@@ -3567,7 +3567,7 @@ async function exportPDFs() {
     answerYPos += 10;
     
     // --- Scoring Guidelines (both PDFs) ---
-    pdf.setFontSize(9);
+    pdf.setFontSize(13);
     pdf.setFont(undefined, 'bold');
     pdf.text('Scoring Guidelines:', margin, yPos);
     yPos += 6;
@@ -3583,7 +3583,7 @@ async function exportPDFs() {
     pdf.text('Alternate scoring (optional): each question normally 10 pts; Q4 may be scored 30/20/10 depending on timing.', margin, yPos, {maxWidth: maxWidth});
     yPos += 12;
     
-    answerKeyPDF.setFontSize(9);
+    answerKeyPDF.setFontSize(13);
     answerKeyPDF.setFont(undefined, 'bold');
     answerKeyPDF.text('Scoring Guidelines:', margin, answerYPos);
     answerYPos += 6;
@@ -3602,18 +3602,18 @@ async function exportPDFs() {
     
     // Quarter 1
     if (gameState.pdfQuestions.q1.length > 0) {
-        pdf.setFontSize(14);
+        pdf.setFontSize(16);
         pdf.setFont(undefined, 'bold');
         pdf.text('Quarter 1', margin, yPos);
-        answerKeyPDF.setFontSize(14);
+        answerKeyPDF.setFontSize(16);
         answerKeyPDF.setFont(undefined, 'bold');
         answerKeyPDF.text('Quarter 1', margin, answerYPos);
         yPos += 8;
         answerYPos += 8;
         
-        pdf.setFontSize(10);
+        pdf.setFontSize(13);
         pdf.setFont(undefined, 'normal');
-        answerKeyPDF.setFontSize(10);
+        answerKeyPDF.setFontSize(13);
         answerKeyPDF.setFont(undefined, 'normal');
         
         gameState.pdfQuestions.q1.forEach((q, i) => {
@@ -3643,18 +3643,18 @@ async function exportPDFs() {
         addNewPage(pdf, false);
         addNewPage(answerKeyPDF, true);
         
-        pdf.setFontSize(14);
+        pdf.setFontSize(16);
         pdf.setFont(undefined, 'bold');
         pdf.text('Quarter 2', margin, yPos);
-        answerKeyPDF.setFontSize(14);
+        answerKeyPDF.setFontSize(16);
         answerKeyPDF.setFont(undefined, 'bold');
         answerKeyPDF.text('Quarter 2', margin, answerYPos);
         yPos += 8;
         answerYPos += 8;
         
-        pdf.setFontSize(10);
+        pdf.setFontSize(13);
         pdf.setFont(undefined, 'normal');
-        answerKeyPDF.setFontSize(10);
+        answerKeyPDF.setFontSize(13);
         answerKeyPDF.setFont(undefined, 'normal');
         
         gameState.pdfQuestions.q2.forEach((q, i) => {
@@ -3703,19 +3703,19 @@ async function exportPDFs() {
         addNewPage(pdf, false);
         addNewPage(answerKeyPDF, true);
         
-        pdf.setFontSize(14);
+        pdf.setFontSize(16);
         pdf.setFont(undefined, 'bold');
         pdf.text('Quarter 3', margin, yPos);
-        answerKeyPDF.setFontSize(14);
+        answerKeyPDF.setFontSize(16);
         answerKeyPDF.setFont(undefined, 'bold');
         answerKeyPDF.text('Quarter 3', margin, answerYPos);
         yPos += 8;
         answerYPos += 8;
         
-        pdf.setFontSize(10);
+        pdf.setFontSize(13);
         pdf.setFont(undefined, 'normal');
         pdf.text('Categories:', margin, yPos);
-        answerKeyPDF.setFontSize(10);
+        answerKeyPDF.setFontSize(13);
         answerKeyPDF.setFont(undefined, 'normal');
         answerKeyPDF.text('Categories:', margin, answerYPos);
         yPos += 7;
@@ -3738,19 +3738,19 @@ async function exportPDFs() {
             addNewPage(pdf, false);
             addNewPage(answerKeyPDF, true);
             
-            pdf.setFontSize(12);
+            pdf.setFontSize(16);
             pdf.setFont(undefined, 'bold');
             pdf.text(`${cat.category.toUpperCase()}`, margin, yPos);
-            answerKeyPDF.setFontSize(12);
+            answerKeyPDF.setFontSize(16);
             answerKeyPDF.setFont(undefined, 'bold');
             answerKeyPDF.text(`${cat.category.toUpperCase()}`, margin, answerYPos);
             yPos += 8;
             answerYPos += 8;
             
-            pdf.setFontSize(10);
+            pdf.setFontSize(13);
             pdf.setFont(undefined, 'normal');
             pdf.text(cat.prompt || 'Name the...', margin, yPos);
-            answerKeyPDF.setFontSize(10);
+            answerKeyPDF.setFontSize(13);
             answerKeyPDF.setFont(undefined, 'normal');
             answerKeyPDF.text(cat.prompt || 'Name the...', margin, answerYPos);
             yPos += 10;
@@ -3782,16 +3782,16 @@ async function exportPDFs() {
         addNewPage(pdf, false);
         addNewPage(answerKeyPDF, true);
         
-        pdf.setFontSize(14);
+        pdf.setFontSize(16);
         pdf.setFont(undefined, 'bold');
         pdf.text('Quarter 4', margin, yPos);
-        answerKeyPDF.setFontSize(14);
+        answerKeyPDF.setFontSize(16);
         answerKeyPDF.setFont(undefined, 'bold');
         answerKeyPDF.text('Quarter 4', margin, answerYPos);
         yPos += 8;
         answerYPos += 8;
         
-        pdf.setFontSize(9);
+        pdf.setFontSize(13);
         pdf.setFont(undefined, 'normal');
         // Updated Q4 scoring description to reflect 4.5/3/1.5 points
         pdf.text('Scoring: Answer in earliest section = 4.5 pts, next = 3 pts, last = 1.5 pts (alternate: 30/20/10).', margin, yPos, {maxWidth: maxWidth});
@@ -3799,7 +3799,7 @@ async function exportPDFs() {
         pdf.text('Note: Answering incorrectly in an earlier section voids later points. Leaving blank allows answering in a later section.', margin, yPos, {maxWidth: maxWidth});
         yPos += 10;
         
-        answerKeyPDF.setFontSize(9);
+        answerKeyPDF.setFontSize(13);
         answerKeyPDF.setFont(undefined, 'normal');
         answerKeyPDF.text('Scoring: Answer in earliest section = 4.5 pts, next = 3 pts, last = 1.5 pts (alternate: 30/20/10).', margin, answerYPos, {maxWidth: maxWidth});
         answerYPos += 6;
@@ -3807,18 +3807,18 @@ async function exportPDFs() {
         answerYPos += 10;
         
         // Section 1: earliest (4.5 pts)
-        pdf.setFontSize(12);
+        pdf.setFontSize(16);
         pdf.setFont(undefined, 'bold');
         pdf.text('Section 1: Earliest (4.5 pts)', margin, yPos);
-        answerKeyPDF.setFontSize(12);
+        answerKeyPDF.setFontSize(16);
         answerKeyPDF.setFont(undefined, 'bold');
         answerKeyPDF.text('Section 1: Earliest (4.5 pts)', margin, answerYPos);
         yPos += 8;
         answerYPos += 8;
         
-        pdf.setFontSize(10);
+        pdf.setFontSize(13);
         pdf.setFont(undefined, 'normal');
-        answerKeyPDF.setFontSize(10);
+        answerKeyPDF.setFontSize(13);
         answerKeyPDF.setFont(undefined, 'normal');
         
         gameState.pdfQuestions.q4.forEach((q, i) => {
@@ -3844,18 +3844,18 @@ async function exportPDFs() {
         addNewPage(pdf, false);
         addNewPage(answerKeyPDF, true);
         
-        pdf.setFontSize(12);
+        pdf.setFontSize(16);
         pdf.setFont(undefined, 'bold');
         pdf.text('Section 2: Middle (3 pts)', margin, yPos);
-        answerKeyPDF.setFontSize(12);
+        answerKeyPDF.setFontSize(16);
         answerKeyPDF.setFont(undefined, 'bold');
         answerKeyPDF.text('Section 2: Middle (3 pts)', margin, answerYPos);
         yPos += 8;
         answerYPos += 8;
         
-        pdf.setFontSize(10);
+        pdf.setFontSize(13);
         pdf.setFont(undefined, 'normal');
-        answerKeyPDF.setFontSize(10);
+        answerKeyPDF.setFontSize(13);
         answerKeyPDF.setFont(undefined, 'normal');
         
         gameState.pdfQuestions.q4.forEach((q, i) => {
@@ -3883,18 +3883,18 @@ async function exportPDFs() {
         addNewPage(pdf, false);
         addNewPage(answerKeyPDF, true);
         
-        pdf.setFontSize(12);
+        pdf.setFontSize(16);
         pdf.setFont(undefined, 'bold');
         pdf.text('Section 3: Last (1.5 pts)', margin, yPos);
-        answerKeyPDF.setFontSize(12);
+        answerKeyPDF.setFontSize(16);
         answerKeyPDF.setFont(undefined, 'bold');
         answerKeyPDF.text('Section 3: Last (1.5 pts)', margin, answerYPos);
         yPos += 8;
         answerYPos += 8;
         
-        pdf.setFontSize(10);
+        pdf.setFontSize(13);
         pdf.setFont(undefined, 'normal');
-        answerKeyPDF.setFontSize(10);
+        answerKeyPDF.setFontSize(13);
         answerKeyPDF.setFont(undefined, 'normal');
         
         gameState.pdfQuestions.q4.forEach((q, i) => {
