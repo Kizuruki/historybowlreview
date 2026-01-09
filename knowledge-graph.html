@@ -312,6 +312,81 @@
     .btn.secondary {
       background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
     }
+
+    .sidebar-left, .sidebar-right {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .collapse-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #5a67d8;
+      color: white;
+      border: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 12px;
+      z-index: 10;
+      transition: all 0.2s;
+    }
+    
+    .collapse-btn:hover {
+      background: #4c51bf;
+      transform: scale(1.1);
+    }
+    
+    .sidebar-right .collapse-btn {
+      left: 10px;
+      right: auto;
+    }
+    
+    .sidebar-content {
+      transition: opacity 0.3s;
+    }
+    
+    .search-input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+    
+    .search-input:focus {
+      outline: none;
+      border-color: #5a67d8;
+    }
+    
+    .node-list-item {
+      padding: 8px 12px;
+      margin: 4px 0;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .node-list-item:hover {
+      border-color: #5a67d8;
+      transform: translateX(3px);
+    }
+    
+    .subcategory-badge {
+      display: inline-block;
+      background: #e6f2ff;
+      color: #2563eb;
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 10px;
+      margin-left: 5px;
+    }
   </style>
 </head>
 <body>
@@ -321,28 +396,34 @@
     <div class="layout">
       <!-- Left Sidebar: Categories -->
       <div class="sidebar-left">
-        <h3>📚 Categories</h3>
-        <div id="categoryList"></div>
-        
-        <h3 style="margin-top: 20px;">📊 Progress</h3>
-        <div id="progressStats"></div>
-      </div>
-      
-      <!-- Center: Graph Visualization -->
-      <div class="graph-container">
-        <svg id="graphCanvas"></svg>
+        <button class="collapse-btn" onclick="toggleLeftSidebar()">◀</button>
+        <div class="sidebar-content">
+          <h3>📚 Categories</h3>
+          <input type="text" id="categorySearch" placeholder="Search categories..." class="search-input">
+          <div id="categoryList"></div>
+          
+          <h3 style="margin-top: 20px;">📊 Progress</h3>
+          <div id="progressStats"></div>
+          
+          <h3 style="margin-top: 20px;">📋 All Nodes</h3>
+          <button class="btn" onclick="toggleNodeList()" style="font-size: 12px; padding: 8px;">
+            Show/Hide All Nodes
+          </button>
+          <div id="allNodesList" style="display: none; max-height: 300px; overflow-y: auto;"></div>
+        </div>
       </div>
       
       <!-- Right Sidebar: Node Details -->
       <div class="sidebar-right">
-        <div id="nodeDetails">
-          <p style="color: #718096; text-align: center; margin-top: 100px;">
-            Select a category and click on a node to view details
-          </p>
+        <button class="collapse-btn" onclick="toggleRightSidebar()">▶</button>
+        <div class="sidebar-content">
+          <div id="nodeDetails">
+            <p style="color: #718096; text-align: center; margin-top: 100px;">
+              Select a category and click on a node to view details
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
   
   <!-- Practice Modal -->
   <div class="practice-modal" id="practiceModal">
@@ -390,7 +471,46 @@
         div.onclick = () => selectCategory(cat, div);
         container.appendChild(div);
       });
+      
+      // Add search functionality
+      document.getElementById('categorySearch').addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        document.querySelectorAll('.category-item').forEach(item => {
+          const text = item.textContent.toLowerCase();
+          item.style.display = text.includes(searchTerm) ? 'block' : 'none';
+        });
+      });
     }
+
+    function renderAllNodesList() {
+      const container = document.getElementById('allNodesList');
+      const sortedNodes = [...nodesData].sort((a, b) => a.answer.localeCompare(b.answer));
+      
+      container.innerHTML = '';
+      sortedNodes.forEach(node => {
+        const div = document.createElement('div');
+        div.className = 'node-list-item';
+        div.innerHTML = `
+          ${node.answer}
+          <span class="subcategory-badge">${node.subcategory || node.category}</span>
+        `;
+        div.onclick = () => {
+          currentCategory = node.category;
+          selectNode(node.answer);
+        };
+        container.appendChild(div);
+      });
+    }
+    
+    window.toggleNodeList = function() {
+      const list = document.getElementById('allNodesList');
+      if (list.style.display === 'none') {
+        list.style.display = 'block';
+        renderAllNodesList();
+      } else {
+        list.style.display = 'none';
+      }
+    };
     
     function selectCategory(category, element) {
       currentCategory = category;
@@ -723,6 +843,40 @@
       if (currentNode) selectNode(currentNode.answer);
     };
     
+    let leftSidebarCollapsed = false;
+    let rightSidebarCollapsed = false;
+    
+    function toggleLeftSidebar() {
+      leftSidebarCollapsed = !leftSidebarCollapsed;
+      const sidebar = document.querySelector('.sidebar-left');
+      const layout = document.querySelector('.layout');
+      
+      if (leftSidebarCollapsed) {
+        sidebar.style.width = '40px';
+        sidebar.style.overflow = 'hidden';
+        layout.style.gridTemplateColumns = '40px 1fr 300px';
+      } else {
+        sidebar.style.width = '250px';
+        sidebar.style.overflow = 'auto';
+        layout.style.gridTemplateColumns = '250px 1fr 300px';
+      }
+    }
+    
+    function toggleRightSidebar() {
+      rightSidebarCollapsed = !rightSidebarCollapsed;
+      const sidebar = document.querySelector('.sidebar-right');
+      const layout = document.querySelector('.layout');
+      
+      if (rightSidebarCollapsed) {
+        sidebar.style.width = '40px';
+        sidebar.style.overflow = 'hidden';
+        layout.style.gridTemplateColumns = leftSidebarCollapsed ? '40px 1fr 40px' : '250px 1fr 40px';
+      } else {
+        sidebar.style.width = '300px';
+        sidebar.style.overflow = 'auto';
+        layout.style.gridTemplateColumns = leftSidebarCollapsed ? '40px 1fr 300px' : '250px 1fr 300px';
+      }
+    }
     init();
   </script>
 </body>
