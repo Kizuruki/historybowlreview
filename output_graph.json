@@ -1,0 +1,434 @@
+{
+  "Battle of Agincourt": {
+    "connections": [
+      "Battle of Hastings",
+      "First English Civil War"
+    ],
+    "scores": {
+      "Battle of Hastings": 0.4780983030796051,
+      "First English Civil War": 0.4662904441356659
+    }
+  },
+  "European Union": {
+    "connections": [],
+    "scores": {}
+  },
+  "Winston Churchill": {
+    "connections": [
+      "Duke of Marlborough"
+    ],
+    "scores": {
+      "Duke of Marlborough": 0.5032389760017395
+    }
+  },
+  "King George III": {
+    "connections": [],
+    "scores": {}
+  },
+  "Athens": {
+    "connections": [],
+    "scores": {}
+  },
+  "Maria Theresa Walburga Amalia Christina": {
+    "connections": [
+      "Charles II",
+      "Philip V"
+    ],
+    "scores": {
+      "Charles II": 0.473482221364975,
+      "Philip V": 0.450192928314209
+    }
+  },
+  "Conservative Party": {
+    "connections": [],
+    "scores": {}
+  },
+  "Second Boer War": {
+    "connections": [
+      "First English Civil War"
+    ],
+    "scores": {
+      "First English Civil War": 0.472858726978302
+    }
+  },
+  "concentration camps": {
+    "connections": [],
+    "scores": {}
+  },
+  "Battle of Hastings": {
+    "connections": [
+      "Alfred the Great",
+      "Battle of Agincourt",
+      "First English Civil War"
+    ],
+    "scores": {
+      "Alfred the Great": 0.5171366930007935,
+      "Battle of Agincourt": 0.4780983030796051,
+      "First English Civil War": 0.4660339951515198
+    }
+  },
+  "Bayeux": {
+    "connections": [],
+    "scores": {}
+  },
+  "Basque Country": {
+    "connections": [],
+    "scores": {}
+  },
+  "Galicia": {
+    "connections": [],
+    "scores": {}
+  },
+  "William I": {
+    "connections": [
+      "William III of England"
+    ],
+    "scores": {
+      "William III of England": 0.46204322576522827
+    }
+  },
+  "the Iron Duke": {
+    "connections": [],
+    "scores": {}
+  },
+  "Charlemagne": {
+    "connections": [
+      "Einhard"
+    ],
+    "scores": {
+      "Einhard": 0.4652235805988312
+    }
+  },
+  "Einhard": {
+    "connections": [
+      "Charlemagne"
+    ],
+    "scores": {
+      "Charlemagne": 0.4652235805988312
+    }
+  },
+  "Poland": {
+    "connections": [
+      "Lech Walesa"
+    ],
+    "scores": {
+      "Lech Walesa": 0.4603034555912018
+    }
+  },
+  "Lech Walesa": {
+    "connections": [
+      "Poland"
+    ],
+    "scores": {
+      "Poland": 0.4603034555912018
+    }
+  },
+  "Greece": {
+    "connections": [
+      "The Popular Association – Golden Dawn"
+    ],
+    "scores": {
+      "The Popular Association – Golden Dawn": 0.5014452338218689
+    }
+  },
+  "The Popular Association – Golden Dawn": {
+    "connections": [
+      "Greece"
+    ],
+    "scores": {
+      "Greece": 0.5014452338218689
+    }
+  },
+  "Reconquista of Iberia": {
+    "connections": [
+      "Charles II",
+      "Muhammad XII"
+    ],
+    "scores": {
+      "Charles II": 0.5374948382377625,
+      "Muhammad XII": 0.4716132879257202
+    }
+  },
+  "Muhammad XII": {
+    "connections": [
+      "Reconquista of Iberia"
+    ],
+    "scores": {
+      "Reconquista of Iberia": 0.4716132879257202
+    }
+  },
+  "Anne Boleyn": {
+    "connections": [
+      "Pilgrimage of Grace"
+    ],
+    "scores": {
+      "Pilgrimage of Grace": 0.47244560718536377
+    }
+  },
+  "Pilgrimage of Grace": {
+    "connections": [
+      "William III of England",
+      "Anne Boleyn"
+    ],
+    "scores": {
+      "William III of England": 0.4743415117263794,
+      "Anne Boleyn": 0.47244560718536377
+    }
+  },
+  "Normandy": {
+    "connections": [
+      "Atlantic Wall",
+      "Omaha Beach"
+    ],
+    "scores": {
+      "Atlantic Wall": 0.5755554437637329,
+      "Omaha Beach": 0.5637087225914001
+    }
+  },
+  "Operation Overlord": {
+    "connections": [],
+    "scores": {}
+  },
+  "Omaha Beach": {
+    "connections": [
+      "Normandy"
+    ],
+    "scores": {
+      "Normandy": 0.5637087225914001
+    }
+  },
+  "Erwin Rommel": {
+    "connections": [
+      "101st Airborne"
+    ],
+    "scores": {
+      "101st Airborne": 0.5925667881965637
+    }
+  },
+  "Atlantic Wall": {
+    "connections": [
+      "Normandy"
+    ],
+    "scores": {
+      "Normandy": 0.5755554437637329
+    }
+  },
+  "Percy Cleghorn Hobart": {
+    "connections": [],
+    "scores": {}
+  },
+  "101st Airborne": {
+    "connections": [
+      "Erwin Rommel"
+    ],
+    "scores": {
+      "Erwin Rommel": 0.5925667881965637
+    }
+  },
+  "Caen": {
+    "connections": [],
+    "scores": {}
+  },
+  "Nero": {
+    "connections": [
+      "Titus",
+      "Caligula"
+    ],
+    "scores": {
+      "Titus": 0.49598413705825806,
+      "Caligula": 0.4711079001426697
+    }
+  },
+  "Constantine the Great": {
+    "connections": [
+      "Theodosius the Great"
+    ],
+    "scores": {
+      "Theodosius the Great": 0.5412722826004028
+    }
+  },
+  "Caligula": {
+    "connections": [
+      "Nero"
+    ],
+    "scores": {
+      "Nero": 0.4711079001426697
+    }
+  },
+  "Marcus Aurelius Antoninus Augustus": {
+    "connections": [],
+    "scores": {}
+  },
+  "Diocletian": {
+    "connections": [],
+    "scores": {}
+  },
+  "Titus": {
+    "connections": [
+      "Nero"
+    ],
+    "scores": {
+      "Nero": 0.49598413705825806
+    }
+  },
+  "Valerian": {
+    "connections": [],
+    "scores": {}
+  },
+  "Theodosius the Great": {
+    "connections": [
+      "Constantine the Great"
+    ],
+    "scores": {
+      "Constantine the Great": 0.5412722826004028
+    }
+  },
+  "Louis XIV": {
+    "connections": [
+      "Philip V",
+      "Bourbon"
+    ],
+    "scores": {
+      "Philip V": 0.4752393662929535,
+      "Bourbon": 0.4674740433692932
+    }
+  },
+  "Bourbon": {
+    "connections": [
+      "Philip V",
+      "Habsburg",
+      "Charles II",
+      "Louis XIV"
+    ],
+    "scores": {
+      "Philip V": 0.7764455676078796,
+      "Habsburg": 0.7109287977218628,
+      "Charles II": 0.5817643404006958,
+      "Louis XIV": 0.4674740433692932
+    }
+  },
+  "Habsburg": {
+    "connections": [
+      "Bourbon",
+      "Charles II",
+      "Philip V"
+    ],
+    "scores": {
+      "Bourbon": 0.7109287977218628,
+      "Charles II": 0.565734326839447,
+      "Philip V": 0.525944709777832
+    }
+  },
+  "Charles II": {
+    "connections": [
+      "Philip V",
+      "Bourbon",
+      "Habsburg",
+      "Reconquista of Iberia",
+      "Maria Theresa Walburga Amalia Christina"
+    ],
+    "scores": {
+      "Philip V": 0.6715714335441589,
+      "Bourbon": 0.5817643404006958,
+      "Habsburg": 0.565734326839447,
+      "Reconquista of Iberia": 0.5374948382377625,
+      "Maria Theresa Walburga Amalia Christina": 0.473482221364975
+    }
+  },
+  "William III of England": {
+    "connections": [
+      "Pilgrimage of Grace",
+      "William I",
+      "Philip V"
+    ],
+    "scores": {
+      "Pilgrimage of Grace": 0.4743415117263794,
+      "William I": 0.46204322576522827,
+      "Philip V": 0.4548588991165161
+    }
+  },
+  "Duke of Marlborough": {
+    "connections": [
+      "Winston Churchill",
+      "Battle of Blenheim"
+    ],
+    "scores": {
+      "Winston Churchill": 0.5032389760017395,
+      "Battle of Blenheim": 0.45695969462394714
+    }
+  },
+  "Battle of Blenheim": {
+    "connections": [
+      "First English Civil War",
+      "Duke of Marlborough"
+    ],
+    "scores": {
+      "First English Civil War": 0.46314263343811035,
+      "Duke of Marlborough": 0.45695969462394714
+    }
+  },
+  "Philip V": {
+    "connections": [
+      "Bourbon",
+      "Charles II",
+      "Habsburg",
+      "Kingdom of Spain",
+      "Louis XIV",
+      "William III of England"
+    ],
+    "scores": {
+      "Bourbon": 0.7764455676078796,
+      "Charles II": 0.6715714335441589,
+      "Habsburg": 0.525944709777832,
+      "Kingdom of Spain": 0.4900500774383545,
+      "Louis XIV": 0.4752393662929535,
+      "William III of England": 0.4548588991165161
+    }
+  },
+  "Kingdom of Spain": {
+    "connections": [
+      "Philip V"
+    ],
+    "scores": {
+      "Philip V": 0.4900500774383545
+    }
+  },
+  "Hanseatic League": {
+    "connections": [],
+    "scores": {}
+  },
+  "First English Civil War": {
+    "connections": [
+      "Second Boer War",
+      "Battle of Agincourt",
+      "Battle of Hastings",
+      "Battle of Blenheim"
+    ],
+    "scores": {
+      "Second Boer War": 0.472858726978302,
+      "Battle of Agincourt": 0.4662904441356659,
+      "Battle of Hastings": 0.4660339951515198,
+      "Battle of Blenheim": 0.46314263343811035
+    }
+  },
+  "codebreaking the Enigma machine": {
+    "connections": [],
+    "scores": {}
+  },
+  "Alfred the Great": {
+    "connections": [
+      "Battle of Hastings"
+    ],
+    "scores": {
+      "Battle of Hastings": 0.5171366930007935
+    }
+  },
+  "Republic of Ireland": {
+    "connections": [],
+    "scores": {}
+  },
+  "Hungary": {
+    "connections": [],
+    "scores": {}
+  }
+}
