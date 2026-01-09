@@ -98,8 +98,8 @@
     async function init() {
       // Load the generated JSON files
       const [nodesRes, graphRes] = await Promise.all([
-        fetch('output_nodes.json'),
-        fetch('output_graph.json')
+        fetch('graph_data/output_nodes.json'),  // Changed
+        fetch('graph_data/output_graph.json')   // Changed
       ]);
       
       nodesData = await nodesRes.json();
