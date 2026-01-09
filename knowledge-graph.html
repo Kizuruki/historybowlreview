@@ -89,52 +89,97 @@
   </div>
 
   <script type="module">
-    import { initDB, getNodesByDivision, getRelatedNodes, updateProgress } from './init-db.js';
-    
+    // Load the graph data
+    let nodesData = [];
+    let graphData = {};
     let currentNode = null;
-    let db = null;
-    
+    let userProgress = {}; // Will store in localStorage
+  
     async function init() {
-      db = await initDB();
+      // Load the generated JSON files
+      const [nodesRes, graphRes] = await Promise.all([
+        fetch('output_nodes.json'),
+        fetch('output_graph.json')
+      ]);
+      
+      nodesData = await nodesRes.json();
+      graphData = await graphRes.json();
+      
+      // Load user progress from localStorage
+      const saved = localStorage.getItem('kg_progress');
+      if (saved) userProgress = JSON.parse(saved);
+      
       renderDivisionFilters();
       renderProgressOverview();
     }
     
     function renderDivisionFilters() {
-      const divisions = [
-        'US History', 'European History', 'World History', 
-        'Ancient History', 'Other History', 'Pop Culture/Sports',
-        'Social Science', 'Recent History', 'Literature',
-        'Fine Arts', 'Geography', 'Math/Science', 'Mythology'
-      ];
+      const categories = [...new Set(nodesData.map(n => n.category))].sort();
       
       const container = document.getElementById('divisionFilters');
-      divisions.forEach(div => {
+      categories.forEach(cat => {
         const btn = document.createElement('button');
         btn.className = 'filter-btn';
-        btn.textContent = div;
-        btn.onclick = () => filterByDivision(div);
+        btn.textContent = cat;
+        btn.onclick = () => filterByCategory(cat);
         container.appendChild(btn);
       });
     }
     
-    async function filterByDivision(division) {
-      const nodes = await getNodesByDivision(db, division);
-      renderNodeGrid(nodes);
+    function filterByCategory(category) {
+      const filtered = nodesData.filter(n => n.category === category);
+      renderNodeList(filtered);
     }
     
-    function renderNodeCard(node) {
-      const stars = getStarDisplay(node.stars, node.platinum_until);
+    function renderNodeList(nodes) {
+      const container = document.getElementById('progressOverview');
+      container.innerHTML = '<h3>Select a Node:</h3>';
       
-      return `
-        <div class="node-card" onclick="selectNode('${node.id}')">
-          <h3>${node.name}</h3>
-          <div class="star-display">${stars}</div>
-          <p>${node.summary || 'Loading summary...'}</p>
-          <div class="stats">
-            <span>✓ ${node.times_correct}</span>
-            <span>✗ ${node.times_wrong}</span>
+      nodes.forEach(node => {
+        const div = document.createElement('div');
+        div.className = 'mini-node';
+        div.textContent = node.answer;
+        div.onclick = () => selectNode(node.answer);
+        container.appendChild(div);
+      });
+    }
+    
+    function renderProgressOverview() {
+      const total = nodesData.length;
+      const completed = Object.values(userProgress).filter(p => p.stars >= 1).length;
+      
+      document.getElementById('progressOverview').innerHTML = `
+        <p>Progress: ${completed}/${total} nodes explored</p>
+      `;
+    }
+    
+    function selectNode(nodeAnswer) {
+      currentNode = nodesData.find(n => n.answer === nodeAnswer);
+      if (!currentNode) return;
+      
+      const progress = userProgress[nodeAnswer] || { stars: 0, platinum_until: null, times_correct: 0, times_wrong: 0 };
+      
+      renderCurrentNode(currentNode, progress);
+      renderRelatedNodes(nodeAnswer);
+    }
+    
+    function renderCurrentNode(node, progress) {
+      const view = document.getElementById('currentNodeView');
+      view.innerHTML = `
+        <div class="node-card active">
+          <h2>${node.answer}</h2>
+          <div class="star-display">${getStarDisplay(progress.stars, progress.platinum_until)}</div>
+          
+          <p><strong>Category:</strong> ${node.category}</p>
+          <p><strong>Questions about this:</strong> ${node.questions.length}</p>
+          
+          <div class="summary">
+            ${node.questions.slice(0, 2).map(q => `<p class="small">• ${q.substring(0, 100)}...</p>`).join('')}
           </div>
+          
+          <button class="btn" onclick="startNodePractice()">
+            Practice ${node.questions.length} Questions
+          </button>
         </div>
       `;
     }
@@ -154,46 +199,38 @@
       return html;
     }
     
-    async function selectNode(nodeId) {
-      currentNode = await db.get('nodes', nodeId);
-      const related = await getRelatedNodes(db, nodeId);
-      const questions = await db.getAllFromIndex('node_questions', 'by-node', nodeId);
+    function renderRelatedNodes(nodeAnswer) {
+      const connections = graphData[nodeAnswer]?.connections || [];
+      const container = document.getElementById('relatedNodes');
       
-      renderCurrentNode(currentNode, questions);
-      renderRelatedNodes(related);
+      container.innerHTML = '<h3>Related Nodes:</h3>';
+      
+      connections.forEach(relatedAnswer => {
+        const relatedNode = nodesData.find(n => n.answer === relatedAnswer);
+        if (!relatedNode) return;
+        
+        const score = graphData[nodeAnswer].scores[relatedAnswer];
+        
+        const div = document.createElement('div');
+        div.className = 'mini-node';
+        div.innerHTML = `
+          <strong>${relatedNode.answer}</strong><br>
+          <small>Similarity: ${(score * 100).toFixed(0)}%</small>
+        `;
+        div.onclick = () => selectNode(relatedAnswer);
+        container.appendChild(div);
+      });
     }
     
-    function renderCurrentNode(node, questions) {
-      const view = document.getElementById('currentNodeView');
-      view.innerHTML = `
-        <div class="node-card active">
-          <h2>${node.name}</h2>
-          <div class="star-display">${getStarDisplay(node.stars, node.platinum_until)}</div>
-          
-          <div class="summary">
-            ${node.summary}
-          </div>
-          
-          ${node.wikipedia_url ? `
-            <a href="${node.wikipedia_url}" target="_blank" class="btn">
-              📖 Wikipedia Article
-            </a>
-          ` : ''}
-          
-          <button class="btn" onclick="startNodePractice()">
-            Practice ${questions.length} Questions
-          </button>
-        </div>
-      `;
-    }
-    
-    window.startNodePractice = async function() {
-      // Reuse your existing question practice logic
-      // but filter to only questions linked to currentNode
-      const questions = await db.getAllFromIndex('node_questions', 'by-node', currentNode.id);
+    window.startNodePractice = function() {
+      if (!currentNode) return;
       
-      // Start practice session with these questions
-      // Track results to award stars
+      // Store questions for practice
+      localStorage.setItem('practice_questions', JSON.stringify(currentNode.questions));
+      localStorage.setItem('practice_node', currentNode.answer);
+      
+      alert(`Starting practice with ${currentNode.questions.length} questions about ${currentNode.answer}`);
+      // You can redirect to your main practice page here or implement inline practice
     }
     
     init();
