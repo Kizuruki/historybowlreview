@@ -2,617 +2,729 @@
   {
     "answer": "Battle of Agincourt",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "French",
+    "subsubcategory": "people",
     "questions": [
       "One side at this battle found its only significant success through an assault on a baggage train\nand was hindered by enemy palings. One side at this battle had previously besieged Harfleur. An\ninitial cavalry charge in this battle failed miserably and churned the field with mud, thus\nimpairing subsequent advances on foot by forces led by the Constable of France. For 10 points,\nname this English victory for Henry V in the Hundred Years War thanks to the efficiency of\nlongbows."
     ],
     "question_ids": [
-      "q1_0"
-    ]
+      "a_q1_0"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "European Union",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "Transnational/Other",
+    "subsubcategory": "places",
     "questions": [
       "Most members of this organization also participate in the Schengen [shane-gun] Area. This\norganization, which guarantees the single market, grew out of an agreement between the “inner\nsix” to trade coal and steel. This winner of the 2012 Nobel Peace Prize was created by the Treaty\nof Maastricht [mass-strict], but is currently threatened by the possible “Grexit.” For 10 points,\nname this organization of 28 member states across a namesake continent."
     ],
     "question_ids": [
-      "q1_1"
-    ]
+      "a_q1_1"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Winston Churchill",
-    "category": "Geography",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Russian",
+    "subsubcategory": "people",
     "questions": [
       "This politician called Russia “a riddle, wrapped up in a mystery, inside an enigma.” The\nfailure of the Gallipoli Campaign tarnished the early career of this orator who capped off his best\nspeeches with phrases like “blood, toil, tears, and sweat” and “this was their finest hour.” Taking\noffice after Neville Chamberlain resigned, this politician led his country through the Battle of\nBritain. For 10 points, name this Prime Minister who led Britain through most of World War II."
     ],
     "question_ids": [
-      "q1_2"
-    ]
+      "a_q1_2"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "King George III",
-    "category": "US History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "French",
+    "subsubcategory": "people",
     "questions": [
       "One of this king’s cabinet ministers was wounded at Putney Heath after a duel. He was\nadvised early in life by Lord Bute and married Charlotte of Mecklenburg-Strelitz [STRAYELits]. After this man refused to support Catholic Emancipation, his prime minister Pitt the\nYounger resigned. Earlier in his reign, Pitt the Elder helped this king defeat France and Lord\nNorth passed the Intolerable Acts. For 10 points, name this mad king who ruled during the\nAmerican Revolution."
     ],
     "question_ids": [
-      "q1_3"
-    ]
+      "a_q1_3"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Athens",
-    "category": "US History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "German",
+    "subsubcategory": "places",
     "questions": [
       "The early Christian thinker Tertullian [turr-TOOL-ee-uhn] asked “what has (this city) to do\nwith Jerusalem?” The royal stoa [STOH-uh] of Attalos [uh-TALL-ohs] is found in this city.\nBerlin’s Brandenburg Gate was copied from a large gate to a landmark in this city called the\nPropylaea [pro-pull-AYE-uh]. The explosion of an Ottoman munitions dump damaged this city's\nmost famous landmark, from which a set of marble sculptures were removed by Lord Elgin. For\n10 points, name this European capital city in which the Parthenon [PAR-thuh-nonn] can be\nfound on the Acropolis [uh-CROP-uh-luhs]."
     ],
     "question_ids": [
-      "q1_4"
-    ]
+      "a_q1_4"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Maria Theresa Walburga Amalia Christina",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "German",
+    "subsubcategory": "people",
     "questions": [
       "This ruler employed a physician who combated rampant paranoia about the undead in Moravia\nand worked with the Count von Haugwitz to reform the empire. This employer of Gerard von\nSwieten was consort to the Duke of Lorraine, Francis Stephen, and signed the Treaty of Breslau\nto end the First Silesian War. The Treaty of Aix-la-Chapelle [ex-luh-shuh-pell] ended a war\nbegun after this ruler's ascension, in violation of Salic Law, under the Pragmatic Sanction. For 10\npoints, name this Habsburg Queen who fought the War of the Austrian Succession."
     ],
     "question_ids": [
-      "q1_5"
-    ]
+      "a_q1_5"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Conservative Party",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "This party controlled government during the Thirteen Wasted Years. It lost power in 1974\nwith the failure of leader Edward Heath, but regained it when its opponents suffered the “Winter\nof Discontent.” In the 1980s, this party dealt with a miners’ strike in its efforts to weaken unions\nand privatize state industries. For 10 points, name this British political party once led by\nMargaret Thatcher, which opposes the Labour Party."
     ],
     "question_ids": [
-      "q1_6"
-    ]
+      "a_q1_6"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Second Boer War",
-    "category": "World History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Western",
+    "subsubcategory": "people",
     "questions": [
       "The government that started this war was re-elected when Lord Salisbury triumphed in the\nKhaki Election. This war was ended by the Treaty of Vereeniging [vur-EEN-uh-ging]. The raid\nled by Leander Starr Jameson raised tensions before this war. It was sparked by the discovery of\ngold in the Witwatersrand [wit-wut-urz-and]. For 10 points, name this war in which Great Britain\ndefeated Dutch-speaking South African farmers."
     ],
     "question_ids": [
-      "q2_tossup_0"
-    ]
+      "a_q2_tossup_0"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "concentration camps",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "British",
+    "subsubcategory": "events",
     "questions": [
       "The British used these facilities to house Boer civilians during the war, often with little\nfood. Later, worse examples include Buchenwald [boo-ken-vahld] and Dachau[dock-ow]."
     ],
     "question_ids": [
-      "q2_bonus_0"
-    ]
+      "a_q2_bonus_0"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Battle of Hastings",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "One side in this battle landed at Pevensey, while the other had just resisted a Viking invasion\nled by Harald Hardrada [hard-dra-duh] at Stamford Bridge. Feigned retreats lead to the thinning\nof the shield wall at this battle, although the death of one commander was the deciding factor.\nFor 10 points, name this 1066 victory for William the Conqueror that lead to the Norman\nconquest of England."
     ],
     "question_ids": [
-      "q2_tossup_1"
-    ]
+      "a_q2_tossup_1"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Bayeux",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "The Battle of Hastings is recorded in this work of art, which depicts Harold Godwinson\nbeing felled by an arrow to his eye."
     ],
     "question_ids": [
-      "q2_bonus_1"
-    ]
+      "a_q2_bonus_1"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Basque Country",
-    "category": "Geography",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Western",
+    "subsubcategory": "people",
     "questions": [
       "This region’s independence was sought by the outlawed Batasuna [bah-tah-soo-nah] party. Its\nnamesake mountain range is the eastern section of the Cantabrian Mountains. A city in this\nregion contains a Frank Gehry-designed Guggenheim Museum. For 10 points, Bilbao is in what\nautonomous community of northern Spain whose native language is a linguistic isolate?"
     ],
     "question_ids": [
-      "q2_tossup_2"
-    ]
+      "a_q2_tossup_2"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Galicia",
-    "category": "Geography",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Western",
+    "subsubcategory": "places",
     "questions": [
       "Santiago de Compostela is the capital of which other northern Spanish autonomous\ncommunity, home to a language more closely related to Portuguese than Spanish?"
     ],
     "question_ids": [
-      "q2_bonus_2"
-    ]
+      "a_q2_bonus_2"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "William I",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Western",
+    "subsubcategory": "people",
     "questions": [
       "This leader refused to appear before the Council of Blood and backed the Watergeuzen [wuhtur-goy-zen]. He arranged for the signing of the Pacification of Ghent and the Union of Utrecht\nto oppose the Duke of Parma. He started the Eighty Years’ War. For 10 points, name this Prince\nof Orange from the House of Nassau, a rebel leader who declared the independence of the\nNetherlands."
     ],
     "question_ids": [
-      "q2_tossup_3"
-    ]
+      "a_q2_tossup_3"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "the Iron Duke",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Western",
+    "subsubcategory": "people",
     "questions": [
       "Give the noble title or nickname of Fernando Alvarez de Toledo, who convened the\nCouncil of Blood after being sent by Philip II to the Netherlands to crush dissent."
     ],
     "question_ids": [
-      "q2_bonus_3"
-    ]
+      "a_q2_bonus_3"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Charlemagne",
-    "category": "Ancient History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "French",
+    "subsubcategory": "people",
     "questions": [
       "This ruler repressed the “pride and folly” of Tassilo, the rebellious Duke of Bavaria, and\nfought battles against the Avars that rendered Pannonia [pann-OH-nee-uh] an uninhabitable\nwasteland. His court at Aachen [OCK-en] was the center of a domain that he passed on to his\nson, Louis the Pious. For 10 points, name this Frankish king, a patron of learning who became\nthe first Holy Roman Emperor."
     ],
     "question_ids": [
-      "q2_tossup_4"
-    ]
+      "a_q2_tossup_4"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Einhard",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "The two major lives of Charlemagne were written by Notker [NOT-kurr] the\nStammerer and what courtier [COURT-eer] who studied at Charlemagne’s palace school?"
     ],
     "question_ids": [
-      "q2_bonus_4"
-    ]
+      "a_q2_bonus_4"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Poland",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "Central/Eastern",
+    "subsubcategory": "people",
     "questions": [
       "This country’s flag emerges from the “N” in the iconic blood-red logo of one of its protest\nmovements, which forced its government to agree to the Round Table Talks. This country’s\nGdansk [guh-DONSK] Shipyards were where an electrician founded the trade union Solidarity.\n2015 NHB Set A\nBowl Round 1\nFor 10 points, name this Eastern European country whose largest city was headquarters to the\nWarsaw Pact."
     ],
     "question_ids": [
-      "q2_tossup_5"
-    ]
+      "a_q2_tossup_5"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Lech Walesa",
-    "category": "US History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Central/Eastern",
+    "subsubcategory": "people",
     "questions": [
       "What electrician founded Solidarity and later became President of Poland?"
     ],
     "question_ids": [
-      "q2_bonus_5"
-    ]
+      "a_q2_bonus_5"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Greece",
-    "category": "Geography",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "One politician from this country, Rena Dourou [door-ooh], was recently attacked on national\ntelevision. A January 2015 election here saw the center-right New Democracy lose power to the\nleft-wing Syriza [sur-ree-zuh] party, which ran on an anti-austerity platform. Its finance minister\nrecently secured a four-month bailout extension from the “troika.” [troy-kuh] For 10 points,\nAlexis Tsipras [sip-priss] leads what indebted Eurozone country, whose capital is Athens?"
     ],
     "question_ids": [
-      "q2_tossup_6"
-    ]
+      "a_q2_tossup_6"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "The Popular Association – Golden Dawn",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "things",
     "questions": [
       "This allegedly Nazi right-wing party has the third most seats in Greece’s Parliament,\nalthough it lost one seat in the January elections."
     ],
     "question_ids": [
-      "q2_bonus_6"
-    ]
+      "a_q2_bonus_6"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Reconquista of Iberia",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Western",
+    "subsubcategory": "events",
     "questions": [
       "An early battle in this conflict was the clash at Covadonga, which was a victory for the\nVisigoth Pelayo. Its turning point is usually considered the defeat of the Almohads at the 13th\ncentury Battle of Las Navas de Tolosa. The union of several factions in this conflict led to the\njoint rule of the Dual Monarchs. El Cid was a heroic figure from, for 10 points, what conflict\nconcluded by Ferdinand and Isabella that ended the period of Islamic government in Spain?"
     ],
     "question_ids": [
-      "q2_tossup_7"
-    ]
+      "a_q2_tossup_7"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Muhammad XII",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "things",
     "questions": [
       "The end of the Reconquista is considered to be the surrender of Granada by this man, this\nlast Muslim ruler in Iberia."
     ],
     "question_ids": [
-      "q2_bonus_7"
-    ]
+      "a_q2_bonus_7"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Anne Boleyn",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "This woman aided Richard Harman, who was arrested for smuggling illegal Tyndale Bibles.\nThis woman’s influence is credited with causing the downfall of Lord Chancellor Thomas\nWolsey. Along with musician Mark Smeaton, this niece of Thomas Howard was imprisoned in\nthe Tower of London on charges of adultery. For 10 points, name this woman executed in 1536,\nthe second wife of Henry VIII."
     ],
     "question_ids": [
-      "q2_tossup_8"
-    ]
+      "a_q2_tossup_8"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Pilgrimage of Grace",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "After Anne’s death her husband faced what Catholic rebellion based in Yorkshire and\nled by Robert Aske?"
     ],
     "question_ids": [
-      "q2_bonus_8"
-    ]
+      "a_q2_bonus_8"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Normandy",
-    "category": "D-DAY",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "French",
+    "subsubcategory": "places",
     "questions": [
       "The region of France that contains all five invasion beaches?"
     ],
     "question_ids": [
-      "q3_0_0"
-    ]
+      "a_q3_0_0"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Operation Overlord",
-    "category": "D-DAY",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "things",
     "questions": [
       "The operational code name of D-Day?"
     ],
     "question_ids": [
-      "q3_0_1"
-    ]
+      "a_q3_0_1"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Omaha Beach",
-    "category": "D-DAY",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "places",
     "questions": [
       "The most heavily defended beach on D-Day, named after the largest city in Nebraska?"
     ],
     "question_ids": [
-      "q3_0_2"
-    ]
+      "a_q3_0_2"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Erwin Rommel",
-    "category": "D-DAY",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "German",
+    "subsubcategory": "people",
     "questions": [
       "The general, nicknamed “Desert Fox”, who commanded German forces at D-Day?"
     ],
     "question_ids": [
-      "q3_0_3"
-    ]
+      "a_q3_0_3"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Atlantic Wall",
-    "category": "D-DAY",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "French",
+    "subsubcategory": "things",
     "questions": [
       "Oceanic term for the “wall” of German defenses along the French coast?"
     ],
     "question_ids": [
-      "q3_0_4"
-    ]
+      "a_q3_0_4"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Percy Cleghorn Hobart",
-    "category": "D-DAY",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "things",
     "questions": [
       "The British namesake of modified tanks known as “funnies” used during the invasion?"
     ],
     "question_ids": [
-      "q3_0_5"
-    ]
+      "a_q3_0_5"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "101st Airborne",
-    "category": "D-DAY",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "German",
+    "subsubcategory": "people",
     "questions": [
       "The US Army division nicknamed the “Screaming Eagles” who paradropped behind German\nlines on D-Day?"
     ],
     "question_ids": [
-      "q3_0_6"
-    ]
+      "a_q3_0_6"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Caen",
-    "category": "D-DAY",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "places",
     "questions": [
       "City on the Orne River that was liberated by the Canadians on July 9th, more than a month\nbehind schedule?"
     ],
     "question_ids": [
-      "q3_0_7"
-    ]
+      "a_q3_0_7"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Nero",
-    "category": "ROMAN EMPERORS",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "things",
     "questions": [
       "Possibly ordered his mother’s assassination and ruled during the Great Fire of Rome?"
     ],
     "question_ids": [
-      "q3_1_0"
-    ]
+      "a_q3_1_0"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Constantine the Great",
-    "category": "ROMAN EMPERORS",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "events",
     "questions": [
       "Defeated Maxentius [max-ENN-shuss] at the Battle of the Milvian [MILL-vee-uhn] Bridge\nand introduced Christianity to the Empire?"
     ],
     "question_ids": [
-      "q3_1_1"
-    ]
+      "a_q3_1_1"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Caligula",
-    "category": "ROMAN EMPERORS",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "things",
     "questions": [
       "Was known for his insanity and attempting to make his horse a Consul?"
     ],
     "question_ids": [
-      "q3_1_2"
-    ]
+      "a_q3_1_2"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Marcus Aurelius Antoninus Augustus",
-    "category": "ROMAN EMPERORS",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "Was the last of the Five Good Emperors and author of Meditations?"
     ],
     "question_ids": [
-      "q3_1_3"
-    ]
+      "a_q3_1_3"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Diocletian",
-    "category": "ROMAN EMPERORS",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "events",
     "questions": [
       "Ended the Crisis of the Third Century and created the Tetrarchy?"
     ],
     "question_ids": [
-      "q3_1_4"
-    ]
+      "a_q3_1_4"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Titus",
-    "category": "ROMAN EMPERORS",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "Succeeded his father Vespasian and was Emperor during the Vesuvius eruption?"
     ],
     "question_ids": [
-      "q3_1_5"
-    ]
+      "a_q3_1_5"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Valerian",
-    "category": "ROMAN EMPERORS",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "Was captured in battle and made into a footstool by Sassanid King Shapur I?"
     ],
     "question_ids": [
-      "q3_1_6"
-    ]
+      "a_q3_1_6"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Theodosius the Great",
-    "category": "ROMAN EMPERORS",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "events",
     "questions": [
       "Won the Battle of the Frigidus [“frigid”-uss] and was the last to rule over the entire Empire?"
     ],
     "question_ids": [
-      "q3_1_7"
-    ]
+      "a_q3_1_7"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Louis XIV",
-    "category": "WAR OF THE SPANISH SUCCESSION",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "French",
+    "subsubcategory": "people",
     "questions": [
       "Was the “Sun King” of France?"
     ],
     "question_ids": [
-      "q3_2_0"
-    ]
+      "a_q3_2_0"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Bourbon",
-    "category": "WAR OF THE SPANISH SUCCESSION",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "French",
+    "subsubcategory": "things",
     "questions": [
       "Was the royal house which the French wanted on the Spanish throne?"
     ],
     "question_ids": [
-      "q3_2_1"
-    ]
+      "a_q3_2_1"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Habsburg",
-    "category": "WAR OF THE SPANISH SUCCESSION",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "German",
+    "subsubcategory": "things",
     "questions": [
       "Was the royal house which previously ruled Spain and also ruled Austria?"
     ],
     "question_ids": [
-      "q3_2_2"
-    ]
+      "a_q3_2_2"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Charles II",
-    "category": "WAR OF THE SPANISH SUCCESSION",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Western",
+    "subsubcategory": "people",
     "questions": [
       "Was the king of Spain who died at the onset of the war, causing the succession crisis?"
     ],
     "question_ids": [
-      "q3_2_3"
-    ]
+      "a_q3_2_3"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "William III of England",
-    "category": "WAR OF THE SPANISH SUCCESSION",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Western",
+    "subsubcategory": "people",
     "questions": [
       "Was the English king during the war, a Dutch stadtholder who jointly ruled with Mary?"
     ],
     "question_ids": [
-      "q3_2_4"
-    ]
+      "a_q3_2_4"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Duke of Marlborough",
-    "category": "WAR OF THE SPANISH SUCCESSION",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "Was the preeminent English general of the war and ancestor of a later Prime Minister?"
     ],
     "question_ids": [
-      "q3_2_5"
-    ]
+      "a_q3_2_5"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Battle of Blenheim",
-    "category": "WAR OF THE SPANISH SUCCESSION",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "places",
     "questions": [
       "Was the 1704 British victory that names a palace in Oxfordshire?"
     ],
     "question_ids": [
-      "q3_2_6"
-    ]
+      "a_q3_2_6"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Philip V",
-    "category": "WAR OF THE SPANISH SUCCESSION",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "French",
+    "subsubcategory": "people",
     "questions": [
       "Was the French nobleman who took the Spanish throne at the beginning of the war?"
     ],
     "question_ids": [
-      "q3_2_7"
-    ]
+      "a_q3_2_7"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Kingdom of Spain",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "French",
+    "subsubcategory": "people",
     "questions": [
       "(30 pts) A king of this nation became known as “the desired” by his supporters after he and his\nfather were forced to abdicate at Bayonne and were replaced by Joseph (20 pts)  Bonaparte. The\nensuing invasion of this country was referred to as an “Ulcer” by Napoleon. The Duke of\nWellington defeated French forces in this nation with help from irregulars who launched a\n“little war” that is the origin of the word (10 pts)  “guerrilla.” For 10 points, much of the fighting\nduring the Peninsular War occurred in what country that borders Portugal?"
     ],
     "question_ids": [
-      "q4_0"
-    ]
+      "a_q4_0"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Hanseatic League",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "(30 pts) This group’s law code was named after its founder and required the election of a Rat, a\ncouncil led by four burgomeisters. This organization fought pirates called the Victual\nBrothers and signed the Treaty of Stralsund with Valdemar IV. This organization\nestablished the (20 pts)  London Steelyard as one of its kontores, or offices, which were also\nfound in Novgorod and Antwerp. This group’s members included its founding city of (10 pts)  Lubeck as well as Danzig and Hamburg. For 10 points, Baltic Sea commerce was once\ndominated by what northern European trading league?"
     ],
     "question_ids": [
-      "q4_1"
-    ]
+      "a_q4_1"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "First English Civil War",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "(30 pts) This conflict was called a “war without an enemy” by William Waller, who spent most of\nit fighting against Hopton's Cornish army. Incidents in this war included the Battle of\nChalgrove Field, where John Hampden was fatally wounded, and the defense of Turnham\nGreen by the trained bands of (20 pts)  London. This war's outcome was decided at the Battle of\nNaseby, where the “Oxford Army” was smashed by the (10 pts)  Roundhead cavalry of the New\nModel Army. For 10 points, name this 17th century conflict in which the Long Parliament\ndefeated Stuart royalists."
     ],
     "question_ids": [
-      "q4_2"
-    ]
+      "a_q4_2"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "codebreaking the Enigma machine",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "(30 pts) This project was originally named BONIFACE to give the illusion that a well-placed spy\nwas responsible for the project. The addition of a fourth (20 pts)  rotor was a major setback for\nthis project. Under this project, Gordon Welchman invented the bombe [“bomb”] at\nBletchley Park with the help of (10 pts)  Alan Turing, and its success meant accurate tracking of Uboat movements. For 10 points, identify this project which allowed the Allies to read Axis\nencrypted communications by deciphering a certain machine."
     ],
     "question_ids": [
-      "q4_3"
-    ]
+      "a_q4_3"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Alfred the Great",
     "category": "European History",
-    "subcategory": "",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "(30 pts) This man successfully negotiated his opponents’ evacuation of Chippenham in the\nTreaty of Wedmore [WEDD-more]. This man, who translated the first English versions of\nPastoral Care and The (20 pts)  Consolation of Philosophy, was the subject of a biography by\nAsser [ASS-urr]. This victor at Edington established the limits of the (10 pts)  Danelaw [DANElaw] by defeating Guthrum [GOOTH-rumm]. For 10 points, name this King of Wessex whose\nerudition and successful defense against Vikings made him the first person known as “King of\nEngland” and only one called “the Great.”"
     ],
     "question_ids": [
-      "q4_4"
-    ]
+      "a_q4_4"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Republic of Ireland",
-    "category": "Geography",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "British",
+    "subsubcategory": "people",
     "questions": [
       "(30 pts) This country’s lore includes a “plain of joy” called Mag Mell, and a land of youth called\nTir na nog. One of this country’s culture heroes defends a brown bull from being stolen by\nsingle-handedly engaging (20 pts)  Queen Medb’s [MAYV’s] warriors during the Cattle Raid of\nCooley. Another legendary hero of this country gained wisdom by tasting the (10 pts)  salmon of\nknowledge. This country’s folk heroes include Cuchulain and Finn McCool. For 10 points, name\nthis country whose mythology is described in the Ulster Cycle, a manuscript of which is in its\ncity of Dublin."
     ],
     "question_ids": [
-      "q4_5"
-    ]
+      "a_q4_5"
+    ],
+    "question_set": "a"
   },
   {
     "answer": "Hungary",
-    "category": "Other History",
-    "subcategory": "",
+    "category": "European History",
+    "subcategory": "Central/Eastern",
+    "subsubcategory": "people",
     "questions": [
       "(30 pts) One ruler from this kingdom led the “Long campaign” and was captured following a\ndefeat at the battle of Varna. The Black Army led by the son of that ruler successfully\nbesieged Vienna and engaged in many conflicts with the Ottomans. Besides (20 pts)  Janos\nHunyadi [hoon-yah-dee] and Matthias Corvinus [kore-vine-us], other leaders from the\nArpad dynasty here include its founder, (10 pts)  Stephen I. The Treaty of Trianon formally\nabolished this kingdom, whose privileges were confirmed by the Ausgleich [oss-glike] of 1867.\nFor 10 points, name this Magyar kingdom later absorbed into a dual-monarchy with Austria."
     ],
     "question_ids": [
-      "q4_6"
-    ]
+      "a_q4_6"
+    ],
+    "question_set": "a"
   }
 ]
