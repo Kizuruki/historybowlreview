@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Knowledge Graph Study</title>
+  <style>
+    .node-card {
+      border: 2px solid #5a67d8;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 16px 0;
+      background: white;
+    }
+    
+    .star-display {
+      font-size: 24px;
+      margin: 8px 0;
+    }
+    
+    .star.earned { color: gold; }
+    .star.platinum { color: #00d4ff; animation: shimmer 1.5s infinite; }
+    .star.empty { color: #ccc; }
+    
+    @keyframes shimmer {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    
+    .related-nodes {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    
+    .mini-node {
+      padding: 12px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .mini-node:hover {
+      background: #e5e7eb;
+      transform: translateY(-2px);
+    }
+    
+    .division-filter {
+      display: flex;
+      gap: 8px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 2px solid #e2e8f0;
+      background: white;
+      cursor: pointer;
+    }
+    
+    .filter-btn.active {
+      background: #5a67d8;
+      color: white;
+      border-color: #5a67d8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Knowledge Graph Study</h1>
+    
+    <!-- Division filters -->
+    <div class="division-filter" id="divisionFilters"></div>
+    
+    <!-- Progress overview -->
+    <div id="progressOverview"></div>
+    
+    <!-- Current node being studied -->
+    <div id="currentNodeView"></div>
+    
+    <!-- Related nodes -->
+    <div id="relatedNodes" class="related-nodes"></div>
+    
+    <!-- Practice questions for this node -->
+    <div id="nodePractice"></div>
+  </div>
+
+  <script type="module">
+    import { initDB, getNodesByDivision, getRelatedNodes, updateProgress } from './graph-db.js';
+    
+    let currentNode = null;
+    let db = null;
+    
+    async function init() {
+      db = await initDB();
+      renderDivisionFilters();
+      renderProgressOverview();
+    }
+    
+    function renderDivisionFilters() {
+      const divisions = [
+        'US History', 'European History', 'World History', 
+        'Ancient History', 'Other History', 'Pop Culture/Sports',
+        'Social Science', 'Recent History', 'Literature',
+        'Fine Arts', 'Geography', 'Math/Science', 'Mythology'
+      ];
+      
+      const container = document.getElementById('divisionFilters');
+      divisions.forEach(div => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.textContent = div;
+        btn.onclick = () => filterByDivision(div);
+        container.appendChild(btn);
+      });
+    }
+    
+    async function filterByDivision(division) {
+      const nodes = await getNodesByDivision(db, division);
+      renderNodeGrid(nodes);
+    }
+    
+    function renderNodeCard(node) {
+      const stars = getStarDisplay(node.stars, node.platinum_until);
+      
+      return `
+        <div class="node-card" onclick="selectNode('${node.id}')">
+          <h3>${node.name}</h3>
+          <div class="star-display">${stars}</div>
+          <p>${node.summary || 'Loading summary...'}</p>
+          <div class="stats">
+            <span>✓ ${node.times_correct}</span>
+            <span>✗ ${node.times_wrong}</span>
+          </div>
+        </div>
+      `;
+    }
+    
+    function getStarDisplay(stars, platinumUntil) {
+      const isPlatinum = platinumUntil && Date.now() < platinumUntil;
+      const starClass = isPlatinum ? 'platinum' : 'earned';
+      
+      let html = '';
+      for (let i = 0; i < 3; i++) {
+        if (i < stars) {
+          html += `<span class="star ${starClass}">★</span>`;
+        } else {
+          html += `<span class="star empty">☆</span>`;
+        }
+      }
+      return html;
+    }
+    
+    async function selectNode(nodeId) {
+      currentNode = await db.get('nodes', nodeId);
+      const related = await getRelatedNodes(db, nodeId);
+      const questions = await db.getAllFromIndex('node_questions', 'by-node', nodeId);
+      
+      renderCurrentNode(currentNode, questions);
+      renderRelatedNodes(related);
+    }
+    
+    function renderCurrentNode(node, questions) {
+      const view = document.getElementById('currentNodeView');
+      view.innerHTML = `
+        <div class="node-card active">
+          <h2>${node.name}</h2>
+          <div class="star-display">${getStarDisplay(node.stars, node.platinum_until)}</div>
+          
+          <div class="summary">
+            ${node.summary}
+          </div>
+          
+          ${node.wikipedia_url ? `
+            <a href="${node.wikipedia_url}" target="_blank" class="btn">
+              📖 Wikipedia Article
+            </a>
+          ` : ''}
+          
+          <button class="btn" onclick="startNodePractice()">
+            Practice ${questions.length} Questions
+          </button>
+        </div>
+      `;
+    }
+    
+    window.startNodePractice = async function() {
+      // Reuse your existing question practice logic
+      // but filter to only questions linked to currentNode
+      const questions = await db.getAllFromIndex('node_questions', 'by-node', currentNode.id);
+      
+      // Start practice session with these questions
+      // Track results to award stars
+    }
+    
+    init();
+  </script>
+</body>
+</html>
