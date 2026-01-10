@@ -709,15 +709,59 @@
     }
   
     // === USER MANAGEMENT ===
-    function loadUserProgress() {
-      const saved = localStorage.getItem('historyBowlProgress_' + (currentUser || 'guest'));
-      if (saved) {
-        userProgress = JSON.parse(saved);
+    const WORKER_URL = "https://patient-base-c952.javalutionization.workers.dev";
+    
+    // Replace loadUserProgress()
+    async function loadUserProgress() {
+      const username = currentUser || 'guest';
+      
+      try {
+        const res = await fetch(`${WORKER_URL}/progress/${username}`);
+        if (res.ok) {
+          const serverProgress = await res.json();
+          userProgress = serverProgress;
+          console.log('✓ Loaded progress from server');
+        } else {
+          // Fallback to localStorage
+          const saved = localStorage.getItem('historyBowlProgress_' + username);
+          if (saved) {
+            userProgress = JSON.parse(saved);
+            // Upload to server
+            await saveUserProgress();
+          }
+        }
+      } catch (err) {
+        console.error('Failed to load from server, using localStorage:', err);
+        const saved = localStorage.getItem('historyBowlProgress_' + username);
+        if (saved) {
+          userProgress = JSON.parse(saved);
+        }
       }
     }
     
-    function saveUserProgress() {
-      localStorage.setItem('historyBowlProgress_' + (currentUser || 'guest'), JSON.stringify(userProgress));
+    // Replace saveUserProgress()
+    async function saveUserProgress() {
+      const username = currentUser || 'guest';
+      
+      // Save to localStorage as backup
+      localStorage.setItem('historyBowlProgress_' + username, JSON.stringify(userProgress));
+      
+      // Save to server
+      try {
+        const res = await fetch(`${WORKER_URL}/progress/${username}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(userProgress)
+        });
+        
+        if (!res.ok) {
+          console.error('Failed to save to server:', res.status);
+        } else {
+          console.log('✓ Progress saved to server');
+        }
+      } catch (err) {
+        console.error('Failed to save to server:', err);
+      }
     }
     
     function showLoginModal() {
@@ -729,7 +773,7 @@
       document.getElementById('loginError').textContent = '';
     }
     
-    function login() {
+    async function login() {
       const username = document.getElementById('loginUsername').value.trim();
       const password = document.getElementById('loginPassword').value;
       
@@ -743,7 +787,10 @@
       if (users[username] && users[username] === password) {
         currentUser = username;
         document.getElementById('username-display').textContent = username;
-        loadUserProgress();
+        
+        // Load progress from server
+        await loadUserProgress();
+        
         closeLoginModal();
         if (currentNode) selectNode(currentNode.answer);
         renderProgressStats();
@@ -1277,6 +1324,22 @@
           renderCategories();
         }
       });
+    }
+
+    function startReviewGame() {
+      if (!currentNode) return;
+      
+      sessionStorage.setItem('reviewNodeAnswer', currentNode.answer);
+      sessionStorage.setItem('reviewNodeQuestions', JSON.stringify(currentNode.questions));
+      sessionStorage.setItem('reviewNodeId', currentNode.answer);
+      
+      // NEW: Pass user info to main game
+      if (currentUser) {
+        sessionStorage.setItem('knowledgeGraphUser', currentUser);
+        localStorage.setItem('currentUser', currentUser);
+      }
+      
+      window.open('https://historybowlreview.kizuruki.com/?mode=review', '_blank');
     }
   </script>
 </body>
