@@ -311,8 +311,10 @@
     <div id="loginModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;backdrop-filter:blur(4px);">
       <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:32px;border-radius:16px;max-width:400px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
         <h2 style="color:#5a67d8;margin-bottom:20px;">Login / Register</h2>
-        <input type="text" id="loginUsername" placeholder="Username" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:2px solid #e2e8f0;font-size:14px;">
-        <input type="password" id="loginPassword" placeholder="Password" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:2px solid #e2e8f0;font-size:14px;">
+        <form onsubmit="return false;">
+          <input type="text" id="loginUsername" placeholder="Username" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:2px solid #e2e8f0;font-size:14px;">
+          <input type="password" id="loginPassword" placeholder="Password" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:2px solid #e2e8f0;font-size:14px;">
+        </form>
         <div style="display:flex;gap:12px;margin-top:16px;">
           <button class="btn" onclick="login()">Login</button>
           <button class="btn" onclick="register()">Register</button>
@@ -2446,6 +2448,7 @@ function buzz(){
                     nextQuestion();
                 }, 10000);
             }
+    }
 
 /* ------------------ Show answer (for practice) ------------------ */
 function showAnswer(){
