@@ -594,10 +594,9 @@
       <div class="sidebar-left">
         <button class="collapse-btn" onclick="toggleLeftSidebar()">◀</button>
         <div class="sidebar-content">
-          <h3>📚 Categories</h3>
-          <input type="text" id="categorySearch" placeholder="Search categories..." class="search-input">
-          <div id="categoryList"></div>
-          
+          <h3 style="margin-top: 20px;">🔍 Search Nodes</h3>
+          <input type="text" id="nodeSearch" placeholder="Search for a node..." class="search-input">
+          <div id="nodeSearchResults" style="max-height: 200px; overflow-y: auto;"></div>
           <h3 style="margin-top: 20px;">📊 Progress</h3>
           <div id="progressStats"></div>
           
@@ -669,12 +668,17 @@
           console.log('No summaries file found (optional)');
           nodeSummaries = {};
         }
-        
+        const savedUser = localStorage.getItem('currentUser');
+        if (savedUser) {
+          currentUser = savedUser;
+          document.getElementById('username-display').textContent = savedUser;
+        }
         loadUserProgress();
         setupStorageSync();
         renderCategories();
         renderProgressStats();
         initDraggableCanvas();
+        setupNodeSearch();
         
         console.log('✓ Initialization complete');
       } catch (error) {
@@ -775,29 +779,41 @@
       const username = document.getElementById('loginUsername').value.trim();
       const password = document.getElementById('loginPassword').value;
       
-      if (!username) {
-        document.getElementById('loginError').textContent = 'Please enter a username';
+      if (!username || !password) {
+        document.getElementById('loginError').textContent = 'Please enter username and password';
         return;
       }
       
-      const users = JSON.parse(localStorage.getItem('historyBowlUsers') || '{}');
-      
-      if (users[username] && users[username] === password) {
-        currentUser = username;
-        document.getElementById('username-display').textContent = username;
+      try {
+        const res = await fetch(`${WORKER_URL}/auth/login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
         
-        // Load progress from server
-        await loadUserProgress();
+        const data = await res.json();
         
-        closeLoginModal();
-        if (currentNode) selectNode(currentNode.answer);
-        renderProgressStats();
-      } else {
-        document.getElementById('loginError').textContent = 'Invalid credentials';
+        if (data.success) {
+          currentUser = username;
+          document.getElementById('username-display').textContent = username;
+          
+          // Save to localStorage for persistence
+          localStorage.setItem('currentUser', username);
+          
+          await loadUserProgress();
+          closeLoginModal();
+          if (currentNode) selectNode(currentNode.answer);
+          renderProgressStats();
+        } else {
+          document.getElementById('loginError').textContent = data.message || 'Invalid credentials';
+        }
+      } catch (err) {
+        console.error('Login error:', err);
+        document.getElementById('loginError').textContent = 'Login failed. Please try again.';
       }
     }
     
-    function register() {
+    async function register() {
       const username = document.getElementById('loginUsername').value.trim();
       const password = document.getElementById('loginPassword').value;
       
@@ -806,28 +822,37 @@
         return;
       }
       
-      const users = JSON.parse(localStorage.getItem('historyBowlUsers') || '{}');
-      
-      if (users[username]) {
-        document.getElementById('loginError').textContent = 'Username already exists';
-        return;
+      try {
+        const res = await fetch(`${WORKER_URL}/auth/register`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        
+        const data = await res.json();
+        
+        if (data.success) {
+          document.getElementById('loginError').textContent = 'Registration successful! Now login.';
+          document.getElementById('loginError').style.color = 'green';
+        } else {
+          document.getElementById('loginError').textContent = data.message || 'Registration failed';
+          document.getElementById('loginError').style.color = 'red';
+        }
+      } catch (err) {
+        console.error('Register error:', err);
+        document.getElementById('loginError').textContent = 'Registration failed. Please try again.';
       }
-      
-      users[username] = password;
-      localStorage.setItem('historyBowlUsers', JSON.stringify(users));
-      
-      document.getElementById('loginError').textContent = 'Registration successful! Now login.';
     }
-    
+
     function logout() {
       currentUser = null;
       document.getElementById('username-display').textContent = 'Guest';
+      localStorage.removeItem('currentUser');
       userProgress = {};
       loadUserProgress();
       if (currentNode) selectNode(currentNode.answer);
       renderProgressStats();
     }
-  
     // === CATEGORY & NODE RENDERING ===
     function renderCategories() {
       const categoryHierarchy = {};
@@ -1180,7 +1205,7 @@
         });
       });
       
-      // NEW: Category color mapping
+      // Category color mapping
       const categoryColors = {
         'US History': '#4299e1',
         'European History': '#9f7aea',
@@ -1230,39 +1255,44 @@
           .attr('y2', node.y);
       });
       
-      // Draw nodes with stars INSIDE
+      // Draw nodes with category colors and stars
       nodes.forEach(node => {
         const nodeGroup = g.append('g')
           .attr('transform', `translate(${node.x}, ${node.y})`);
         
-        const radius = node.type === 'center' ? 40 : node.type === 'connected' ? 30 : 20;
+        const nodeRadius = node.type === 'center' ? 40 : node.type === 'connected' ? 30 : 20;
         const progress = userProgress[node.id] || { stars: 0 };
-        const color = node.type === 'center' ? '#667eea' : getNodeColor(node.id);
+        const color = getNodeColor(node.id);
         
+        // Draw circle with category color
         nodeGroup.append('circle')
-          .attr('class', `node-circle ${node.type}`)
-          .attr('r', radius)
+          .attr('r', nodeRadius)
           .attr('fill', color)
+          .attr('stroke', node.type === 'center' ? '#5a67d8' : '#ffffff')
+          .attr('stroke-width', node.type === 'center' ? 4 : 2)
           .style('cursor', 'pointer')
           .on('click', () => selectNode(node.id));
         
-        // NEW: Stars INSIDE circle
+        // Draw stars INSIDE circle
         if (progress.stars > 0) {
           nodeGroup.append('text')
-            .attr('class', 'node-stars-badge')
             .attr('x', 0)
             .attr('y', 5)
             .attr('text-anchor', 'middle')
             .attr('font-size', '16px')
             .attr('font-weight', 'bold')
             .attr('fill', 'gold')
+            .attr('stroke', '#000')
+            .attr('stroke-width', '0.5px')
+            .attr('paint-order', 'stroke')
             .text('★'.repeat(progress.stars));
         }
         
+        // Draw label
         const label = node.id.length > 20 ? node.id.substring(0, 18) + '...' : node.id;
         nodeGroup.append('text')
           .attr('class', 'node-label')
-          .attr('y', radius + 15)
+          .attr('y', nodeRadius + 15)
           .text(label);
       });
     }
@@ -1378,9 +1408,52 @@
         container.classList.remove('dragging');
       });
     }
-  
+
+    function setupNodeSearch() {
+      const searchInput = document.getElementById('nodeSearch');
+      const resultsContainer = document.getElementById('nodeSearchResults');
+      
+      searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase().trim();
+        
+        if (searchTerm.length < 2) {
+          resultsContainer.innerHTML = '';
+          return;
+        }
+        
+        const matches = nodesData.filter(node => 
+          node.answer.toLowerCase().includes(searchTerm)
+        ).slice(0, 10); // Limit to 10 results
+        
+        if (matches.length === 0) {
+          resultsContainer.innerHTML = '<p style="color: #718096; padding: 8px;">No nodes found</p>';
+          return;
+        }
+        
+        resultsContainer.innerHTML = '';
+        matches.forEach(node => {
+          const div = document.createElement('div');
+          div.className = 'node-list-item';
+          const progress = userProgress[node.answer] || { stars: 0 };
+          const starDisplay = progress.stars > 0 ? '★'.repeat(progress.stars) : '';
+          
+          div.innerHTML = `
+            ${node.answer}
+            <span class="subcategory-badge">${node.category}</span>
+            <span class="stars-display">${starDisplay}</span>
+          `;
+          div.onclick = () => {
+            selectNode(node.answer);
+            searchInput.value = '';
+            resultsContainer.innerHTML = '';
+          };
+          resultsContainer.appendChild(div);
+        });
+      });
+    }
     // === INIT ON LOAD ===
     window.addEventListener('load', init);
+    setupNodeSearch();
 
     function setupStorageSync() {
       // Listen for updates from main game
