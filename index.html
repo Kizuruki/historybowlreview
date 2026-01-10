@@ -2318,7 +2318,7 @@ function startReading(){
     $('questionText').textContent = "";
     $('timerDisplay').textContent = "--";
 
-    gameState.readingInterval = setInterval(()=>{
+    gameState.readingInterval = setInterval(async ()=>{
         if (gameState.readingCharIndex < questionText.length && !gameState.buzzed){
             $('questionText').textContent += questionText[gameState.readingCharIndex];
             gameState.readingCharIndex++;
@@ -2340,7 +2340,7 @@ function startReading(){
             if (!gameState.buzzed){
                 let postReadTime = 5;
                 $('timerDisplay').textContent = `Buzz time: ${postReadTime}`;
-                gameState.postReadTimer = setInterval(()=>{
+                gameState.postReadTimer = setInterval(async ()=>{
                     postReadTime--;
                     $('timerDisplay').textContent = `Buzz time: ${postReadTime}`;
                     if (postReadTime <= 0){
