@@ -1067,7 +1067,9 @@
       currentNode = nodesData.find(n => n.answer === nodeAnswer);
       if (!currentNode) return;
       
-      const progress = userProgress[nodeAnswer] || { 
+      // NORMALIZE when looking up progress
+      const normalizedAnswer = normalizeAnswer(nodeAnswer);
+      const progress = userProgress[normalizedAnswer] || { 
         stars: 0, 
         platinum_until: null, 
         times_correct: 0, 
@@ -1486,6 +1488,14 @@
       
       window.open('https://historybowlreview.kizuruki.com', '_blank');
     }
+
+    // Add this function in both files
+function normalizeAnswer(answer) {
+  return String(answer)
+    .replace(/'/g, "'")  // Normalize fancy apostrophes to regular ones
+    .replace(/'/g, "'")  // Another variant
+    .trim();
+}
   </script>
 </body>
 </html>
