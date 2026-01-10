@@ -638,20 +638,70 @@
   
     // === INITIALIZATION ===
     async function init() {
-      const [nodesRes, graphRes, summariesRes] = await Promise.all([
-        fetch('graph_data/output_nodes.json'),
-        fetch('graph_data/output_graph.json'),
-        fetch('graph_data/output_summaries.json').catch(() => ({ json: () => ({}) }))
-      ]);
-      
-      nodesData = await nodesRes.json();
-      graphData = await graphRes.json();
-      nodeSummaries = await summariesRes.json();
-      
-      loadUserProgress();
-      renderCategories();
-      renderProgressStats();
-      initDraggableCanvas();
+      try {
+        console.log('Loading data files...');
+        
+        // Load nodes
+        const nodesRes = await fetch('graph_data/output_nodes.json');
+        if (!nodesRes.ok) {
+          throw new Error(`Failed to load nodes: ${nodesRes.status} ${nodesRes.statusText}`);
+        }
+        nodesData = await nodesRes.json();
+        console.log(`✓ Loaded ${nodesData.length} nodes`);
+        
+        // Load graph
+        const graphRes = await fetch('graph_data/output_graph.json');
+        if (!graphRes.ok) {
+          throw new Error(`Failed to load graph: ${graphRes.status} ${graphRes.statusText}`);
+        }
+        graphData = await graphRes.json();
+        console.log(`✓ Loaded graph data`);
+        
+        // Load summaries (optional)
+        try {
+          const summariesRes = await fetch('graph_data/output_summaries.json');
+          if (summariesRes.ok) {
+            nodeSummaries = await summariesRes.json();
+            console.log(`✓ Loaded ${Object.keys(nodeSummaries).length} summaries`);
+          }
+        } catch (e) {
+          console.log('No summaries file found (optional)');
+          nodeSummaries = {};
+        }
+        
+        loadUserProgress();
+        renderCategories();
+        renderProgressStats();
+        initDraggableCanvas();
+        
+        console.log('✓ Initialization complete');
+      } catch (error) {
+        console.error('❌ Failed to initialize:', error);
+        
+        // Show error message to user
+        document.querySelector('.container').innerHTML = `
+          <div style="text-align: center; padding: 50px; color: #e53e3e;">
+            <h2>⚠️ Failed to Load Data</h2>
+            <p>Could not load the knowledge graph data files.</p>
+            <p style="font-family: monospace; background: #fff3cd; padding: 10px; border-radius: 8px; margin: 20px auto; max-width: 600px;">
+              ${error.message}
+            </p>
+            <h3>Checklist:</h3>
+            <ul style="text-align: left; max-width: 500px; margin: 20px auto;">
+              <li>✓ Make sure <code>graph_data/</code> folder exists</li>
+              <li>✓ Files should be in: <code>graph_data/output_nodes.json</code></li>
+              <li>✓ Files should be in: <code>graph_data/output_graph.json</code></li>
+              <li>✓ Open browser console (F12) for more details</li>
+              <li>✓ If using file:// protocol, use a local server instead (python -m http.server)</li>
+            </ul>
+            <p style="margin-top: 30px;">
+              <button onclick="location.reload()" style="padding: 12px 24px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
+                🔄 Retry
+              </button>
+            </p>
+          </div>
+        `;
+      }
     }
   
     // === USER MANAGEMENT ===
