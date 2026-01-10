@@ -4190,10 +4190,13 @@ function updateNodeProgressAfterCorrect() {
 async function syncKnowledgeGraphProgress(nodeAnswer, correct) {
   const username = currentUser || 'guest';
   
+  console.log('Syncing progress for:', nodeAnswer, 'correct:', correct);
+  
   try {
-    // Get current progress from server
     const res = await fetch(`${WORKER_URL}/progress/${username}`);
     const progress = res.ok ? await res.json() : {};
+    
+    console.log('Current progress keys:', Object.keys(progress));
     
     // Update node progress
     if (!progress[nodeAnswer]) {
