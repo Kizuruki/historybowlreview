@@ -118,6 +118,7 @@
     .node-circle {
       cursor: pointer;
       transition: all 0.3s;
+      stroke-width: 2px;
     }
     
     .node-circle:hover {
@@ -458,17 +459,14 @@
     .toggle-switch.active .toggle-slider {
         transform: translateX(24px);
     }
-
-    .node-circle {
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-    }
     
     .node-stars-badge {
-      font-size: 10px;
+      font-size: 16px;
       font-weight: bold;
       fill: gold;
+      stroke: #000;
+      stroke-width: 0.5px;
+      paint-order: stroke;
     }
     
     .category-item {
@@ -895,17 +893,51 @@
             <small style="color: #666;">${subcatCompleted}/${subcatNodes.length}</small>
           `;
           
+          // NEW: Sub-subcategories container
+          const subsubcatContainer = document.createElement('div');
+          subsubcatContainer.className = 'subcategory-list';
+          subsubcatContainer.style.marginLeft = '15px';
+          
+          Object.keys(subcatData.subsubcategories).sort().forEach(subsubcat => {
+            const subsubcatNodes = subcatData.subsubcategories[subsubcat];
+            const subsubcatCompleted = subsubcatNodes.filter(n => (userProgress[n.answer]?.stars || 0) >= 1).length;
+            const subsubcatPercentage = Math.round((subsubcatCompleted / subsubcatNodes.length) * 100);
+            
+            const subsubcatDiv = document.createElement('div');
+            subsubcatDiv.className = 'subcategory-item';
+            subsubcatDiv.style.fontSize = '0.85rem';
+            subsubcatDiv.innerHTML = `
+              ${subsubcat}
+              <div class="category-progress-bar">
+                <div class="category-progress-fill" style="width: ${subsubcatPercentage}%"></div>
+              </div>
+              <small style="color: #666;">${subsubcatCompleted}/${subsubcatNodes.length}</small>
+            `;
+            
+            subsubcatDiv.onclick = (e) => {
+              e.stopPropagation();
+              if (subsubcatNodes.length > 0) {
+                selectNode(subsubcatNodes[0].answer);
+              }
+            };
+            
+            subsubcatContainer.appendChild(subsubcatDiv);
+          });
+          
+          const arrow = subcatDiv.querySelector('.expand-arrow');
           subcatDiv.onclick = (e) => {
             e.stopPropagation();
-            const arrow = subcatDiv.querySelector('.expand-arrow');
             arrow.classList.toggle('expanded');
-            // Select first node in subcategory
+            subsubcatContainer.classList.toggle('expanded');
             if (subcatNodes.length > 0) {
               selectNode(subcatNodes[0].answer);
             }
           };
           
           subcatContainer.appendChild(subcatDiv);
+          if (Object.keys(subcatData.subsubcategories).length > 0) {
+            subcatContainer.appendChild(subsubcatContainer);
+          }
         });
         
         const arrow = catDiv.querySelector('.expand-arrow');
@@ -1148,7 +1180,37 @@
         });
       });
       
+      // NEW: Category color mapping
+      const categoryColors = {
+        'US History': '#4299e1',
+        'European History': '#9f7aea',
+        'World History': '#ed8936',
+        'Ancient History': '#d69e2e',
+        'Other History': '#718096',
+        'Fine Arts History': '#ed64a6',
+        'Math and Science History': '#48bb78',
+        'Pop Culture/Sports History': '#f56565',
+        'Social Science/Philosophy': '#38b2ac',
+        'Literature History': '#667eea',
+        'Recent History': '#fc8181',
+        'Geographical History': '#38a169'
+      };
+      
+      const getNodeColor = (nodeId) => {
+        const node = nodesData.find(n => n.answer === nodeId);
+        return categoryColors[node?.category] || '#a0aec0';
+      };
+      
       const g = svg.append('g');
+      
+      // Add zoom behavior
+      const zoom = d3.zoom()
+        .scaleExtent([0.5, 3])
+        .on('zoom', (event) => {
+          g.attr('transform', event.transform);
+        });
+      
+      svg.call(zoom);
       
       // Draw connections
       nodes.slice(1).forEach(node => {
@@ -1168,27 +1230,33 @@
           .attr('y2', node.y);
       });
       
-      // Draw nodes with stars
+      // Draw nodes with stars INSIDE
       nodes.forEach(node => {
         const nodeGroup = g.append('g')
           .attr('transform', `translate(${node.x}, ${node.y})`);
         
         const radius = node.type === 'center' ? 40 : node.type === 'connected' ? 30 : 20;
         const progress = userProgress[node.id] || { stars: 0 };
+        const color = node.type === 'center' ? '#667eea' : getNodeColor(node.id);
         
         nodeGroup.append('circle')
           .attr('class', `node-circle ${node.type}`)
           .attr('r', radius)
+          .attr('fill', color)
           .style('cursor', 'pointer')
           .on('click', () => selectNode(node.id));
         
-        // Add star badge if node has stars
+        // NEW: Stars INSIDE circle
         if (progress.stars > 0) {
           nodeGroup.append('text')
             .attr('class', 'node-stars-badge')
-            .attr('x', radius - 8)
-            .attr('y', -radius + 8)
-            .text('★' + progress.stars);
+            .attr('x', 0)
+            .attr('y', 5)
+            .attr('text-anchor', 'middle')
+            .attr('font-size', '16px')
+            .attr('font-weight', 'bold')
+            .attr('fill', 'gold')
+            .text('★'.repeat(progress.stars));
         }
         
         const label = node.id.length > 20 ? node.id.substring(0, 18) + '...' : node.id;
@@ -1271,7 +1339,7 @@
       }
       
       // Open main game
-      window.open('https://historybowlreview.kizuruki.com/?mode=review', '_blank');
+      window.open('https://historybowlreview.kizuruki.com', '_blank');
     }
   
     // === MISSED MODE ===
