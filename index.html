@@ -2653,6 +2653,62 @@ async function findNodeAnswer(answer) {
   return answer; // Return original if no match
 }
 
+async function syncWithKnowledgeGraph(userAnswer, isCorrect) {
+  // Find the matching node
+  const nodeAnswer = findNodeAnswer(userAnswer);
+  
+  if (!nodeAnswer) {
+    console.log(`⚠ No knowledge graph match for: "${userAnswer}"`);
+    return;
+  }
+  
+  console.log(`Syncing progress for: ${nodeAnswer} correct: ${isCorrect}`);
+  
+  // IMPORTANT: Use the NORMALIZED node answer as the key
+  const normalizedKey = normalizeAnswer(nodeAnswer);
+  
+  // Get current progress
+  let progress = userProgress[normalizedKey];
+  
+  // Handle array format from server
+  if (Array.isArray(progress)) {
+    progress = {
+      stars: progress[0] || 0,
+      lastReviewed: progress[1] || Date.now(),
+      times_correct: 0,
+      times_wrong: 0
+    };
+  } else if (!progress) {
+    progress = {
+      stars: 0,
+      lastReviewed: Date.now(),
+      times_correct: 0,
+      times_wrong: 0
+    };
+  }
+  
+  // Update progress
+  if (isCorrect) {
+    progress.times_correct = (progress.times_correct || 0) + 1;
+    // Award star 2 if they got it right and only have 1 star
+    if (progress.stars === 1) {
+      progress.stars = 2;
+    }
+  } else {
+    progress.times_wrong = (progress.times_wrong || 0) + 1;
+  }
+  
+  progress.lastReviewed = Date.now();
+  
+  // Save back to userProgress with normalized key
+  userProgress[normalizedKey] = progress;
+  
+  // Save to both localStorage and server
+  await saveUserProgress();
+  
+  console.log('✓ Knowledge graph progress synced');
+}
+  
 async function startMissedQuestionsMode() {
   if (!currentUser) {
     alert('Please login first to access missed questions.');
@@ -4322,12 +4378,14 @@ window.addEventListener('load', () => {
   checkKnowledgeGraphUser();
 });
 
-  // Add this function in both files
 function normalizeAnswer(answer) {
+  if (!answer) return '';
+  
   return String(answer)
-    .replace(/'/g, "'")  // Normalize fancy apostrophes to regular ones
+    .replace(/'/g, "'")  // Normalize fancy apostrophes
     .replace(/'/g, "'")  // Another variant
     .trim();
+  // DON'T split on comma here - keep the full string as-is
 }
 </script>
 </body>
