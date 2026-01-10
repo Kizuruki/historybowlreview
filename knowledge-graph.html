@@ -725,7 +725,23 @@
         const res = await fetch(`${WORKER_URL}/progress/${username}`);
         if (res.ok) {
           const serverProgress = await res.json();
-          userProgress = serverProgress;
+          
+          // FIX: Transform array format to object format
+          userProgress = {};
+          for (const [key, value] of Object.entries(serverProgress)) {
+            if (Array.isArray(value)) {
+              // Convert [stars, timestamp] to object
+              userProgress[key] = {
+                stars: value[0] || 0,
+                lastReviewed: value[1] || Date.now(),
+                times_correct: 0,
+                times_wrong: 0
+              };
+            } else {
+              userProgress[key] = value;
+            }
+          }
+          
           console.log('✓ Loaded progress from server');
           console.log('User progress keys:', Object.keys(userProgress));
           console.log('Sample progress:', Object.entries(userProgress).slice(0, 5));
@@ -896,7 +912,16 @@
       // Helper function to get stars for a node (uses normalized answer)
       const getNodeStars = (node) => {
         const normalized = normalizeAnswer(node.answer);
-        const stars = userProgress[normalized]?.stars || 0;
+        const progress = userProgress[normalized];
+        
+        // Handle both array format [stars, timestamp] and object format {stars: n}
+        let stars = 0;
+        if (Array.isArray(progress)) {
+          stars = progress[0] || 0;
+        } else if (progress && typeof progress === 'object') {
+          stars = progress.stars || 0;
+        }
+        
         if (stars > 0) {
           console.log(`✓ Node: ${node.answer}, Normalized: ${normalized}, Stars: ${stars}`);
         }
@@ -1115,20 +1140,41 @@
       currentNode = nodesData.find(n => n.answer === nodeAnswer);
       if (!currentNode) return;
       
-      // NORMALIZE when looking up progress
       const normalizedAnswer = normalizeAnswer(nodeAnswer);
-      const progress = userProgress[normalizedAnswer] || { 
-        stars: 0, 
-        platinum_until: null, 
-        times_correct: 0, 
-        times_wrong: 0 
-      };
+      let progress = userProgress[normalizedAnswer];
+      
+      // Handle array format
+      if (Array.isArray(progress)) {
+        progress = {
+          stars: progress[0] || 0,
+          lastReviewed: progress[1] || Date.now(),
+          times_correct: 0,
+          times_wrong: 0,
+          platinum_until: null
+        };
+      } else if (!progress) {
+        progress = { 
+          stars: 0, 
+          platinum_until: null, 
+          times_correct: 0, 
+          times_wrong: 0 
+        };
+      }
       
       renderCurrentNode(currentNode, progress);
       renderGraph(nodeAnswer);
     }
         
     function renderCurrentNode(node, progress) {
+      // At the start of this function, transform progress if it's an array
+      if (Array.isArray(progress)) {
+        progress = {
+          stars: progress[0] || 0,
+          lastReviewed: progress[1] || Date.now(),
+          times_correct: 0,
+          times_wrong: 0
+        };
+      }
       const summary = nodeSummaries[node.answer] || 'No summary available for this topic yet.';
       
       const detailsContainer = document.getElementById('nodeDetails');
