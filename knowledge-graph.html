@@ -594,6 +594,10 @@
       <div class="sidebar-left">
         <button class="collapse-btn" onclick="toggleLeftSidebar()">◀</button>
         <div class="sidebar-content">
+          <h3>📂 Categories</h3>
+          <input type="text" id="categorySearch" placeholder="Search categories..." class="search-input">
+          <div id="categoryList"></div>  <!-- ADD THIS LINE -->
+          
           <h3 style="margin-top: 20px;">🔍 Search Nodes</h3>
           <input type="text" id="nodeSearch" placeholder="Search for a node..." class="search-input">
           <div id="nodeSearchResults" style="max-height: 200px; overflow-y: auto;"></div>
