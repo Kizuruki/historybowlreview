@@ -2355,7 +2355,7 @@ function startReading(){
                         updateScoreDisplays();
                         
                         // Sync to knowledge graph as wrong
-                        const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
+                        const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
                         if (nodeAnswer) {
                             syncKnowledgeGraphProgress(nodeAnswer, false);
                         }
@@ -2437,7 +2437,7 @@ function buzz(){
                 updateScoreDisplays();
                 
                 // Sync to knowledge graph as wrong
-                const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
+                const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
                 if (nodeAnswer) {
                     syncKnowledgeGraphProgress(nodeAnswer, false);
                 }
@@ -2594,17 +2594,26 @@ function normalizeAnswerArray(ans) {
     return ans.split(',').map(a => a.trim().toLowerCase());
 }
 
-function findNodeAnswer(userAnswer) {
+function findNodeAnswer(correctAnswer) {
   if (!knowledgeGraphNodes || knowledgeGraphNodes.length === 0) return null;
   
-  // Split the user answer by comma and try each variation
-  const userVariations = userAnswer.split(',').map(v => v.trim().toLowerCase());
+  // Handle array answers (take first element)
+  let answerToMatch = correctAnswer;
+  if (Array.isArray(correctAnswer)) {
+    answerToMatch = correctAnswer[0]; // Use first variant
+  }
+  
+  // Convert to string just in case
+  answerToMatch = String(answerToMatch || '');
+  
+  // Split by comma and try each variation
+  const variations = answerToMatch.split(',').map(v => v.trim().toLowerCase());
   
   // Try to find a match for any variation
-  for (const userVar of userVariations) {
+  for (const variant of variations) {
     // Try exact match with node's answer
     let match = knowledgeGraphNodes.find(node => 
-      normalizeAnswer(node.answer).toLowerCase() === userVar
+      normalizeAnswer(node.answer).toLowerCase() === variant
     );
     
     if (match) return match.answer;
@@ -2612,7 +2621,7 @@ function findNodeAnswer(userAnswer) {
     // Try matching if the node's answer also has variations
     match = knowledgeGraphNodes.find(node => {
       const nodeVariations = node.answer.split(',').map(v => v.trim().toLowerCase());
-      return nodeVariations.includes(userVar);
+      return nodeVariations.includes(variant);
     });
     
     if (match) return match.answer;
@@ -2620,7 +2629,7 @@ function findNodeAnswer(userAnswer) {
     // Try partial match
     match = knowledgeGraphNodes.find(node => {
       const nodeAnswerLower = normalizeAnswer(node.answer).toLowerCase();
-      return nodeAnswerLower.includes(userVar) || userVar.includes(nodeAnswerLower);
+      return nodeAnswerLower.includes(variant) || variant.includes(nodeAnswerLower);
     });
     
     if (match) return match.answer;
@@ -2744,7 +2753,7 @@ async function submitAnswer(){
                   looseMatch(given, gameState.currentAnswer);
     
     // NEW: Sync to knowledge graph
-    const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
+    const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
     if (nodeAnswer) {
       await syncKnowledgeGraphProgress(nodeAnswer, isCorrect);
     }
@@ -2893,7 +2902,7 @@ async function submitAnswer(){
             updateScoreDisplays();
             
             // Sync to knowledge graph
-            const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
+            const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
             if (nodeAnswer) {
                 await syncKnowledgeGraphProgress(nodeAnswer, true);
                 console.log(`✓ Synced correct answer for: ${nodeAnswer}`);
@@ -3010,7 +3019,7 @@ async function submitAnswer(){
                 }
             }
             // Sync to knowledge graph as wrong
-            const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
+            const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
             if (nodeAnswer) {
                 await syncKnowledgeGraphProgress(nodeAnswer, false);
                 console.log(`✓ Synced wrong answer for: ${nodeAnswer}`);
