@@ -864,6 +864,8 @@
     }
     // === CATEGORY & NODE RENDERING ===
     function renderCategories() {
+      console.log('Total userProgress entries:', Object.keys(userProgress).length);
+      console.log('Sample userProgress entries:', Object.entries(userProgress).slice(0, 5));
       const categoryHierarchy = {};
       
       nodesData.forEach(node => {
@@ -895,7 +897,9 @@
       const getNodeStars = (node) => {
         const normalized = normalizeAnswer(node.answer);
         const stars = userProgress[normalized]?.stars || 0;
-        console.log(`Node: ${node.answer}, Normalized: ${normalized}, Stars: ${stars}`); // Debug
+        if (stars > 0) {
+          console.log(`✓ Node: ${node.answer}, Normalized: ${normalized}, Stars: ${stars}`);
+        }
         return stars;
       };
       
