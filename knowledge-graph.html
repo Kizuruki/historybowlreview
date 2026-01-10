@@ -727,11 +727,15 @@
           const serverProgress = await res.json();
           userProgress = serverProgress;
           console.log('✓ Loaded progress from server');
+          console.log('User progress keys:', Object.keys(userProgress));
+          console.log('Sample progress:', Object.entries(userProgress).slice(0, 5));
         } else {
           // Fallback to localStorage
           const saved = localStorage.getItem('historyBowlProgress_' + username);
           if (saved) {
             userProgress = JSON.parse(saved);
+            console.log('✓ Loaded progress from localStorage');
+            console.log('User progress keys:', Object.keys(userProgress));
             // Upload to server
             await saveUserProgress();
           }
@@ -741,6 +745,7 @@
         const saved = localStorage.getItem('historyBowlProgress_' + username);
         if (saved) {
           userProgress = JSON.parse(saved);
+          console.log('User progress keys:', Object.keys(userProgress));
         }
       }
     }
@@ -886,18 +891,20 @@
       const container = document.getElementById('categoryList');
       container.innerHTML = '';
       
-      // Helper function to get stars for a node
+      // Helper function to get stars for a node (uses normalized answer)
       const getNodeStars = (node) => {
         const normalized = normalizeAnswer(node.answer);
-        return userProgress[normalized]?.stars || 0;
+        const stars = userProgress[normalized]?.stars || 0;
+        console.log(`Node: ${node.answer}, Normalized: ${normalized}, Stars: ${stars}`); // Debug
+        return stars;
       };
       
       Object.keys(categoryHierarchy).sort().forEach(cat => {
         const catNodes = nodesData.filter(n => n.category === cat);
-        // Calculate progress based on stars (1 star = 33%, 2 stars = 67%, 3 stars = 100%)
-        const totalStars = catNodes.reduce((sum, n) => sum + getNodeStars(n), 0);
-        const maxStars = catNodes.length * 3;
-        const percentage = Math.round((totalStars / maxStars) * 100);
+        // Count topics with at least 1 star
+        const completedTopics = catNodes.filter(n => getNodeStars(n) >= 1).length;
+        const totalTopics = catNodes.length;
+        const percentage = totalTopics > 0 ? Math.round((completedTopics / totalTopics) * 100) : 0;
         
         const catDiv = document.createElement('div');
         catDiv.className = 'category-item';
@@ -907,7 +914,7 @@
           <div class="category-progress-bar">
             <div class="category-progress-fill" style="width: ${percentage}%"></div>
           </div>
-          <small style="color: #666; font-size: 0.8rem;">${totalStars}/${maxStars} stars</small>
+          <small style="color: #666; font-size: 0.8rem;">${completedTopics}/${totalTopics} topics</small>
         `;
         
         const subcatContainer = document.createElement('div');
@@ -916,9 +923,9 @@
         Object.keys(categoryHierarchy[cat]).sort().forEach(subcat => {
           const subcatData = categoryHierarchy[cat][subcat];
           const subcatNodes = [...subcatData.nodes, ...Object.values(subcatData.subsubcategories).flat()];
-          const subcatTotalStars = subcatNodes.reduce((sum, n) => sum + getNodeStars(n), 0);
-          const subcatMaxStars = subcatNodes.length * 3;
-          const subcatPercentage = Math.round((subcatTotalStars / subcatMaxStars) * 100);
+          const subcatCompleted = subcatNodes.filter(n => getNodeStars(n) >= 1).length;
+          const subcatTotal = subcatNodes.length;
+          const subcatPercentage = subcatTotal > 0 ? Math.round((subcatCompleted / subcatTotal) * 100) : 0;
           
           const subcatDiv = document.createElement('div');
           subcatDiv.className = 'subcategory-item';
@@ -928,19 +935,22 @@
             <div class="category-progress-bar">
               <div class="category-progress-fill" style="width: ${subcatPercentage}%"></div>
             </div>
-            <small style="color: #666;">${subcatTotalStars}/${subcatMaxStars} stars</small>
+            <small style="color: #666;">${subcatCompleted}/${subcatTotal} topics</small>
           `;
           
-          // NEW: Sub-subcategories container
+          // Sub-subcategories container
           const subsubcatContainer = document.createElement('div');
           subsubcatContainer.className = 'subcategory-list';
           subsubcatContainer.style.marginLeft = '15px';
           
           Object.keys(subcatData.subsubcategories).sort().forEach(subsubcat => {
-            const subsubcatNodes = subcatData.subsubcategories[subsubcat];
-            const subsubcatTotalStars = subsubcatNodes.reduce((sum, n) => sum + getNodeStars(n), 0);
-            const subsubcatMaxStars = subsubcatNodes.length * 3;
-            const subsubcatPercentage = Math.round((subsubcatTotalStars / subsubcatMaxStars) * 100);
+            const subsubcatNodes = subcatData.subsubcategories[subsubcat].sort((a, b) => 
+              a.answer.localeCompare(b.answer)
+            ); // Sort alphabetically
+            
+            const subsubcatCompleted = subsubcatNodes.filter(n => getNodeStars(n) >= 1).length;
+            const subsubcatTotal = subsubcatNodes.length;
+            const subsubcatPercentage = subsubcatTotal > 0 ? Math.round((subsubcatCompleted / subsubcatTotal) * 100) : 0;
             
             const subsubcatDiv = document.createElement('div');
             subsubcatDiv.className = 'subcategory-item';
@@ -951,10 +961,10 @@
               <div class="category-progress-bar">
                 <div class="category-progress-fill" style="width: ${subsubcatPercentage}%"></div>
               </div>
-              <small style="color: #666;">${subsubcatTotalStars}/${subsubcatMaxStars} stars</small>
+              <small style="color: #666;">${subsubcatCompleted}/${subsubcatTotal} topics</small>
             `;
             
-            // NEW: Node list for sub-subcategory
+            // Node list for sub-subcategory
             const nodeListContainer = document.createElement('div');
             nodeListContainer.className = 'subcategory-list';
             nodeListContainer.style.marginLeft = '15px';
@@ -963,11 +973,11 @@
               const nodeDiv = document.createElement('div');
               nodeDiv.className = 'node-list-item';
               const nodeStars = getNodeStars(node);
-              const starDisplay = nodeStars > 0 ? '★'.repeat(nodeStars) : '';
+              const starDisplay = nodeStars > 0 ? '★'.repeat(nodeStars) : '☆☆☆';
               
               nodeDiv.innerHTML = `
                 ${node.answer}
-                <span class="stars-display">${starDisplay}</span>
+                <span class="stars-display" style="color: ${nodeStars > 0 ? 'gold' : '#cbd5e0'};">${starDisplay}</span>
               `;
               nodeDiv.onclick = (e) => {
                 e.stopPropagation();
