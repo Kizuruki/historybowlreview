@@ -2354,7 +2354,7 @@ function startReading(){
                         updateScoreDisplays();
                         
                         // Sync to knowledge graph as wrong
-                        const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
+                        const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
                         if (nodeAnswer) {
                             syncKnowledgeGraphProgress(nodeAnswer, false);
                         }
@@ -2436,7 +2436,7 @@ function buzz(){
                 updateScoreDisplays();
                 
                 // Sync to knowledge graph as wrong
-                const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
+                const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
                 if (nodeAnswer) {
                     syncKnowledgeGraphProgress(nodeAnswer, false);
                 }
@@ -2696,9 +2696,9 @@ async function submitAnswer(){
                   looseMatch(given, gameState.currentAnswer);
     
     // NEW: Sync to knowledge graph
-    const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
+    const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
     if (nodeAnswer) {
-      syncKnowledgeGraphProgress(nodeAnswer, isCorrect);
+      await syncKnowledgeGraphProgress(nodeAnswer, isCorrect);
     }
     let basePoints = 0;
     let earnedPoints = 0;
