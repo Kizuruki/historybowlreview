@@ -672,14 +672,18 @@
           console.log('No summaries file found (optional)');
           nodeSummaries = {};
         }
+        
         const savedUser = localStorage.getItem('currentUser');
         if (savedUser) {
           currentUser = savedUser;
           document.getElementById('username-display').textContent = savedUser;
         }
-        loadUserProgress();
+        
+        // ADD AWAIT HERE!
+        await loadUserProgress();
+        
         setupStorageSync();
-        renderCategories();
+        renderCategories();  // Now this runs AFTER userProgress is loaded
         renderProgressStats();
         initDraggableCanvas();
         setupNodeSearch();
@@ -726,11 +730,10 @@
         if (res.ok) {
           const serverProgress = await res.json();
           
-          // FIX: Transform array format to object format
+          // Transform array format to object format
           userProgress = {};
           for (const [key, value] of Object.entries(serverProgress)) {
             if (Array.isArray(value)) {
-              // Convert [stars, timestamp] to object
               userProgress[key] = {
                 stars: value[0] || 0,
                 lastReviewed: value[1] || Date.now(),
@@ -745,6 +748,10 @@
           console.log('✓ Loaded progress from server');
           console.log('User progress keys:', Object.keys(userProgress));
           console.log('Sample progress:', Object.entries(userProgress).slice(0, 5));
+          
+          // RE-RENDER after progress is loaded
+          renderCategories();
+          renderProgressStats();
         } else {
           // Fallback to localStorage
           const saved = localStorage.getItem('historyBowlProgress_' + username);
