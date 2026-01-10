@@ -2825,6 +2825,18 @@ async function submitAnswer(){
             setFeedback(`Incorrect. The correct answer was: ${formatAnswer(gameState.currentAnswer)}`, false);
             gameState.questionsAttempted++;
             updateScoreDisplays();
+            if (currentUser && gameState.mode !== 'missed') {
+                const missedQ = {
+                    question: gameState.currentQuestionText,
+                    answer: gameState.currentAnswer,
+                    quarter: 1,
+                    timestamp: Date.now()
+                };
+                if (!missedQuestions.find(mq => mq.question === missedQ.question)) {
+                    missedQuestions.push(missedQ);
+                    saveMissedQuestions();
+                }
+            }
             startFeedbackCountdown(10);
             $('questionText').textContent = gameState.currentQuestionText;
             setTimeout(()=> {
@@ -2909,6 +2921,19 @@ async function submitAnswer(){
             setFeedback(`Incorrect tossup. The correct answer was: ${formatAnswer(gameState.currentAnswer)}. (No bonus.)`, false);
             gameState.questionsAttempted++;
             updateScoreDisplays();
+            if (currentUser && gameState.mode !== 'missed') {
+                const missedQ = {
+                    question: gameState.currentQuestionText,
+                    answer: gameState.currentAnswer,
+                    quarter: 2,
+                    type: 'tossup',
+                    timestamp: Date.now()
+                };
+                if (!missedQuestions.find(mq => mq.question === missedQ.question)) {
+                    missedQuestions.push(missedQ);
+                    saveMissedQuestions();
+                }
+            }
             startFeedbackCountdown(10);
             $('questionText').textContent = gameState.currentQuestionText; // Stay on tossup, not bonus!
             setTimeout(()=> { nextQuestion(); }, 10000);
@@ -2939,6 +2964,18 @@ async function submitAnswer(){
         } else {
             gameState.questionsAttempted++;
             updateScoreDisplays();
+            if (currentUser && gameState.mode !== 'missed') {
+                const missedQ = {
+                    question: gameState.currentQuestionText,
+                    answer: gameState.currentAnswer,
+                    quarter: 4,
+                    timestamp: Date.now()
+                };
+                if (!missedQuestions.find(mq => mq.question === missedQ.question)) {
+                    missedQuestions.push(missedQ);
+                    saveMissedQuestions();
+                }
+            }
             // Sync to knowledge graph as wrong
             const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
             if (nodeAnswer) {
@@ -2979,6 +3016,19 @@ async function submitAnswer(){
             }, 1500);
         } else {
             setFeedback(`Incorrect bonus. The correct answer was: ${formatAnswer(gameState.currentAnswer)}`, false);
+            if (currentUser && gameState.mode !== 'missed') {
+                const missedQ = {
+                    question: gameState.currentBonus?.question || '',
+                    answer: gameState.currentAnswer,
+                    quarter: 2,
+                    type: 'bonus',
+                    timestamp: Date.now()
+                };
+                if (!missedQuestions.find(mq => mq.question === missedQ.question)) {
+                    missedQuestions.push(missedQ);
+                    saveMissedQuestions();
+                }
+            }
             startFeedbackCountdown(10);
             $('questionText').textContent = gameState.currentBonus?.question || '';
             gameState.currentBonus = null;
