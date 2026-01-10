@@ -2564,6 +2564,7 @@ function submitAnswer(){
     }
     const isCorrect = isStrictCorrect(given, gameState.currentAnswer) ||
                   looseMatch(given, gameState.currentAnswer);
+    syncKnowledgeGraphProgress(gameState.reviewNodeId, isCorrect);
     let basePoints = 0;
     let earnedPoints = 0;
     const submitTime = Date.now();
@@ -3906,6 +3907,59 @@ function updateNodeProgressAfterCorrect() {
     localStorage.setItem(key, JSON.stringify(progress));
   }
 }
+
+async function syncKnowledgeGraphProgress(nodeAnswer, correct) {
+  const username = sessionStorage.getItem('knowledgeGraphUser') || 
+                   localStorage.getItem('currentUser') || 'guest';
+  
+  try {
+    // Get current progress from server
+    const res = await fetch(`${WORKER_URL}/progress/${username}`);
+    const progress = res.ok ? await res.json() : {};
+    
+    // Update node progress
+    if (!progress[nodeAnswer]) {
+      progress[nodeAnswer] = { stars: 0, times_correct: 0, times_wrong: 0 };
+    }
+    
+    if (correct) {
+      progress[nodeAnswer].times_correct = (progress[nodeAnswer].times_correct || 0) + 1;
+      // Award 2 stars for correct answer
+      if (progress[nodeAnswer].stars < 2) {
+        progress[nodeAnswer].stars = 2;
+      }
+    } else {
+      progress[nodeAnswer].times_wrong = (progress[nodeAnswer].times_wrong || 0) + 1;
+    }
+    
+    progress[nodeAnswer].lastReviewed = Date.now();
+    
+    // Save back to server
+    await fetch(`${WORKER_URL}/progress/${username}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(progress)
+    });
+    
+    console.log('✓ Knowledge graph progress synced');
+  } catch (err) {
+    console.error('Failed to sync knowledge graph:', err);
+  }
+}
+
+function checkKnowledgeGraphUser() {
+  const kgUser = sessionStorage.getItem('knowledgeGraphUser');
+  if (kgUser) {
+    // User came from knowledge graph, use their account
+    currentUser = kgUser;
+    document.getElementById('playerNameInput').value = kgUser;
+    localStorage.setItem('currentUser', kgUser);
+  }
+}
+
+window.addEventListener('load', () => {
+  checkKnowledgeGraphUser();
+});
 </script>
 </body>
 </html>
