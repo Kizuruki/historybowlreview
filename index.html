@@ -4271,13 +4271,26 @@ async function syncKnowledgeGraphProgress(nodeAnswer, correct) {
     
     if (correct) {
       progress[normalizedAnswer].times_correct = (progress[normalizedAnswer].times_correct || 0) + 1;
+      // Award 2 stars for getting question correct (reading gives 1 star)
       if (progress[normalizedAnswer].stars < 2) {
         progress[normalizedAnswer].stars = 2;
       }
     } else {
       progress[normalizedAnswer].times_wrong = (progress[normalizedAnswer].times_wrong || 0) + 1;
       
-      // Add to missed questions...
+      // Add to missed questions
+      if (currentUser && gameState.mode !== 'missed') {
+        const missedQ = {
+          question: gameState.currentQuestionText,
+          answer: gameState.currentAnswer,
+          quarter: gameState.currentQuarter,
+          timestamp: Date.now()
+        };
+        if (!missedQuestions.find(mq => mq.question === missedQ.question)) {
+          missedQuestions.push(missedQ);
+          saveMissedQuestions();
+        }
+      }
     }
     
     progress[normalizedAnswer].lastReviewed = Date.now();
