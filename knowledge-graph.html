@@ -380,7 +380,194 @@
       font-size: 10px;
       margin-left: 5px;
     }
+
+    /* Account system styles */
+    .account-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: rgba(255,255,255,0.95);
+        padding: 8px 16px;
+        border-radius: 0 0 0 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 1000;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .account-btn {
+        background: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+        color: white;
+        border: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    
+    /* Progress indicators */
+    .node-stars {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: gold;
+        color: #000;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        border: 2px solid white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .node-completed {
+        border: 3px solid #4CAF50 !important;
+    }
+    
+    /* Draggable canvas */
+    .graph-container {
+        cursor: grab;
+        user-select: none;
+    }
+    
+    .graph-container.dragging {
+        cursor: grabbing;
+    }
+    
+    /* Summary panel */
+    .summary-panel {
+        position: fixed;
+        right: 20px;
+        top: 60px;
+        width: 320px;
+        background: white;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        display: none;
+    }
+    
+    .summary-panel.active {
+        display: block;
+    }
+    
+    /* Category progress */
+    .category-progress {
+        background: #f8f9fa;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+    
+    .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+        margin-top: 6px;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        transition: width 0.3s ease;
+    }
+    
+    /* Missed questions mode */
+    .mode-toggle {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: white;
+        padding: 12px 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .toggle-switch {
+        position: relative;
+        width: 50px;
+        height: 26px;
+        background: #ccc;
+        border-radius: 13px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .toggle-switch.active {
+        background: #667eea;
+    }
+    
+    .toggle-slider {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        transition: transform 0.3s;
+    }
+    
+    .toggle-switch.active .toggle-slider {
+        transform: translateX(24px);
+    }
   </style>
+  <div class="account-bar">
+      <span id="username-display">Guest</span>
+      <button class="account-btn" onclick="showLoginModal()">Login</button>
+      <button class="account-btn" onclick="logout()">Logout</button>
+  </div>
+  
+  <div class="mode-toggle">
+      <span>Missed Questions Only</span>
+      <div class="toggle-switch" id="missedToggle" onclick="toggleMissedMode()">
+          <div class="toggle-slider"></div>
+      </div>
+  </div>
+  
+  <div class="summary-panel" id="summaryPanel">
+      <h3 id="summaryTitle">Node Summary</h3>
+      <div id="summaryStar" class="node-stars" style="position:relative;margin:8px 0;">★ 0</div>
+      <p id="summaryText">Select a node to view its summary.</p>
+      <div class="category-progress">
+          <strong id="summaryCategory">Category</strong>
+          <div class="progress-bar">
+              <div class="progress-fill" id="summaryProgress" style="width:0%"></div>
+          </div>
+          <small id="summaryProgressText">0 / 0 completed</small>
+      </div>
+      <button class="account-btn" onclick="markAsRead()">Mark as Read (+1★)</button>
+      <button class="account-btn" onclick="startReviewGame()">Review Game</button>
+      <button class="account-btn" onclick="closeSummary()">Close</button>
+  </div>
+  
+  <!-- Login Modal -->
+  <div id="loginModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; display:flex; align-items:center; justify-content:center;">
+      <div style="background:white; padding:32px; border-radius:16px; max-width:400px; width:90%;">
+          <h2>Login / Register</h2>
+          <input type="text" id="loginUsername" placeholder="Username" style="width:100%; padding:8px; margin:8px 0; border-radius:6px; border:1px solid #ddd;">
+          <input type="password" id="loginPassword" placeholder="Password" style="width:100%; padding:8px; margin:8px 0; border-radius:6px; border:1px solid #ddd;">
+          <div style="display:flex; gap:12px; margin-top:16px;">
+              <button class="account-btn" onclick="login()">Login</button>
+              <button class="account-btn" onclick="register()">Register</button>
+              <button class="account-btn" onclick="closeLoginModal()">Cancel</button>
+          </div>
+          <p id="loginError" style="color:red; margin-top:12px;"></p>
+      </div>
+  </div>
 </head>
 <body>
   <div class="container">
@@ -897,6 +1084,261 @@
         }
       }
     };
+
+    let currentUser = null;
+    let userProgress = {}; // { nodeId: { stars: 0-2, lastReviewed: timestamp } }
+    
+    function loadUserProgress() {
+        const saved = localStorage.getItem('historyBowlProgress_' + (currentUser || 'guest'));
+        if (saved) {
+            userProgress = JSON.parse(saved);
+        }
+    }
+    
+    function saveUserProgress() {
+        localStorage.setItem('historyBowlProgress_' + (currentUser || 'guest'), JSON.stringify(userProgress));
+    }
+    
+    function showLoginModal() {
+        document.getElementById('loginModal').style.display = 'flex';
+    }
+    
+    function closeLoginModal() {
+        document.getElementById('loginModal').style.display = 'none';
+    }
+    
+    function login() {
+        const username = document.getElementById('loginUsername').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        
+        if (!username) {
+            document.getElementById('loginError').textContent = 'Please enter a username';
+            return;
+        }
+        
+        // Simple local auth (you can replace with real backend)
+        const users = JSON.parse(localStorage.getItem('historyBowlUsers') || '{}');
+        
+        if (users[username] && users[username] === password) {
+            currentUser = username;
+            document.getElementById('username-display').textContent = username;
+            loadUserProgress();
+            updateAllNodeStars();
+            closeLoginModal();
+        } else {
+            document.getElementById('loginError').textContent = 'Invalid credentials';
+        }
+    }
+    
+    function register() {
+        const username = document.getElementById('loginUsername').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        
+        if (!username || !password) {
+            document.getElementById('loginError').textContent = 'Please enter username and password';
+            return;
+        }
+        
+        const users = JSON.parse(localStorage.getItem('historyBowlUsers') || '{}');
+        
+        if (users[username]) {
+            document.getElementById('loginError').textContent = 'Username already exists';
+            return;
+        }
+        
+        users[username] = password;
+        localStorage.setItem('historyBowlUsers', JSON.stringify(users));
+        
+        document.getElementById('loginError').textContent = 'Registration successful! Now login.';
+    }
+    
+    function logout() {
+        currentUser = null;
+        document.getElementById('username-display').textContent = 'Guest';
+        loadUserProgress();
+        updateAllNodeStars();
+    }
+    
+    // ========== NEW: Progress Tracking ==========
+    function getNodeProgress(nodeId) {
+        return userProgress[nodeId] || { stars: 0, lastReviewed: null };
+    }
+    
+    function updateNodeProgress(nodeId, stars) {
+        if (!userProgress[nodeId]) {
+            userProgress[nodeId] = { stars: 0, lastReviewed: null };
+        }
+        userProgress[nodeId].stars = Math.min(stars, 2);
+        userProgress[nodeId].lastReviewed = Date.now();
+        saveUserProgress();
+        updateAllNodeStars();
+    }
+    
+    function markAsRead() {
+        if (!selectedNode) return;
+        const progress = getNodeProgress(selectedNode.id);
+        updateNodeProgress(selectedNode.id, Math.max(1, progress.stars));
+        updateSummaryPanel();
+    }
+    
+    function updateAllNodeStars() {
+        const nodes = document.querySelectorAll('.node');
+        nodes.forEach(node => {
+            const nodeId = node.getAttribute('data-id');
+            const progress = getNodeProgress(nodeId);
+            
+            let starDiv = node.querySelector('.node-stars');
+            if (!starDiv) {
+                starDiv = document.createElement('div');
+                starDiv.className = 'node-stars';
+                node.appendChild(starDiv);
+            }
+            
+            starDiv.textContent = '★ ' + progress.stars;
+            
+            if (progress.stars >= 2) {
+                node.classList.add('node-completed');
+            } else {
+                node.classList.remove('node-completed');
+            }
+        });
+    }
+    
+    // ========== NEW: Draggable Canvas ==========
+    let isDragging = false;
+    let dragStart = { x: 0, y: 0 };
+    let graphOffset = { x: 0, y: 0 };
+    
+    function initDraggableCanvas() {
+        const container = document.querySelector('.graph-container') || document.body;
+        
+        container.addEventListener('mousedown', (e) => {
+            if (e.target.classList.contains('node')) return; // Don't drag when clicking nodes
+            isDragging = true;
+            dragStart = { x: e.clientX - graphOffset.x, y: e.clientY - graphOffset.y };
+            container.classList.add('dragging');
+        });
+        
+        container.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            graphOffset.x = e.clientX - dragStart.x;
+            graphOffset.y = e.clientY - dragStart.y;
+            container.style.transform = `translate(${graphOffset.x}px, ${graphOffset.y}px)`;
+        });
+        
+        container.addEventListener('mouseup', () => {
+            isDragging = false;
+            container.classList.remove('dragging');
+        });
+        
+        container.addEventListener('mouseleave', () => {
+            isDragging = false;
+            container.classList.remove('dragging');
+        });
+    }
+    
+    // ========== NEW: Summary Panel ==========
+    let selectedNode = null;
+    let nodeSummaries = {};
+    
+    async function loadSummaries() {
+        try {
+            const response = await fetch('graph_data/output_summaries.json');
+            nodeSummaries = await response.json();
+        } catch (e) {
+            console.log('No summaries file found');
+        }
+    }
+    
+    function showSummaryPanel(node) {
+        selectedNode = node;
+        const panel = document.getElementById('summaryPanel');
+        panel.classList.add('active');
+        updateSummaryPanel();
+    }
+    
+    function updateSummaryPanel() {
+        if (!selectedNode) return;
+        
+        document.getElementById('summaryTitle').textContent = selectedNode.answer;
+        
+        const progress = getNodeProgress(selectedNode.id);
+        document.getElementById('summaryStar').textContent = '★ ' + progress.stars;
+        
+        const summary = nodeSummaries[selectedNode.answer] || 'No summary available yet.';
+        document.getElementById('summaryText').textContent = summary;
+        
+        document.getElementById('summaryCategory').textContent = selectedNode.category_path || selectedNode.category;
+        
+        // Calculate category progress
+        const categoryNodes = allNodes.filter(n => n.category === selectedNode.category);
+        const completedInCategory = categoryNodes.filter(n => getNodeProgress(n.id).stars >= 2).length;
+        const percentComplete = Math.round((completedInCategory / categoryNodes.length) * 100);
+        
+        document.getElementById('summaryProgress').style.width = percentComplete + '%';
+        document.getElementById('summaryProgressText').textContent = `${completedInCategory} / ${categoryNodes.length} completed`;
+    }
+    
+    function closeSummary() {
+        document.getElementById('summaryPanel').classList.remove('active');
+        selectedNode = null;
+    }
+    
+    // ========== NEW: Missed Questions Mode ==========
+    let missedMode = false;
+    
+    function toggleMissedMode() {
+        missedMode = !missedMode;
+        const toggle = document.getElementById('missedToggle');
+        toggle.classList.toggle('active', missedMode);
+        filterNodes();
+    }
+    
+    function filterNodes() {
+        const nodes = document.querySelectorAll('.node');
+        nodes.forEach(node => {
+            const nodeId = node.getAttribute('data-id');
+            const progress = getNodeProgress(nodeId);
+            
+            if (missedMode) {
+                // Show only nodes with 0 or 1 stars (not fully completed)
+                node.style.display = (progress.stars < 2) ? 'block' : 'none';
+            } else {
+                node.style.display = 'block';
+            }
+        });
+    }
+    
+    // ========== NEW: Review Game Integration ==========
+    function startReviewGame() {
+        if (!selectedNode) return;
+        
+        // Store the node answer and questions in sessionStorage
+        sessionStorage.setItem('reviewNodeAnswer', selectedNode.answer);
+        sessionStorage.setItem('reviewNodeQuestions', JSON.stringify(selectedNode.questions));
+        sessionStorage.setItem('reviewNodeId', selectedNode.id);
+        
+        // Redirect to main study program
+        window.open('index.html?mode=review', '_blank');
+    }
+    
+    // ========== Initialize Everything ==========
+    window.addEventListener('load', async () => {
+        await loadSummaries();
+        loadUserProgress();
+        initDraggableCanvas();
+        updateAllNodeStars();
+        
+        // Modify existing node click handlers to show summary
+        document.querySelectorAll('.node').forEach(node => {
+            node.addEventListener('click', () => {
+                const nodeData = allNodes.find(n => n.id === node.getAttribute('data-id'));
+                if (nodeData) {
+                    showSummaryPanel(nodeData);
+                }
+            });
+        });
+    });
     init();
   </script>
 </body>
