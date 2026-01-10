@@ -606,6 +606,7 @@ const FULL_GAME_SET_MODE = 'ABC';
 const WORKER_URL = "https://patient-base-c952.javalutionization.workers.dev";
 let currentUser = null;
 let missedQuestions = [];
+let knowledgeGraphNodes = [];
 let practiceCategoryWeights = { us: 1, eu: 1, world: 1 };
 let practiceCategorySelection = 'A'; // Default to A 
 
@@ -3740,17 +3741,29 @@ function saveMissedQuestions() {
   localStorage.setItem('missedQuestions_' + currentUser, JSON.stringify(missedQuestions));
 }
   
-function init(){
+async function init(){
     resetGame();
     updateScoreDisplays();
     updateQuestionsStatus('Loading questions from server...', true);
-    // Automatically load questions when the page loads
+    
+    // Load questions
     loadQuestionsFromServer();
     
-    // NEW: Check for review mode from knowledge graph
+    // NEW: Load knowledge graph nodes
+    try {
+        const nodesRes = await fetch('graph_data/output_nodes.json');
+        if (nodesRes.ok) {
+            knowledgeGraphNodes = await nodesRes.json();
+            console.log('✓ Loaded knowledge graph nodes for matching');
+        }
+    } catch (err) {
+        console.warn('Knowledge graph nodes not available:', err);
+    }
+    
+    // Check for review mode
     checkReviewMode();
     
-    // Load jsPDF library
+    // Load jsPDF
     const script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
     script.onload = () => console.log('jsPDF loaded');
