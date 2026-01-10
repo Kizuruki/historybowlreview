@@ -3884,6 +3884,28 @@ async function exportPDFs() {
   }, 200);
 }
 
+function updateNodeProgressAfterCorrect() {
+  if (gameState.mode === 'review' && gameState.reviewNodeId) {
+    const nodeId = gameState.reviewNodeId;
+    const user = sessionStorage.getItem('knowledgeGraphUser') || 'guest';
+    const key = 'historyBowlProgress_' + user;
+    const progress = JSON.parse(localStorage.getItem(key) || '{}');
+    
+    if (!progress[nodeId]) {
+      progress[nodeId] = { stars: 0, times_correct: 0, times_wrong: 0 };
+    }
+    
+    progress[nodeId].times_correct = (progress[nodeId].times_correct || 0) + 1;
+    
+    // Award 2 stars for getting question correct
+    if (progress[nodeId].stars < 2) {
+      progress[nodeId].stars = 2;
+    }
+    
+    progress[nodeId].lastReviewed = Date.now();
+    localStorage.setItem(key, JSON.stringify(progress));
+  }
+}
 </script>
 </body>
 </html>
