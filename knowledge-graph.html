@@ -888,8 +888,10 @@
       
       Object.keys(categoryHierarchy).sort().forEach(cat => {
         const catNodes = nodesData.filter(n => n.category === cat);
-        const completed = catNodes.filter(n => (userProgress[n.answer]?.stars || 0) >= 1).length;
-        const percentage = Math.round((completed / catNodes.length) * 100);
+        // Calculate progress based on stars (1 star = 33%, 2 stars = 67%, 3 stars = 100%)
+        const totalStars = catNodes.reduce((sum, n) => sum + (userProgress[normalizeAnswer(n.answer)]?.stars || 0), 0);
+        const maxStars = catNodes.length * 3;
+        const percentage = Math.round((totalStars / maxStars) * 100);
         
         const catDiv = document.createElement('div');
         catDiv.className = 'category-item';
@@ -899,7 +901,7 @@
           <div class="category-progress-bar">
             <div class="category-progress-fill" style="width: ${percentage}%"></div>
           </div>
-          <small style="color: #666; font-size: 0.8rem;">${completed}/${catNodes.length}</small>
+          <small style="color: #666; font-size: 0.8rem;">${totalStars}/${maxStars} stars</small>
         `;
         
         const subcatContainer = document.createElement('div');
@@ -908,8 +910,9 @@
         Object.keys(categoryHierarchy[cat]).sort().forEach(subcat => {
           const subcatData = categoryHierarchy[cat][subcat];
           const subcatNodes = [...subcatData.nodes, ...Object.values(subcatData.subsubcategories).flat()];
-          const subcatCompleted = subcatNodes.filter(n => (userProgress[n.answer]?.stars || 0) >= 1).length;
-          const subcatPercentage = Math.round((subcatCompleted / subcatNodes.length) * 100);
+          const subcatTotalStars = subcatNodes.reduce((sum, n) => sum + (userProgress[normalizeAnswer(n.answer)]?.stars || 0), 0);
+          const subcatMaxStars = subcatNodes.length * 3;
+          const subcatPercentage = Math.round((subcatTotalStars / subcatMaxStars) * 100);
           
           const subcatDiv = document.createElement('div');
           subcatDiv.className = 'subcategory-item';
@@ -919,7 +922,7 @@
             <div class="category-progress-bar">
               <div class="category-progress-fill" style="width: ${subcatPercentage}%"></div>
             </div>
-            <small style="color: #666;">${subcatCompleted}/${subcatNodes.length}</small>
+            <small style="color: #666;">${subcatTotalStars}/${subcatMaxStars} stars</small>
           `;
           
           // NEW: Sub-subcategories container
@@ -929,28 +932,53 @@
           
           Object.keys(subcatData.subsubcategories).sort().forEach(subsubcat => {
             const subsubcatNodes = subcatData.subsubcategories[subsubcat];
-            const subsubcatCompleted = subsubcatNodes.filter(n => (userProgress[n.answer]?.stars || 0) >= 1).length;
-            const subsubcatPercentage = Math.round((subsubcatCompleted / subsubcatNodes.length) * 100);
+            const subsubcatTotalStars = subsubcatNodes.reduce((sum, n) => sum + (userProgress[normalizeAnswer(n.answer)]?.stars || 0), 0);
+            const subsubcatMaxStars = subsubcatNodes.length * 3;
+            const subsubcatPercentage = Math.round((subsubcatTotalStars / subsubcatMaxStars) * 100);
             
             const subsubcatDiv = document.createElement('div');
             subsubcatDiv.className = 'subcategory-item';
             subsubcatDiv.style.fontSize = '0.85rem';
             subsubcatDiv.innerHTML = `
+              <span class="expand-arrow">▶</span>
               ${subsubcat}
               <div class="category-progress-bar">
                 <div class="category-progress-fill" style="width: ${subsubcatPercentage}%"></div>
               </div>
-              <small style="color: #666;">${subsubcatCompleted}/${subsubcatNodes.length}</small>
+              <small style="color: #666;">${subsubcatTotalStars}/${subsubcatMaxStars} stars</small>
             `;
             
+            // NEW: Node list for sub-subcategory
+            const nodeListContainer = document.createElement('div');
+            nodeListContainer.className = 'subcategory-list';
+            nodeListContainer.style.marginLeft = '15px';
+            
+            subsubcatNodes.forEach(node => {
+              const nodeDiv = document.createElement('div');
+              nodeDiv.className = 'node-list-item';
+              const nodeProgress = userProgress[normalizeAnswer(node.answer)] || { stars: 0 };
+              const starDisplay = nodeProgress.stars > 0 ? '★'.repeat(nodeProgress.stars) : '';
+              
+              nodeDiv.innerHTML = `
+                ${node.answer}
+                <span class="stars-display">${starDisplay}</span>
+              `;
+              nodeDiv.onclick = (e) => {
+                e.stopPropagation();
+                selectNode(node.answer);
+              };
+              nodeListContainer.appendChild(nodeDiv);
+            });
+            
+            const subsubArrow = subsubcatDiv.querySelector('.expand-arrow');
             subsubcatDiv.onclick = (e) => {
               e.stopPropagation();
-              if (subsubcatNodes.length > 0) {
-                selectNode(subsubcatNodes[0].answer);
-              }
+              subsubArrow.classList.toggle('expanded');
+              nodeListContainer.classList.toggle('expanded');
             };
             
             subsubcatContainer.appendChild(subsubcatDiv);
+            subsubcatContainer.appendChild(nodeListContainer);
           });
           
           const arrow = subcatDiv.querySelector('.expand-arrow');
@@ -1102,8 +1130,11 @@
           <p style="line-height: 1.6; color: #4a5568;">${summary}</p>
         </div>
         
-        <button class="btn" onclick="markAsRead()" ${progress.stars >= 1 ? 'disabled' : ''}>
-          ${progress.stars >= 1 ? '✓ Already Read' : '📚 Mark as Read (+1★)'}
+        <button class="btn" onclick="markAsRead()" ${progress.stars >= 3 ? 'disabled' : ''}>
+          ${progress.stars >= 3 ? '✓ Max Stars (3/3)' : 
+            progress.stars === 2 ? '📚 Mark as Read (+1★ for 3rd star)' :
+            progress.stars === 1 ? '✓ Already Read (get 2nd star by playing)' :
+            '📚 Mark as Read (+1★)'}
         </button>
         
         <button class="btn" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); margin-top: 10px;" 
@@ -1346,10 +1377,13 @@
     
     function markAsRead() {
       if (!currentNode) return;
-      const progress = userProgress[currentNode.answer] || { stars: 0, times_correct: 0, times_wrong: 0 };
+      const normalizedAnswer = normalizeAnswer(currentNode.answer);
+      const progress = userProgress[normalizedAnswer] || { stars: 0, times_correct: 0, times_wrong: 0 };
       
-      if (progress.stars < 1) {
-        userProgress[currentNode.answer] = {
+      // Allow reading to give you stars 1 or 3 (star 2 comes from getting questions right)
+      if (progress.stars === 0) {
+        // First read: give 1 star
+        userProgress[normalizedAnswer] = {
           ...progress,
           stars: 1,
           lastReviewed: Date.now()
@@ -1358,7 +1392,20 @@
         selectNode(currentNode.answer);
         renderProgressStats();
         renderCategories();
+      } else if (progress.stars === 2) {
+        // Already got 2 stars from playing, now give 3rd star for reading
+        userProgress[normalizedAnswer] = {
+          ...progress,
+          stars: 3,
+          lastReviewed: Date.now()
+        };
+        saveUserProgress();
+        selectNode(currentNode.answer);
+        renderProgressStats();
+        renderCategories();
       }
+      // If stars === 1, they need to play to get star 2 first
+      // If stars === 3, already maxed out
     }
     
     function startReviewGame() {
