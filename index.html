@@ -2618,20 +2618,35 @@ async function findNodeAnswer(answer) {
     return match.answer;
   }
   
-  // Try partial match (last word for people's names)
-  const lastWord = normalized.split(' ').pop();
-  match = nodes.find(n => n.answer.toLowerCase().includes(lastWord));
-  if (match) {
-    console.log(`✓ Partial match: "${answer}" → "${match.answer}"`);
-    return match.answer;
+  // Try matching the most distinctive words (skip common words like "war", "the", "of")
+  const commonWords = new Set(['war', 'the', 'of', 'and', 'a', 'an', 'in', 'on', 'at', 'to', 'for']);
+  const significantWords = normalized.split(' ').filter(w => !commonWords.has(w) && w.length > 3);
+  
+  if (significantWords.length > 0) {
+    // Try to match using the most significant words (2+ matches required)
+    match = nodes.find(n => {
+      const nodeWords = n.answer.toLowerCase().split(' ');
+      const matchCount = significantWords.filter(w => nodeWords.includes(w)).length;
+      return matchCount >= Math.min(2, significantWords.length);
+    });
+    
+    if (match) {
+      console.log(`✓ Multi-word match: "${answer}" → "${match.answer}"`);
+      return match.answer;
+    }
   }
   
-  // Try first word match
-  const firstWord = normalized.split(' ')[0];
-  match = nodes.find(n => n.answer.toLowerCase().includes(firstWord));
-  if (match) {
-    console.log(`✓ First word match: "${answer}" → "${match.answer}"`);
-    return match.answer;
+  // Try partial match (last word for people's names)
+  const lastWord = normalized.split(' ').pop();
+  if (lastWord && lastWord.length > 4) {
+    match = nodes.find(n => {
+      const nWords = n.answer.toLowerCase().split(' ');
+      return nWords[nWords.length - 1] === lastWord;
+    });
+    if (match) {
+      console.log(`✓ Last word match: "${answer}" → "${match.answer}"`);
+      return match.answer;
+    }
   }
   
   console.warn(`⚠ No knowledge graph match for: "${answer}"`);
