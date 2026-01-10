@@ -4190,41 +4190,32 @@ function updateNodeProgressAfterCorrect() {
 async function syncKnowledgeGraphProgress(nodeAnswer, correct) {
   const username = currentUser || 'guest';
   
-  console.log('Syncing progress for:', nodeAnswer, 'correct:', correct);
+  // NORMALIZE the answer
+  const normalizedAnswer = normalizeAnswer(nodeAnswer);
+  
+  console.log('Syncing progress for:', normalizedAnswer, 'correct:', correct);
   
   try {
     const res = await fetch(`${WORKER_URL}/progress/${username}`);
     const progress = res.ok ? await res.json() : {};
     
-    console.log('Current progress keys:', Object.keys(progress));
-    
-    // Update node progress
-    if (!progress[nodeAnswer]) {
-      progress[nodeAnswer] = { stars: 0, times_correct: 0, times_wrong: 0 };
+    // Update node progress using normalized answer
+    if (!progress[normalizedAnswer]) {
+      progress[normalizedAnswer] = { stars: 0, times_correct: 0, times_wrong: 0 };
     }
     
     if (correct) {
-      progress[nodeAnswer].times_correct = (progress[nodeAnswer].times_correct || 0) + 1;
-      // Award 2 stars for correct answer
-      if (progress[nodeAnswer].stars < 2) {
-        progress[nodeAnswer].stars = 2;
+      progress[normalizedAnswer].times_correct = (progress[normalizedAnswer].times_correct || 0) + 1;
+      if (progress[normalizedAnswer].stars < 2) {
+        progress[normalizedAnswer].stars = 2;
       }
     } else {
-      progress[nodeAnswer].times_wrong = (progress[nodeAnswer].times_wrong || 0) + 1;
+      progress[normalizedAnswer].times_wrong = (progress[normalizedAnswer].times_wrong || 0) + 1;
       
-      // Add to missed questions
-      if (currentUser && gameState.currentQuestionText && gameState.currentAnswer) {
-        missedQuestions.push({
-          question: gameState.currentQuestionText,
-          answer: gameState.currentAnswer,
-          topic: nodeAnswer,
-          timestamp: Date.now()
-        });
-        saveMissedQuestions();
-      }
+      // Add to missed questions...
     }
     
-    progress[nodeAnswer].lastReviewed = Date.now();
+    progress[normalizedAnswer].lastReviewed = Date.now();
     
     // Save back to server
     await fetch(`${WORKER_URL}/progress/${username}`, {
@@ -4252,6 +4243,14 @@ function checkKnowledgeGraphUser() {
 window.addEventListener('load', () => {
   checkKnowledgeGraphUser();
 });
+
+  // Add this function in both files
+function normalizeAnswer(answer) {
+  return String(answer)
+    .replace(/'/g, "'")  // Normalize fancy apostrophes to regular ones
+    .replace(/'/g, "'")  // Another variant
+    .trim();
+}
 </script>
 </body>
 </html>
