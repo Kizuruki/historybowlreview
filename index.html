@@ -3376,7 +3376,10 @@ function init(){
     resetGame();
     updateScoreDisplays();
     updateQuestionsStatus('Loading questions from server...', true);
-
+    const savedUser = localStorage.getItem('currentUser') || sessionStorage.getItem('knowledgeGraphUser');
+    if (savedUser) {
+        document.getElementById('playerNameInput').value = savedUser;
+    }
     // Automatically load questions when the page loads
     loadQuestionsFromServer();
     
