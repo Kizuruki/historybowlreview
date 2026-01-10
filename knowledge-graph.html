@@ -886,10 +886,16 @@
       const container = document.getElementById('categoryList');
       container.innerHTML = '';
       
+      // Helper function to get stars for a node
+      const getNodeStars = (node) => {
+        const normalized = normalizeAnswer(node.answer);
+        return userProgress[normalized]?.stars || 0;
+      };
+      
       Object.keys(categoryHierarchy).sort().forEach(cat => {
         const catNodes = nodesData.filter(n => n.category === cat);
         // Calculate progress based on stars (1 star = 33%, 2 stars = 67%, 3 stars = 100%)
-        const totalStars = catNodes.reduce((sum, n) => sum + (userProgress[normalizeAnswer(n.answer)]?.stars || 0), 0);
+        const totalStars = catNodes.reduce((sum, n) => sum + getNodeStars(n), 0);
         const maxStars = catNodes.length * 3;
         const percentage = Math.round((totalStars / maxStars) * 100);
         
@@ -910,7 +916,7 @@
         Object.keys(categoryHierarchy[cat]).sort().forEach(subcat => {
           const subcatData = categoryHierarchy[cat][subcat];
           const subcatNodes = [...subcatData.nodes, ...Object.values(subcatData.subsubcategories).flat()];
-          const subcatTotalStars = subcatNodes.reduce((sum, n) => sum + (userProgress[normalizeAnswer(n.answer)]?.stars || 0), 0);
+          const subcatTotalStars = subcatNodes.reduce((sum, n) => sum + getNodeStars(n), 0);
           const subcatMaxStars = subcatNodes.length * 3;
           const subcatPercentage = Math.round((subcatTotalStars / subcatMaxStars) * 100);
           
@@ -932,7 +938,7 @@
           
           Object.keys(subcatData.subsubcategories).sort().forEach(subsubcat => {
             const subsubcatNodes = subcatData.subsubcategories[subsubcat];
-            const subsubcatTotalStars = subsubcatNodes.reduce((sum, n) => sum + (userProgress[normalizeAnswer(n.answer)]?.stars || 0), 0);
+            const subsubcatTotalStars = subsubcatNodes.reduce((sum, n) => sum + getNodeStars(n), 0);
             const subsubcatMaxStars = subsubcatNodes.length * 3;
             const subsubcatPercentage = Math.round((subsubcatTotalStars / subsubcatMaxStars) * 100);
             
@@ -956,8 +962,8 @@
             subsubcatNodes.forEach(node => {
               const nodeDiv = document.createElement('div');
               nodeDiv.className = 'node-list-item';
-              const nodeProgress = userProgress[normalizeAnswer(node.answer)] || { stars: 0 };
-              const starDisplay = nodeProgress.stars > 0 ? '★'.repeat(nodeProgress.stars) : '';
+              const nodeStars = getNodeStars(node);
+              const starDisplay = nodeStars > 0 ? '★'.repeat(nodeStars) : '';
               
               nodeDiv.innerHTML = `
                 ${node.answer}
@@ -1020,15 +1026,15 @@
     function renderAllNodesList() {
       const container = document.getElementById('allNodesList');
       const sortedNodes = [...nodesData].sort((a, b) => {
-        const starsA = (userProgress[a.answer]?.stars || 0);
-        const starsB = (userProgress[b.answer]?.stars || 0);
+        const starsA = (userProgress[normalizeAnswer(a.answer)]?.stars || 0);
+        const starsB = (userProgress[normalizeAnswer(b.answer)]?.stars || 0);
         if (starsB !== starsA) return starsB - starsA;
         return a.answer.localeCompare(b.answer);
       });
       
       container.innerHTML = '';
       sortedNodes.forEach(node => {
-        const progress = userProgress[node.answer] || { stars: 0 };
+        const progress = userProgress[normalizeAnswer(node.answer)] || { stars: 0 };
         const starDisplay = progress.stars > 0 ? '★'.repeat(progress.stars) : '';
         
         const div = document.createElement('div');
@@ -1298,7 +1304,7 @@
           .attr('transform', `translate(${node.x}, ${node.y})`);
         
         const nodeRadius = node.type === 'center' ? 40 : node.type === 'connected' ? 30 : 20;
-        const progress = userProgress[node.id] || { stars: 0 };
+        const progress = userProgress[normalizeAnswer(node.id)] || { stars: 0 };
         const color = getNodeColor(node.id);
         
         // Draw circle with category color
@@ -1487,7 +1493,7 @@
         matches.forEach(node => {
           const div = document.createElement('div');
           div.className = 'node-list-item';
-          const progress = userProgress[node.answer] || { stars: 0 };
+          const progress = userProgress[normalizeAnswer(node.answer)] || { stars: 0 };
           const starDisplay = progress.stars > 0 ? '★'.repeat(progress.stars) : '';
           
           div.innerHTML = `
