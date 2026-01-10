@@ -2346,18 +2346,28 @@ function startReading(){
                         gameState.postReadTimer = null;
                         $('buzzerBtn').disabled = true;
                         $('timerDisplay').textContent = "Time's up";
+                        
+                        // Count as incorrect for accuracy
+                        gameState.questionsAttempted++;
+                        updateScoreDisplays();
+                        
+                        // Sync to knowledge graph as wrong
+                        const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
+                        if (nodeAnswer) {
+                            syncKnowledgeGraphProgress(nodeAnswer, false);
+                        }
+                        
                         setFeedback(`Time expired! No points awarded. The correct answer was: ${formatAnswer(gameState.currentAnswer)}`, false);
                         startFeedbackCountdown(10);
                         $('questionText').textContent = gameState.currentQuestionText;
                         if (!gameState.buzzed) {
-                            // Reading time = time from questionStartTime to now
                             const totalBuzzTime = (Date.now() - gameState.questionStartTime) / 1000;
                             gameState.buzzInTimes.push(totalBuzzTime);
                             updateScoreDisplays();
                         }
                         setTimeout(()=> {
                             nextQuestion();
-                        }, 10000); // 5 seconds to review
+                        }, 10000);
                     }
                 }, 1000);
             }
@@ -2416,20 +2426,26 @@ function buzz(){
             if (gameState.answerTimeLeft <= 0){
                 clearInterval(gameState.answerTimer);
                 gameState.answerTimer = null;
-                // Auto-submit whatever is in the input
-                if (!$('answerInput').disabled && $('answerInput').value.trim()) {
-                    submitAnswer();
-                } else {
-                    $('answerInput').disabled = true;
-                    $('timerDisplay').textContent = "Time expired";
-                    setFeedback("Time expired! No points awarded. The correct answer was: " + formatAnswer(gameState.currentAnswer), false);
-                    startFeedbackCountdown(10);
-                    $('questionText').textContent = gameState.currentQuestionText;
-                    setTimeout(()=> { nextQuestion(); }, 10000);
+                $('answerInput').disabled = true;
+                $('timerDisplay').textContent = "Time expired";
+                
+                // Count as incorrect for accuracy
+                gameState.questionsAttempted++;
+                updateScoreDisplays();
+                
+                // Sync to knowledge graph as wrong
+                const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
+                if (nodeAnswer) {
+                    syncKnowledgeGraphProgress(nodeAnswer, false);
                 }
+                
+                setFeedback(`Correct answer: ${formatAnswer(gameState.currentAnswer)}`, false);
+                startFeedbackCountdown(10);
+                $('questionText').textContent = gameState.currentQuestionText;
+                setTimeout(() => {
+                    nextQuestion();
+                }, 10000);
             }
-    }, 1000);
-}
 
 /* ------------------ Show answer (for practice) ------------------ */
 function showAnswer(){
@@ -2573,14 +2589,49 @@ function normalizeAnswerArray(ans) {
     return ans.split(',').map(a => a.trim().toLowerCase());
 }
 
-function findNodeAnswer(answer) {
-  // Try to match the answer to a knowledge graph node
-  // This is a simple implementation - you may need to make it smarter
+async function findNodeAnswer(answer) {
+  // Load knowledge graph nodes if not already loaded
+  if (!window.knowledgeGraphNodes) {
+    try {
+      const res = await fetch('graph_data/output_nodes.json');
+      if (res.ok) {
+        window.knowledgeGraphNodes = await res.json();
+        console.log('✓ Loaded knowledge graph nodes for matching');
+      }
+    } catch (err) {
+      console.warn('Could not load knowledge graph nodes:', err);
+      return answer; // Fallback to original
+    }
+  }
+  
+  const nodes = window.knowledgeGraphNodes || [];
   const normalized = String(answer).trim().toLowerCase();
   
-  // For now, just return the answer as-is
-  // You could load the actual nodes data and do fuzzy matching here
-  return answer;
+  // Try exact match first
+  let match = nodes.find(n => n.answer.toLowerCase() === normalized);
+  if (match) {
+    console.log(`✓ Exact match: "${answer}" → "${match.answer}"`);
+    return match.answer;
+  }
+  
+  // Try partial match (last word for people's names)
+  const lastWord = normalized.split(' ').pop();
+  match = nodes.find(n => n.answer.toLowerCase().includes(lastWord));
+  if (match) {
+    console.log(`✓ Partial match: "${answer}" → "${match.answer}"`);
+    return match.answer;
+  }
+  
+  // Try first word match
+  const firstWord = normalized.split(' ')[0];
+  match = nodes.find(n => n.answer.toLowerCase().includes(firstWord));
+  if (match) {
+    console.log(`✓ First word match: "${answer}" → "${match.answer}"`);
+    return match.answer;
+  }
+  
+  console.warn(`⚠ No knowledge graph match for: "${answer}"`);
+  return answer; // Return original if no match
 }
 
 async function startMissedQuestionsMode() {
@@ -2620,7 +2671,7 @@ async function startMissedQuestionsMode() {
   nextQuestion();
 }
   
-function submitAnswer(){
+async function submitAnswer(){
     if (gameState.isPaused) return; // hard block while paused
     if ($('answerInput').disabled) return;
     if(gameState.bonusTimer) {
@@ -2776,6 +2827,14 @@ function submitAnswer(){
             gameState.questionsAttempted++;
             gameState.questionsCorrect++;
             updateScoreDisplays();
+            
+            // Sync to knowledge graph
+            const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
+            if (nodeAnswer) {
+                await syncKnowledgeGraphProgress(nodeAnswer, true);
+                console.log(`✓ Synced correct answer for: ${nodeAnswer}`);
+            }
+            
             if (responseTime !== null) {
                 gameState.responseTimes.push(responseTime);
             }
@@ -2861,6 +2920,12 @@ function submitAnswer(){
         } else {
             gameState.questionsAttempted++;
             updateScoreDisplays();
+            // Sync to knowledge graph as wrong
+            const nodeAnswer = await findNodeAnswer(gameState.currentAnswer);
+            if (nodeAnswer) {
+                await syncKnowledgeGraphProgress(nodeAnswer, false);
+                console.log(`✓ Synced wrong answer for: ${nodeAnswer}`);
+            }
             setFeedback(`Incorrect. The correct answer was: ${formatAnswer(gameState.currentAnswer)}`, false);
             startFeedbackCountdown(10);
             $('questionText').textContent = gameState.currentQuestionText;
