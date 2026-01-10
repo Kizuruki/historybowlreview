@@ -2593,68 +2593,43 @@ function normalizeAnswerArray(ans) {
     return ans.split(',').map(a => a.trim().toLowerCase());
 }
 
-async function findNodeAnswer(answer) {
-  // Load knowledge graph nodes if not already loaded
-  if (!window.knowledgeGraphNodes) {
-    try {
-      const res = await fetch('graph_data/output_nodes.json');
-      if (res.ok) {
-        window.knowledgeGraphNodes = await res.json();
-        console.log('✓ Loaded knowledge graph nodes for matching');
-      }
-    } catch (err) {
-      console.warn('Could not load knowledge graph nodes:', err);
-      return answer; // Fallback to original
-    }
-  }
+function findNodeAnswer(userAnswer) {
+  if (!knowledgeGraphNodes || knowledgeGraphNodes.length === 0) return null;
   
-  const nodes = window.knowledgeGraphNodes || [];
-  const normalized = String(answer).trim().toLowerCase();
+  // Split the user answer by comma and try each variation
+  const userVariations = userAnswer.split(',').map(v => v.trim().toLowerCase());
   
-  // Try exact match first
-  let match = nodes.find(n => n.answer.toLowerCase() === normalized);
-  if (match) {
-    console.log(`✓ Exact match: "${answer}" → "${match.answer}"`);
-    return match.answer;
-  }
-  
-  // Try matching the most distinctive words (skip common words like "war", "the", "of")
-  const commonWords = new Set(['war', 'the', 'of', 'and', 'a', 'an', 'in', 'on', 'at', 'to', 'for']);
-  const significantWords = normalized.split(' ').filter(w => !commonWords.has(w) && w.length > 3);
-  
-  if (significantWords.length > 0) {
-    // Try to match using the most significant words (2+ matches required)
-    match = nodes.find(n => {
-      const nodeWords = n.answer.toLowerCase().split(' ');
-      const matchCount = significantWords.filter(w => nodeWords.includes(w)).length;
-      return matchCount >= Math.min(2, significantWords.length);
+  // Try to find a match for any variation
+  for (const userVar of userVariations) {
+    // Try exact match with node's answer
+    let match = knowledgeGraphNodes.find(node => 
+      normalizeAnswer(node.answer).toLowerCase() === userVar
+    );
+    
+    if (match) return match.answer;
+    
+    // Try matching if the node's answer also has variations
+    match = knowledgeGraphNodes.find(node => {
+      const nodeVariations = node.answer.split(',').map(v => v.trim().toLowerCase());
+      return nodeVariations.includes(userVar);
     });
     
-    if (match) {
-      console.log(`✓ Multi-word match: "${answer}" → "${match.answer}"`);
-      return match.answer;
-    }
-  }
-  
-  // Try partial match (last word for people's names)
-  const lastWord = normalized.split(' ').pop();
-  if (lastWord && lastWord.length > 4) {
-    match = nodes.find(n => {
-      const nWords = n.answer.toLowerCase().split(' ');
-      return nWords[nWords.length - 1] === lastWord;
+    if (match) return match.answer;
+    
+    // Try partial match
+    match = knowledgeGraphNodes.find(node => {
+      const nodeAnswerLower = normalizeAnswer(node.answer).toLowerCase();
+      return nodeAnswerLower.includes(userVar) || userVar.includes(nodeAnswerLower);
     });
-    if (match) {
-      console.log(`✓ Last word match: "${answer}" → "${match.answer}"`);
-      return match.answer;
-    }
+    
+    if (match) return match.answer;
   }
   
-  console.warn(`⚠ No knowledge graph match for: "${answer}"`);
-  return answer; // Return original if no match
+  return null;
 }
 
 async function syncWithKnowledgeGraph(userAnswer, isCorrect) {
-  // Find the matching node
+  // Find the matching node - this now returns the canonical answer
   const nodeAnswer = findNodeAnswer(userAnswer);
   
   if (!nodeAnswer) {
@@ -2662,9 +2637,10 @@ async function syncWithKnowledgeGraph(userAnswer, isCorrect) {
     return;
   }
   
+  console.log(`✓ Found match: "${userAnswer}" → "${nodeAnswer}"`);
   console.log(`Syncing progress for: ${nodeAnswer} correct: ${isCorrect}`);
   
-  // IMPORTANT: Use the NORMALIZED node answer as the key
+  // Use the canonical node answer as the key (already normalized)
   const normalizedKey = normalizeAnswer(nodeAnswer);
   
   // Get current progress
