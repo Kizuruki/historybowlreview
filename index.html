@@ -2422,7 +2422,7 @@ function buzz(){
 
     gameState.answerTimeLeft = 10;
     $('timerDisplay').textContent = `Answer time: ${gameState.answerTimeLeft}`;
-    gameState.answerTimer = setInterval(()=>{
+    gameState.answerTimer = setInterval(async ()=>{
         gameState.answerTimeLeft--;
         $('timerDisplay').textContent = `Answer time: ${gameState.answerTimeLeft}`;
             if (gameState.answerTimeLeft <= 0){
