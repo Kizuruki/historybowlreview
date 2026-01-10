@@ -265,72 +265,6 @@
       margin-left: 5px;
     }
     
-    /* Practice modal */
-    .practice-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.7);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
-    
-    .practice-modal.active {
-      display: flex;
-    }
-    
-    .practice-content {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      max-width: 700px;
-      width: 90%;
-      max-height: 80vh;
-      overflow-y: auto;
-    }
-    
-    .practice-question {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin: 20px 0;
-      color: #2d3748;
-    }
-    
-    .practice-input {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #e2e8f0;
-      border-radius: 8px;
-      font-size: 1rem;
-      margin: 15px 0;
-    }
-    
-    .practice-input:focus {
-      outline: none;
-      border-color: #5a67d8;
-    }
-    
-    .practice-feedback {
-      padding: 15px;
-      border-radius: 8px;
-      margin: 15px 0;
-      font-weight: 600;
-    }
-    
-    .practice-feedback.correct {
-      background: linear-gradient(135deg, #c6f6d5 0%, #9ae6b4 100%);
-      color: #22543d;
-    }
-    
-    .practice-feedback.incorrect {
-      background: linear-gradient(135deg, #fed7d7 0%, #fc8181 100%);
-      color: #742a2a;
-    }
-    
     .btn-group {
       display: flex;
       gap: 10px;
@@ -524,6 +458,90 @@
     .toggle-switch.active .toggle-slider {
         transform: translateX(24px);
     }
+
+    .node-circle {
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+    }
+    
+    .node-stars-badge {
+      font-size: 10px;
+      font-weight: bold;
+      fill: gold;
+    }
+    
+    .category-item {
+      padding: 12px;
+      margin: 8px 0;
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+    
+    .category-progress-bar {
+      width: 100%;
+      height: 6px;
+      background: #e0e0e0;
+      border-radius: 3px;
+      margin-top: 4px;
+      overflow: hidden;
+    }
+    
+    .category-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transition: width 0.3s ease;
+    }
+    
+    .subcategory-list {
+      margin-left: 15px;
+      margin-top: 5px;
+      display: none;
+    }
+    
+    .subcategory-list.expanded {
+      display: block;
+    }
+    
+    .subcategory-item {
+      padding: 8px;
+      margin: 4px 0;
+      background: #f8f9fa;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+    }
+    
+    .subcategory-item:hover {
+      border-color: #5a67d8;
+    }
+    
+    .expand-arrow {
+      display: inline-block;
+      margin-right: 5px;
+      transition: transform 0.2s;
+    }
+    
+    .expand-arrow.expanded {
+      transform: rotate(90deg);
+    }
+    
+    .summary-section {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    
+    .node-list-item .stars-display {
+      float: right;
+      color: gold;
+      font-size: 11px;
+    }
   </style>
   <div class="account-bar">
       <span id="username-display">Guest</span>
@@ -609,14 +627,6 @@
           </div>
         </div>
       </div>
-  
-  <!-- Practice Modal -->
-  <div class="practice-modal" id="practiceModal">
-    <div class="practice-content">
-      <h2 style="color: #5a67d8; margin-bottom: 20px;">Practice Questions</h2>
-      <div id="practiceArea"></div>
-    </div>
-  </div>
 
   <script>
     // === GLOBAL VARIABLES ===
@@ -641,23 +651,16 @@
       try {
         console.log('Loading data files...');
         
-        // Load nodes
         const nodesRes = await fetch('graph_data/output_nodes.json');
-        if (!nodesRes.ok) {
-          throw new Error(`Failed to load nodes: ${nodesRes.status} ${nodesRes.statusText}`);
-        }
+        if (!nodesRes.ok) throw new Error(`Failed to load nodes: ${nodesRes.status}`);
         nodesData = await nodesRes.json();
         console.log(`✓ Loaded ${nodesData.length} nodes`);
         
-        // Load graph
         const graphRes = await fetch('graph_data/output_graph.json');
-        if (!graphRes.ok) {
-          throw new Error(`Failed to load graph: ${graphRes.status} ${graphRes.statusText}`);
-        }
+        if (!graphRes.ok) throw new Error(`Failed to load graph: ${graphRes.status}`);
         graphData = await graphRes.json();
         console.log(`✓ Loaded graph data`);
         
-        // Load summaries (optional)
         try {
           const summariesRes = await fetch('graph_data/output_summaries.json');
           if (summariesRes.ok) {
@@ -670,6 +673,7 @@
         }
         
         loadUserProgress();
+        setupStorageSync();
         renderCategories();
         renderProgressStats();
         initDraggableCanvas();
@@ -781,16 +785,91 @@
   
     // === CATEGORY & NODE RENDERING ===
     function renderCategories() {
-      const categories = [...new Set(nodesData.map(n => n.category))].sort();
+      const categoryHierarchy = {};
+      
+      nodesData.forEach(node => {
+        const cat = node.category;
+        const subcat = node.subcategory || 'Other';
+        const subsubcat = node.subsubcategory || null;
+        
+        if (!categoryHierarchy[cat]) {
+          categoryHierarchy[cat] = {};
+        }
+        if (!categoryHierarchy[cat][subcat]) {
+          categoryHierarchy[cat][subcat] = { nodes: [], subsubcategories: {} };
+        }
+        
+        if (subsubcat) {
+          if (!categoryHierarchy[cat][subcat].subsubcategories[subsubcat]) {
+            categoryHierarchy[cat][subcat].subsubcategories[subsubcat] = [];
+          }
+          categoryHierarchy[cat][subcat].subsubcategories[subsubcat].push(node);
+        } else {
+          categoryHierarchy[cat][subcat].nodes.push(node);
+        }
+      });
+      
       const container = document.getElementById('categoryList');
       container.innerHTML = '';
       
-      categories.forEach(cat => {
-        const div = document.createElement('div');
-        div.className = 'category-item';
-        div.textContent = cat;
-        div.onclick = () => selectCategory(cat, div);
-        container.appendChild(div);
+      Object.keys(categoryHierarchy).sort().forEach(cat => {
+        const catNodes = nodesData.filter(n => n.category === cat);
+        const completed = catNodes.filter(n => (userProgress[n.answer]?.stars || 0) >= 1).length;
+        const percentage = Math.round((completed / catNodes.length) * 100);
+        
+        const catDiv = document.createElement('div');
+        catDiv.className = 'category-item';
+        catDiv.innerHTML = `
+          <span class="expand-arrow">▶</span>
+          ${cat}
+          <div class="category-progress-bar">
+            <div class="category-progress-fill" style="width: ${percentage}%"></div>
+          </div>
+          <small style="color: #666; font-size: 0.8rem;">${completed}/${catNodes.length}</small>
+        `;
+        
+        const subcatContainer = document.createElement('div');
+        subcatContainer.className = 'subcategory-list';
+        
+        Object.keys(categoryHierarchy[cat]).sort().forEach(subcat => {
+          const subcatData = categoryHierarchy[cat][subcat];
+          const subcatNodes = [...subcatData.nodes, ...Object.values(subcatData.subsubcategories).flat()];
+          const subcatCompleted = subcatNodes.filter(n => (userProgress[n.answer]?.stars || 0) >= 1).length;
+          const subcatPercentage = Math.round((subcatCompleted / subcatNodes.length) * 100);
+          
+          const subcatDiv = document.createElement('div');
+          subcatDiv.className = 'subcategory-item';
+          subcatDiv.innerHTML = `
+            <span class="expand-arrow">▶</span>
+            ${subcat}
+            <div class="category-progress-bar">
+              <div class="category-progress-fill" style="width: ${subcatPercentage}%"></div>
+            </div>
+            <small style="color: #666;">${subcatCompleted}/${subcatNodes.length}</small>
+          `;
+          
+          subcatDiv.onclick = (e) => {
+            e.stopPropagation();
+            const arrow = subcatDiv.querySelector('.expand-arrow');
+            arrow.classList.toggle('expanded');
+            // Select first node in subcategory
+            if (subcatNodes.length > 0) {
+              selectNode(subcatNodes[0].answer);
+            }
+          };
+          
+          subcatContainer.appendChild(subcatDiv);
+        });
+        
+        const arrow = catDiv.querySelector('.expand-arrow');
+        catDiv.onclick = () => {
+          arrow.classList.toggle('expanded');
+          subcatContainer.classList.toggle('expanded');
+          selectCategory(cat, catDiv);
+        };
+        
+        container.appendChild(catDiv);
+        container.appendChild(subcatContainer);
       });
       
       document.getElementById('categorySearch').addEventListener('input', (e) => {
@@ -804,15 +883,24 @@
   
     function renderAllNodesList() {
       const container = document.getElementById('allNodesList');
-      const sortedNodes = [...nodesData].sort((a, b) => a.answer.localeCompare(b.answer));
+      const sortedNodes = [...nodesData].sort((a, b) => {
+        const starsA = (userProgress[a.answer]?.stars || 0);
+        const starsB = (userProgress[b.answer]?.stars || 0);
+        if (starsB !== starsA) return starsB - starsA;
+        return a.answer.localeCompare(b.answer);
+      });
       
       container.innerHTML = '';
       sortedNodes.forEach(node => {
+        const progress = userProgress[node.answer] || { stars: 0 };
+        const starDisplay = progress.stars > 0 ? '★'.repeat(progress.stars) : '';
+        
         const div = document.createElement('div');
         div.className = 'node-list-item';
         div.innerHTML = `
           ${node.answer}
           <span class="subcategory-badge">${node.subcategory || node.category}</span>
+          <span class="stars-display">${starDisplay}</span>
         `;
         div.onclick = () => {
           currentCategory = node.category;
@@ -880,10 +968,11 @@
       
       renderCurrentNode(currentNode, progress);
       renderGraph(nodeAnswer);
-      showSummaryPanel(currentNode);
     }
-    
+        
     function renderCurrentNode(node, progress) {
+      const summary = nodeSummaries[node.answer] || 'No summary available for this topic yet.';
+      
       const detailsContainer = document.getElementById('nodeDetails');
       detailsContainer.innerHTML = `
         <h2>${node.answer}</h2>
@@ -892,16 +981,27 @@
         <div class="node-info">
           <p><strong>Category:</strong> ${node.category}</p>
           <p><strong>Subcategory:</strong> ${node.subcategory || 'N/A'}</p>
+          ${node.subsubcategory ? `<p><strong>Sub-subcategory:</strong> ${node.subsubcategory}</p>` : ''}
           <p><strong>Total Questions:</strong> ${node.questions.length}</p>
           <p><strong>✓ Correct:</strong> ${progress.times_correct || 0}</p>
           <p><strong>✗ Wrong:</strong> ${progress.times_wrong || 0}</p>
         </div>
         
-        <button class="btn" onclick="startNodePractice()">
-          🎯 Practice Now (${node.questions.length} Questions)
+        <div class="summary-section">
+          <h3 style="color: #5a67d8; margin-bottom: 10px;">📖 Summary</h3>
+          <p style="line-height: 1.6; color: #4a5568;">${summary}</p>
+        </div>
+        
+        <button class="btn" onclick="markAsRead()" ${progress.stars >= 1 ? 'disabled' : ''}>
+          ${progress.stars >= 1 ? '✓ Already Read' : '📚 Mark as Read (+1★)'}
         </button>
         
         <button class="btn" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); margin-top: 10px;" 
+                onclick="startReviewGame()">
+          🎯 Review in Main Game
+        </button>
+        
+        <button class="btn" style="background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%); margin-top: 10px;" 
                 onclick="window.open('${node.wikipedia_link}', '_blank')">
           📖 Wikipedia Reference
         </button>
@@ -1003,6 +1103,7 @@
       
       const g = svg.append('g');
       
+      // Draw connections
       nodes.slice(1).forEach(node => {
         const target = node.type === 'second-degree' 
           ? nodes.find(n => n.type === 'connected' && 
@@ -1020,11 +1121,13 @@
           .attr('y2', node.y);
       });
       
+      // Draw nodes with stars
       nodes.forEach(node => {
         const nodeGroup = g.append('g')
           .attr('transform', `translate(${node.x}, ${node.y})`);
         
         const radius = node.type === 'center' ? 40 : node.type === 'connected' ? 30 : 20;
+        const progress = userProgress[node.id] || { stars: 0 };
         
         nodeGroup.append('circle')
           .attr('class', `node-circle ${node.type}`)
@@ -1032,126 +1135,21 @@
           .style('cursor', 'pointer')
           .on('click', () => selectNode(node.id));
         
+        // Add star badge if node has stars
+        if (progress.stars > 0) {
+          nodeGroup.append('text')
+            .attr('class', 'node-stars-badge')
+            .attr('x', radius - 8)
+            .attr('y', -radius + 8)
+            .text('★' + progress.stars);
+        }
+        
         const label = node.id.length > 20 ? node.id.substring(0, 18) + '...' : node.id;
         nodeGroup.append('text')
           .attr('class', 'node-label')
           .attr('y', radius + 15)
           .text(label);
       });
-    }
-  
-    // === PRACTICE MODE ===
-    function startNodePractice() {
-      if (!currentNode) return;
-      
-      practiceState = {
-        questions: [...currentNode.questions],
-        currentIndex: 0,
-        correctCount: 0,
-        wrongCount: 0,
-        nodeAnswer: currentNode.answer
-      };
-      
-      document.getElementById('practiceModal').classList.add('active');
-      showPracticeQuestion();
-    }
-    
-    function showPracticeQuestion() {
-      const { questions, currentIndex } = practiceState;
-      
-      if (currentIndex >= questions.length) {
-        showPracticeResults();
-        return;
-      }
-      
-      const question = questions[currentIndex];
-      const practiceArea = document.getElementById('practiceArea');
-      
-      practiceArea.innerHTML = `
-        <p style="color: #718096; font-weight: 600;">Question ${currentIndex + 1} of ${questions.length}</p>
-        <div class="practice-question">${question}</div>
-        <input type="text" class="practice-input" id="practiceInput" placeholder="Type your answer...">
-        <div id="practiceFeedback"></div>
-        <div class="btn-group">
-          <button class="btn" onclick="submitPracticeAnswer()">Submit</button>
-          <button class="btn secondary" onclick="closePractice()">Exit</button>
-        </div>
-      `;
-      
-      document.getElementById('practiceInput').focus();
-      document.getElementById('practiceInput').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') submitPracticeAnswer();
-      });
-    }
-    
-    function submitPracticeAnswer() {
-      const input = document.getElementById('practiceInput');
-      const userAnswer = input.value.trim().toLowerCase();
-      const correctAnswer = currentNode.answer.toLowerCase();
-      
-      const isCorrect = userAnswer === correctAnswer || 
-                       correctAnswer.includes(userAnswer) ||
-                       userAnswer.includes(correctAnswer);
-      
-      const feedback = document.getElementById('practiceFeedback');
-      
-      if (isCorrect) {
-        practiceState.correctCount++;
-        feedback.className = 'practice-feedback correct';
-        feedback.textContent = `✓ Correct! The answer is: ${currentNode.answer}`;
-      } else {
-        practiceState.wrongCount++;
-        feedback.className = 'practice-feedback incorrect';
-        feedback.textContent = `✗ Incorrect. The correct answer is: ${currentNode.answer}`;
-      }
-      
-      input.disabled = true;
-      
-      setTimeout(() => {
-        practiceState.currentIndex++;
-        showPracticeQuestion();
-      }, 2000);
-    }
-    
-    function showPracticeResults() {
-      const { correctCount, wrongCount, nodeAnswer } = practiceState;
-      const total = correctCount + wrongCount;
-      const percentage = Math.round((correctCount / total) * 100);
-      
-      if (!userProgress[nodeAnswer]) {
-        userProgress[nodeAnswer] = { stars: 0, platinum_until: null, times_correct: 0, times_wrong: 0 };
-      }
-      
-      userProgress[nodeAnswer].times_correct += correctCount;
-      userProgress[nodeAnswer].times_wrong += wrongCount;
-      
-      if (percentage >= 80 && userProgress[nodeAnswer].stars === 0) {
-        userProgress[nodeAnswer].stars = 1;
-      } else if (percentage >= 90 && userProgress[nodeAnswer].stars === 1) {
-        userProgress[nodeAnswer].stars = 2;
-      } else if (percentage === 100 && userProgress[nodeAnswer].stars === 2) {
-        userProgress[nodeAnswer].stars = 3;
-        userProgress[nodeAnswer].platinum_until = Date.now() + (30 * 24 * 60 * 60 * 1000);
-      }
-      
-      saveUserProgress();
-      
-      const practiceArea = document.getElementById('practiceArea');
-      practiceArea.innerHTML = `
-        <h2 style="color: #5a67d8;">Practice Complete! 🎉</h2>
-        <div class="node-info" style="margin: 20px 0;">
-          <p><strong>Score:</strong> ${correctCount}/${total} (${percentage}%)</p>
-          <p><strong>Stars Earned:</strong> ${getStarDisplay(userProgress[nodeAnswer].stars, userProgress[nodeAnswer].platinum_until)}</p>
-        </div>
-        <button class="btn" onclick="closePractice()">Close</button>
-      `;
-      
-      renderProgressStats();
-    }
-    
-    function closePractice() {
-      document.getElementById('practiceModal').classList.remove('active');
-      if (currentNode) selectNode(currentNode.answer);
     }
   
     // === SIDEBAR TOGGLES ===
@@ -1194,60 +1192,39 @@
         layout.style.gridTemplateColumns = leftSidebarCollapsed ? '40px 1fr 300px' : '250px 1fr 300px';
       }
     }
-  
-    // === SUMMARY PANEL ===
-    function showSummaryPanel(node) {
-      selectedNode = node;
-      const panel = document.getElementById('summaryPanel');
-      panel.classList.add('active');
-      updateSummaryPanel();
-    }
-    
-    function updateSummaryPanel() {
-      if (!selectedNode) return;
-      
-      document.getElementById('summaryTitle').textContent = selectedNode.answer;
-      
-      const progress = userProgress[selectedNode.answer] || { stars: 0 };
-      document.getElementById('summaryStar').textContent = '★ ' + progress.stars;
-      
-      const summary = nodeSummaries[selectedNode.answer] || 'No summary available yet.';
-      document.getElementById('summaryText').textContent = summary;
-      
-      document.getElementById('summaryCategory').textContent = selectedNode.category_path || selectedNode.category;
-      
-      const categoryNodes = nodesData.filter(n => n.category === selectedNode.category);
-      const completedInCategory = categoryNodes.filter(n => (userProgress[n.answer]?.stars || 0) >= 2).length;
-      const percentComplete = Math.round((completedInCategory / categoryNodes.length) * 100);
-      
-      document.getElementById('summaryProgress').style.width = percentComplete + '%';
-      document.getElementById('summaryProgressText').textContent = `${completedInCategory} / ${categoryNodes.length} completed`;
-    }
-    
-    function closeSummary() {
-      document.getElementById('summaryPanel').classList.remove('active');
-      selectedNode = null;
-    }
     
     function markAsRead() {
-      if (!selectedNode) return;
-      const progress = userProgress[selectedNode.answer] || { stars: 0 };
-      userProgress[selectedNode.answer] = {
-        ...progress,
-        stars: Math.max(1, progress.stars),
-        lastReviewed: Date.now()
-      };
-      saveUserProgress();
-      updateSummaryPanel();
-      if (currentNode) selectNode(currentNode.answer);
-      renderProgressStats();
+      if (!currentNode) return;
+      const progress = userProgress[currentNode.answer] || { stars: 0, times_correct: 0, times_wrong: 0 };
+      
+      if (progress.stars < 1) {
+        userProgress[currentNode.answer] = {
+          ...progress,
+          stars: 1,
+          lastReviewed: Date.now()
+        };
+        saveUserProgress();
+        selectNode(currentNode.answer);
+        renderProgressStats();
+        renderCategories();
+      }
     }
     
     function startReviewGame() {
-      if (!selectedNode) return;
-      sessionStorage.setItem('reviewNodeAnswer', selectedNode.answer);
-      sessionStorage.setItem('reviewNodeQuestions', JSON.stringify(selectedNode.questions));
-      window.open('index.html?mode=review', '_blank');
+      if (!currentNode) return;
+      
+      // Save node info for review mode
+      sessionStorage.setItem('reviewNodeAnswer', currentNode.answer);
+      sessionStorage.setItem('reviewNodeQuestions', JSON.stringify(currentNode.questions));
+      sessionStorage.setItem('reviewNodeId', currentNode.answer);
+      
+      // Sync user progress
+      if (currentUser) {
+        sessionStorage.setItem('knowledgeGraphUser', currentUser);
+      }
+      
+      // Open main game
+      window.open('https://historybowlreview.kizuruki.com/?mode=review', '_blank');
     }
   
     // === MISSED MODE ===
@@ -1289,6 +1266,18 @@
   
     // === INIT ON LOAD ===
     window.addEventListener('load', init);
+
+    function setupStorageSync() {
+      // Listen for updates from main game
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'historyBowlProgress_' + (currentUser || 'guest')) {
+          loadUserProgress();
+          if (currentNode) selectNode(currentNode.answer);
+          renderProgressStats();
+          renderCategories();
+        }
+      });
+    }
   </script>
 </body>
 </html>
