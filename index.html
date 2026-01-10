@@ -300,6 +300,27 @@
 </head>
 <body>
   <div class="container">
+    <!-- Account Bar -->
+    <div class="account-bar" style="position:fixed;top:0;right:0;background:rgba(255,255,255,0.95);padding:8px 16px;border-radius:0 0 0 12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:1000;display:flex;gap:12px;align-items:center;">
+        <span id="username-display">Guest</span>
+        <button class="btn" onclick="showLoginModal()" style="padding:6px 12px;font-size:13px;">Login</button>
+        <button class="btn secondary" onclick="logout()" style="padding:6px 12px;font-size:13px;">Logout</button>
+    </div>
+    
+    <!-- Login Modal -->
+    <div id="loginModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;backdrop-filter:blur(4px);">
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:32px;border-radius:16px;max-width:400px;width:90%;box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+        <h2 style="color:#5a67d8;margin-bottom:20px;">Login / Register</h2>
+        <input type="text" id="loginUsername" placeholder="Username" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:2px solid #e2e8f0;font-size:14px;">
+        <input type="password" id="loginPassword" placeholder="Password" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:2px solid #e2e8f0;font-size:14px;">
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <button class="btn" onclick="login()">Login</button>
+          <button class="btn" onclick="register()">Register</button>
+          <button class="btn secondary" onclick="closeLoginModal()">Cancel</button>
+        </div>
+        <p id="loginError" style="color:#e53e3e;margin-top:12px;"></p>
+      </div>
+    </div>
     <!-- Header -->
     <div class="header">
       <h1>💚🤍 History Bowl Study Program</h1>
@@ -488,6 +509,11 @@
           <p class="muted">Visual map of all topics with AI summaries and progress tracking.</p>
           <div style="margin-top:10px"><button class="btn">Open Graph</button></div>
       </div>
+      <div class="card" onclick="startMissedQuestionsMode()">
+          <h3>🔄 Missed Questions</h3>
+          <p class="muted">Review questions you got wrong until you master them.</p>
+          <div style="margin-top:10px"><button class="btn">Start Review</button></div>
+      </div>
     </div>
 
     <!-- Game Area -->
@@ -575,7 +601,9 @@
    ================================================================ */
 // 'A', 'B', 'C', any combo like 'AB', 'BC', 'ABC', or 'mixed'
 const FULL_GAME_SET_MODE = 'ABC';
-
+const WORKER_URL = "https://patient-base-c952.javalutionization.workers.dev";
+let currentUser = null;
+let missedQuestions = [];
 let practiceCategoryWeights = { us: 1, eu: 1, world: 1 };
 let practiceCategorySelection = 'A'; // Default to A 
 
@@ -2545,6 +2573,53 @@ function normalizeAnswerArray(ans) {
     return ans.split(',').map(a => a.trim().toLowerCase());
 }
 
+function findNodeAnswer(answer) {
+  // Try to match the answer to a knowledge graph node
+  // This is a simple implementation - you may need to make it smarter
+  const normalized = String(answer).trim().toLowerCase();
+  
+  // For now, just return the answer as-is
+  // You could load the actual nodes data and do fuzzy matching here
+  return answer;
+}
+
+async function startMissedQuestionsMode() {
+  if (!currentUser) {
+    alert('Please login first to access missed questions.');
+    showLoginModal();
+    return;
+  }
+  
+  await loadMissedQuestions();
+  
+  if (missedQuestions.length === 0) {
+    alert('No missed questions yet! Play some games first.');
+    return;
+  }
+  
+  gameState.mode = 'missed';
+  gameState.currentQuarter = 1;
+  
+  // Convert missed questions to Q1 format
+  gameState.activeQ1 = missedQuestions.map(mq => ({
+    question: mq.question,
+    answer: mq.answer
+  }));
+  
+  gameState.activeQ2 = [];
+  gameState.activeQ3 = [];
+  gameState.activeQ4 = [];
+  
+  $('mainMenu').style.display = 'none';
+  $('gameArea').style.display = 'block';
+  $('modeDisplay').textContent = 'Missed Questions Review';
+  $('showAnswerBtn').style.display = 'inline-block';
+  updatePauseButtonVisibility();
+  
+  resetGame();
+  nextQuestion();
+}
+  
 function submitAnswer(){
     if (gameState.isPaused) return; // hard block while paused
     if ($('answerInput').disabled) return;
@@ -2564,7 +2639,12 @@ function submitAnswer(){
     }
     const isCorrect = isStrictCorrect(given, gameState.currentAnswer) ||
                   looseMatch(given, gameState.currentAnswer);
-    syncKnowledgeGraphProgress(gameState.reviewNodeId, isCorrect);
+    
+    // NEW: Sync to knowledge graph
+    const nodeAnswer = findNodeAnswer(gameState.currentAnswer);
+    if (nodeAnswer) {
+      syncKnowledgeGraphProgress(nodeAnswer, isCorrect);
+    }
     let basePoints = 0;
     let earnedPoints = 0;
     const submitTime = Date.now();
@@ -2655,7 +2735,12 @@ function submitAnswer(){
             gameState.questionsAttempted++;
             gameState.questionsCorrect++;
             updateScoreDisplays();
-            updateScoreDisplays();
+            // NEW: Remove from missed questions if in missed mode
+            if (gameState.mode === 'missed') {
+              const questionText = gameState.currentQuestionText;
+              missedQuestions = missedQuestions.filter(mq => mq.question !== questionText);
+              saveMissedQuestions();
+            }
             if (responseTime !== null) {
                 gameState.responseTimes.push(responseTime);
             }
@@ -3371,6 +3456,123 @@ function updateNodeProgressAfterCorrect() {
         sessionStorage.setItem('nodeProgress', JSON.stringify(progress));
     }
 }
+
+/* ------------------ Login/Logout Functions ------------------ */
+function showLoginModal() {
+  document.getElementById('loginModal').style.display = 'flex';
+}
+
+function closeLoginModal() {
+  document.getElementById('loginModal').style.display = 'none';
+  document.getElementById('loginError').textContent = '';
+}
+
+async function login() {
+  const username = document.getElementById('loginUsername').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  
+  if (!username || !password) {
+    document.getElementById('loginError').textContent = 'Please enter username and password';
+    return;
+  }
+  
+  try {
+    const res = await fetch(`${WORKER_URL}/auth/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    
+    const data = await res.json();
+    
+    if (data.success) {
+      currentUser = username;
+      document.getElementById('username-display').textContent = username;
+      document.getElementById('playerNameInput').value = username;
+      localStorage.setItem('currentUser', username);
+      sessionStorage.setItem('knowledgeGraphUser', username);
+      
+      await loadUserProgress();
+      await loadMissedQuestions();
+      closeLoginModal();
+    } else {
+      document.getElementById('loginError').textContent = data.message || 'Invalid credentials';
+    }
+  } catch (err) {
+    console.error('Login error:', err);
+    document.getElementById('loginError').textContent = 'Login failed. Please try again.';
+  }
+}
+
+async function register() {
+  const username = document.getElementById('loginUsername').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  
+  if (!username || !password) {
+    document.getElementById('loginError').textContent = 'Please enter username and password';
+    return;
+  }
+  
+  try {
+    const res = await fetch(`${WORKER_URL}/auth/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password })
+    });
+    
+    const data = await res.json();
+    
+    if (data.success) {
+      document.getElementById('loginError').textContent = 'Registration successful! Now login.';
+      document.getElementById('loginError').style.color = 'green';
+    } else {
+      document.getElementById('loginError').textContent = data.message || 'Registration failed';
+      document.getElementById('loginError').style.color = 'red';
+    }
+  } catch (err) {
+    console.error('Register error:', err);
+    document.getElementById('loginError').textContent = 'Registration failed. Please try again.';
+  }
+}
+
+function logout() {
+  currentUser = null;
+  document.getElementById('username-display').textContent = 'Guest';
+  document.getElementById('playerNameInput').value = '';
+  localStorage.removeItem('currentUser');
+  sessionStorage.removeItem('knowledgeGraphUser');
+  missedQuestions = [];
+}
+
+async function loadUserProgress() {
+  if (!currentUser) return;
+  
+  try {
+    const res = await fetch(`${WORKER_URL}/progress/${currentUser}`);
+    if (res.ok) {
+      const serverProgress = await res.json();
+      // Store in gameState or localStorage as needed
+      localStorage.setItem('knowledgeGraphProgress_' + currentUser, JSON.stringify(serverProgress));
+      console.log('✓ Loaded user progress from server');
+    }
+  } catch (err) {
+    console.error('Failed to load progress:', err);
+  }
+}
+
+async function loadMissedQuestions() {
+  if (!currentUser) return;
+  
+  const saved = localStorage.getItem('missedQuestions_' + currentUser);
+  if (saved) {
+    missedQuestions = JSON.parse(saved);
+  }
+}
+
+function saveMissedQuestions() {
+  if (!currentUser) return;
+  localStorage.setItem('missedQuestions_' + currentUser, JSON.stringify(missedQuestions));
+}
   
 function init(){
     resetGame();
@@ -3392,6 +3594,15 @@ function init(){
     script.onload = () => console.log('jsPDF loaded');
     script.onerror = () => console.error('Failed to load jsPDF');
     document.head.appendChild(script);
+    // Check for saved login
+    const savedUser = localStorage.getItem('currentUser') || sessionStorage.getItem('knowledgeGraphUser');
+    if (savedUser) {
+        currentUser = savedUser;
+        document.getElementById('username-display').textContent = savedUser;
+        document.getElementById('playerNameInput').value = savedUser;
+        loadUserProgress();
+        loadMissedQuestions();
+    }
 }
 init()
 /* ------------------ PDF Management Functions ------------------ */
@@ -3912,8 +4123,7 @@ function updateNodeProgressAfterCorrect() {
 }
 
 async function syncKnowledgeGraphProgress(nodeAnswer, correct) {
-  const username = sessionStorage.getItem('knowledgeGraphUser') || 
-                   localStorage.getItem('currentUser') || 'guest';
+  const username = currentUser || 'guest';
   
   try {
     // Get current progress from server
@@ -3933,6 +4143,17 @@ async function syncKnowledgeGraphProgress(nodeAnswer, correct) {
       }
     } else {
       progress[nodeAnswer].times_wrong = (progress[nodeAnswer].times_wrong || 0) + 1;
+      
+      // Add to missed questions
+      if (currentUser && gameState.currentQuestionText && gameState.currentAnswer) {
+        missedQuestions.push({
+          question: gameState.currentQuestionText,
+          answer: gameState.currentAnswer,
+          topic: nodeAnswer,
+          timestamp: Date.now()
+        });
+        saveMissedQuestions();
+      }
     }
     
     progress[nodeAnswer].lastReviewed = Date.now();
