@@ -618,17 +618,26 @@
     </div>
   </div>
 
-  <script type="module">
-    // Load the graph data
+  <script>
+    // === GLOBAL VARIABLES ===
     let nodesData = [];
     let graphData = {};
+    let nodeSummaries = {};
     let currentNode = null;
     let currentCategory = null;
     let userProgress = {};
     let practiceState = { questions: [], currentIndex: 0, correctCount: 0 };
+    let currentUser = null;
+    let selectedNode = null;
+    let missedMode = false;
+    let leftSidebarCollapsed = false;
+    let rightSidebarCollapsed = false;
+    let isDragging = false;
+    let dragStart = { x: 0, y: 0 };
+    let graphOffset = { x: 0, y: 0 };
   
+    // === INITIALIZATION ===
     async function init() {
-      // Load the generated JSON files
       const [nodesRes, graphRes, summariesRes] = await Promise.all([
         fetch('graph_data/output_nodes.json'),
         fetch('graph_data/output_graph.json'),
@@ -644,7 +653,82 @@
       renderProgressStats();
       initDraggableCanvas();
     }
+  
+    // === USER MANAGEMENT ===
+    function loadUserProgress() {
+      const saved = localStorage.getItem('historyBowlProgress_' + (currentUser || 'guest'));
+      if (saved) {
+        userProgress = JSON.parse(saved);
+      }
+    }
     
+    function saveUserProgress() {
+      localStorage.setItem('historyBowlProgress_' + (currentUser || 'guest'), JSON.stringify(userProgress));
+    }
+    
+    function showLoginModal() {
+      document.getElementById('loginModal').style.display = 'flex';
+    }
+    
+    function closeLoginModal() {
+      document.getElementById('loginModal').style.display = 'none';
+      document.getElementById('loginError').textContent = '';
+    }
+    
+    function login() {
+      const username = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      
+      if (!username) {
+        document.getElementById('loginError').textContent = 'Please enter a username';
+        return;
+      }
+      
+      const users = JSON.parse(localStorage.getItem('historyBowlUsers') || '{}');
+      
+      if (users[username] && users[username] === password) {
+        currentUser = username;
+        document.getElementById('username-display').textContent = username;
+        loadUserProgress();
+        closeLoginModal();
+        if (currentNode) selectNode(currentNode.answer);
+        renderProgressStats();
+      } else {
+        document.getElementById('loginError').textContent = 'Invalid credentials';
+      }
+    }
+    
+    function register() {
+      const username = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value;
+      
+      if (!username || !password) {
+        document.getElementById('loginError').textContent = 'Please enter username and password';
+        return;
+      }
+      
+      const users = JSON.parse(localStorage.getItem('historyBowlUsers') || '{}');
+      
+      if (users[username]) {
+        document.getElementById('loginError').textContent = 'Username already exists';
+        return;
+      }
+      
+      users[username] = password;
+      localStorage.setItem('historyBowlUsers', JSON.stringify(users));
+      
+      document.getElementById('loginError').textContent = 'Registration successful! Now login.';
+    }
+    
+    function logout() {
+      currentUser = null;
+      document.getElementById('username-display').textContent = 'Guest';
+      userProgress = {};
+      loadUserProgress();
+      if (currentNode) selectNode(currentNode.answer);
+      renderProgressStats();
+    }
+  
     // === CATEGORY & NODE RENDERING ===
     function renderCategories() {
       const categories = [...new Set(nodesData.map(n => n.category))].sort();
@@ -687,7 +771,7 @@
         container.appendChild(div);
       });
     }
-
+    
     function toggleNodeList() {
       const list = document.getElementById('allNodesList');
       if (list.style.display === 'none') {
@@ -822,7 +906,7 @@
       }
       return html;
     }
-    
+  
     // === GRAPH VISUALIZATION ===
     function renderGraph(centerNodeAnswer) {
       const svg = d3.select('#graphCanvas');
@@ -905,23 +989,7 @@
           .text(label);
       });
     }
-    
-    // Practice functionality
-    window.startNodePractice = function() {
-      if (!currentNode) return;
-      
-      practiceState = {
-        questions: [...currentNode.questions],
-        currentIndex: 0,
-        correctCount: 0,
-        wrongCount: 0,
-        nodeAnswer: currentNode.answer
-      };
-      
-      document.getElementById('practiceModal').classList.add('active');
-      showPracticeQuestion();
-    };
-    
+  
     // === PRACTICE MODE ===
     function startNodePractice() {
       if (!currentNode) return;
@@ -965,7 +1033,7 @@
         if (e.key === 'Enter') submitPracticeAnswer();
       });
     }
-
+    
     function submitPracticeAnswer() {
       const input = document.getElementById('practiceInput');
       const userAnswer = input.value.trim().toLowerCase();
@@ -994,35 +1062,6 @@
         showPracticeQuestion();
       }, 2000);
     }
-    
-    window.submitPracticeAnswer = function() {
-      const input = document.getElementById('practiceInput');
-      const userAnswer = input.value.trim().toLowerCase();
-      const correctAnswer = currentNode.answer.toLowerCase();
-      
-      const isCorrect = userAnswer === correctAnswer || 
-                       correctAnswer.includes(userAnswer) ||
-                       userAnswer.includes(correctAnswer);
-      
-      const feedback = document.getElementById('practiceFeedback');
-      
-      if (isCorrect) {
-        practiceState.correctCount++;
-        feedback.className = 'practice-feedback correct';
-        feedback.textContent = `✓ Correct! The answer is: ${currentNode.answer}`;
-      } else {
-        practiceState.wrongCount++;
-        feedback.className = 'practice-feedback incorrect';
-        feedback.textContent = `✗ Incorrect. The correct answer is: ${currentNode.answer}`;
-      }
-      
-      input.disabled = true;
-      
-      setTimeout(() => {
-        practiceState.currentIndex++;
-        showPracticeQuestion();
-      }, 2000);
-    };
     
     function showPracticeResults() {
       const { correctCount, wrongCount, nodeAnswer } = practiceState;
@@ -1060,15 +1099,13 @@
       renderProgressStats();
     }
     
-    window.closePractice = function() {
+    function closePractice() {
       document.getElementById('practiceModal').classList.remove('active');
       if (currentNode) selectNode(currentNode.answer);
-    };
-    
-    let leftSidebarCollapsed = false;
-    let rightSidebarCollapsed = false;
-    
-    window.toggleLeftSidebar = function() {
+    }
+  
+    // === SIDEBAR TOGGLES ===
+    function toggleLeftSidebar() {
       leftSidebarCollapsed = !leftSidebarCollapsed;
       const sidebar = document.querySelector('.sidebar-left');
       const layout = document.querySelector('.layout');
@@ -1079,24 +1116,16 @@
         sidebar.style.width = '40px';
         content.style.display = 'none';
         btn.textContent = '▶';
-        if (rightSidebarCollapsed) {
-          layout.style.gridTemplateColumns = '40px 1fr 40px';
-        } else {
-          layout.style.gridTemplateColumns = '40px 1fr 300px';
-        }
+        layout.style.gridTemplateColumns = rightSidebarCollapsed ? '40px 1fr 40px' : '40px 1fr 300px';
       } else {
         sidebar.style.width = '250px';
         content.style.display = 'block';
         btn.textContent = '◀';
-        if (rightSidebarCollapsed) {
-          layout.style.gridTemplateColumns = '250px 1fr 40px';
-        } else {
-          layout.style.gridTemplateColumns = '250px 1fr 300px';
-        }
+        layout.style.gridTemplateColumns = rightSidebarCollapsed ? '250px 1fr 40px' : '250px 1fr 300px';
       }
-    };
+    }
     
-    window.toggleRightSidebar = function() {
+    function toggleRightSidebar() {
       rightSidebarCollapsed = !rightSidebarCollapsed;
       const sidebar = document.querySelector('.sidebar-right');
       const layout = document.querySelector('.layout');
@@ -1107,191 +1136,16 @@
         sidebar.style.width = '40px';
         content.style.display = 'none';
         btn.textContent = '◀';
-        if (leftSidebarCollapsed) {
-          layout.style.gridTemplateColumns = '40px 1fr 40px';
-        } else {
-          layout.style.gridTemplateColumns = '250px 1fr 40px';
-        }
+        layout.style.gridTemplateColumns = leftSidebarCollapsed ? '40px 1fr 40px' : '250px 1fr 40px';
       } else {
         sidebar.style.width = '300px';
         content.style.display = 'block';
         btn.textContent = '▶';
-        if (leftSidebarCollapsed) {
-          layout.style.gridTemplateColumns = '40px 1fr 300px';
-        } else {
-          layout.style.gridTemplateColumns = '250px 1fr 300px';
-        }
-      }
-    };
-
-    let currentUser = null;
-    let userProgress = {}; // { nodeId: { stars: 0-2, lastReviewed: timestamp } }
-    
-    function loadUserProgress() {
-      const saved = localStorage.getItem('historyBowlProgress_' + (currentUser || 'guest'));
-      if (saved) {
-        userProgress = JSON.parse(saved);
+        layout.style.gridTemplateColumns = leftSidebarCollapsed ? '40px 1fr 300px' : '250px 1fr 300px';
       }
     }
-    
-    function saveUserProgress() {
-      localStorage.setItem('historyBowlProgress_' + (currentUser || 'guest'), JSON.stringify(userProgress));
-    }
-    
-    function showLoginModal() {
-      document.getElementById('loginModal').style.display = 'flex';
-    }
-    
-    function closeLoginModal() {
-      document.getElementById('loginModal').style.display = 'none';
-      document.getElementById('loginError').textContent = '';
-    }
-    
-    function login() {
-      const username = document.getElementById('loginUsername').value.trim();
-      const password = document.getElementById('loginPassword').value;
-      
-      if (!username) {
-        document.getElementById('loginError').textContent = 'Please enter a username';
-        return;
-      }
-      
-      const users = JSON.parse(localStorage.getItem('historyBowlUsers') || '{}');
-      
-      if (users[username] && users[username] === password) {
-        currentUser = username;
-        document.getElementById('username-display').textContent = username;
-        loadUserProgress();
-        closeLoginModal();
-        if (currentNode) selectNode(currentNode.answer);
-      } else {
-        document.getElementById('loginError').textContent = 'Invalid credentials';
-      }
-    }
-    
-    function register() {
-      const username = document.getElementById('loginUsername').value.trim();
-      const password = document.getElementById('loginPassword').value;
-      
-      if (!username || !password) {
-        document.getElementById('loginError').textContent = 'Please enter username and password';
-        return;
-      }
-      
-      const users = JSON.parse(localStorage.getItem('historyBowlUsers') || '{}');
-      
-      if (users[username]) {
-        document.getElementById('loginError').textContent = 'Username already exists';
-        return;
-      }
-      
-      users[username] = password;
-      localStorage.setItem('historyBowlUsers', JSON.stringify(users));
-      
-      document.getElementById('loginError').textContent = 'Registration successful! Now login.';
-    }
-    
-    function logout() {
-      currentUser = null;
-      document.getElementById('username-display').textContent = 'Guest';
-      userProgress = {};
-      loadUserProgress();
-      if (currentNode) selectNode(currentNode.answer);
-      renderProgressStats();
-    }
-    
-    // ========== NEW: Progress Tracking ==========
-    function getNodeProgress(nodeId) {
-        return userProgress[nodeId] || { stars: 0, lastReviewed: null };
-    }
-    
-    function updateNodeProgress(nodeId, stars) {
-        if (!userProgress[nodeId]) {
-            userProgress[nodeId] = { stars: 0, lastReviewed: null };
-        }
-        userProgress[nodeId].stars = Math.min(stars, 2);
-        userProgress[nodeId].lastReviewed = Date.now();
-        saveUserProgress();
-        updateAllNodeStars();
-    }
-    
-    function markAsRead() {
-        if (!selectedNode) return;
-        const progress = getNodeProgress(selectedNode.id);
-        updateNodeProgress(selectedNode.id, Math.max(1, progress.stars));
-        updateSummaryPanel();
-    }
-    
-    function updateAllNodeStars() {
-        const nodes = document.querySelectorAll('.node');
-        nodes.forEach(node => {
-            const nodeId = node.getAttribute('data-id');
-            const progress = getNodeProgress(nodeId);
-            
-            let starDiv = node.querySelector('.node-stars');
-            if (!starDiv) {
-                starDiv = document.createElement('div');
-                starDiv.className = 'node-stars';
-                node.appendChild(starDiv);
-            }
-            
-            starDiv.textContent = '★ ' + progress.stars;
-            
-            if (progress.stars >= 2) {
-                node.classList.add('node-completed');
-            } else {
-                node.classList.remove('node-completed');
-            }
-        });
-    }
-    
-    // ========== NEW: Draggable Canvas ==========
-    let isDragging = false;
-    let dragStart = { x: 0, y: 0 };
-    let graphOffset = { x: 0, y: 0 };
-    
-    function initDraggableCanvas() {
-      const container = document.querySelector('.graph-container');
-      if (!container) return;
-      
-      container.addEventListener('mousedown', (e) => {
-        if (e.target.tagName === 'circle' || e.target.tagName === 'text') return;
-        isDragging = true;
-        dragStart = { x: e.clientX - graphOffset.x, y: e.clientY - graphOffset.y };
-        container.classList.add('dragging');
-      });
-      
-      container.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        graphOffset.x = e.clientX - dragStart.x;
-        graphOffset.y = e.clientY - dragStart.y;
-        d3.select('#graphCanvas g').attr('transform', `translate(${graphOffset.x}, ${graphOffset.y})`);
-      });
-      
-      container.addEventListener('mouseup', () => {
-        isDragging = false;
-        container.classList.remove('dragging');
-      });
-      
-      container.addEventListener('mouseleave', () => {
-        isDragging = false;
-        container.classList.remove('dragging');
-      });
-    }
-    
-    // ========== NEW: Summary Panel ==========
-    let selectedNode = null;
-    let nodeSummaries = {};
-    
-    async function loadSummaries() {
-        try {
-            const response = await fetch('graph_data/output_summaries.json');
-            nodeSummaries = await response.json();
-        } catch (e) {
-            console.log('No summaries file found');
-        }
-    }
-    
+  
+    // === SUMMARY PANEL ===
     function showSummaryPanel(node) {
       selectedNode = node;
       const panel = document.getElementById('summaryPanel');
@@ -1336,60 +1190,55 @@
       saveUserProgress();
       updateSummaryPanel();
       if (currentNode) selectNode(currentNode.answer);
+      renderProgressStats();
     }
     
-    // ========== NEW: Missed Questions Mode ==========
-    let missedMode = false;
-    
-    function toggleMissedMode() {
-      missedMode = !missedMode;
-      const toggle = document.getElementById('missedToggle');
-      toggle.classList.toggle('active', missedMode);
-      // You'd need to implement filtering logic here
-    }
-    
-    function filterNodes() {
-        const nodes = document.querySelectorAll('.node');
-        nodes.forEach(node => {
-            const nodeId = node.getAttribute('data-id');
-            const progress = getNodeProgress(nodeId);
-            
-            if (missedMode) {
-                // Show only nodes with 0 or 1 stars (not fully completed)
-                node.style.display = (progress.stars < 2) ? 'block' : 'none';
-            } else {
-                node.style.display = 'block';
-            }
-        });
-    }
-    
-    // ========== NEW: Review Game Integration ==========
     function startReviewGame() {
       if (!selectedNode) return;
       sessionStorage.setItem('reviewNodeAnswer', selectedNode.answer);
       sessionStorage.setItem('reviewNodeQuestions', JSON.stringify(selectedNode.questions));
       window.open('index.html?mode=review', '_blank');
     }
-    
-    // ========== Initialize Everything ==========
-    window.addEventListener('load', async () => {
-        await loadSummaries();
-        loadUserProgress();
-        initDraggableCanvas();
-        updateAllNodeStars();
-        
-        // Modify existing node click handlers to show summary
-        document.querySelectorAll('.node').forEach(node => {
-            node.addEventListener('click', () => {
-                const nodeData = allNodes.find(n => n.id === node.getAttribute('data-id'));
-                if (nodeData) {
-                    showSummaryPanel(nodeData);
-                }
-            });
-        });
-    });
+  
+    // === MISSED MODE ===
+    function toggleMissedMode() {
+      missedMode = !missedMode;
+      const toggle = document.getElementById('missedToggle');
+      toggle.classList.toggle('active', missedMode);
+    }
+  
+    // === DRAGGABLE CANVAS ===
+    function initDraggableCanvas() {
+      const container = document.querySelector('.graph-container');
+      if (!container) return;
+      
+      container.addEventListener('mousedown', (e) => {
+        if (e.target.tagName === 'circle' || e.target.tagName === 'text') return;
+        isDragging = true;
+        dragStart = { x: e.clientX - graphOffset.x, y: e.clientY - graphOffset.y };
+        container.classList.add('dragging');
+      });
+      
+      container.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        graphOffset.x = e.clientX - dragStart.x;
+        graphOffset.y = e.clientY - dragStart.y;
+        d3.select('#graphCanvas g').attr('transform', `translate(${graphOffset.x}, ${graphOffset.y})`);
+      });
+      
+      container.addEventListener('mouseup', () => {
+        isDragging = false;
+        container.classList.remove('dragging');
+      });
+      
+      container.addEventListener('mouseleave', () => {
+        isDragging = false;
+        container.classList.remove('dragging');
+      });
+    }
+  
+    // === INIT ON LOAD ===
     window.addEventListener('load', init);
-    init();
   </script>
 </body>
 </html>
