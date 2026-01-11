@@ -1,0 +1,313 @@
+{
+  "q1": [
+    {
+      "question": "After Woodes Roger threatened these people with execution, they left New Providence. One of these people, Jean Lafitte [la-FEET], aided American forces at the Battle of New Orleans in exchange for a federal pardon. Henry Jennings was one of many of these people who based their forces in Port Royal. A famous leader of these people, Edward Teach, renamed a captured merchant vessel the Queen Anne’s Revenge. For ten points, name this occupation of Blackbeard and other seafaring criminals.",
+      "answer": "pirates"
+    },
+    {
+      "question": "This monarch tried to force Scotland to give up Queen Mary in marriage to his son in the War of the Rough Wooing. This king executed his advisor Thomas More and effectively replaced him with the author of the Book of Common Prayer, Thomas Cranmer, because More did not attend the coronation of Anne Boleyn. For ten points, name this English king who ordered the executions of two of his six wives.",
+      "answer": "Henry VIII of England"
+    },
+    {
+      "question": "This country’s lowland Terai region was divided between the kingdoms of Chaudandi and Makwanpur in the 18th century. The Bodhnath Stupa is a major landmark in this country’s capital, where Gurkha soldiers are recruited. This country contains Sagarmatha National Park as well as the southern faces of mountains such as Cho Oyu, Lhotse, and Annapurna. Kangchenjunga is located on this country’s border with the Indian state of Sikkim. For ten points, name this country whose border with China is home to Mount Everest.",
+      "answer": "Nepal"
+    },
+    {
+      "question": "This leader’s policies helped put the SEAT 600 automobile into mass production, leading to his country’s economic “miracle.” This leader saw action in the Rif War and eventually became the leader of the Falange party. Juan Carlos I succeeded this man, whose forces were supported by the Condor Legion during a 1930s civil war. For ten points, name this Spanish dictator who ruled from 1939 to 1975.",
+      "answer": "Francisco Franco Bahamonde"
+    },
+    {
+      "question": "In this war, Vulcan bombers were ordered to carry out 8000-mile long raids in Operation Black Buck. Controversy in this war arose when the submarine Conqueror fired on a ship allegedly returning to port, the General Belgrano. This war, which was prompted by Leopoldo Galtieri’s desire to distract his citizens from his country’s economic issues, ended after two months in 1982. For ten points, name this war in which the UK fought for a namesake island group that had been claimed by Argentina.",
+      "answer": [
+        "Falklands War",
+        "South Atlantic War",
+        "Malvinas War"
+      ]
+    },
+    {
+      "question": "This woman’s unstable financial situation late in life led Daniel Webster to send her goods through this woman’s former slave, Paul Jennings, and caused her to sell her family’s plantation, Montpelier. This woman and Jean Pierre Sioussat ensured the safety of a copy of Gilbert Stuart’s Lansdowne Portrait during the hurried evacuation of the White House in 1814. For ten points, name this First Lady, the wife of James Madison.",
+      "answer": [
+        "Dolley Payne Todd Madison",
+        "“Dolley” alone after “Madison” is read"
+      ]
+    },
+    {
+      "question": "This country’s Special Period of deprivation and economic depression began in 1989, after the loss of Eastern Bloc backing. This country’s Sierra Maestra mountains have been the site of many guerilla wars, including against the American-supported Fulgencio Batista who fled to the Dominican Republic after he was deposed. Che Guevara helped the communists take power in, for ten points, what island country that has been governed by the Castros since 1959?",
+      "answer": "Cuba"
+    },
+    {
+      "question": "Early versions of this system used “eka-” and other Sanskrit prefixes for entries that had been predicted but not yet discovered. The “law of octaves” was developed by John Newlands in an early attempt to create this system, which Lothar Meyer subdivided into six families based on valence. Glenn Seaborg revised this system with the “actinide concept.” For ten points, name this system that uses increasing atomic number to organize the elements, first designed by Dmitri Mendeleev.",
+      "answer": "periodic table of elements"
+    },
+    {
+      "question": "A ruler of this city obtained knowledge by communing with the muse Egeria. According to tradition, the doors of a temple in this city were closed during times of peace and opened during times of war. The legendary founder of this city was a son of Rhea Silvia who, as an infant, was sentenced to death by Amulius. For ten points, name this city, home to the Temple of Janus, where Jupiter was worshiped in the capital of an ancient empire.",
+      "answer": "Rome"
+    },
+    {
+      "question": "This state’s governor, Evan Mecham, raised a national furor by canceling Martin Luther King Day in 1987; he was impeached for obstruction of justice in 1988. A senator from this state gave a speech declaring that “extremism in defense of liberty is no vice” and was targeted by the “Daisy Ad.” Another senator from this state lost a presidential election after nominating Sarah Palin as his vice president. For ten points, name this state represented in the Senate by Barry Goldwater and John McCain.",
+      "answer": "Arizona"
+    }
+  ],
+  "q2": [
+    {
+      "tossup": {
+        "question": "This region lost much of its power in the Middle Ages following the revolt of Henry the Quarrelsome. The Wittelsbach kings were rulers from this region, which faced a “Potato War” that is also known as this region’s war of succession. The town of Schwangau in this region is the site of Neuschwanstein castle, which was built by “Mad” King Ludwig. For ten points, name this German region where the Beer Hall Putsch took place in Munich.",
+        "answer": [
+          "Bavaria",
+          "Bayern"
+        ]
+      },
+      "bonus": {
+        "question": "This man joined Hitler in Munich at the Beer Hall Putsch. With Paul von Hindenburg, this general led German forces at the Battle of Tannenberg.",
+        "answer": "Erich Ludendorff"
+      }
+    },
+    {
+      "tossup": {
+        "question": "For founding a movement named for this color, Wangari Maathai won a Nobel Peace Prize. A series of protests named for this color occurred after an election was rigged against Mir-Hossein Mousavi in favor of Mahmoud Ahmadinejad. A book named for this color contains quotations from Muammar Qaddafi, and a heavily policed “zone” of this color was under international control during the Iraq War. For ten points, name this color that often symbolizes environmental movements.",
+        "answer": [
+          "green",
+          "Green Belt Movement",
+          "Green Revolution",
+          "Green Book",
+          "Green Zone",
+          "Green Party"
+        ]
+      },
+      "bonus": {
+        "question": "The Green Party was represented in the 2000 US Presidential election by this consumer activist and author of Unsafe at Any Speed.",
+        "answer": "Ralph Nader"
+      }
+    },
+    {
+      "tossup": {
+        "question": "William “Green” Russell discovered precious metals in the vicinity of this mountain, which the Spanish called “El Capitan.” The “fifty-niners” participated in a gold rush named for this mountain, which led to the creation of the Denver Mint. This mountain’s namesake first sighted it in 1806 before his expedition was captured by Spanish forces and diverted to Santa Fe. For ten points, identify this Colorado mountain, a peak named after the American explorer Zebulon.",
+        "answer": "Pikes Peak"
+      },
+      "bonus": {
+        "question": "A view of Pikes Peak inspired Katharine Lee Bates to write the lyrics to this song, which praises the beauty of “amber waves of grain.”",
+        "answer": "America the Beautiful do not"
+      }
+    },
+    {
+      "tossup": {
+        "question": "While this man was busy subduing Parthia, his wife Fulvia used the issue of disputed land grants to fight a rival in the Perusine War. After this politician was denounced by fourteen speeches known as the Philippics, he condemned their author to death. His power was effectively ended after a devastating loss to Agrippa in the Battle of Actium. For ten points, name this ally and friend of Julius Caesar who committed suicide after mistakenly thinking that his lover, Cleopatra, was already dead.",
+        "answer": "Marc Antony or Marcus Antonius"
+      },
+      "bonus": {
+        "question": "This orator and consul of Rome attacked Marc Antony in the Philippics.",
+        "answer": "Marcus Tullius Cicero"
+      }
+    },
+    {
+      "tossup": {
+        "question": "One of these characters barricades himself in the wine cellar of an inn with his friend Grimaud. One of these characters takes Madame de Chevreuse as his mistress. These characters aid a friend on a mission to help the Duke of Buckingham replace diamonds that were stolen by Milady de Winter, thus foiling Cardinal Richelieu’s scheme to cause war between France and England. Athos, Porthos, and Aramis are the names of, for ten points, what trio who title an Alexandre Dumas [do-MAH] novel?",
+        "answer": [
+          "the Three Musketeers",
+          "Athos, Porthos, and Aramis in any order before “Athos” is said"
+        ]
+      },
+      "bonus": {
+        "question": "Dumas’s novel The Vicomte of Bragelonne claims that this mysterious prisoner, usually known by the name of a piece of clothing that he was compelled to wear at all times, was actually the twin brother of Louis XIV.",
+        "answer": "The Man in the Iron Mask"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This country lost land in a war that has been theorized as a proxy conflict between Royal Dutch Shell and Standard Oil. This country also lost the ports of Arica and Tacna in a war over a nitrate-rich coastal region that left it landlocked. This country lost the Chaco War as well as the War of the Pacific. For ten points, name this South American country whose navy was confined to Lake Titicaca after it lost its coastline.",
+        "answer": "Bolivia"
+      },
+      "bonus": {
+        "question": "The War of the Pacific was largely fought over this nitrogenous substance that, like guano, can be used in fertilizer and explosives production. Black gunpowder is a combination of sulfur, charcoal, and this compound.",
+        "answer": [
+          "saltpeter",
+          "potassium nitrate",
+          "KNO 3"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "An official portrait at this location incorrectly lists Christine Watkins and Michael Schwartner as its first visitors, rather than David MacPherson. The question “What must I do? Commit suicide?” was posed when security refused to allow Nikita Khrushchev to tour this location. This location was originally conceived to entertain tourists visiting a Burbank animation studio, and it now includes Tomorrowland and Sleeping Beauty Castle. For ten points, name this location in Anaheim, California, a theme park that opened in 1955.",
+        "answer": "Disneyland Park"
+      },
+      "bonus": {
+        "question": "A former heir of what dictatorial family was arrested trying to enter Tokyo’s Disneyland and subsequently assassinated in a Malaysian airport after his fall from grace?",
+        "answer": "Kim family"
+      }
+    },
+    {
+      "tossup": {
+        "question": "JohnParkerwaschargedwithneglectofdutyfornotbeingpresenttostopthisevent.HenryRathbone was driven insane by his inability to prevent this event and murdered his wife 20 years later. Mary Surratt was hanged for her role in this event, whose perpetrator was cornered and killed inside a barn. This event took place during a showing of Our American Cousin inside a private box at Ford’s Theater. For ten points, name this April 14, 1865 event carried out by John Wilkes Booth.",
+        "answer": "assassination or murder, shooting, etc. of Abraham Lincoln"
+      },
+      "bonus": {
+        "question": "John Wilkes Booth shouted this three word Latin phrase while leaping from the President’s box at Ford’s Theater.",
+        "answer": "Sic semper tyrannis"
+      }
+    }
+  ],
+  "q3": [
+    {
+      "category": "Revolutionary Boston",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "Shared last name of Sons of Liberty founder Sam and Boston-based lawyer John, who was later the second president.",
+          "answer": [
+            "Adams",
+            "Samuel Adams and/or John Adams"
+          ]
+        },
+        {
+          "question": "Product that was thrown overboard by colonists dressed as Native Americans at a namesake “Party.”",
+          "answer": [
+            "tea",
+            "Boston Tea Party"
+          ]
+        },
+        {
+          "question": "Revolutionary War battle where the order “Don’t fire until you see the whites of their eyes” was legendarily given.",
+          "answer": "Battle of Bunker Hill"
+        },
+        {
+          "question": "Objects used with hot tar in a humiliating form of mob violence used against British tax collectors.",
+          "answer": [
+            "feathers",
+            "tarring and feathering"
+          ]
+        },
+        {
+          "question": "African-American man who was the first to die at the Boston Massacre.",
+          "answer": "Crispus Attucks"
+        },
+        {
+          "question": "General who brought captured cannons from Fort Ticonderoga to Boston. He later served as the First Secretary of War.",
+          "answer": "Henry Knox"
+        },
+        {
+          "question": "Ship owned by John Hancock until the British seized it for suspected smuggling in 1768.",
+          "answer": "HMS Liberty"
+        },
+        {
+          "question": "Colonial Governor of Massachusetts whose mansion was ransacked during the Stamp Act riots.",
+          "answer": "Thomas Hutchinson"
+        }
+      ]
+    },
+    {
+      "category": "Elizabeth I",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "Religion whose persecution intensified in her later years as she embraced Protestantism.",
+          "answer": "Roman Catholicism"
+        },
+        {
+          "question": "Playwright patronized by Elizabeth who wrote Hamlet and Romeo and Juliet.",
+          "answer": "William Shakespeare"
+        },
+        {
+          "question": "London castle where Elizabeth was imprisoned during Wyatt’s Rebellion.",
+          "answer": "Tower of London"
+        },
+        {
+          "question": "Half-sister and predecessor of Elizabeth who got her nickname from violent persecution of Protestants.",
+          "answer": [
+            "Bloody Mary",
+            "Mary I",
+            "Mary Tudor"
+          ]
+        },
+        {
+          "question": "King who succeeded Elizabeth and established the House of Stuart in England.",
+          "answer": [
+            "James I",
+            "James VI of Scotland"
+          ]
+        },
+        {
+          "question": "Privateer employed by Britain who “singed the beard of the King of Spain” in a raid at Cadiz.",
+          "answer": "Sir Francis Drake"
+        },
+        {
+          "question": "Bill that established Elizabeth as the head of the Church of England, replacing a Bill of the same name from Henry VIII’s reign.",
+          "answer": "Act of Supremacy"
+        },
+        {
+          "question": "Spymaster and secretary to Elizabeth who secured the execution of Mary, Queen of Scots.",
+          "answer": "Sir Francis Walsingham Foreign Intervention in Central and South America Name the..."
+        }
+      ]
+    }
+  ],
+  "q4": [
+    {
+      "parts": [
+        "(30 pts) This man wears a crown of laurels on his deathbed in a Horace Vernet painting, and he holds a gold orb in a statue by Antonio Canova that portrays him as (20 pts)",
+        "“Mars the Peacemaker.” This man touches the wound of a shirtless soldier in a painting by Antoine Jean-Gros set in a plague house at (10 pts)",
+        "Jaffa. In another painting, Pope Pius VII blesses this ruler as he crowns his wife, Josephine. For ten points, name this emperor who crosses the Alps on a rearing horse in an 1801 painting by Jacques-Louis David [dah-veed]."
+      ],
+      "answer": [
+        "Napoleon I Bonaparte",
+        "either underlined part"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) This man’s colleague claimed that this man, not Robert Fotherby, was the first to discover the island of Jan Mayen. This man was given the ship Hopewell while in the service of the (20 pts)",
+        "Muscovy Company that sent him to the Arctic Circle in an attempt to reach the Indies. This captain of the Discovery was (10 pts)",
+        "cast adrift along with his son after a mutiny while he was attempting to search for the Northwest Passage. For ten points, name this English explorer for the Netherlands who names a large bay in Canada."
+      ],
+      "answer": "Henry Hudson"
+    },
+    {
+      "parts": [
+        "(30 pts) A relief effort during this battle featured heavy fighting around the Alksay River. Initially, one side in this battle had only the 1077th Anti-Aircraft, a primarily (20 pts)",
+        "female regiment, to defend itself. This battle, which was part of a larger thrust called Case Blue towards Baku, included heavy fighting around (10 pts)",
+        "Pavlov’s House. Operation Uranus encircled Field Marshal Paulus’ Sixth Army during, for ten points, what World War II siege on the Volga, a failed Nazi attempt to capture a city named after a Soviet leader?"
+      ],
+      "answer": "Battle of Stalingrad"
+    },
+    {
+      "parts": [
+        "(30 pts) Leonard Bernstein once added an impromptu new conclusion to this piece during his Young People’s Concert series, and Colin Matthews wrote an extra movement for this piece in 2000. At this work’s premiere, its composer recruited students from (20 pts)",
+        "St. Paul’s Girls’ School for a movement where an offstage choir can be heard. One of this work’s most famous melodies, “Thaxted,” is heard in a movement subtitled (10 pts)",
+        "“Bringer of Jollity,” one of seven astrologically named movements. For ten points, name this suite composed by Gustav Holst that opens with “Mars, the Bringer of War.”"
+      ],
+      "answer": "The Planets, Opus 32"
+    },
+    {
+      "parts": [
+        "(30 pts) Joseph de Guignes believed these people were descended from the Xiongnu [zong-nu]. The Peace of Anatolius and the Treaty of Margus were signed to stop this group’s expansion. (20 pts)",
+        "Theodoric and Flavius Aetius fought this group after it had been ruled by men like Rugila and Bleda. These people lost the Battle of the (10 pts)",
+        "Catalaunian Plains under a leader who was persuaded not to sack Rome by Pope Leo I. For ten points, name this nomadic group that helped cause the downfall of the Roman Empire under its leader, Attila."
+      ],
+      "answer": "Huns"
+    },
+    {
+      "parts": [
+        "(30 pts) This country’s president, Andres Pastrana, was famed for his tough line on Communist guerrillas, one faction of whom was led by Timochenko. The assassination of Jose Eliecer Gaitan began a civil war in this country known as (20 pts)",
+        "La Violencia. A former president of this country won a Nobel Peace Prize in 2016 for signing a peace accord with (10 pts)",
+        "FARC. A drug trafficker from this country, Pablo Escobar, briefly held a seat in its Senate. Juan Manuel Santos once led, for ten points, what South American country where drug-related violence has plagued the capital of Bogota?"
+      ],
+      "answer": "Colombia"
+    },
+    {
+      "parts": [
+        "(30 pts) This man defined virtue as self-denial and rationality, and he encouraged parents to nourish the physical health of their children in a series of letters to Edward Clarke that would later be published as Some Thoughts (20 pts)",
+        "Concerning Education. This thinker, who argued that civil society was created to preserve private property, wrote that man is born without (10 pts)",
+        "innate ideas but is instead a tabula rasa in his Essay Concerning Human Understanding. For ten points, name this English philosopher, a key inspiration for Jefferson’s work on the Declaration of Independence."
+      ],
+      "answer": "John Locke"
+    },
+    {
+      "parts": [
+        "(30 pts) This man was appointed by Harry Truman to chair a commission eliminating federal inefficiencies. This man proclaimed “when in doubt, eat potatoes” as head of the Food Administration during (20 pts)",
+        "World War I. This man, who signed the Smoot-Hawley Tariff, authorized Douglas MacArthur’s use of force in the Anacostia Flats to evict the Bonus Army. (10 pts)",
+        "Shantytowns were built in the early 1930s and named for, for ten points, what US president who faced the beginning of the Great Depression?"
+      ],
+      "answer": "Herbert Hoover"
+    }
+  ]
+}
