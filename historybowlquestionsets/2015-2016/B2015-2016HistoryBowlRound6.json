@@ -1,0 +1,336 @@
+{
+  "q1": [
+    {
+      "question": "Maurice Brodie developed a remedy for this disease while a research assistant at NYU, and John Enders was awarded the 1954 Nobel for his cultivation of this virus in the lab. The first live vaccine for this disease was tested at Letchworth Village in New York City. One sufferer of this disease had a bathtub installed on the USS Iowa for its treatment and founded the March of Dimes. For ten points, name this virus that paralyzed FDR.",
+      "answer": "poliomyelitis"
+    },
+    {
+      "question": "Augustus the Strong was dethroned during this war, and one side in this war attacked in a blinding snowstorm, winning the Battle of Narva. The turning point of this war saw General Adam Lewenhaupt and his Caroleans defeated while attempting to storm the Great Redoubt. That battle forced the exile of the losing ruler, Charles XII. For ten points, name this war, mostly fought between Russia and Sweden, which saw the Battle of Poltava won by Peter the Great.",
+      "answer": "Great Northern War"
+    },
+    {
+      "question": "This country won the Battle of Breadfield, and it failed to subjugate Moldavia after the Battle of Baia. One campaign led by a king of this country lifted a siege of Belgrade, and that king lost the Battle of Kosovo to an empire that would later conquer this country at the Battle of Mohacs [MO-hotch]. For ten points, name this country led by Janos [YAH-nosh] Hunyadi, which was conquered by Suleiman the Magnificent and was once in a personal union with Austria.",
+      "answer": [
+        "Hungary",
+        "Magyarorzag"
+      ]
+    },
+    {
+      "question": "This commodity is mined from sulfide ore in the Escondida near Antofagasta. A mine for this metal and gold in Copiap´o collapsed in 2010, trapping 33 miners for over two months. The Atacama Desert is rich in this metal, making Chile the world’s leader in its production. For ten points, name this conductive metal which alloys with tin to make bronze.",
+      "answer": "copper"
+    },
+    {
+      "question": "Francis Heney prosecuted this city’s Mayor Eugene Schmitz in a series of 1908 graft trials. William Ralston constructed the Palace Hotel in this city, which was later burned down after a disaster here killed the fire chief, Dennis Sullivan. The neighborhoods of North Beach and Telegraph Hill in this city were heavily damaged in that disaster, which featured heavy underreporting of casualties in this city’s Chinatown district. For ten points, name this California city which suffered a devastating earthquake in 1906.",
+      "answer": "San Francisco"
+    },
+    {
+      "question": "This ruler, who described himself as the “Beloved of the Gods,” protected his power by assassinating his half-brother Susima. This patron of the Great Stupa at Sanchi and son of Bindusara ruled from Magadha. His visions of bloodshed after winning the Kalinga War led him to convert to Buddhism. For ten points, name this grandson of Chandragupta and emperor of the Mauryans.",
+      "answer": "Ashoka the Great"
+    },
+    {
+      "question": "This artist sang “We met as soulmates on Parris Island” in his song about Vietnam veterans, “Goodnight Saigon.” Another song from his album The Nylon Curtain was inspired by the closing of Bethlehem Steel in Allentown. This Long Island resident rhymed “Bernie Goetz” with “homeless vets” in a song that proclaimed the title phenomenon “was always burning since the world’s been turning.” for ten points, name this singer of “Movin’ Out” and “We Didn’t Start The Fire.”",
+      "answer": "Billy Joel"
+    },
+    {
+      "question": "A 2003 dig at this location discovered the possible grave of Bartholomew Gosnold, the founder of this location’s Charter Company. The “Rude Answer” was given by a leader of this colony, who was reinforced by Christopher Newport. It was burned down after a rebellion against William Berkeley, Bacon’s Rebellion, and it was settled by a man who had his life apocryphally saved by Pocahontas. For ten points, name this first permanent English settlement in the U.S., led by John Smith.",
+      "answer": "Jamestown"
+    },
+    {
+      "question": "In a literary work, refugees from one of these events camp out at a villa in Fiesole [fee-AY-so-lay] for two weeks and tell stories that include one about “Patient Griselda.” People trying to stop this event wore masks with bird beaks, and the Flagellants gained notoriety for their self-abuse during this event. Boccaccio’s Decameron is set during, for ten points, what epidemic in the 1300s that killed over thirty percent of Europe’s population?",
+      "answer": [
+        "bubonic plague",
+        "Black Death",
+        "Black Plague"
+      ]
+    },
+    {
+      "question": "Suzanne Massie taught this politician to “trust, but verify.” As governor, he signed the Therapeutic Abortion Act and banned public carry of firearms with the Mulford Act. As President, he launched an invasion to protect American medical students, Operation Urgent Fury, which deposed Maurice Bishop in Grenada. For ten points, name this U.S. President who served as Governor of California after his acting career.",
+      "answer": "Ronald Reagan"
+    }
+  ],
+  "q2": [
+    {
+      "tossup": {
+        "question": "This man accused Mitch McConnell of telling an “out-right lie” with regards to the Export-Import Bank. He criticized the Obama administration’s handling of the death of Darren Goforth, a sheriff’s deputy in this man’s state. This successor to Kay Bailey Hutchinson filibustered the Affordable Care Act in 2013 shortly after being elected as the junior Senator from Texas. For ten points, name this Republican senator and 2016 Presidential candidate.",
+        "answer": "Ted Cruz"
+      },
+      "bonus": {
+        "question": "Ted Cruz served as a clerk to this Supreme Court Justice who, as a law clerk, defended Plessy v. Ferguson in an infamous 1952 memo.",
+        "answer": "William Rehnquist"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This man allowed volunteer troops from his country to fight against the Soviet Union as the Blue Division, despite maintaining official neutrality in World War II. The German Condor Legion assisted this leader of the Falange by bombing the Basque city of Guernica. This man defeated the Communist-backed Republicans in his country’s 1930’s civil war. For ten points, name this fascist dictator who led Spain from 1936 to 1975.",
+        "answer": "Francisco Franco Bahamonde"
+      },
+      "bonus": {
+        "question": "In 1969, Franco closed the border between Spain and this tiny peninsular territory to its south, which had been ceded to Great Britain in the Treaty of Utrecht.",
+        "answer": "Gibraltar"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This man’s retirement was delayed by a scandal concerning Louis Wolfson. The John Birch Society put up posters urging the impeachment of this man, and his court ruled school prayer unconstitutional in Engel v. Vitale. This Supreme Court justice’s court presided over cases which greatly expanded the rights of criminals, such as Gideon v. Wainwright. For ten points, name this liberal Chief Justice, a former Governor of California, who served from 1953 to 1969.",
+        "answer": "Earl Warren"
+      },
+      "bonus": {
+        "question": "In this 1966 Warren Court case, a “warning” to inform suspects of their Fifth and Sixth Amendment rights was made mandatory for police officers in certain arresting situations.",
+        "answer": "Miranda v. Arizona"
+      }
+    },
+    {
+      "tossup": {
+        "question": "One of the first cities of this civilization was said to have held the Abzu temple to a water god. The world’s oldest surviving law code, found at Nippur, came from this civilization’s king — Ur-Nammu. An ancient text from this civilization lists its kings, but omits the Lagash dynasty. The First Dynasty of — Uruk includes a man whose friend Enkidu dies after helping him; that man was the legendary Gilgamesh. For ten points, name this Mesopotamian civilization that was conquered by Sargon the Great.",
+        "answer": "Sumeria"
+      },
+      "bonus": {
+        "question": "Sargon the Great was king of this other Mesopotamian empire, which collapsed in 2154 BC and occupied cities from Nineveh to Ur.",
+        "answer": "Akkadian Empire"
+      }
+    },
+    {
+      "tossup": {
+        "question": "One of these events established a “right to work” advocated for by Louis Blanc, and included a separate instance of this type of event during it when the National Workshops were closed, known as the June Days. Another instance of this type of event saw the defeat of the Legitimists, and led to the July Monarchy. The most important event of this type saw the creation of the Constitutional Assembly and one part of it ended by the Thermidorian Reaction. For ten points, name this type of event, one of which began in 1789 and included the execution of Louis XVI.",
+        "answer": [
+          "Revolutions in France",
+          "equivalents, including just French Revolution"
+        ]
+      },
+      "bonus": {
+        "question": "The June Days occurred during France’s revolution of this year, which also saw revolutions all across Europe. This year is sometimes known as the Spring of Nations.",
+        "answer": "1848"
+      }
+    },
+    {
+      "tossup": {
+        "question": "Solomon Southwick was this party’s unsuccessful nominee for Governor of New York in 1828, and it grew in popularity after William Morgan’s alleged killing by a group on the Niagara River. This earliest 3rd party in the U.S. nominated William Wirt for President in the 1832 election. For ten points, name this single-issue party that eventually merged with the Whig Party and opposed a certain secret society.",
+        "answer": "Anti-Masonic Party"
+      },
+      "bonus": {
+        "question": "The Anti-Masonic Party held the first one of these events in Baltimore in 1831, endorsing Wirt and Amos Ellmaker. The Democratic Party followed suit several months later with one of these events to replace John Calhoun with Martin Van Buren.",
+        "answer": "nominating conventions for Presidential candidates"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This artist used gold and tempera to create a Dormition of the Virgin in the Byzantine style, and painted an Allegory of a Christian Knight in his Modena Triptych. In a painting by this artist, the three Marys watch in sorrow as a man in green attempts to pull off the red cloak of Jesus. This painter of The Disrobing of Christ painted the Castle of San Servando in a depiction of his adopted hometown, his View of Toledo. For ten points, name this Greek-born Spanish Mannerist painter.",
+        "answer": [
+          "El Greco",
+          "Domenikos Theotokopoulos"
+        ]
+      },
+      "bonus": {
+        "question": "This nobleman rises up to heaven while his body is buried by Saints Stephen and Augustine in a namesake work by El Greco, which includes the artist’s self-portrait in a crowd of funeral attendees.",
+        "answer": [
+          "Count Orgaz or Don Gonzalo Ru’iz",
+          "The Burial of the Count of Orgaz"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "Albert of Mainz’s desire for cathedrals prompted the writing of this document, which was anticipated by a similar document written by Andreas Karlstadt. It ends by casting away prophets who say “Peace, peace!” without providing peace. The papal bull Exsurge Domine [ex-oor-gay doh-me-nay] identified 41 mistakes in this work. For ten points, name this list of complaints directed towards the Catholic Church and its policy of indulgences that was apocryphally nailed to a door in Wittenberg by Martin Luther.",
+        "answer": "95 Theses"
+      },
+      "bonus": {
+        "question": "At this imperial diet in 1521, Martin Luther supposedly claimed “Here I stand; I can do no other” while standing up to Charles V. Johann Eck debated Luther at this meeting.",
+        "answer": "Diet of Worms"
+      }
+    }
+  ],
+  "q3": [
+    {
+      "category": "The Great Lakes",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "state that once sued its southern neighbor, Illinois, over lowering Lake Michigan’s water level.",
+          "answer": "Wisconsin"
+        },
+        {
+          "question": "Ohio city on Lake Erie and the once-aflame Cuyahoga River.",
+          "answer": "Cleveland"
+        },
+        {
+          "question": "river the drains Lake Erie into Lake Ontario, on which three massive waterfalls lie?",
+          "answer": "Niagara River or Niagara Falls"
+        },
+        {
+          "question": "river, once invaded by German U-boats, that connects Lake Ontario to the Atlantic.",
+          "answer": "Saint Lawrence River"
+        },
+        {
+          "question": "American naval commander who said “we have met the enemy, and they are ours” at the Battle of Lake Erie.",
+          "answer": "Oliver Hazard Perry"
+        },
+        {
+          "question": "lake on the Vermont-New York border that Bill Clinton briefly made the “sixth” Great Lake.",
+          "answer": "Lake Champlain"
+        },
+        {
+          "question": "freighter that sank on Lake Superior in 1975, killing 29.",
+          "answer": "SS Edmund Fitzgerald"
+        },
+        {
+          "question": "1818 treaty that limited naval forces on the Great Lakes.",
+          "answer": "Rush-Bagot Treaty"
+        }
+      ]
+    },
+    {
+      "category": "Congress of Vienna",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "Alpine country whose neutrality was guaranteed.",
+          "answer": "Switzerland"
+        },
+        {
+          "question": "country whose delegation was led by Tsar Alexander I.",
+          "answer": "Russia"
+        },
+        {
+          "question": "Austrian statesman who organized the Congress.",
+          "answer": "Klemens Wenzel von Metternich"
+        },
+        {
+          "question": "French representative who forced his way into the inner circle and may have betrayed Napoleon’s conquests.",
+          "answer": "Charles Maurice de Talleyrand"
+        },
+        {
+          "question": "French town, formerly home to a line of antipopes, which was not returned to the Papal States.",
+          "answer": "Avignon"
+        },
+        {
+          "question": "region home to Dresden, which was partially given to Prussia.",
+          "answer": "Saxony"
+        },
+        {
+          "question": "second wife of Napoleon who was made Duchess of Parma.",
+          "answer": "Marie-Louise"
+        },
+        {
+          "question": "Swedish territory on the south Baltic coast, given from Denmark to Prussia.",
+          "answer": "Swedish Pomerania"
+        }
+      ]
+    },
+    {
+      "category": "Rulers of Rome",
+      "prompt": "Which ruler of Rome...",
+      "questions": [
+        {
+          "question": "founded Rome with his brother Remus?",
+          "answer": "Romulus"
+        },
+        {
+          "question": "was stabbed to death on the Ides of March?",
+          "answer": "Gaius Julius Caesar"
+        },
+        {
+          "question": "fiddled while Rome burned?",
+          "answer": "Nero"
+        },
+        {
+          "question": "was the first Emperor of Rome and was the adopted son of Julius Caesar?",
+          "answer": "Augustus Caesar"
+        },
+        {
+          "question": "commemorated his wars against Dacia with a column in Rome?",
+          "answer": "Trajan or Marcus Ulpius Traianus"
+        },
+        {
+          "question": "established the Tetrachy and led the last persecution of Christians?",
+          "answer": "Diocletian"
+        },
+        {
+          "question": "succeeded his father Vespasian and completed the Colosseum?",
+          "answer": "Titus"
+        },
+        {
+          "question": "tried to regain power in Rome by allying with Veii and Lars Porsena’s Clusium?",
+          "answer": "Tarquin the Proud or Lucius Tarquinius Superbus"
+        }
+      ]
+    }
+  ],
+  "q4": [
+    {
+      "parts": [
+        "(30 pts) Sherron Watkins blew the whistle on this company, which caused blackouts in California in 2000 with its manipulative speculating. The Sarbanes-Oxley Act was passed in the wake of this company’s end, after which the (20 pts)",
+        "Arthur Andersen accounting firm was discredited and Jeff Skilling and (10 pts)",
+        "Ken Lay were convicted of fraud. For ten points, name this energy company based in Houston, Texas, which suffered the largest Chapter 11 bankruptcy in U.S. history in 2001."
+      ],
+      "answer": "Enron Corporation"
+    },
+    {
+      "parts": [
+        "(30 pts) This man’s ministry saw the passage of the Railways act, which was introduced by this man’s minister of transport, Eric Geddes. This man won the “Coupon election” against Andrew Bonar (20 pts)",
+        "Law, and avoided war with Turkey after an invasion of the Dardanelles in the Chanak Crisis. While Minister of the Exchequer under Herbert Asquith, this man championed the (10 pts)",
+        "People’s Budget, and this man’s ministry saw women gain the right to vote in Great Britain. For ten points, name this Welsh British prime minister of the Liberal party who led Great Britain at the Versailles Conference."
+      ],
+      "answer": "David Lloyd George"
+    },
+    {
+      "parts": [
+        "(30 pts) A former employee of this organization alleged that “company men A and F” wanted to fix a 2002 event in favor of Los Angeles. Bill Kennedy, another employee of this organization, came out as (20 pts)",
+        "gay in December 2015 after being the target of a homophobic slur by Rajon Rondo. Former referee (10 pts)",
+        "Tim Donaghy gambled on games run by this organization under commissioner David Stern. For ten points, name this professional sports league that may have rigged the 1984 draft lottery to give Patrick Ewing to the New York Knicks."
+      ],
+      "answer": [
+        "National Basketball Association or NBA",
+        "National Basketball Referees Association",
+        "NBRA",
+        "descriptions thereof"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) One of this man’s operas includes a scene in which an elderly Edgar Ray Killen recounts his role in a trio of 1964 Mississippi murders, and primarily depicts the final battle and surrender of the Confederate Army. This composer of (20 pts)",
+        "Appomattox dramatized the reign of a monotheistic pharaoh in the final part of his “Portrait Trilogy” and inserted five scene-change “knee plays” in a five-hour opera about the title (10 pts)",
+        "physicist. For ten points, what American minimalist wrote the operas Akhnaten and Einstein on the Beach?"
+      ],
+      "answer": "Philip Glass"
+    },
+    {
+      "parts": [
+        "(30 pts) One philosophical split in this movement pitted Lysander Spooner’s arguments against those of Wendell Phillips’ “disunionists.” Bates College and Oberlin College were founded in support of this movement, and (20 pts)",
+        "Elijah Lovejoy was killed by a mob in Illinois for supporting it. Newspapers devoted to this cause included (10 pts)",
+        "The North Star and The Liberator, published by William Lloyd Garrison. For ten points, name this movement led by Frederick Douglass, whose goal was to end slavery."
+      ],
+      "answer": [
+        "abolitionism or abolition of slavery",
+        "ending slavery",
+        "equivalents before “slavery”"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) Sociologist George Ritzer used this company as a metaphor for cultural homogenization. Thomas Friedman has claimed that no two countries where this company does business have ever gone to war with each other. Since 1986, the price of this corporation’s signature product has been used in an (20 pts)",
+        "“index” measuring purchasing power by The Economist. Stella Liebeck’s lawsuit against this corporation was explored in the documentary (10 pts)",
+        "Hot Coffee. For ten points, name this fast food restaurant chain that sells the Big Mac."
+      ],
+      "answer": "McDonald’s"
+    },
+    {
+      "parts": [
+        "(30 pts) Former President Rutherford B. Hayes arbitrated a land dispute in the aftermath of this war, in which the losing general was killed during the battle of Cerro Cor´a. It began after the invasion of Mato Grosso, leading (20 pts)",
+        "Dom Pedro II, Bartolome Mitre, and Venancio Flores to form a coalition against Francisco Solano Lopez. Over half of (10 pts)",
+        "Paraguay’s population was killed in, for ten points, what war against an alliance of Argentina, Uruguay, and Brazil?"
+      ],
+      "answer": [
+        "War of the Triple Alliance",
+        "Paraguayan War before Paraguay is mentioned"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) Representatives of this city declared “the weak suffer what they must” before destroying the town of Melos. This city won the Battle of Sphacteria, but it was later subjected to the rule of the (20 pts)",
+        "Thirty Tyrants after losing the Battle of Aegospotami. This city, which was connected to its port at (10 pts)",
+        "Piraeus by the Long Walls, lost its maritime empire after it led a disastrous offensive against Syracuse. For ten points, name this city that launched the Sicilian Expedition during the Second Peloponnesian War against Sparta."
+      ],
+      "answer": "Athens"
+    }
+  ]
+}
