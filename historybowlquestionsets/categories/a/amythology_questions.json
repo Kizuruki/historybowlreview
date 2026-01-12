@@ -1,6 +1,501 @@
 {
-  "q1": [],
-  "q2": [],
-  "q3": [],
-  "q4": []
+  "q1": [
+    {
+      "question": "In the Tummal inscription, this character and his son rebuild a sanctuary to the goddess Ninlil. In another appearance, he hears counsel about the fool being given chaff and about a three-ply rope not being easily broken. This character meets Siduri after mourning a friend for seven days and travels to see the flood survivor Utnapishtim. He defeats Humbaba in a cedar forest with the help of his companion, a former wild-man named Enkidu. For 10 points, name this king of Uruk, the hero of a namesake epic.",
+      "answer": "Gilgamesh"
+    },
+    {
+      "question": "A popular myth about these people was promulgated by the Geatish Society during the early 19th century. Charles the Simple bought off these people with the Treaty of Saint-Clair-sur-Epte. These people were responsible for the destruction and looting of the Lindisfarne abbey in 793, and they raided much of Northern and Western Europe by traveling in longships. For ten points, name these Germanic people, whose rulers included Canute the Great, who were notorious for their pillaging.",
+      "answer": "Vikings"
+    },
+    {
+      "question": "This man’s concept of “election” was rejected by Karl Barth. The Consensus Tigurinus resolved a dispute between this man and Huldrych Zwingli [z’ving-lee] over the nature of the Eucharist. Nicolas de la Fontaine brought Michael Servetus to trial on behalf of this man, which led to Servetus being burned at the stake. He believed that God alone chooses who is saved, according to his idea of predestination. For ten points, name this French Protestant and author of The Institutes of Christian Religion who led the Reformation in Geneva.",
+      "answer": "John Calvin"
+    },
+    {
+      "question": "Description acceptable. Stephen Roberts’ “historical induction” argument argues against this philosophical position. Alvin Plantinga argues for this philosophical position based on neo-Aristotelian models of modal logic. The “Ultimate Boeing 747 Gambit” was used to attack the watchmaker argument for this position by Richard Dawkins, one of the “Four Horsemen” who fought against it. Atheists reject, for ten points, what belief in the presence of a deity?",
+      "answer": [
+        "the existence of God",
+        "descriptions referring to the existence of one",
+        "more gods and equivalents"
+      ]
+    },
+    {
+      "question": "These people discovered a “land of stone slabs” that might be the Torngat Mountains. These people harvestedlumberfromMarklandandrecordedfindinggrapesinanotherarea.Thesepeoplebattledagainst Skraelings and found grapes during their brief settlements in Vinland and at L’Anse Aux Meadows. The first European peoples to land in Canada were, for ten points, what Scandinavians, including the explorer Leif Ericsson?",
+      "answer": [
+        "Norsemen or Vikings",
+        "Danes",
+        "Greenlanders"
+      ]
+    },
+    {
+      "question": "One member of this family became the first woman appointed to the Harvard University faculty and fought typhoid in Chicago from Hull House. Another member of this family served as the Headmistress of the Bryn Mawr college prep school in Baltimore for 26 years, then detailed the “Timeless Tales of Gods and Heroes” in a 1942 work whose first section teaches about Greek creation myths. For ten points, name this family, including public health advocate Alice and classicist Edith, the author of Mythology.",
+      "answer": [
+        "Hamilton",
+        "Alice and/or Edith Hamilton"
+      ]
+    },
+    {
+      "question": "A symbol of authority possessed by the holder of this position was a set of nine cauldrons, or ding. A group of five legendary holders of this position are paired with the Three Sovereigns in many ancient texts, and the most prominent member of that group is usually named after the color yellow. The holder of this position was given the right and ability to rule from a divine provenance, which was called the Mandate of Heaven. For ten points, name this position held by monarchs from the Han Dynasty.",
+      "answer": [
+        "Emperor of China",
+        "equivalents such as king of China",
+        "ruler of China"
+      ]
+    },
+    {
+      "question": "This god burned himself to death after he slept with a celibate priestess while drunk. This god contributed his own blood to create the fifth world-cycle, and supposedly invented books and the calendar. This brother of Xolotl [sho-LOT-ull] was identified with Venus and, supposedly, also with the conquistador Hernan Cortes when he arrived in Mexico in 1519. For ten points, name this Aztec God who fought with Tezcatlipoca, a feathered serpent.",
+      "answer": "Quetzalcoatl"
+    },
+    {
+      "question": "Adam of Bremen claimed that the people of Uppsala would sacrifice animals to this god during wartime. Through the process of interpretatio romana, Tacitus equated this deity with Mercury. Animals may have been hung by the neck in honor of this god’s impalement and self-hanging from Yggdrasil to receive knowledge of the runes. The day Wednesday is believed to have been derived from the name of, for ten points, what one-eyed chief god of the Norse pantheon, the father of Thor?",
+      "answer": [
+        "Odin",
+        "Wotan"
+      ]
+    },
+    {
+      "question": "Archaeologist John Marshall claims that the Pashupati seal depicts a “proto” version of this god surrounded by animals. This god’s name originally was applied as an epithet to the Vedic god Rudra, with whom this god was syncretized. This god is depicted with a third eye, which he used to destroy the love god Kama. Parvati is the wife of, for ten points, what Hindu destroyer god who makes up the Trimurti with Vishnu and Brahma?",
+      "answer": "Shiva or Siva"
+    },
+    {
+      "question": "In the Peloponnese, this god's cult depicted him as a singular horse. Along with Apollo, this god watched over Greek colonists during their travels. This god's signature weapon was created by the Telchines [[TEL-kines]], and, according to legend, this husband of Amphitrite [[am-fih-TRY-tee]] offered a salt water spring in an attempt to become the patron god of Athens. This god was worshipped in his \"earth shaker\" form due to his ability to cause earthquakes by striking the ground with his trident. For ten points, name this Greek god of the ocean.",
+      "answer": "Poseidon"
+    },
+    {
+      "question": "Ancient pilgrimages to this location included a ritual of inscribing messages to the gods in ashes. The Horae, or Seasons, were held to be the guards of the gate to this location. The Pythian games were celebrated near the base of this location in honor of the god Apollo. Bellerophon was prevented from entering this location when Zeus sent a gadfly to bite Pegasus, and residents of this location ate nectar and ambrosia. For ten points, name this tallest mountain in Greece, which was believed to be the home of the Greek gods.",
+      "answer": "Mount Olympus"
+    },
+    {
+      "question": "The archer Tripurantaka and the dog-riding Bhairava are avatars of this deity, the patron of yoga, meditation, and the arts. The Ganges flows from the hair of this rider of the white bull, Nandi. The five mantras of this god reflect the sacredness of that number for this deity, whose sons by Parvati are Kartikeya and Ganesha. Brahma and Vishnu join this blue- throated god to make up the Trimurti. For ten points, name this Hindu destroyer-god who possesses a third eye.",
+      "answer": "Shiva or Mahadeva"
+    },
+    {
+      "question": "This figure incorporated a band he managed, Lou Reed's Velvet Underground, into his multimedia art show, the Exploding Plastic Inevitable. This man was shot after the author of the radical feminist work, the SCUM Manifesto, Valerie Solanas, claimed he had too much control over her life. Silkscreen ink was used by this artist to depict the preeminent Communist leader Mao Zedong. 32 Campbell's Soup Cans and the Marilyn Diptych were created by, for ten points, which American Pop artist?",
+      "answer": "Andy Warhol or Andrew Warhola, Jr."
+    },
+    {
+      "question": "Leo von Klenze [[KLEN-zuh]] built a temple named for this place under the auspices of Ludwig of Bavaria, and included several busts of historical Germans. The legendary king Vanlandi visited this site in a work that describes a \"historical\" figure's law about the dead being burned and their ashes buried. The Heimskringla discusses that ritual for reaching this place, which is accomplished by Eric Bloodaxe, king of Norway, in an epic poem. For ten points, name this mythical hall of slain warriors that Norse pagans believed awaited them in the afterlife.",
+      "answer": [
+        "Valhalla or Walhalla",
+        "Walhalla Temple"
+      ]
+    },
+    {
+      "question": "In this nation's mythology, a horned, transparent man known as the \"Divine Farmer\" introduced agricultural techniques and various drugs. The mother goddess of this nation's myth system, Nuwa, was a turtle who held the heavens and Earth on her back. This nation was created by the breath of Pangu with the help of the Kirin and the immortal Phoenix, and the first mythical king of its Xia [[SHAH]] dynasty was Yu the Great. For ten points, name this country whose populace was wiped out by a mythical great flood of its Yellow River.",
+      "answer": [
+        "China",
+        "Zhongguo"
+      ]
+    },
+    {
+      "question": "Aeneas and Anchises [[ahn-KYE-ses]] collected ritual statues found in these places, which they called \"our holy symbols,\" shortly before fleeing Troy in the Aeneid. They're not temples, but statues of the trimorphic goddess Hecate [[heh-KAH-teh]] were often placed at these sites. The lararium was an altar or niche in these places meant for gods known as the Lares Familiares, or family deities. The Domus was a Roman variety of, for ten points, what type of locale used as human residences?",
+      "answer": [
+        "Homes or Houses",
+        "Domicile",
+        "Residence before mentioned",
+        "or other synonyms",
+        "Domus before mentioned"
+      ]
+    }
+  ],
+  "q2": [
+    {
+      "tossup": {
+        "question": "One side in this battle landed at Pevensey, while the other had just resisted a Viking invasion\nled by Harald Hardrada [hard-dra-duh] at Stamford Bridge. Feigned retreats lead to the thinning\nof the shield wall at this battle, although the death of one commander was the deciding factor.\nFor 10 points, name this 1066 victory for William the Conqueror that lead to the Norman\nconquest of England.",
+        "answer": [
+          "Battle of Hastings",
+          "Hastings"
+        ]
+      },
+      "bonus": {
+        "question": "The Battle of Hastings is recorded in this work of art, which depicts Harold Godwinson\nbeing felled by an arrow to his eye.",
+        "answer": [
+          "Bayeux",
+          "Bayeux Tapestry"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "According to a book named after him, this god once spent eight years underground milking cows. This god turned Idunn into a nut to rescue her from her kidnapper Thiazzi. Skadi placed a serpent above this god, whose venom causes him to writhe so violently the earth shakes. This god took the form of a mare to sleep with Svadilfari, a union that produced Sleipnir. For 10 points, identify this trickster god of Norse mythology.",
+        "answer": "Loki"
+      },
+      "bonus": {
+        "question": "Loki once got kicked out of a party hosted by this god for killing his servant Fimafeng. Like Njord, he was a god of the sea.",
+        "answer": "Aegir"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This man described the process to conversion in Religious Affections. He quoted Deuteronomy 32:25, “their foot shall slide in due time,” as the inspiration for a work that uses the image of a spider’s web failing to hold a rock. That work by this man compared the wicked Israelites to the audience, a congregation in Connecticut. For ten points, name this Puritan revivalist preacher who noted that only the “meer pleasure of God” kept wicked men out of Hell in his sermon Sinners in the Hands of an Angry God.",
+        "answer": "Jonathan Edwards"
+      },
+      "bonus": {
+        "question": "Edwards was a leader in this 18th century religious revival movement in New England. George Whitefield spread this movement to Britain.",
+        "answer": "First Great Awakening"
+      }
+    },
+    {
+      "tossup": {
+        "question": "The twelve Jyotirlinga [j’yoh-teer-LINGA] shrines dedicated to this god include one at Somnath and the Rameswaram temple, which includes a body of water named for Agni, a cognate of this modern god. Statues of this god wear five serpents and hold a trident in one of their four arms. With Parvati, this god is the father of Ganesha. For ten points, name this Hindu destruction god who forms the Trimurti with Brahma and Vishnu.",
+        "answer": "Shiva or Siva"
+      },
+      "bonus": {
+        "question": "Like Agni, Rudra is historically closely related to Shiva; this monkey king from the Ramayana is sometimes considered an avatar of Rudra.",
+        "answer": "Hanuman"
+      }
+    },
+    {
+      "tossup": {
+        "question": "When this man took the throne, he killed two of his father’s advisers and his brother Adonijah. This man’s son promised to be harsher to his subjects than this man was, a mistake that led to the division of this man’s kingdom. Earlier, this father of Rehoboam offered a thousand burnt offerings at the Temple he built, for which God gave him wisdom and fabulous wealth. For ten points, name this king of Israel, the son and successor of David.",
+        "answer": [
+          "Solomon",
+          "Shlomo",
+          "Jedidiah"
+        ]
+      },
+      "bonus": {
+        "question": "Solomon is traditionally credited as the author of this book of wisdom. Its third chapter begins with a passage noting “For everything there is a season...”",
+        "answer": [
+          "Ecclesiastes",
+          "Kohelet"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "These people “trampled on the bodies of saints [...] like dung in the streets,” according to Alcuin’s description of their raid on Lindisfarne. These people were recruited to form the Varangian Guard by the Byzantines. Charles the Simple signed the Treaty of Saint-Claire-sur-Epte, granting these people land in Western Europe, and they were granted Normandy after carrying out a series of raids down the Seine River in their longships. For ten points, name these seafaring marauders from Scandinavia who didn’t actually wear iconic two-horned caps.",
+        "answer": "Vikings"
+      },
+      "bonus": {
+        "question": "The Vikings conquered England in 1016 under the leadership of this ruler. He defeated Edmund Ironside at Assandun to take power, and, like Alfred, is known as “the great.”",
+        "answer": "Canute the Great or Cnut the Great"
+      }
+    },
+    {
+      "tossup": {
+        "question": "An artifact said to have belonged to this deity was chewed and spit out to create other deities. Another artifact was believed to have been hung from a tree to lure this deity from a cave; that mirror is believed to be held at the Grand Shrine of Ise [ee-say]. This goddess gave her grandson Ninigi the sword Kusanagi, one of the Imperial Regalia of Japan. The emperor of Japan traces his lineage to, for ten points, what sister of Susanoo, the Shinto sun goddess?",
+        "answer": "Amaterasu"
+      },
+      "bonus": {
+        "question": "The legend that Japanese emperors are descended from Amaterasu is found in this 8th century AD compilation of myths, legends, and history. The more detailed Nihon Shoki was written shortly after this work, the oldest surviving Japanese text.",
+        "answer": [
+          "Kojiki",
+          "Furukotofumi"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "While traveling on this body of water, one god turned into a blazing disk which blinded an enemy army. Ancient people believed this body of water was controlled from beneath Elephantine Island. This body of water was ruled by gods such as Khnum and the androgynous potbellied deity Hapi. The flooding of this body of water was critical to regional agriculture and was believed to be controlled by the Pharaoh. For ten points, name this river which features prominently in Egyptian mythology.",
+        "answer": "Nile River"
+      },
+      "bonus": {
+        "question": "According to legend, Claudia Quinta once pulled a statue of Cybele [[SIB-uh-lee]] up this other oft-mythologized river. Horatius Cocles [[KOK-lees]] legendarily prayed to this river while defending the Pons Sublicius [[soo-BLIH-see-us]] along its banks.",
+        "answer": "Tiber River or Tevere"
+      }
+    },
+    {
+      "tossup": {
+        "question": "A 3rd-century chamber containing a marble relief of this animal being killed was found in Walbrook Street in London in 1954. The castration of this animal became a central ritual and artistic motif in the 2nd-century Magna Mater cult. According to one cult, this animal was killed by the infant Mithra, whose worshippers re-enacted the slaughter. The Greeks believed that Zeus took the form of this animal to abduct Europa. For ten points, name this type of male cattle that ancient astronomers saw in the constellation Taurus.",
+        "answer": "Bulls"
+      },
+      "bonus": {
+        "question": "In Greek myth, a bull impregnated Pasiphae [[pah-SEE-fay]] leading to the birth of this monster, named for a legendary king of Crete.",
+        "answer": "Minotaur"
+      }
+    },
+    {
+      "tossup": {
+        "question": "In this state, the discovery of the Goddard coin, which dates back to 11th-century Norway, is considered evidence that Vikings regularly traded with Native Americans. That artifact was discovered in this state's Penobscot Bay. The Webster-Ashburton Treaty fixed the borders shared by this state and the Maritime Province of New Brunswick. Until 1820, the state of Massachusetts directly controlled, for ten points, what New England state governed from Augusta?",
+        "answer": "Maine"
+      },
+      "bonus": {
+        "question": "Maine's Casco Bay names a treaty which ended hostilities with this \"Confederacy\" made of nations like the Mi'kmaq [[MIG-mah]] and the Passamaquoddy [[pah-sah-mah- KWAH-dee]].",
+        "answer": "Wabanaki Confederacy or the People of the Dawn"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This author ascribes the invention of metallurgy to the namesake smelters in the Idaean Dactyls [[ee-DAY-ehn DAHK-tils]]. The overthrow of Uranus by Cronus and then Cronus by his son Zeus are retold in this writer's compendium, Theogony [[thee-AH-juh- nee]]. This man asserted that human history had experienced a Golden and Silver Age, as well as a \"Heroic Age\" that witnessed the Trojan War. \"The Myth of Five Ages\" and agrarian life in Ancient Greece is expounded in, for ten points, which writer's Works and Days?",
+        "answer": "Hesiod or Hesiodos"
+      },
+      "bonus": {
+        "question": "Hesiod claimed to have been raised in the shadow of what sacred Greek mountain, which historically possessed several shrines to the muses?",
+        "answer": "Mount Helicon"
+      }
+    }
+  ],
+  "q3": [
+    {
+      "category": "NEW DEAL",
+      "questions": [
+        {
+          "question": "Put young men to work in military style on mainly large scale environmental projects?",
+          "answer": [
+            "CCC",
+            "Civilian Conservation Corps"
+          ]
+        },
+        {
+          "question": "Created universal old-age pensions?",
+          "answer": [
+            "Social Security Administration",
+            "Social Security"
+          ]
+        },
+        {
+          "question": "Led by William O. Douglas regulated Wall Street and financial transactions?",
+          "answer": [
+            "SEC",
+            "Securities and Exchange Commission"
+          ]
+        },
+        {
+          "question": "Limited flooding and generated hydroelectric power in several Southern states via dams?",
+          "answer": [
+            "TVA",
+            "Tennessee Valley Authority"
+          ]
+        },
+        {
+          "question": "Included putting writers and artists to work on programs building culture?",
+          "answer": [
+            "WPA",
+            "Works Progress Administration"
+          ]
+        },
+        {
+          "question": "Protected the rights of workers and set up a namesake board for labor disputes?",
+          "answer": [
+            "National Labor Relations Act",
+            "National Labor Relations",
+            "NLRA",
+            "Wagner Act",
+            "Wagner"
+          ]
+        },
+        {
+          "question": "Paid subsidies to farmers to reduce production?",
+          "answer": [
+            "AAA",
+            "Agricultural Adjustment Act"
+          ]
+        },
+        {
+          "question": "Was struck down by the Supreme Court after attempting to create large scale industrial codes?",
+          "answer": [
+            "NIRA",
+            "National Industrial Recovery Act",
+            "National Recovery Administration",
+            "NRA"
+          ]
+        }
+      ],
+      "prompt": "Which New Deal program…"
+    },
+    {
+      "category": "The Alamo",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "Modern US state where the Battle of the Alamo took place.",
+          "answer": "Texas"
+        },
+        {
+          "question": "City in that state that includes the Alamo.",
+          "answer": "San Antonio"
+        },
+        {
+          "question": "Mexican general who led the attack on the Alamo.",
+          "answer": [
+            "Antonio Lopez de Santa Anna",
+            "Antonio de Padua Maria Severino Lopez de Santa Anna y Perez de Lebron"
+          ]
+        },
+        {
+          "question": "“King of the Wild Frontier” and former Tennessee politician who died at the Alamo.",
+          "answer": "Davy Crockett"
+        },
+        {
+          "question": "Pioneer and knifeman who fought despite being bedridden at the Alamo.",
+          "answer": "James Bowie"
+        },
+        {
+          "question": "Author of the “Victory or Death” letter who died at the Alamo.",
+          "answer": "William Travis"
+        },
+        {
+          "question": "Woman who confirmed several legendary details about the Alamo after surviving with her daughter Angelina.",
+          "answer": "Susanna Dickinson"
+        },
+        {
+          "question": "So-called “coward of the Alamo,” supposedly the only man to choose to leave before fighting broke out.",
+          "answer": "Louis “Moses” Rose"
+        }
+      ]
+    },
+    {
+      "category": "Gilded Age",
+      "prompt": "Concerning late 19th century America, name the...",
+      "questions": [
+        {
+          "question": "Author of The Adventures of Huckleberry Finn who coined the term \"Gilded Age.\"",
+          "answer": "Mark Twain or Samuel Langhorne Clemens"
+        },
+        {
+          "question": "Scottish-born steel magnate and anti-unionist who promoted philanthropy in his \"Gospel of Wealth.\"",
+          "answer": "Andrew Carnegie"
+        },
+        {
+          "question": "Businessman who, alongside Henry Flagler, founded Standard Oil in 1870.",
+          "answer": "John D. Rockefeller or John Davison Rockefeller Sr."
+        },
+        {
+          "question": "Political machine of New York led by the infamous \"Boss\" Tweed which was known for its rampant corruption.",
+          "answer": [
+            "Tammany Hall or Tammany Society",
+            "the Society of St. Tammany",
+            "or Sons of St. Tammany",
+            "Columbian Order"
+          ]
+        },
+        {
+          "question": "Medieval term used to describe ruthlessly powerful businessmen like Cornelius Vanderbilt.",
+          "answer": "Robber Baron"
+        },
+        {
+          "question": "Third party named for an informal term for dollars which formed to oppose the growth of monopolies.",
+          "answer": [
+            "Greenback Party",
+            "National Independent Party"
+          ]
+        },
+        {
+          "question": "Disastrous 1887 act which aimed to subdivide Native reservations into western allotments of farmlands.",
+          "answer": [
+            "Dawes Act of 1887 or Dawes Severalty Act of 1887",
+            "General Allotment Act"
+          ]
+        },
+        {
+          "question": "Norwegian-American economist who was inspired to write The Theory of the Leisure Class in response to the excess of the Gilded Age.",
+          "answer": "Thorstein Veblen or Thorstein Bunde Veblen"
+        }
+      ]
+    }
+  ],
+  "q4": [
+    {
+      "parts": [
+        "(30 pts) This author cast the Duke of Guise [geez] as a villain in his play The Massacre at Paris.\nThe assassin Lightborn kills the title character of a play by this man that opens with the\nrecall of that king’s favorite, (20 pts) ",
+        "Piers Gaveston, from exile. The title character of another\nof his plays keeps the sultan Bajazeth in a cage and burns a Koran after conquering\nBabylon. This author of (10 pts) ",
+        "Edward II and Tamburlaine the Great also had the ghost of\nMachiavelli deliver the prologue to his play The Jew of Malta. For 10 points, name this\nElizabethan author who was stabbed by Ingram Frizer, possibly for spying."
+      ],
+      "answer": [
+        "Christopher Marlowe",
+        "Marlowe"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) This figure is thought to be depicted by a silver figurine found in 2009 in the Danish town of Lejre. Tacitus equated this god with the Roman Mercury in his Germania. This deity revealed the cruelty of King Geirr¨oth by visiting him in disguise, and this god’s hall (20 pts)",
+        "Valaskj´alf [vah-luhsk-yulf] contains his throne, Hlidskjalf [h’lid-sk’yulf]. Animals that serve this god include the (10 pts)",
+        "eight-legged horse Sleipnir and the ravens Huginn and Muninn. For ten points, name this father of Baldr and Thor, the one-eyed chief god of Norse mythology."
+      ],
+      "answer": [
+        "Odin",
+        "Othin, Woden, Wotan,",
+        "Wotanaz"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) A 28-volume work on this subject opened with the call to sell your townhouse and give up the household gods of the city; that work was written in Punic by Mago. In another work, the author teaches this subject to his squanderous brother (20 pts)",
+        "Perses. The “works” of Hesiod’s Works and Days details how to be successful at this practice, which Cincinnatus (10 pts)",
+        "resumed after his dictatorships. For ten points, name this practice which includes animal husbandry, beekeeping, and the cultivation of crops for food."
+      ],
+      "answer": [
+        "agriculture",
+        "farming",
+        "equivalents",
+        "any specific form, such as beekeeping",
+        "making wine"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) After this man added battering rams to his armies for a successful campaign, Anatolius negotiated peace with him on behalf of Theodosius. In one battle, this man’s camp was accidentally stumbled upon by (20 pts)",
+        "Thorismund. This man was finally defeated by Flavius Aetius and Theodoric I at the Catalaunian Plains. This brother of (10 pts)",
+        "Bleda allegedly died of a nosebleed on the night of his marriage to a Gothic bride. In 452, Pope Leo convinced this man to refrain from attacking Rome. For ten points, name this “Scourge of God,” a 5th-century ruler of the Huns."
+      ],
+      "answer": "Attila the Hun"
+    },
+    {
+      "parts": [
+        "(30 pts) This work informs listeners that “they shall be left to fall as they are inclined by their own weight” when discussing a passage that notes “Their foot shall slide in due time” from Deuteronomy. The image of a (20 pts)",
+        "spider dangling over a pit of fire is invoked in this work, which warned listeners that “there is nothing that keeps wicked men [...] out of (10 pts)",
+        "hell, but the mere pleasure of God.” For ten points, name this fearsome sermon, a powerful example of the first Great Awakening, delivered in 1741 by Jonathan Edwards."
+      ],
+      "answer": "Sinners in the Hands of an Angry God"
+    },
+    {
+      "parts": [
+        "(30 pts) A lone rider before this battle offered “seven feet of English ground” to this battle’s losing commander, saying “he is taller than most men.” During this battle, a (20 pts)",
+        "Norse axeman held up the winning side’s troops on a bridge until he was speared by a soldier from under the bridge. Tostig, the brother of the winning commander of this battle, was killed in it. Following this battle, another force (10 pts)",
+        "landed at Pevensey. Harald Hardrada died in a defeat to Harold Godwinson at, for ten points, what September 1066 battle, fought three weeks before Hastings?"
+      ],
+      "answer": "Battle of Stamford Bridge"
+    },
+    {
+      "parts": [
+        "(30 pts) The weekly Torah reading is divided into this many aliyahs. In the first part of the book of Revelation, the author writes letters to this many churches in Asia Minor. Jericho’s (20 pts)",
+        "walls fell after this many days of marching, and King David had this many brothers. The Passover feast lasts this many days, and this is the number of (10 pts)",
+        "lamps on the Temple of Jerusalem’s menorah. For ten points, give this number of the day God rested in the first Genesis narrative, which is also the number of deadly sins."
+      ],
+      "answer": "seven"
+    },
+    {
+      "parts": [
+        "(30 pts) One side in this battle was bolstered by the arrival of John George’s forces, though those Saxon troops were later routed. During this battle, Johan Baner’s cavalry routed the Black Cuirassiers, who weren’t given the proper authority to charge and attacked because of the (20 pts)",
+        "myth that a Pappenheim would save Germany from an invading king. The losing side in this battle was forced to rehire Albrecht (10 pts)",
+        "Wallenstein to cover for the wounded Count Tilly. For ten points, name this 1631 battle fought near Leipzig, a great victory for Gustavus Adolphus in the Thirty Years’ War."
+      ],
+      "answer": "Battle of Breitenfeld"
+    },
+    {
+      "parts": [
+        "(30 pts) A god from this civilization was syncretized with Hermes to form Hermes Trismegistus, the purported author of the Hermetic Corpus. While at this civilization’s Siwa (20 pts)",
+        "oasis, Alexander the Great proclaimed himself to be a god. Worship of the syncretic god Serapis in this civilization was instituted by (10 pts)",
+        "Ptolemy I, and worship of the sun disk Aten here was instituted by Akenaten. For ten points, name this civilization whose people worshiped the pharaohs as incarnations of Osiris and Horus."
+      ],
+      "answer": "ancient Egypt"
+    },
+    {
+      "parts": [
+        "(30 pts) This god was traditionally given fifty names that corresponded to an ancient list of kings. Bronze Age depictions of this god show him riding on the mushussu dragon. A notable statue of this god was worshipped in the Esagila temple, from which it was stolen by the (20 pts)",
+        "Elamites and Assyrians. This son of Ea is depicted slaying a primordial water deity and retrieving the Tablets of Destiny in the (10 pts)",
+        "Enuma Elish. For ten points, name this chief god of the Babylonian pantheon, the slayer of Tiamat."
+      ],
+      "answer": "Bel Marduk"
+    },
+    {
+      "parts": [
+        "(30 pts) A passage in Pliny says that an important statue of this god had wool binding around the feet and was hollowed out and filled with oil that was removed only once per year. A fresco discovered at Pompeii shows this god wearing a white veil and carrying a (20 pts)",
+        "sickle. This god, whom the Romans believes patronized an archaic Golden Age in Italy, was the namesake of a winter (10 pts)",
+        "festival during which masters waited on slaves. For ten points, identify this father of Jupiter who the Romans worshipped at a cult center on the Capitoline hill."
+      ],
+      "answer": [
+        "Saturn",
+        "Saturnalia"
+      ]
+    },
+    {
+      "parts": [
+        "It's not a feast, but the Gaelic festival of Lughnasadh [[loo-nah-SAHD]] traditionally begins with this specific event to commemorate the mother-goddess Tailte. While held in veneration for Zeus in Classical Greece, scholars speculate the (*) Olympics first began as one of these events during its Dark Ages. Aeneas hosts one of these events in book 5 of the Aeneid to honor his father Anchises [[ahn-KYE-sees]], who fell during the escape from Troy. In the Iliad, events like chariot-racing and (*) wrestling occur during, for ten points, what type of event held after the death of Patroclus?"
+      ],
+      "answer": "Funeral Games"
+    }
+  ]
 }
