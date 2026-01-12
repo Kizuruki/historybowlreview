@@ -888,57 +888,100 @@ function renderSetList(yearIdx) {
         typeHeader.style.color = '#111827';
         typeHeader.style.fontWeight = '700';
         typeBlock.appendChild(typeHeader);
+        
         if (typeLabel === 'Category Sets') {
-        const weightRow = document.createElement('div');
-        weightRow.style.display = 'grid';
-        weightRow.style.gridTemplateColumns = 'repeat(auto-fit,minmax(180px,1fr))';
-        weightRow.style.gap = '8px';
-        weightRow.style.margin = '8px 0 12px';
-      
-        function makePicker(labelText, id, key) {
-          const wrap = document.createElement('label');
-          wrap.style.display = 'flex';
-          wrap.style.justifyContent = 'space-between';
-          wrap.style.alignItems = 'center';
-          wrap.style.gap = '8px';
-          wrap.innerHTML = `
-            <span>${labelText}</span>
-            <select id="${id}" class="btn outline" style="min-width:120px;">
-              <option value="1">100%</option>
-              <option value="0.5">50%</option>
-              <option value="0.33">33%</option>
-            </select>`;
-          // sync from current weights
-          wrap.querySelector('select').value = String(practiceCategoryWeights[key] ?? 1);
-          wrap.querySelector('select').onchange = (e) => {
-            practiceCategoryWeights[key] = parseFloat(e.target.value);
-          };
-          return wrap;
+            const weightRow = document.createElement('div');
+            weightRow.style.display = 'grid';
+            weightRow.style.gridTemplateColumns = 'repeat(auto-fit,minmax(180px,1fr))';
+            weightRow.style.gap = '8px';
+            weightRow.style.margin = '8px 0 12px';
+          
+            function makePicker(labelText, id, key) {
+              const wrap = document.createElement('label');
+              wrap.style.display = 'flex';
+              wrap.style.justifyContent = 'space-between';
+              wrap.style.alignItems = 'center';
+              wrap.style.gap = '8px';
+              wrap.innerHTML = `
+                <span>${labelText}</span>
+                <select id="${id}" class="btn outline" style="min-width:120px;">
+                  <option value="1">100%</option>
+                  <option value="0.5">50%</option>
+                  <option value="0.33">33%</option>
+                </select>`;
+              wrap.querySelector('select').value = String(practiceCategoryWeights[key] ?? 1);
+              wrap.querySelector('select').onchange = (e) => {
+                practiceCategoryWeights[key] = parseFloat(e.target.value);
+              };
+              return wrap;
+            }
+          
+            weightRow.appendChild(makePicker('US History','picker_us','us'));
+            weightRow.appendChild(makePicker('European History','picker_eu','eu'));
+            weightRow.appendChild(makePicker('World History','picker_world','world'));
+          
+            typeBlock.appendChild(weightRow);
         }
-      
-        weightRow.appendChild(makePicker('US History','picker_us','us'));
-        weightRow.appendChild(makePicker('European History','picker_eu','eu'));
-        weightRow.appendChild(makePicker('World History','picker_world','world'));
-      
-        typeBlock.appendChild(weightRow);
-      }
 
         letters.forEach(letter => {
             // Collapsible section
             const section = document.createElement('div');
             section.style.marginBottom = '8px';
 
-            // Header
+            // Header with letter-specific select/deselect buttons
+            const headerContainer = document.createElement('div');
+            headerContainer.style.display = 'flex';
+            headerContainer.style.justifyContent = 'space-between';
+            headerContainer.style.alignItems = 'center';
+            headerContainer.style.background = '#f3f4f6';
+            headerContainer.style.padding = '6px';
+            headerContainer.style.borderRadius = '6px 6px 0 0';
+            headerContainer.style.cursor = 'pointer';
+
             const header = document.createElement('div');
-            header.textContent = (typeLabel === 'Category % Weights')
+            header.textContent = (typeLabel === 'Category Sets')
                 ? `Categories Set ${letter}`
                 : `Set ${letter}`;
-            header.style.cursor = 'pointer';
             header.style.fontWeight = 'bold';
-            header.style.background = '#f3f4f6';
-            header.style.padding = '6px';
-            header.style.borderRadius = '6px 6px 0 0';
-            section.appendChild(header);
+            header.style.flex = '1';
+            
+            const buttonGroup = document.createElement('div');
+            buttonGroup.style.display = 'flex';
+            buttonGroup.style.gap = '4px';
+            buttonGroup.style.marginLeft = '12px';
+            
+            const selectBtn = document.createElement('button');
+            selectBtn.className = 'btn success';
+            selectBtn.textContent = 'Select All';
+            selectBtn.style.padding = '4px 8px';
+            selectBtn.style.fontSize = '11px';
+            selectBtn.onclick = (e) => {
+                e.stopPropagation();
+                groupMap[letter].forEach(set => {
+                    _selectedSets[`${yearIdx}-${set.idx}`] = true;
+                });
+                renderSetList(yearIdx);
+            };
+            
+            const deselectBtn = document.createElement('button');
+            deselectBtn.className = 'btn outline';
+            deselectBtn.textContent = 'Deselect All';
+            deselectBtn.style.padding = '4px 8px';
+            deselectBtn.style.fontSize = '11px';
+            deselectBtn.onclick = (e) => {
+                e.stopPropagation();
+                groupMap[letter].forEach(set => {
+                    delete _selectedSets[`${yearIdx}-${set.idx}`];
+                });
+                renderSetList(yearIdx);
+            };
+            
+            buttonGroup.appendChild(selectBtn);
+            buttonGroup.appendChild(deselectBtn);
+            
+            headerContainer.appendChild(header);
+            headerContainer.appendChild(buttonGroup);
+            section.appendChild(headerContainer);
 
             // Content
             const content = document.createElement('div');
@@ -965,7 +1008,9 @@ function renderSetList(yearIdx) {
             section.appendChild(content);
 
             // Collapsible logic
-            header.onclick = () => {
+            headerContainer.onclick = (e) => {
+                // Don't toggle if clicking buttons
+                if (e.target.tagName === 'BUTTON') return;
                 content.style.display = (content.style.display === 'none') ? 'block' : 'none';
             };
             content.style.display = 'block';
