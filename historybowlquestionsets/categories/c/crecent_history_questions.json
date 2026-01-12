@@ -1,6 +1,95 @@
 {
   "q1": [
     {
+      "question": "This state was where Teddy Roosevelt once suffered an economic setback as a rancher, though\ntoday it’s the site of Theodore Roosevelt National Park. This state’s economy boomed in 2008-2015\ndue to lucrative oil wells around its city of Williston. For 10 points, name this state whose capital\nwas named to attract German immigrants, and which was depicted in the 1990’s film Fargo.",
+      "answer": "North Dakota"
+    },
+    {
+      "question": "A 2006 contest resulted in two of these animals being given the politically explosive name\n\"reunion.\" In August 2014, one of these animals was given a first birthday party by the U.S.\nNational Zoo, and another one of these animals, Ai Hin, was caught faking a pregnancy to earn\nmore bamboo. For 10 points, name these endangered Chinese bears.",
+      "answer": [
+        "giant pandas",
+        "pandas"
+      ]
+    },
+    {
+      "question": "This character is portrayed in the 2008 conservative satire film An American Carol by Kelsey\nGrammer. Kirk Douglas portrayed him in Is Paris Burning?, and his \"last days\" were the subject\nof a 1986 TV movie in which his most notable portrayer reprised this role. For 10 points, name\nthis commander of the Third Army who was played in a 1970 biopic by George C. Scott.",
+      "answer": [
+        "George Smith Patton",
+        "Patton"
+      ]
+    },
+    {
+      "question": "The men's section of this event was dominated by Bill Rodgers in the 1970s. In 1980, Rosie\nRuiz was disqualified from this event after initially \"winning\" its women's title by taking\nshortcuts. From 2002 to 2013, all men's winners of this event were from either Kenya or\nEthiopia. For 10 points, name this distance running event which, in 2013, was attacked by\nterrorists.",
+      "answer": [
+        "Boston Marathon"
+      ]
+    },
+    {
+      "question": "Schoolgirl Venetia Burney proposed what is now the official name of this object. This body\nwas discovered in 1930 using the blink comparator machine by Vesto Slipher's new apprentice,\nClyde Tombaugh. In 2006, this object was demoted by the International Astronomical Union to\n\"dwarf planet\" status. For 10 points, name this trans-Neptunian object and former ninth planet.",
+      "answer": "Pluto"
+    },
+    {
+      "question": "This man said he planned to use a Kärcher pressure-washer to \"clean out\" suburbs. In 2014,\nthis former leader of the UMP was questioned by police for alleged corruption in a judicial\nappointment in Monaco. He lost a close re-election bid in 2012 to his left-wing rival François\nHollande (pr. frah-SWAH oh-LAHND). For 10 points, name this former President of France.",
+      "answer": [
+        "Nicolas Sarkozy",
+        "Sarkozy"
+      ]
+    },
+    {
+      "question": "In 2014, a Senate candidate from this state was criticized for posting graphic X-rays on his\nwebsite; that second cousin of Barack Obama, Milton Wolf, failed to win the Republican\nnomination here. This state is where independent Greg Orman sought to unseat the then incumbent Pat\nRoberts. For 10 points, name this state governed by Laura Kelly from Topeka.",
+      "answer": "Kansas"
+    },
+    {
+      "question": "Following controversy over his proposed \"budget repair bill,\" this man defeated Tom Barrett\nfor the second time in two years. An occupation of his state capitol occurred after he planned to\noutlaw bargaining with public unions, leading to a recall election which he survived in 2012. For\n10 points, name this former Republican governor of Wisconsin.",
+      "answer": [
+        "Scott Walker",
+        "Walker"
+      ]
+    },
+    {
+      "question": "(TIEBREAKER BONUS QUESTION) Which U.S. President was investigated for his role in the Whitewater scandal and for an\naffair with Monica Lewinsky?",
+      "answer": [
+        "Bill Clinton",
+        "Clinton"
+      ]
+    },
+    {
+      "question": "This man directed a 2005 film where he played Fred Friendly, a colleague of Edward Murrow, as well\nas a 2014 film about the recovery of art in Nazi Germany. This director of Good Night and Good Luck\nand The Monuments Men operates a project to monitor Sudanese war crimes via satellite imagery. For\nten points, name this American actor who starred as Daniel Ocean in the Ocean’s 11 trilogy and with\nSandra Bullock in 2013’s Gravity.",
+      "answer": [
+        "George Clooney",
+        "Clooney"
+      ]
+    },
+    {
+      "question": "In 2012, this man announced a “Return to Sovereignty” day. This man, who accused the show Asa\nZuba! of slander, leads a coalition between the NKP and his Liberal Democrats. He updated the\n“three-arrows” of his namesake economics but was criticized for numerous visits to the Yasukuni\nShrine. For ten points, name this former Prime Minster of Japan.",
+      "answer": [
+        "Shinzo Abe",
+        "Abe"
+      ]
+    },
+    {
+      "question": "A poem about this river notes that “Wushan’s clouds and rain” will be held back by “walls of\nstone.” Those walls predicted a dam, completed in 2012, that now blocks silt from traveling downstream,\npotentially weakening Shanghai on its mouth. The Three Gorges Dam was built on, for ten points, what\nlongest river in Asia?",
+      "answer": [
+        "Yangtze River",
+        "Yangtze"
+      ]
+    },
+    {
+      "question": "Marc Dubois suffered from this condition as the pilot of Air France Flight 447, which crashed in 2009.\nWorld records for this condition are no longer maintained due to fear of harm, but the last scientifically\ndocumented record for this condition is Randy Gardner’s 264 hours. Tracy Morgan was injured in a\nbus accident caused by a Walmart truck driver suffering from this condition. For ten points, name this\ncondition that causes irritability and yawning.",
+      "answer": [
+        "sleep deprivation",
+        "insomnia",
+        "fatigue",
+        "exhaustion",
+        "tiredness",
+        "lack of sleep"
+      ]
+    },
+    {
+      "question": "(TIEBREAKER BONUS QUESTION) What American state is home to the world’s largest coin mint and, with Washington,\nlegalized marijuana growing in 2012?",
+      "answer": "Colorado"
+    },
+    {
       "question": "Donald Trump claimed that this organization had opened a hotel and that he was “in\ncompetition with them.” This group was driven out of Tikrit after massacring unarmed Air Force cadets\nat Camp Speicher. The Bataclan was targeted by this group in a November 2015 attack in Paris. For ten\npoints, name this extremist Islamic terrorist group that arose from an offshoot of Al-Qaeda and which\ncontrolled territory in Iraq and Syria.",
       "answer": [
         "Islamic State of Iraq and Syria",
@@ -11,6 +100,10 @@
         "Daesh",
         "Islamic State of Iraq and the Levant"
       ]
+    },
+    {
+      "question": "This sporting event’s invention is credited to philologist Michel Breal. At one Olympic Games,\nCuban Andarin Carvajal finished in fourth place in this event despite taking a break to eat rotten apples.\nBoylston Street serves as the finish for one of these events in Boston where three spectators were killed in\n2013. For ten points, name this race inspired by a Greek battle, with a length of about 26 miles.",
+      "answer": "marathon"
     },
     {
       "question": "The documentary An Unreasonable Man examined this man, whose study of the Chevy Corvair led\nhim to advocate for seat belts and other basic safety features. He ran on a Presidential ticket with Winona\nLaDuke in a third party candidacy that some feel cost Al Gore the 2000 election. For ten points, name\nthis consumer activist and Green Party politician who wrote Unsafe at Any Speed.",
@@ -27,11 +120,8 @@
       ]
     },
     {
-      "question": "In 1999, this country and its eastern neighbor established “Earthquake Diplomacy.” This country’s\nrapper Killah P was murdered by a supporter of the Golden Dawn Party. In 2015, there was high\nspeculation that this country would abandon the Euro. For ten points, name this Balkan country, formerly ruled by the SYRIZA Party under Alexis Tsipras, which suffered from austerity and high\nunemployment in Athens.",
-      "answer": [
-        "Greece",
-        "Hellenic Republic"
-      ]
+      "question": "For many years, Ohio Congressman Ralph Regula blocked attempts to rename this landmark, which\nis normally climbed by the West Buttress Route. Gold prospector William Dickey coined a name for this\npeak; in 2015, that name was officially replaced by its local Athabascan name, translating to “the high\none.” For ten points, name this highest peak in North America, an Alaska mountain that was previously\nnamed Mount McKinley.",
+      "answer": "Denali"
     },
     {
       "question": "In 2009, one of these awards was controversially awarded just nine months into its recipient’s first\nterm. In granting this award in 2002 to a philanthropist who worked with Habitat for Humanity, Gunnar\nBerge [BAIR-ye] contrasted the winner with George W. Bush. U.S. Presidents Teddy Roosevelt, Jimmy\nCarter, and Barack Obama have each won, for ten points, what award for global social progress awarded\nby a Norwegian committee?",
@@ -41,11 +131,48 @@
       ]
     },
     {
+      "question": "This country received illegal kickbacks from the Australian Wheat Board through the UN’s “Oil\nfor Food” program, which bypassed economic sanctions that were established in 1991. Hans Blix led a\n2002 commission that investigated this country’s weapons development program; it found no evidence of\nweapons of mass destruction, contradicting George W. Bush’s claims. For ten points, name this Middle\nEastern country where, in 2003, a US-led coalition invaded and deposed its leader, Saddam Hussein.",
+      "answer": "Iraq"
+    },
+    {
       "question": "(TIEBREAKER BONUS QUESTION) What whistle blower revealed the NSA’s PRISM program and was granted asylum in\nRussia in 2013?",
       "answer": [
         "Edward Snowden",
         "Snowden"
       ]
+    },
+    {
+      "question": "(TIEBREAKER BONUS QUESTION) What term describes someone who vigorously supports their country and was used, in\nacronym form, to name a 2001 American law that allows roving wiretaps and other anti-terrorist\nmeasures?",
+      "answer": [
+        "Patriot",
+        "PATRIOT Act"
+      ]
+    },
+    {
+      "question": "In this election year, a primary campaign suffered in South Carolina due to flyers suggesting he\nfathered an illegitimate black child. This election year featured John McCain’s first campaign for the\npresidency, and its outcome may have been affected by the use of confusing “butterfly ballots” in Palm\nBeach County, Florida. For ten points, name this election year in which the popular vote was won by Al\nGore, but the electoral college named George W. Bush U.S. President.",
+      "answer": [
+        "2000 US Presidential Election",
+        "2000"
+      ]
+    },
+    {
+      "question": "The first edition of this publication depicted Speaker Joseph Cannon. It was founded by Briton\nHadden and Henry Luce, and it has often depicted men with a red “X” on their faces after their deaths.\nThis publication named Albert Einstein the Person of the Century and declared “You” the Person of the\nYear in 2006. For ten points, name this magazine that is famous for featuring single people on its cover,\nfeaturing a bright red border.",
+      "answer": [
+        "Time Magazine",
+        "Time"
+      ]
+    },
+    {
+      "question": "Description acceptable. In 2003, the University of Washington fired football coach Rick Neuheisel\n[nu-hi-zel] for engaging in this activity. An open challenge to complete this process perfectly for a one\nbillion dollar prize was instituted in 2014 by Warren Buffett. President Obama has been criticized for his\n“chalk” in this process, which he does on an annual ESPN special called Barack-etology. For ten points,\nname this annual activity of attempting to predict the results of a premier college basketball tournament.",
+      "answer": [
+        "filling out a bracket for the NCAA men’s basketball tournament",
+        "bracket NCAA tournament",
+        "filling out a March Madness bracket"
+      ]
+    },
+    {
+      "question": "This state’s “jungle primaries” allow political parties to list multiple candidates. In 2016, David Duke\nannounced his candidacy for this state’s Senate seat. John Bel Edwards was elected governor of this state\nin 2015, succeeding the term-limited incumbent, Bobby Jindal. In summer 2016, FEMA declared disaster\nareas in 20 of this state’s parishes. For ten points, name this Southern U.S. state where August 2016 flash\nflooding devastated the capital, Baton Rouge.",
+      "answer": "Louisiana"
     },
     {
       "question": "This leader abolished his country’s Planning Commission and replaced it with the NITI Aayog. This\nleader launched an economic plan promising “Housing for All” by the year 2022. Over the 2016 Labor Day\nWeekend, over 100 million workers took part in a strike against this leader’s efforts towards privatization.\nThis leader is criticized for his role in the 2002 anti-Muslim riots in the state of Gujarat. For ten points,\nname this leader elected in 2014 after defeating the INC, the current Prime Minister of India.",
@@ -55,6 +182,10 @@
       ]
     },
     {
+      "question": "During his first Parliament, this man confiscated all the land holdings of his predecessor’s wife,\nElizabeth Woodville. Shortly after this man became king, the children Richard of Shrewsbury and\nEdward V mysteriously disappeared after being taken to the Tower of London. This man’s remains had\ndisappeared for centuries until, in 2012, they were found under a parking lot. For ten points, name this\nsubject of a Shakespeare history, the final king of the House of York.",
+      "answer": "Richard III"
+    },
+    {
       "question": "This politician attempted to stall the construction of the Hinckley nuclear power station out of fears\nof Chinese involvement. This figure was criticized after reportedly covering up the misfire of a Trident\nmissile in June 2016. She appointed the highly controversial Boris Johnson as Secretary of State for\nForeign Affairs, and in March 2017 she invoked Article 50 to formally begin the Brexit process. For ten\npoints, name this successor of David Cameron as prime minister of the United Kingdom.",
       "answer": [
         "Theresa May",
@@ -62,14 +193,137 @@
       ]
     },
     {
-      "question": "In 2004 in this country, TV host Rania al-Baz was severely beaten by her husband for answering the\nphone without permission. This country’s prominent businesswomen include Lubna Olayan, who gave a\nhistoric address in 2004 at the Jeddah Economic Forum, held on this country’s west coast. For ten points,\nname this country where, in 2017, King Salman lifted a restriction on driver’s licenses that will, eventually,\nallow women to drive in Riyadh and Mecca.",
+      "question": "This artist, who was credited as Charlie Jr. in the Traveling Wilburys, is the subject of a 2007\ndocumentary by Peter Bogdanovich, Running Down a Dream. In 2015, Jeff Lynne and this artist received\nroyalties from Sam Smith, whose “Stay With Me” accidentally plagiarized this man’s “I Won’t Back\nDown.” For ten points, name this artist who sang songs like “American Girl” and “Free Fallin’” with his\nbacking band, the Heartbreakers, and who passed away in October 2017.",
       "answer": [
-        "Kingdom of Saudi Arabia",
-        "Saudi Arabia"
+        "Tom Petty",
+        "Petty"
       ]
+    },
+    {
+      "question": "John Shipton chaired a political party founded by this man to contest the 2013 Australian Senate elections. An organization founded by this man gained prominence after publishing the “Collateral Murder” video, along with other materials provided by Chelsea Manning. In 2010, Sweden requested that this man be extradited on allegations of sexual assault. This man was granted asylum by Ecuador in 2012, and currently resides in its London embassy. For ten points, name this whistleblower who founded WikiLeaks.",
+      "answer": "Julian Paul Assange"
+    },
+    {
+      "question": "The loser of this event began it wearing a “Sugar Daddy” jacket, having been sponsored by the candy. This event, which took place four months after a similar event lost by Margaret Court, was watched by 50 million people and ended in straight sets. A 2017 film starring Emma Stone and Steve Carell depicts, for ten points, what 1973 match in which Billie Jean King defeated Bobby Riggs, helping spark interest in women’s tennis?",
+      "answer": [
+        "Battle of the Sexes",
+        "descriptive answers related to Billie Jean King playing/defeating/etc. Bobby Riggs before “Billie” is read"
+      ]
+    },
+    {
+      "question": "This specific activity was conceived by Benton MacKaye, who opened its first section from Bear Mountain in 1923. A challenging section of this activity is known as the Hundred-Mile Wilderness. Randall Lee Smith murdered two women performing this action in 1981, and Mark Sanford used this activity to cover up his extramarital affair in 2009. For ten points, name this activity whose complete version can be conducted from Mount Katahdin in Maine to Springer Mountain in Georgia.",
+      "answer": [
+        "hiking the Appalachian Trail",
+        "equivalents for hiking, such as walking the Appalachian Trail"
+      ]
+    },
+    {
+      "question": "In 2012, this country temporarily occupied the Heglig oil field of its northern neighbor. The President of this country has been known for his fondness for Stetson hats since he received one as a gift from George W. Bush in 2006. Civil war broke out in this country in 2013 shortly after Riek Machar was accused of plotting a coup d’etat by President Salva Kiir. For ten points, name this African country that declared its independence in 2011.",
+      "answer": "Republic of South Sudan"
+    },
+    {
+      "question": "A “Great” ruler with this name negotiated with Basil II in order to marry his daughter Anna; that prince of Novgorod witht his name began the process of Christianizing the Kievan Rus after being impressed by a trip to Constantinople. A modern leader with this first name alternated terms as president of his country with Dmitry Medvedev and controversially annexed the Crimea in 2014. For ten points, give this first name of the current President of Russia.",
+      "answer": [
+        "Vladimir",
+        "Vladimir the Great",
+        "Vladimir Putin after “modern” is read"
+      ]
+    },
+    {
+      "question": "This war was the subject of a controversy in which members of the 1st Mechanized Infantry Division used bulldozers to clear out fortified lines by burying enemy troops alive. This war’s losing side attempted to retreat through Highway 80, the so-called “Highway of Death.” Norman Schwarzkopf was able to win this war within sixty days of the initial invasion of Kuwait. For ten points, name this war in which George H.W. Bush authorized Operation Desert Storm against Saddam Hussein’s Iraqi forces.",
+      "answer": [
+        "Persian Gulf War",
+        "First Gulf War",
+        "First Iraq War",
+        "do not"
+      ]
+    },
+    {
+      "question": "In 2009, this country underwent the “Pots and Pans Revolution,” a series of protests against Geir Haarde. This country planned to nationalize Glitnir, one of three banks that ultimately defaulted in 2008. During that financial crisis, the IMF gave this country a 5 billion dollar bailout to stabilize the kr´ona. For ten points, name this European country where mass protests took place outside the Althing in Reykjavik [rek-ya-vik].",
+      "answer": "Iceland"
+    },
+    {
+      "question": "A May 2019 article detailed how overcrowding caused eleven people to die while performing this action, some of whom passed away at the South Col. Today, many people performing this action adjust to altitude sickness by spending several days at a base camp in Nepal. Sherpa guide Tenzing Norgay and the explorer Edmund Hillary were the first to perform, for ten points, what feat of mountaineering in the Himalayas?",
+      "answer": [
+        "climbing Mount Everest",
+        "equivalents, such as reaching the top of Mount Everest"
+      ]
+    },
+    {
+      "question": "This man purged his rivals by using a North Korean-trained brigade that carried out the “rain that washes away the chaff.” This man’s downfall came when he removed Emmerson Mnangagwa from office, likely so he could name his wife Grace as Vice President. In 2000, land reforms by this African leader led to extreme hyperinflation. For ten points, name this head of the ZANU-PF who led Zimbabwe for 37 years.",
+      "answer": "Robert Mugabe"
+    },
+    {
+      "question": "Religious leaders criticized this man for holding Hugo Chavez’s mother at his funeral. This man, who has used his Twitter to support the University of Michigan football program and lament the death of rapper Nipsey Hussle, sought to develop a peaceful nuclear program in 2007 despite opposition from Ali Khamenei. Hassan Rouhani succeeded, for ten points, what former mayor of Tehran who served from 2005 to 2013 as President of Iran?",
+      "answer": "Mahmoud Ahmadinejad"
+    },
+    {
+      "question": "24,000 tons of dynamite were detonated at once so that this project could utilize the Culebra Cut. This project, which was greatly expanded after a 2006 referendum approved the Third Lock project, was the subject of the Torrijos-Carter treaties. Theodore Roosevelt supported the construction of, for ten points, what Central American waterway that connects the Atlantic and Pacific Oceans?",
+      "answer": "Panama Canal"
+    },
+    {
+      "question": "When told that the Pinochet regime killed 3,000 people, this leader responded by saying it “should have killed more” in a Vera article. This leader, who shared a meme disparaging the appearance of Emmanuelle Macron’s wife survived a 2018 stabbing by Adelio Bispo de Oliveira while campaigning against Fernando Haddad. This man became a front-runner in the 2018 election after Lula da Silva was arrested. Michel Temer was succeeded by, for ten points, what current President of Brazil?",
+      "answer": "Jair Bolsonaro"
+    },
+    {
+      "question": "The name of this body was conceived by 11-year old Venetia Burney and announced in 1930. ThRough Percival Lowell initially predicted this body’s existence, Clyde Tombaugh discovered it using an astrograph. Photographs of this body from 12,500 kilometers were taken by the New Horizons space probe in July 2015. For ten points, name this body that was the smallest planet in our solar system prior to its controversial reclassification as a dwarf planet in 2006.",
+      "answer": "Pluto"
+    },
+    {
+      "question": "This entity publishes a report informally known as the Beige Book and was formed partly as a result of the chaos caused by the Panic of 1907. This institution made massive purchases of T-bills and mortgage-backed securities after the 2008 real estate crisis as part of its program of quantitative easing. This institution's Open Market Committee controls monetary policy by targeting the federal funds rate. For ten points, name this central banking system of the United States whose 16th chair person is Jay Powell.",
+      "answer": [
+        "Federal Reserve System",
+        "“The Fed”"
+      ]
+    },
+    {
+      "question": "This state’s Ybor City was a center for cigar manufacturing, and its Hialeah is home to many marielitos and balseros who arrived before the wet foot-dry foot policy was implemented. Elian Gonzalez was deported from this state as a child, an event which is thought to have led many in its large Cuban-American community to turn against Al Gore in the close presidential election in this state in 2000. For ten points, name this US state, some 90 miles north of Cuba.",
+      "answer": "Florida A"
+    },
+    {
+      "question": "Various speeches by this man were mixed with modern musical accompaniment by progressive rocker Giulio Neroni in the album Wake Up! Referencing the \"calming of the storm\" in the Book of Mark, this man gave an Urbi et Orbi address in the wake of the COVID- 19 pandemic. The 2021 Synod of Bishops was called by this figure following news of an abuse scandal in France. Jorge Bergoglio [[behr-GOH-lyoh]] is the birth name of, for ten points, what pope from Argentina?",
+      "answer": [
+        "Pope Francis",
+        "Francis I",
+        "Jorge Bergoglio before mentioned"
+      ]
+    },
+    {
+      "question": "Friedrich Miescher [[MEE-shuh]] first identified this molecule in 1869, calling it nuclein. Helicases create a \"fork\" during the replication of this molecule, whose structure was identified thanks to Rosalind Franklin's Photo 51. For ten points, name this molecule that is often sequenced, best identifiedbyitsdouble-helixstructuredocumentedbyWatson and Crick. ANSWER:DNA(acceptDeoxyribonucleic acid) (4) This man ordered the Hungnam Evacuation following his failure to predict an invasion by the People's Volunteer Army. This man's failure to abandon the strategically insignificant site of Peleliu [[peh-LEH-loo]] resulted in devastating losses for U.S. marines. This man's support of the use of nuclear weapons in the Korean War led to his sacking by Harry S. Truman. For ten points, name this Supreme Allied commander in the Pacific Theater.",
+      "answer": "DouglasMacArthur 2021-22 C Set History"
+    },
+    {
+      "question": "A mayor in this nation, Arturas Zuokas [[zoo-OH-kuss]], fought illegal parking in his city by crushing a car with an armored vehicle in 2011. This nation's language was preserved through the 19th-century \"Book Smuggling\" movement after Tsarist Russia banned its use. This modern state merged with a southern neighbor in the Union of Lublin, and it joined Estonia and Latvia in the anti-Soviet Singing Revolution. For ten points, name this Baltic state that formed a historical Commonwealth with Poland.",
+      "answer": "Republic of Lithuania"
     }
   ],
   "q2": [
+    {
+      "tossup": {
+        "question": "A scandal leading up to this ballot question involved abusive Twitter messages sent to J.K.\nRowling. Alistair Darling appeared in an August 2014 debate on behalf of Better Together,\nwhich led the \"no\" campaign on this question. For 10 points, identify this September 2014 ballot\nquestion which sought to make Edinburgh the capital of a new sovereign country.",
+        "answer": "Scottish independence, Scottish independence referendum"
+      },
+      "bonus": {
+        "question": "Which largest Scottish city by population was one of the few areas where the majority\nof people voted for independence?",
+        "answer": "Glasgow"
+      }
+    },
+    {
+      "tossup": {
+        "question": "In this sport, the Hershey Bears have won eleven Calder Cups. In 2014, Metallurg Magnitogorsk\nwon the Gagarin Cup as champion of a prominent European league for this sport. The top league\nin this sport awards the Hart Trophy to its MVP and the Conn Smythe Trophy to the best playoff\nperformer. For 10 points, name this sport whose champion receives the Stanley Cup.",
+        "answer": [
+          "ice hockey",
+          "hockey"
+        ]
+      },
+      "bonus": {
+        "question": "What team, which plays at Nassau Coliseum, won four straight Stanley Cups from 1980\nto 1983?",
+        "answer": [
+          "New York Islanders",
+          "Islanders"
+        ]
+      }
+    },
     {
       "tossup": {
         "question": "This man collected scrapbooks filled with pictures of Condoleeza Rice, and he once set up a tent\nnear the United Nations where he resided with his \"Amazonian Guard.\" He was killed near Sirte\n(pr. SUR-tay) in October 2011 following his overthrow in the Arab Spring. For 10 points, identify\nthis nemesis of Ronald Reagan who was the forty-year dictator of Libya.",
@@ -88,28 +342,182 @@
     },
     {
       "tossup": {
-        "question": "This country’s parliament gives a fifty-seat bonus to its largest party. The Indignant Citizens\nMovement protested a series of 2011 austerity measures in this country, where in 2012 the neo-nazi Golden\nDawn entered parliament. In a July 2015 referendum, voters in this country rejected bailout terms set by\nthe “troika,” leading to fears that this country would have to leave the euro and reintroduce the drachma.\nFor ten points, what European country has been beset by a sovereign debt crisis leading to unrest in\nAthens?",
+        "question": "Two important models of this kind of device were introduced in 1976, Chuck Peddle’s 6502\nand Zilog’s Z80. Those devices competed with the widely used 8080, from the company which\nmanufactured influential later models of these devices such as the x86, Pentium series, and i7.\nFor 10 points, name these devices at the heart of a computer, which are made by Intel.",
         "answer": [
-          "Greece",
-          "Hellenic Republic"
+          "microprocessors",
+          "processors",
+          "CPUs",
+          "central processing units"
         ]
       },
       "bonus": {
-        "question": "Greek Euro coins feature this bird, a symbol of the goddess Athena and the city of Athens.",
-        "answer": "owl"
+        "question": "From 1991 to 2005, what company used RISC-based PowerPC processors almost\nexclusively, such as in machines that ran its iconic System 7?",
+        "answer": [
+          "Apple Inc.",
+          "Apple",
+          "Apple Computer Inc."
+        ]
       }
     },
     {
       "tossup": {
-        "question": "This politician was heavily criticized for promoting the idea of a government-funded news website\ncalled JustIN. As governor in 2015, he allowed five counties in the south of his state to operate needle\nexchange programs in an attempt to curb an HIV outbreak. In March 2015, Angie’s List threatened to\nleave this governor’s state after he signed the Religious Freedom Restoration Act, which was criticized\nas a cover for LGBT discrimination. For ten points, name this former Governor of Indiana and running\nmate of Republican nominee Donald Trump.",
+        "question": "The Interahamwe engaged in one of these events after the death of Juvenal Habyarimana. Viktor\nYuschenko classified the Holodomor as one of these events, as the Soviets declared the possession of food\na crime. Turkey does not recognize one of these events against the Armenian people. For ten points, name\nthese atrocities that involve mass killings of a specific demographic, such as the Holocaust.",
+        "answer": "genocide"
+      },
+      "bonus": {
+        "question": "The Holodomor was a massive famine in this former Soviet republic, which saw the Orange\nRevolution oust Viktor Yanukovych in favor of Victor Yushchenko in 2005.",
+        "answer": "Ukraine"
+      }
+    },
+    {
+      "tossup": {
+        "question": "Nobukazu Kuriki lost 9 fingers at this location in 2012, and a 1996 disaster here that killed Scott\nFischer was chronicled in Jon Krakauer’s Into Thin Air. No one summited this peak in 2015 after an April\nearthquake killed 19 people at its base camp and Nepal closed it for the season. The guide Tenzing Norgay\nand Sir Edmund Hillary were the first to climb, for ten points, what tallest mountain in the world?",
         "answer": [
-          "Mike Pence",
-          "Pence"
+          "Mount Everest",
+          "Everest",
+          "Sagarmatha",
+          "Chomolungma"
         ]
       },
       "bonus": {
-        "question": "In March 2016, Mike Pence signed Bill HB 1337 into law, tightening restrictions on this action.\nIn 2015, the Center for Medical Progress was criticized for altering videos that secretly recorded meetings\nwith physicians who perform this action.",
-        "answer": "abortion"
+        "question": "Tenzing Norgay was a member of what Nepalese ethnic group, famous for guiding Himalayan\nmountain climbers?",
+        "answer": "Sherpa"
+      }
+    },
+    {
+      "tossup": {
+        "question": "When asked about violence against followers of this religion, one politician responded, “When a big\ntree falls, the earth shakes.” An empire named for this religion ruled the Punjab under Maharaja Ranjit\nSingh during the first half of the 19th century. For ten points, name this monotheistic religion founded by\nGuru Nanak whose male adherents follow five articles of faith, including the keeping of uncut hair.",
+        "answer": [
+          "Sikhism",
+          "Sikhs"
+        ]
+      },
+      "bonus": {
+        "question": "Another article of Sikhism is the traditional possession of a kirpan, one of these items that, in\n2011, Quebec banned from governmental buildings.",
+        "answer": [
+          "ceremonial dagger",
+          "dagger",
+          "ceremonial sword",
+          "sword"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "The price elasticity of this quantity should always be negative, but Veblen goods violate that theory.\nJohn Maynard Keynes argued that, in recessions, the aggregate of this quantity should be bolstered by\ngovernment spending. During the Irish Potato Famine, this quantity rose for potatoes even as their price\nrose, as people could no longer afford luxuries like meat. For ten points, name this economic quantity\nthat, in competitive markets, should reach equilibrium with supply.",
+        "answer": "demand"
+      },
+      "bonus": {
+        "question": "A demand shock may be triggered by these events, such as one passed by President Bush in 2001\nand made permanent for most Americans in wake of the 2012 fiscal cliff.",
+        "answer": [
+          "tax cuts"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "In 2000, Robert Fowler reported how the trade of these objects violated the Lusaka Protocol. The\nKimberley Process ensures that these objects are “conflict-free.” The Revolutionary United Front in Sierra\nLeone used child soldiers to gather these objects. These objects are sold by the Cecil Rhodes-founded\ncompany De Beers. For ten points, name these precious gems that are often nicknamed “blood” when\nused to finance warlords.",
+        "answer": [
+          "blood diamonds",
+          "diamond"
+        ]
+      },
+      "bonus": {
+        "question": "The Marange fields, one of the largest diamond-producing regions in the world, are found in\nwhat country once called Southern Rhodesia?",
+        "answer": [
+          "Republic of Zimbabwe",
+          "Zimbabwe"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "In 2008, FiveThirtyEight.com only failed to predict this state’s Presidential result. Robert Kennedy’s\nspeech after the death of Martin Luther King was given in this state, shortly after speeches that day at\nBall State and Notre Dame universities here. In 2015, the review website Angie’s List cancelled a planned\nexpansion of its headquarters in this state after the Religious Freedom Restoration Act was passed and\nsigned by its governor, Mike Pence. For ten points, name this “Hoosier” state.",
+        "answer": "Indiana"
+      },
+      "bonus": {
+        "question": "This statistician and founder of FiveThirtyEight rebounded in 2012 to correctly predict the\nentire electoral college.",
+        "answer": [
+          "Nate Silver",
+          "Silver"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "At least two governors of this state have publicly refused to return a Virginian Confederate flag won\nat the Battle of Gettysburg. One endured a state government shutdown in 2011; another was former professional wrestler Jesse Ventura. For ten points, name this state where Tim Walz\nof the Democratic-Farmer-Labor Party governs from St. Paul.",
+        "answer": "Minnesota"
+      },
+      "bonus": {
+        "question": "In 2007, 13 people died when this disaster struck Interstate 35 in Minneapolis, leading to calls\nfor increased funding for infrastructure.",
+        "answer": [
+          "a bridge collapsed into the Mississippi River",
+          "bridge collapse"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "This man led the MBR-200, which failed to overthrow Carlos Andres Perez in 1992. This leader\nestablished a national chain of stores called Mercal and quipped that a podium “still smelled of sulfur”\nafter calling George W. Bush “the devil.” In 2013, this leader entered his fourth term while in Cuba\nfor cancer treatment. For ten points, name this Socialist who ruled from 2002 to 2013 as President of\nVenezuela.",
+        "answer": [
+          "Hugo Rafael Chavez Frias",
+          "Chavez"
+        ]
+      },
+      "bonus": {
+        "question": "This other South American country is led by Movement for Socialism leader Evo Morales, who\nlives in La Paz.",
+        "answer": "Bolivia"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This party lost an election to Stanley Baldwin due to the Zinoviev Letter. This party’s 1983 election\nmanifesto was called by one man as the “longest suicide note in history”. James Callaghan of this\nparty suffered the Winter of Discontent which saw the rise of the opposition party’s leader Margaret\nThatcher. For ten points, name this British political party formerly led by Ed Milliband which opposes\nthe Conservatives and Liberals.",
+        "answer": [
+          "United Kingdom Labour Party",
+          "Labour"
+        ]
+      },
+      "bonus": {
+        "question": "Ed Milliband was replaced by this self-described democratic socialist as leader of the Labour\nParty after an abysmal showing in the UK 2015 elections. This MP from Islington North was originally\nconsidered a fringe candidate.",
+        "answer": [
+          "Jeremy Corbyn",
+          "Corbyn"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "One holder of this position ordered the kidnapping of Adolf Eichmann. Another member of this\nposition said “I deeply regret that some perceive my being here as political,” in a 2015 address to Congress.\nThe only holder of this office to be assassinated was Yitzhak Rabin, and the only woman to hold this\nposition was Golda Meir. For ten points, name this position first held by David Ben-Gurion and currently\nheld by Benjamin Netanyahu, the head of state of a Middle Eastern Jewish country.",
+        "answer": [
+          "Prime Minister of Israel",
+          "PM of Israel"
+        ]
+      },
+      "bonus": {
+        "question": "Netanyahu is a member of this Israeli political party, from which Ariel Sharon split to form the\nKadima party in 2005.",
+        "answer": [
+          "Likud Party",
+          "Likud"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "This politician rose to national attention with the “A Time for Choosing” speech. This man’s\nPresidential re-election opponent only won D.C. and Minnesota. During this President’s first year in office,\nhe fired thousands of striking government employees who had sworn not to strike when they were hired.\nThe air traffic controllers strike was broken by, for ten points, what former actor, a Republican President\nwho served from 1981 to 1989?",
+        "answer": [
+          "Ronald Reagan",
+          "Reagan"
+        ]
+      },
+      "bonus": {
+        "question": "During Reagan’s first Presidential campaign, this primary opponent called Reagan’s supply-side\neconomic policies “voodoo economics.” That didn’t hinder this man’s career; he served as Reagan’s Vice\nPresident and succeeded him as President.",
+        "answer": [
+          "George Herbert Walker Bush",
+          "HW Bush",
+          "Bush the Elder",
+          "Bush the 41st",
+          "George HW Bush"
+        ]
       }
     },
     {
@@ -128,9 +536,753 @@
           "CDU"
         ]
       }
+    },
+    {
+      "tossup": {
+        "question": "This company ran the ad campaign “Like a Rock.” The Black Keys named their second album for a\nproduct by this company, which is namedropped in the chorus of Don McLean’s “American Pie.” Jimmie\nJohnson’s #48 car in NASCAR was made by this company, which survived the 2009 bankruptcy of its\nparent company with the introduction of a hybrid model, the Volt. For ten points, name this division of\nGeneral Motors that produces the Silverado, Camaro, and Corvette models.",
+        "answer": [
+          "Chevrolet",
+          "Chevy"
+        ]
+      },
+      "bonus": {
+        "question": "The Chevrolet Corvair was criticized in the book Unsafe at Any Speed by this consumer advocate\nand 2000 Green party presidential candidate.",
+        "answer": [
+          "Ralph Nader",
+          "Nader"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "This politician was heavily criticized for promoting the idea of a government-funded news website\ncalled JustIN. As governor in 2015, he allowed five counties in the south of his state to operate needle\nexchange programs in an attempt to curb an HIV outbreak. In March 2015, Angie’s List threatened to\nleave this governor’s state after he signed the Religious Freedom Restoration Act, which was criticized\nas a cover for LGBT discrimination. For ten points, name this former Governor of Indiana and running\nmate of Republican nominee Donald Trump.",
+        "answer": [
+          "Mike Pence",
+          "Pence"
+        ]
+      },
+      "bonus": {
+        "question": "In March 2016, Mike Pence signed Bill HB 1337 into law, tightening restrictions on this action.\nIn 2015, the Center for Medical Progress was criticized for altering videos that secretly recorded meetings\nwith physicians who perform this action.",
+        "answer": "abortion"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This politician attacked his opponent’s support for weekend furlough passes in the Willie Horton ad. In another ad, this man listed his opponent’s opposition to military bills while his opponent rode in a tank. This man called trickle-down economics “voodoo economics” before serving as Ronald Reagan’s Vice President. For ten points, name this man who reneged on his promise of “no new taxes,” then lost his re-election campaign to Bill Clinton in 1992.",
+        "answer": [
+          "George Herbert Walker Bush",
+          "Bush the Elder",
+          "Bush the 41st"
+        ]
+      },
+      "bonus": {
+        "question": "Bush used the Willie Horton and Tank ads in his campaign against this Massachusetts governor, the Democratic nominee in 1988.",
+        "answer": "Michael Dukakis"
+      }
+    },
+    {
+      "tossup": {
+        "question": "Methods for this activity should satisfy criteria like non-dictatorship and the independence of irrelevant\nalternatives, according to the 1951 book Social Choice and Individual Values. That book outlines an\nimpossibility theorem that applies when this activity involves three or more distinct alternatives and\nwas written by Kenneth Arrow. Methods for judging this activity include “first-past-the-post,” which is\ncriticized for leading to two-party politics. For ten points, name this democratic process in which ballots\nare cast to make political decisions.",
+        "answer": [
+          "voting",
+          "votes",
+          "election",
+          "election systems",
+          "voting systems"
+        ]
+      },
+      "bonus": {
+        "question": "Two current American states use the congressional district method, rather than a winner-take-all\nsystem, to allocate their Electoral College votes. One state split their vote in 2016, while the other did in\n2008. Name either state.",
+        "answer": [
+          "Maine",
+          "Nebraska",
+          "Maine and Nebraska"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "In this country, suicide bombers pretending to be journalists used an exploding camera to assassinate\nAhmad Shah Massoud. This country’s caves of Tora Bora served as the headquarters of an insurgency.\nThe Northern Alliance was formed to defend this country and received Western support when this country\nwas invaded in Operation Enduring Freedom after 9/11. For ten points, name this country where, in 2001,\nNATO troops toppled the Taliban government.",
+        "answer": [
+          "Islamic Republic of Afghanistan",
+          "Afghanistan"
+        ]
+      },
+      "bonus": {
+        "question": "The NATO invasion in 2001 triggered a massive-but-brief drop in the farming of this illegal\nsubstance from poppy seed pods. It is used in the production of morphine and heroin.",
+        "answer": "opium"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This non-African leader made the mistake of sending troops to aid Agostinho Neto of the MPLA in\nthe Angolan Civil War, a costly intervention dubbed his country’s “Vietnam.” Though he was arrested\nfor launching an unsuccessful raid on Moncada Barracks in a failed revolution, his later movement of 26th\nJuly was able to overthrow Fulgencio Batista with the aid of Che Guevara. For ten points, name this\nformer Communist president of Cuba who died in 2016.",
+        "answer": [
+          "Fidel Castro",
+          "Castro"
+        ]
+      },
+      "bonus": {
+        "question": "This man, Fidel’s brother, took power in 2006 due to Fidel’s illness. In 2013, this man announced\nthat he would retire as President in 2018.",
+        "answer": [
+          "Raul Castro",
+          "Raul"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "The investigation into this event produced the Kean-Hamilton Report. Richard Drew’s photograph\nThe Falling Man was taken during this event. Zacarias Moussaoui is sometimes considered the twentieth\nperpetrator of this event, joining a group led by Mohammed Atta. Al-Qaeda orchestrated, for ten points,\nwhat 2001 terrorist attack that destroyed the World Trade Center’s Twin Towers?",
+        "answer": [
+          "September 11th attacks",
+          "September 11th",
+          "9/11"
+        ]
+      },
+      "bonus": {
+        "question": "Among the findings of the 9/11 Commission’s report were this agency’s failure to relay\ninformation about the hijackings to the military. This governmental agency is in charge of air traffic\nmanagement and, thus, grounded all flights on 9/11.",
+        "answer": [
+          "Federal Aviation Administration",
+          "FAA"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "A national park in this state filled with fairy chimneys, or “hoodoos,” is named for settler Ebenezer Bryce. In 2002, an Olympic torch relay passed under the Delicate Arch in this state’s Arches National Park. This US state is the only one to have a majority of its population belonging to a single church. For ten points, name this Western U.S. state where, in 1847, Brigham Young founded Salt Lake City.",
+        "answer": "Utah"
+      },
+      "bonus": {
+        "question": "This politician and former presidential candidate oversaw the aforementioned 2002 Winter Olympics in Salt Lake City.",
+        "answer": "Willard “Mitt” Romney"
+      }
+    },
+    {
+      "tossup": {
+        "question": "Philip Murray represented workers in this industry, who went on strike in April 1952 in response to Harry Truman’s nationalization of its production facilities, a decision that was quickly ruled unconstitutional in the Youngstown case. ArcelorMittal, the world’s largest producer of this commodity, absorbed a major American company in this industry, Bethlehem, during the 2000s. For ten points, name this industrial commodity that created much of Andrew Carnegie’s wealth in Pittsburgh.",
+        "answer": "steel industry"
+      },
+      "bonus": {
+        "question": "Andrew Carnegie’s steel fortune was fueled by this 19th century technological development, an industrial process that allowed production of steel from pig iron.",
+        "answer": "Bessemer process"
+      }
+    },
+    {
+      "tossup": {
+        "question": "For founding a movement named for this color, Wangari Maathai won a Nobel Peace Prize. A series of protests named for this color occurred after an election was rigged against Mir-Hossein Mousavi in favor of Mahmoud Ahmadinejad. A book named for this color contains quotations from Muammar Qaddafi, and a heavily policed “zone” of this color was under international control during the Iraq War. For ten points, name this color that often symbolizes environmental movements.",
+        "answer": [
+          "green",
+          "Green Belt Movement",
+          "Green Revolution",
+          "Green Book",
+          "Green Zone",
+          "Green Party"
+        ]
+      },
+      "bonus": {
+        "question": "The Green Party was represented in the 2000 US Presidential election by this consumer activist and author of Unsafe at Any Speed.",
+        "answer": "Ralph Nader"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This leader once gave a conciliatory speech in English before switching to his native language to say “we will crush them.” This leader launched a guerrilla war known as the Second Chimurenga, and he outmaneuvered Joshua Nkomo and Bishop Abel Muzorewa to assume control of his country. Ian Smith fought the Rhodesian Bush War against this man’s ZANU-PF party. For ten points, name this autocratic longtime President of Zimbabwe.",
+        "answer": "Robert Mugabe"
+      },
+      "bonus": {
+        "question": "In 2017, this ally of Mugabe succeeded him as President of Zimbabwe.",
+        "answer": "Emmerson Mnangagwa"
+      }
+    },
+    {
+      "tossup": {
+        "question": "In 1988, electoral fraud in this country was explained by the phrase “the system crashed,” which was later declared to be a lie by outgoing President Miguel de la Madrid. This country, whose ruling party was described as “the perfect dictatorship,” put down a revolt at the Plaza de Tres Culturas in the Tlatelolco neighborhood during the 1968 Summer Olympics. From 1929 to 2000, the PRI controlled the Presidency of, for ten points, what country that recently elected Andr´es Manuel L´opez Obrador?",
+        "answer": "M´exico or the United Mexican States"
+      },
+      "bonus": {
+        "question": "This party’s Manuel Clouthier finished 3rd in the controversial 1988 presidential elections, but in 2000, it became the first party to defeat a PRI-backed candidate when Vicente Fox took office.",
+        "answer": [
+          "PAN or Partido Acci´on Nacional",
+          "National Action Party"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "This actor plays a man who serves under Colonel Bagley and is given a salary of $500 a month by Omura to help Emperor Meiji destroy a class of swordsmen. In another film, this man plays a character who is tasked with carrying out an attack with a pencil detonator at the Wolf’s Lair. This actor, who starred in The Last Samurai and played Colonel Stauffenberg in 2008’s Valkyrie, has been criticized in Europe for advertising a cult. For ten points, name this prominent Scientologist and star of the Mission: Impossible series.",
+        "answer": "Tom Cruise"
+      },
+      "bonus": {
+        "question": "In Valkyrie, Cruise plays Colonel Stauffenberg, who leads a plot to assassinate this man at the Wolf’s Lair.",
+        "answer": "Adolf Hitler"
+      }
+    },
+    {
+      "tossup": {
+        "question": "The settlement house movement sought to help people facing this condition by introducing them to middle class values. In Nickel and Dimed, Barbara Ehrenreich examined this condition among employed people. This condition is defined as having an income less than three times the average food budget in the United States, while the extreme form of this condition is often identified as living on less than a dollar a day. For ten points, name this condition characterized by a lack of money.",
+        "answer": [
+          "poverty",
+          "obvious equivalents such as being poor",
+          "material hardship"
+        ]
+      },
+      "bonus": {
+        "question": "Ehrenreich’s Nickel and Dimed includes a section on this corporation, the subject of a 2005 documentary subtitled The High Cost of Low Price. This company’s founder, Sam Walton, was the richest man in America for much of the 1980s.",
+        "answer": "Wal-Mart Inc."
+      }
+    },
+    {
+      "tossup": {
+        "question": "In this election year, Shepard Fairey made a poster of the winning candidate in solid red, beige, and blue. One candidate in this election year called his opponent “a decent family man” after an audience member labeled that opponent “an Arab.” The winning candidate in this year used the slogan “Yes We Can,” and ran with Delaware senator Joe Biden. For ten points, name this election year in which John McCain lost to Barack Obama.",
+        "answer": "US presidential election of 2008 BONUS:ThisformergovernorofMassachusettsfinishedwiththethirdmostdelegatesaftertheRepublican primaries in 2008. He later became the Republican presidential candidate in 2012. ANSWER: Willard “Mitt” Romney 5 In the aftermath of this battle, the body of the winning commander was stored in a barrel of brandy for transport. The flagship of Admiral Collingwood, the Royal Sovereign took heavy damage in this battle. A commander in this battle signaled “England expects every man to do his duty” after he drove his ships towards a French fleet. Horatio Nelson was killed in, for ten points, what 1805 battle off the coast of Spain that Britain won? ANSWER: Battle of Trafalgar"
+      },
+      "bonus": {
+        "question": "Horatio Nelson died aboard this vessel, his flagship.",
+        "answer": "HMS Victory"
+      }
+    },
+    {
+      "tossup": {
+        "question": "As an attorney, this man prosecuted leaders of the “Five Families” during the Mafia Commission Trial. After being diagnosed with prostate cancer, this man withdrew from a 2000 Senate race that was won by Hillary Clinton. This man succeeded David Dinkins in his highest post, in which he said “we’re going to rebuild” during a statement following an event at which his city’s fire department was dispatched to the Twin Towers. For ten points, name this mayor of New York City during 9/11.",
+        "answer": "Rudolph “Rudy” Giuliani"
+      },
+      "bonus": {
+        "question": "With the help of Bill Bratton, Giuliani adopted a crime-fighting strategy based on this theory, developed by two social scientists, that explained vandalism’s effect on criminal behavior.",
+        "answer": "broken windows theory IHO General Bowl 2017-2018 Round 9"
+      }
+    },
+    {
+      "tossup": {
+        "question": "The Carillon at this site was created by Coca-Cola for the 1964 World’s Fair. The largest bas-relief sculpture in the world can be found at this site. A 2013 bell-ringing was held here during the fiftieth anniversary of Martin Luther King’s “I Have a Dream Speech” in which King said “Let Freedom Ring from [this site] of Georgia.” After the release of Birth of a Nation, this monument became the site of the founding of the second Ku Klux Klan. Made of quartz monzonite, this monument contains depictions of Jefferson Davis and Robert E. Lee. For ten points, name this Confederate equivalent of Mount Rushmore.",
+        "answer": "Stone Mountain Park R"
+      },
+      "bonus": {
+        "question": "Stone Mountain Park opened on April 14 of this year, 100 years to the day after the assassination of Abraham Lincoln.",
+        "answer": "1965"
+      }
+    },
+    {
+      "tossup": {
+        "question": "One leader of this country issued Decree 88A, and that man overthrew the regime of William Tolbert, the final leader of the True Whig Party. Another leader of this country, Joshua Blahyri, believed himself to be invincible to bullets, and was thus known as General Buck Naked. In 2006, this nation elected Africa’s first female head of state, Ellen Johnson Sirleaf, and another president was sentenced to 50 years F in prison for war crimes involving blood diamonds. For ten points, name this country formerly led by Charles Taylor with capital Monrovia.",
+        "answer": "Republic of Liberia"
+      },
+      "bonus": {
+        "question": "In 2012, Ellen Johnson Sirleaf won a Prize for Peace, Disarmament, and Development, a prize named for this first and only female Prime Minister of India",
+        "answer": "Indira Gandhi A"
+      }
+    },
+    {
+      "tossup": {
+        "question": "In this man’s maiden speech at the House of Commons, he declared that Socialism stood for “Cooperation, not confrontation; for fellowship, not fear.” Under this man, the SAS was sent in to rescue hostages in Sierra Leone in Operation Barras. This man visited victims after the Omagh Bombing and helped negotiate the Good Friday Agreement. This man, an adherent of the Third Way, led New Labour to victory in 1997. This leader, who supported George W. Bush’s campaign to invade Iraq, was succeeded by Gordon Brown. For ten points, name this Prime Minister of the UK from 1997 to 2007. R",
+        "answer": "Tony Blair"
+      },
+      "bonus": {
+        "question": "Tony Blair was the youngest person appointed Prime Minister since the 1810s, but that distinction didn’t last long as this man took the title from him, holding the position from 2010 to 2016.",
+        "answer": "David Cameron"
+      }
+    },
+    {
+      "tossup": {
+        "question": "The Hashemite monarch Faisal II ruled this nation until a 1958 officer coup executed him during the July Revolution. To counter Shia influence, this country invaded a neighbor led by Ayatollah Khomeini [[kho-MAY-nee]], resulting in a costly eight-year stalemate. This nation was the target of a 2003 U.S. invasion in an effort to depose its Ba'ath Party. The dictator Saddam Hussein led, for ten points, what Middle Eastern nation?",
+        "answer": "Republic of Iraq"
+      },
+      "bonus": {
+        "question": "The Iran-Iraq War degenerated into this style of warfare, most associated with World War One, in which dug-out systems of defenses are created on a large scale.",
+        "answer": [
+          "Trench Warfare",
+          "descriptive answers involving battling in trenches"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "This man's tweet claiminghecouldtakehiscompany\"privateat$420pershare\"led to him paying 40 million dollars in penalties to the Securities and Exchange Commission. This man's \"Boring Company\" is testing intra-city travel through the experimental \"Hyperloop System,\" and that company broke off from this businessman's otherenterprise, SpaceX. AsofSeptember2021,thewealthiestmanonearthis,fortenpoints,whichCEOand founder of Tesla?",
+        "answer": "ElonMuskor Elon ReeveMusk"
+      },
+      "bonus": {
+        "question": "Musk passed which Amazon founder as the wealthiest person in the world?",
+        "answer": [
+          "JeffBezosor Jeffrey PrestonBezos",
+          "acceptJeffrey PrestonJorgensen"
+        ]
+      }
     }
   ],
-  "q3": [],
+  "q3": [
+    {
+      "category": "THE U.K. IN THE 1990’S",
+      "prompt": "In the 1990s, who or what was the...",
+      "questions": [
+        {
+          "question": "City where the Jubilee underground line on the tube was extended?",
+          "answer": "London"
+        },
+        {
+          "question": "Holiday shortly before Easter for which a Northern Ireland peace accord was named?",
+          "answer": "Good Friday"
+        },
+        {
+          "question": "Labour Party Prime Minister who began his ten-year term in 1997?",
+          "answer": [
+            "Tony Blair",
+            "Blair",
+            "Anthony Charles Lynton Blair"
+          ]
+        },
+        {
+          "question": "City whose “United” soccer team was managed by Sir Alex Ferguson?",
+          "answer": "Manchester"
+        },
+        {
+          "question": "City where a Scottish parliament was established?",
+          "answer": "Edinburgh"
+        },
+        {
+          "question": "Longtime Chancellor of the Exchequer who ultimately succeeded to the premiership in 2007?",
+          "answer": [
+            "Gordon Brown",
+            "Brown"
+          ]
+        },
+        {
+          "question": "Five-member \"girl group\" whose song \"Wannabe\" led the British pop culture revival?",
+          "answer": "The Spice Girls"
+        },
+        {
+          "question": "1992 treaty creating the European Union which Britain joined?",
+          "answer": [
+            "Maastricht Treaty",
+            "Maastricht"
+          ]
+        }
+      ]
+    },
+    {
+      "category": "MIDDLE EASTERN CONFLICT AND PROTEST",
+      "questions": [
+        {
+          "question": "Had a 2013 coup d’etat remove Mohamed Morsi from power in Cairo?",
+          "answer": "Egypt"
+        },
+        {
+          "question": "Has lost territory to ISIS but is still led from Baghdad?",
+          "answer": "Iraq"
+        },
+        {
+          "question": "Attacked the Hamas-ruled Gaza Strip to its west in 2014?",
+          "answer": "Israel"
+        },
+        {
+          "question": "Signed the Joint Comprehensive Plan of Action, limiting its nuclear production capabilities in\nexchange for relaxed sanctions?",
+          "answer": "Iran"
+        },
+        {
+          "question": "Is torn by civil fighting in and around Aleppo?",
+          "answer": "Syria"
+        },
+        {
+          "question": "Is the base of the militant group Hezbollah?",
+          "answer": "Lebanon"
+        },
+        {
+          "question": "Was invaded by Saddam Hussein in 1990, triggering the first Persian Gulf War?",
+          "answer": "Kuwait"
+        },
+        {
+          "question": "Was the site of the 2000 USS Cole bombing in a port on the Arabian Peninsula?",
+          "answer": "Yemen"
+        }
+      ],
+      "prompt": "Which Middle Eastern country..."
+    },
+    {
+      "category": "BILL CLINTON",
+      "questions": [
+        {
+          "question": "Is married to which Democratic Presidential candidate?",
+          "answer": [
+            "Hillary Rodham Clinton",
+            "Hillary",
+            "Hillary Clinton"
+          ]
+        },
+        {
+          "question": "Served with which Vice President?",
+          "answer": [
+            "Al Gore",
+            "Gore"
+          ]
+        },
+        {
+          "question": "Served as the governor of what state?",
+          "answer": "Arkansas"
+        },
+        {
+          "question": "Had an “inappropriate relationship” with which White House intern?",
+          "answer": [
+            "Monica Lewinsky",
+            "Lewinsky"
+          ]
+        },
+        {
+          "question": "Earned what academic honor, allowing him to study in Oxford?",
+          "answer": [
+            "Rhodes scholarship",
+            "Rhodes"
+          ]
+        },
+        {
+          "question": "Signed what law that was later ruled unconstitutional by the Supreme Court in U.S. v. Windsor?",
+          "answer": [
+            "Defense of Marriage Act",
+            "Defense of Marriage",
+            "DOMA"
+          ]
+        },
+        {
+          "question": "Issued over 100 of what orders on his last day in office, controversially including tax evader Marc\nRich?",
+          "answer": "pardons"
+        },
+        {
+          "question": "employed which first female Attorney General?",
+          "answer": [
+            "Janet Reno",
+            "Reno"
+          ]
+        }
+      ],
+      "prompt": "Bill Clinton..."
+    },
+    {
+      "category": "U.S. PRESIDENTIAL CAMPAIGN GAFFES",
+      "questions": [
+        {
+          "question": "2016 Republican nominee who claimed climate change was invented by the Chinese.",
+          "answer": [
+            "Donald Trump",
+            "Trump"
+          ]
+        },
+        {
+          "question": "Former President who, while campaigning for his wife, called Obamacare “the craziest thing in the\nworld.”",
+          "answer": [
+            "Bill Clinton",
+            "Clinton"
+          ]
+        },
+        {
+          "question": "2016 Libertarian party candidate who failed to identify Aleppo as a Syrian city.",
+          "answer": [
+            "Gary Johnson",
+            "Johnson"
+          ]
+        },
+        {
+          "question": "Previous Republican nominee, who claimed “47 percent of the people” will vote for President Obama,\n“no matter what.”",
+          "answer": [
+            "Mitt Romney",
+            "Romney"
+          ]
+        },
+        {
+          "question": "1976 Democratic nominee who noted that he had “committed adultery many times in his heart.”",
+          "answer": [
+            "Jimmy Carter",
+            "Carter"
+          ]
+        },
+        {
+          "question": "1988 Democratic nominee whose poll numbers bombed after releasing a “tank ride” ad.",
+          "answer": [
+            "Michael Dukakis",
+            "Dukakis"
+          ]
+        },
+        {
+          "question": "20th century running mate who convinced a schoolboy that “potato” was spelled with an e.",
+          "answer": [
+            "Dan Quayle",
+            "Quayle"
+          ]
+        },
+        {
+          "question": "Nominee who alienated voters by noting “extremism in the defense of liberty is no vice.”",
+          "answer": [
+            "Barry Goldwater",
+            "Goldwater"
+          ]
+        }
+      ],
+      "prompt": "Name the..."
+    },
+    {
+      "category": "UNITED NATIONS",
+      "questions": [
+        {
+          "question": "War that inspired its creation and which the League of Nations failed to stop.",
+          "answer": "World War II"
+        },
+        {
+          "question": "Home country of former Secretary General Antonio Guterres, who previously worked as Prime\nMinister in Lisbon.",
+          "answer": "Portugal"
+        },
+        {
+          "question": "Term for the 15-nation UN body in charge of international peace. Its five permanent members hold\nveto power.",
+          "answer": [
+            "UN Security Council",
+            "Security Council",
+            "United Nations Security Council"
+          ]
+        },
+        {
+          "question": "Home country of Dag Hammarskjold, the UN’s second Secretary General from Scandinavia.",
+          "answer": "Sweden"
+        },
+        {
+          "question": "South Korean Secretary General who left the office in 2016.",
+          "answer": [
+            "Ban Ki-moon",
+            "Ban"
+          ]
+        },
+        {
+          "question": "Dutch city where the Peace Palace hosts the UN’s International Court of Justice.",
+          "answer": "the Hague"
+        },
+        {
+          "question": "Secretary General from Ghana who later tried to create peace in Syria.",
+          "answer": [
+            "Kofi Annan",
+            "Annan"
+          ]
+        },
+        {
+          "question": "Former Iranian leader who, in a 2010 speech to the General Assembly, claimed the US government\ncaused the 9/11 attacks.",
+          "answer": [
+            "Mahmoud Ahmadinejad",
+            "Ahmadinejad"
+          ]
+        }
+      ],
+      "prompt": "Name the..."
+    },
+    {
+      "category": "US Presidential Runners-Up",
+      "prompt": "Given the runner-up in the Electoral College, name the year in which the Presidential election took place.",
+      "questions": [
+        {
+          "question": "John McCain, who lost to Illinois senator Barack Obama.",
+          "answer": "2008"
+        },
+        {
+          "question": "Mitt Romney, who lost to President Barack Obama.",
+          "answer": "2012"
+        },
+        {
+          "question": "George McGovern, who only took DC and Massachusetts from Richard Nixon.",
+          "answer": "1972"
+        },
+        {
+          "question": "Michael Dukakis, whose running mate Lloyd Bentsen called Dan Quayle “no Jack Kennedy.”",
+          "answer": "1988"
+        },
+        {
+          "question": "Bob Dole, who ran after the successful midterm “Contract with America” strategy.",
+          "answer": "1996"
+        },
+        {
+          "question": "Horace Greeley, who died in this year.",
+          "answer": "1872"
+        },
+        {
+          "question": "Al Smith, the first Catholic nominee.",
+          "answer": "1928"
+        },
+        {
+          "question": "Alf Landon, who even lost his home state of Kansas.",
+          "answer": "1936"
+        }
+      ]
+    },
+    {
+      "category": "William Rehnquist",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "President who nominated him as Associate Justice in 1971.",
+          "answer": "Richard Nixon"
+        },
+        {
+          "question": "1973 case concerning abortion in which Rehnquist was one of two dissenters.",
+          "answer": "Roe v. Wade"
+        },
+        {
+          "question": "Action that was determined in Lee v. Weisman to be illegal if led by a school-sponsored rabbi, with Rehnquist dissenting.",
+          "answer": "school prayer"
+        },
+        {
+          "question": "Action that was determined in Texas v. Johnson to be legal, with Rehnquist dissenting.",
+          "answer": [
+            "flag burning",
+            "flag desecration"
+          ]
+        },
+        {
+          "question": "2000 case in which Rehnquist’s court ended the Florida recount.",
+          "answer": "Bush v. Gore"
+        },
+        {
+          "question": "Man he succeeded as Chief Justice in 1986.",
+          "answer": "Warren Burger"
+        },
+        {
+          "question": "Attorney General under Bill Clinton who was the defendant in the 1993 Shaw redistricting case.",
+          "answer": [
+            "Janet Reno",
+            "Shaw v Reno"
+          ]
+        },
+        {
+          "question": "Justice who was appointed to the Supreme Court by FDR, who was Chief US Prosecutor at the Nuremberg Trials, and who Rehnquist clerked for.",
+          "answer": "Robert H. Jackson"
+        }
+      ]
+    },
+    {
+      "category": "Assassinations",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "Country where King Faisal was killed in Riyadh.",
+          "answer": "Saudi Arabia"
+        },
+        {
+          "question": "Female British Prime Minister who was targeted in the Brighton Hotel bombing.",
+          "answer": "Margaret Thatcher"
+        },
+        {
+          "question": "Country where Park Hung-Chee was assassinated.",
+          "answer": "South Korea"
+        },
+        {
+          "question": "Common item used to inject Alexander Litvinenko with poison.",
+          "answer": "umbrella"
+        },
+        {
+          "question": "Roman Emperor whose assassination in 192 AD ended the Nerva-Antonine dynasty.",
+          "answer": "Lucius Aurelius Commodus"
+        },
+        {
+          "question": "Prime Minister of Israel who was killed in 1995.",
+          "answer": "Yitzhak Rabin"
+        },
+        {
+          "question": "First female Prime Minister of Pakistan who was killed while campaigning in 2007.",
+          "answer": "Benazir Bhutto"
+        },
+        {
+          "question": "City where Elisabeth of Austria was stabbed by an anarchist in 1898.",
+          "answer": "Geneva"
+        }
+      ]
+    },
+    {
+      "category": "Prime Ministers of the United Kingdom",
+      "prompt": "Concerning the British office of Prime Minister (PM), name the...",
+      "questions": [
+        {
+          "question": "Conservative PM of the 1980s, dubbed \"The Iron Lady.\"",
+          "answer": [
+            "MargaretThatcheror Margaret HildaThatcher",
+            "or BaronessThatcher"
+          ]
+        },
+        {
+          "question": "Former mayor of London who led the UK during the COVID-19 pandemic.",
+          "answer": "BorisJohnsonor Alexander Boris de PfeffelJohnson"
+        },
+        {
+          "question": "PM who declared \"Peace in Our Time\" after appeasing Hitler.",
+          "answer": "Arthur NevilleChamberlain"
+        },
+        {
+          "question": "Son of an \"Elder\" PM who oversaw the end of the American Revolution.",
+          "answer": "WilliamPittthe Younger"
+        },
+        {
+          "question": "Liberal PM who gave the Midlothian Campaign speeches and opposed Disraeli.",
+          "answer": "WilliamGladstoneor William Ewart Gladstone"
+        },
+        {
+          "question": "De factofirst PM, in power during the beginningof the War of the Austrian Succession.",
+          "answer": "RobertWalpole, 1st Earl of Orford"
+        },
+        {
+          "question": "Conservative who signed the Good Friday Agreement and ratified the treaty to join the European Union.",
+          "answer": "JohnMajor"
+        },
+        {
+          "question": "Conservative successor of Churchill who resigned after bungling the Suez Crisis.",
+          "answer": "AnthonyEden, 1st Earl of Avon or RobertAnthonyEden 2021-22 C Set History"
+        }
+      ]
+    },
+    {
+      "category": "Syrian Civil War",
+      "prompt": "Concerning the 21st century civil war in Syria, name the...",
+      "questions": [
+        {
+          "question": "So-called \"caliphate\" which controlled much of Eastern Syria in the mid-2010s.",
+          "answer": "ISIL"
+        },
+        {
+          "question": "U.S. president who first called for strategic airstrikes in Syria in 2014.",
+          "answer": "Barack Obama or Barack Hussein Obama II"
+        },
+        {
+          "question": "Family of Ba'ath politicians including Hafez and Bashar, who presided over the government forces during the Civil War.",
+          "answer": "al-Assad"
+        },
+        {
+          "question": "Nearby state whose IDF-led Operation Good Neighbor was an attempt to bring medical and humanitarian aid.",
+          "answer": "State of Israel or Medinat Yisra'el"
+        },
+        {
+          "question": "Turkish president who committed ground forces to the war in the mid-2010s.",
+          "answer": "Recep Tayyip Erdoğan ]"
+        },
+        {
+          "question": "Northern Syrian city whose Great Mosque was levelled following a four year-long battle.",
+          "answer": "Aleppo or Halab"
+        },
+        {
+          "question": "Lebanese militant faction and political party which sent both ground forces and convoys of weapons.",
+          "answer": "Hezbollah or Ḥizbu 'llāh"
+        },
+        {
+          "question": "Kurdish militia first formed during the Rojava campaign who are seen as terrorists by Turkey.",
+          "answer": "People's Defense Units"
+        }
+      ]
+    },
+    {
+      "category": "Natural Disasters in the U.S.",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "2005 Category-5 Hurricane which broke the levees of New Orleans.",
+          "answer": "HurricaneKatrina"
+        },
+        {
+          "question": "Volcano in the Cascades whose 1980 eruption caused deadly mudslides that reached the Columbia River.",
+          "answer": "MountSaint HelensorLawetlat'la"
+        },
+        {
+          "question": "2017 Hurricane which left denizens of Puerto Rico without power for years.",
+          "answer": "HurricaneMaria"
+        }
+      ]
+    }
+  ],
   "q4": [
     {
       "parts": [
@@ -175,14 +1327,11 @@
     },
     {
       "parts": [
-        "(30 pts) Senate Bill 3225 was an attempt to disclose the full text of this treaty. A humorous\nwebsite dedicated to this treaty directs the reader to stopfasttrack.com. One politician\nclaimed that this treaty “is much more than a (20 pts) ",
-        "free trade agreement,” and this\nagreement is the successor to the TPSEP. (10 pts) ",
-        "In 2015, Vietnam, Australia, Canada, and the United\nStates were in talks regarding, for ten points, what proposed trade agreement between twelve Pacific Rim\ncountries?"
+        "(30 pts) This adjective names a white supremacist “Council of Citizens” led by Earl Holt. Brent\nBozell ghostwrote a book for Arizona Senator Barry Goldwater about The Conscience of\nthis type of person. The Canadian Alliance (20 pts) ",
+        "merged with another party to form the\nCanadian political party of this name, which was, until October 2015, led by Stephen (10 pts) ",
+        "Harper. Traditional cultural institutions are supported by, for ten points, what political philosophy that\ndescribes the American Republican Party, contrasted with “liberalism”?"
       ],
-      "answer": [
-        "Trans-Pacific-Partnership",
-        "TPP"
-      ]
+      "answer": "conservative"
     },
     {
       "parts": [
@@ -197,11 +1346,53 @@
     },
     {
       "parts": [
+        "(30 pts) One of this man’s first acts as Prime Minister was the First Agrarian Reform, which\nexpropriated large sugar plantations for redistributions to peasants. Before coming to power,\nhe was denied counsel in a trial over a failed (20 pts) ",
+        "July 26th attack on the barracks at\nMoncada; at that trial, this man proclaimed “Condemn me; it does not matter. History will (10 pts) ",
+        "absolve me.” After overthrowing Fulgencio Batista, this man ruled for half a century until passing\npower to his brother Raul in 2008. For ten points, name this longtime dictator of Cuba."
+      ],
+      "answer": [
+        "Fidel Castro",
+        "Castro"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) In August 2015, one of these items was returned to NPR legal correspondent Nina\nTotenberg and her family 35 years after it was stolen from her father. In 2014, one of\nthese objects named “Lipinski” was stolen in Milwaukee after a performance of Olivier (20 pts) ",
+        "Messiaen’s Quartet for the End of Time. Wood density and varnish quality have been\nproposed as explanations for the (10 pts) ",
+        "brilliant sound of these instruments, which are roughly 300\nyears old. For ten points, name these instruments, reputed to be the finest-crafted violins in the world."
+      ],
+      "answer": [
+        "Stradivarius violin",
+        "Stradivari",
+        "Stradivarius instrument"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) Senate Bill 3225 was an attempt to disclose the full text of this treaty. A humorous\nwebsite dedicated to this treaty directs the reader to stopfasttrack.com. One politician\nclaimed that this treaty “is much more than a (20 pts) ",
+        "free trade agreement,” and this\nagreement is the successor to the TPSEP. (10 pts) ",
+        "In 2015, Vietnam, Australia, Canada, and the United\nStates were in talks regarding, for ten points, what proposed trade agreement between twelve Pacific Rim\ncountries?"
+      ],
+      "answer": [
+        "Trans-Pacific-Partnership",
+        "TPP"
+      ]
+    },
+    {
+      "parts": [
         "(30 pts) Alicia Garza and Patrisse Cullors are credited with originating this movement. In\nAugust 2015, Elizabeth Hasselbeck questioned whether this group should be identified as a (20 pts) ",
         "hate group, while other opposition to this movement has focused on support for law\nenforcement. Though it was created in (10 pts) ",
         "2013, it became nationally prominent after the death of\nMichael Brown. For ten points, name this civil rights protest movement whose three-word name protests\nthe lack of human rights for a minority group."
       ],
       "answer": "Black Lives Matter"
+    },
+    {
+      "parts": [
+        "(30 pts) An incident in this body of water’s Macondo Prospect led to a moratorium announced\nby Ken Salazar. A delta known as the Bird’s Foot extends into this body of water, whose\ncoast is home to many (20 pts) ",
+        "bayous. Oil gushed into this body of water for 87 days in 2010\nafter the Deepwater Horizon explosion, and a (10 pts) ",
+        "2005 hurricane that gained strength here\ndevastated New Orleans. For ten points, name this gulf of the Atlantic Ocean where Hurricane Katrina\nstruck the Mississippi River Delta."
+      ],
+      "answer": "Gulf of Mexico"
     },
     {
       "parts": [
@@ -213,28 +1404,21 @@
     },
     {
       "parts": [
-        "(30 pts) (TIEBREAKER EXAMPLE QUESTION) A 2003 attempt to amend Article 23 of this region’s law to allow police access to\nprivate property led to the downfall of its leader, Tung Chee-hwa. This region was the\norigin of the (20 pts) ",
-        "H5N1 “bird flu” virus. The question of how to implement universal\nsuffrage led to the Occupy Central movement in this region, in which protesting\nstudents carried (10 pts) ",
-        "umbrellas to defend against police. For ten points, name this former British\ncolony which, along with Macau, became part of China in the 1990s."
+        "(30 pts) One party in this nation was divided into the Khalqs and the Parchams and overthrew\nDaud Khan to rise to power in the Saur Revolution. Thousands of Stinger missiles were\nsent to this nation by the CIA during Operation Cyclone. Hafizullah (20 pts) ",
+        "Amin’s inability\nto quell unrest in this country led to an invasion that was repelled by foreign fighters from\naround the Islamic world, a group called the (10 pts) ",
+        "mujahideen. For ten points, name this country\nthat was ruled by the Taliban until a 2001 US invasion."
       ],
-      "answer": [
-        "Hong Kong Special Administrative Region",
-        "Hong Kong",
-        "Hong Kong SAR",
-        "Xianggang",
-        "Xianggang Tebie Xingzhengqu"
-      ]
+      "answer": "Afghanistan"
     },
     {
       "parts": [
-        "(30 pts) Multiple false reports of the death of this group’s leader led security analyst Ryan\nCummings to state that he “dies more often than an iPhone battery.” This group’s leadership was in dispute between Abu Musab Al-Barnawi and (20 pts) ",
-        "Abubakar Shekau after\nBarnawi was appointed by Abu-Bakr al-Baghdadi. The hashtag campaign “Bring back our (10 pts) ",
-        "girls” was started to spread awareness of this group’s kidnapping of 300 Christian schoolgirls from\nChibok. For ten points, name this Islamist group whose name means “Western education is forbidden”\nand which operates in Northeastern Nigeria."
+        "(30 pts) This man ordered the construction of the Great Man-Made River to irrigate his country\nand renamed his state as a jamahiriya as part of his Third International Theory. This man\nwas accused of being behind the (20 pts) ",
+        "Lockerbie bombing, causing his country to be listed\nas a state sponsor of terror. This man was overthrown in a 2011 revolution in which NATO\nenforced a no-fly zone and an (10 pts) ",
+        "American embassy in Benghazi was attacked. For ten points, name\nthis longtime dictator of Libya."
       ],
       "answer": [
-        "Boko Haram",
-        "People Committed to the Prophet’s Teachings for Propagation and Jihad",
-        "Jama’atu Ahlis Sunna Lidda’Awati Wal-Jihad"
+        "Muammar al-Gaddafi",
+        "Gadaffi"
       ]
     },
     {
@@ -261,14 +1445,130 @@
     },
     {
       "parts": [
-        "(30 pts) This company spent 11 months in bankruptcy protection after three years of\nmismanagement by former ESPN executive Mark Shapiro and NFL owner Dan Snyder.\nIn 2005, this company closed AstroWorld in Houston and, due to Hurricane (20 pts) ",
-        "Katrina,\nits New Orleans facility. In 2017, this company stopped promoting the “Stars and Bars”\nConfederate symbol at its primary (10 pts) ",
-        "“Over Texas” location. For ten points, name this American\nchain of amusement parks whose name refers to the number of nations that have governed Texas."
+        "(30 pts) In 2009, a group of firefighters in this state who had not been given promotions won their Supreme Court case, Ricci v. DeStefano. In 2005, Susette Kelo sued a town in this state for misusing its (20 pts)",
+        "eminent domain power by seizing condemned property along the Thames River. In 1965, this state’s Comstock Act banning contraception was struck down after a lawsuit by Estelle (10 pts)",
+        "Griswold. For ten points, name this New England state, the site of the Kelo v. New London and the New Haven firefighters cases."
+      ],
+      "answer": "Connecticut"
+    },
+    {
+      "parts": [
+        "(30 pts) In 1997, Fuzzy Zoeller [zeller] made a racist remark about the food this man would\nselect for the next year’s Champion’s Dinner, a remark echoed in 2013 by Sergio Garcia.\nThis man, who refers to his ethnic background as (20 pts) ",
+        "“Cablinasian,” won the 2000 US\nOpen by 15 strokes, the most dominating major championship victory in history. In 1997,\nhe became the (10 pts) ",
+        "youngest and first non-white man to win the Masters. For ten points, name this\nAmerican athlete with the second-most wins in golf history."
       ],
       "answer": [
-        "Six Flags Entertainment Corporation",
-        "Six Flags"
+        "Eldrick “Tiger” Woods",
+        "Eldrick Woods",
+        "Tiger Woods",
+        "Woods"
       ]
+    },
+    {
+      "parts": [
+        "(30 pts) This man names a thesis with Alonzo Church that concerns functions computable by one of his hypothetical namesake machines. Computers capable of mimicking human (20 pts)",
+        "speech are said to “pass” a test named for this man, who worked at Bletchley Park during World War II. In 2014, Queen Elizabeth II announced an official (10 pts)",
+        "pardon of, for ten points, what British mathematician who led the effort to decode the Enigma machine and who committed suicide following his conviction of homosexuality?"
+      ],
+      "answer": "Alan Turing"
+    },
+    {
+      "parts": [
+        "(30 pts) In 2013, after campaigning on support for this issue, the Social Democratic Party refused to support a bill brought by Die Linke [dee link-uh] because it threatened the SDP’s coalition with the Christian Democrats. In 2017, over 160 million dollars was budgeted for a non-binding (20 pts)",
+        "postal survey on this issue in Australia. Taiwan may soon become the first Asian country to adopt this policy, which, despite (10 pts)",
+        "Angela Merkel having voted against it, became law in Germany in 2017. For ten points, name this form of matrimony."
+      ],
+      "answer": [
+        "same-sex marriage or gay marriage",
+        "equivalents"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) A holder of this position once ran for the Austrian presidency but was discovered to have been in the Wehrmacht during World War II. Kurt Waldheim held this position, as did a man whose (20 pts)",
+        "plane was shot down during the Congo Crisis, Dag Hammarskjold [hammer-sk’yold]. A former holder of this position, (10 pts)",
+        "Kofi Annan, died in August 2018, and Portugal’s Antonio Guterres succeeded Ban Ki-moon in this position in 2016. For ten points, name this position held by the chief administrator of the United Nations."
+      ],
+      "answer": "Secretary-General of the United Nations"
+    },
+    {
+      "parts": [
+        "(30 pts) Leonard Bernstein once added an impromptu new conclusion to this piece during his Young People’s Concert series, and Colin Matthews wrote an extra movement for this piece in 2000. At this work’s premiere, its composer recruited students from (20 pts)",
+        "St. Paul’s Girls’ School for a movement where an offstage choir can be heard. One of this work’s most famous melodies, “Thaxted,” is heard in a movement subtitled (10 pts)",
+        "“Bringer of Jollity,” one of seven astrologically named movements. For ten points, name this suite composed by Gustav Holst that opens with “Mars, the Bringer of War.”"
+      ],
+      "answer": "The Planets, Opus 32"
+    },
+    {
+      "parts": [
+        "(30 pts) A lynch mob in this state tortured Claude Neal in 1934. On Election Day 1920 in this state’s town of Ocoee, whites killed over 50 African Americans and drove out the rest of the black population. The 1923 Rosewood massacre took place in this state, where the (20 pts)",
+        "NAACP’s Harry Moore and his wife were killed by a KKK bombing in 1950. In 2012, police in the city of (10 pts)",
+        "Sanford were criticized for not promptly arresting George Zimmerman, who shot and killed an unarmed black teenager. For ten points, name this state where Trayvon Martin was killed in a suburb north of Orlando."
+      ],
+      "answer": "Florida"
+    },
+    {
+      "parts": [
+        "(30 pts) Charles Krauthammer defined a doctrine named for this politician in the wake of withdrawing from the ABM treaty. In a 1995 election, this politician defeated Ann Richards with the help of (20 pts)",
+        "Karl Rove. This man coined the term “axis of evil” to describe targets of the War on Terror. While reading (10 pts)",
+        "The Pet Goat to schoolchildren, this man was informed that a second plane had hit the Twin Towers. The 9/11 attacks took place under, for ten points, what 43rd President of the United States?"
+      ],
+      "answer": [
+        "George W. Bush",
+        "Bush 43 before “43rd” is read"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) With Roger Penrose, this figure names a set of theorems regarding gravitational singularities; with Leonard Susskind, this figure debated the black (20 pts)",
+        "hole information paradox. This figure discussed the work of five other scientists in On the Shoulders of Giants. The (10 pts)",
+        "radiation emitted by an evaporating black hole is named for this author of A Brief History of Time. For ten points, name this British physicist who suffered from ALS and died in 2018."
+      ],
+      "answer": "Stephen Hawking"
+    },
+    {
+      "parts": [
+        "(30 pts) A holder of this position investigated the 1967 Detroit race riot as the leader, and namesake, of the Kerner Commission. In 2003, a holder of this position was indicted on corruption charges relating to (20 pts)",
+        "“Operation Safe Road.” George Ryan was a holder of this position, that had earlier been held by Dwight Green until the election of a man who lost to (10 pts)",
+        "Dwight Eisenhower in back-to-back Presidential elections. Adlai Stevenson II held, for ten points, what position that often clashes with the Mayor of Chicago from Springfield?"
+      ],
+      "answer": "Governor of Illinois"
+    },
+    {
+      "parts": [
+        "(30 pts) The pose of this work’s central figure is thought to pay homage to both the Earth and the divine. This work influenced Le Corbusier’s concept of “Modulor.” A work by Giacomo Andrea da Ferrara contains similarities to this one but was criticized for incorrectly positioning the (20 pts)",
+        "navel. Principles from Polykleitos’ canon were adapted into this work, whose creator accompanied it with notes like “the space that lies between the (10 pts)",
+        "legs is an equilateral triangle.” Book 3 of De Architectura inspired, for ten points, what sketch of the human body’s ideal proportions, made by Leonardo da Vinci?"
+      ],
+      "answer": "Vitruvian Man IHO General Bowl 2017-2018 Round 9"
+    },
+    {
+      "parts": [
+        "(30 pts) In September 2015, a crane accident killed over a hundred people preparing for this ritual. An economic collapse occurred due to the liberal dispensation of gold during Mansa Musa’s performance of this ritual. One portion of this ritual involves (20 pts)",
+        "throwing stones at a wall representing the devil. One structure involved in this ritual contains a black stone that participants are encouraged to kiss. Participants in this ritual (10 pts)",
+        "walk counterclockwise around the Ka’aba. For ten points, name this Pillar of Islam that consists of a pilgrimage to Mecca. ANSWER:Hajj(acceptUmrahuntil“throwingstones”ismentioned,promptonanswerslike“pilgrimage to Mecca” until mentioned.) T (6) Under this man, the purchase of officer ranks was abolished in the Cardwell Reforms. This man launched one of the first modern political campaigns in the (+) Midlothian Campaign but was less successful working with Charles Parnell in securing Irish home rule. This man’s popularity declined after the death of Charlie Gordon in the Sudan, while this F man’s (*) conservative rival was preferred by Queen Victoria. For ten points, name this Liberal prime minister of the United Kingdom."
+      ],
+      "answer": "William Ewart Gladstone"
+    },
+    {
+      "parts": [
+        "(30 pts) Description Acceptable. A dispute over who accomplished this feat led to the SmithsonianwronglyattributingittoengineerSamuelLangley.Thisfeat,whichlasted 59 seconds, (20 pts)",
+        "waslaunchedfromaninclineonKillDevilHill.Bicyclestoreemployee Charlie Taylor built a lightweight gasoline motor to make this feat possible for the vessel Flyer I. Kitty Hawk, (10 pts)",
+        "North Carolina was the sight of, for ten points, what feat accomplished by the Wright Brothers?"
+      ],
+      "answer": [
+        "TheFirstmanned, poweredFlightby the WrightBrothers",
+        "theFirst manned, poweredFlightat Kitty Hawk",
+        "descriptiveanswers 2021-22 C Set History"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) Using the codename Bolek, thismanlikelyinformedonhisfellowworkingmen regarding dissident matters such as listening to Radio Free Europe. This electrician led a strike of (20 pts)",
+        "17,000 workers at the Lenin Shipyards in Gdansk [[guh-DANSK]]. This man achieved semi-free elections following theRoundTableAgreementsheldin Warsaw. The leader of the trade union (10 pts)",
+        "Solidarity was, for ten points, what first president of a democratic Poland?"
+      ],
+      "answer": "LechWałęsa] be lenienton pronunciation 2021-22 C Set History"
     }
   ]
 }

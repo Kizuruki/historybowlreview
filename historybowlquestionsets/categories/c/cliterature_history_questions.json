@@ -1,10 +1,10 @@
 {
   "q1": [
     {
-      "question": "This author corresponded with Colonel Thomas Wentworth Higginson during the Civil War,\nwhich was the subject of her poem \"It Feels a Shame to Be Alive.\" She described a carriage\ncontaining \"eternity\" in another poem. For 10 points, name this \"belle of Amherst\" whose poems\nsuch as \"Because I Could Not Stop for Death\" were published only after her death.",
+      "question": "Near the end of his life, this man gave a speech identifying the \"three boxes\" as the source of\nrights. This man was nominated for Vice-President by the Equal Rights Party on the Victoria\nWoodhull ticket. This orator gave a speech asking \"what, to the slave, is the Fourth of July\" after\nfounding The North Star. This author of My Bondage and My Freedom wrote about his escape\nfrom Mr. Covey in Maryland. For 10 points, name this former slave turned abolitionist.",
       "answer": [
-        "Emily Dickinson",
-        "Dickinson"
+        "Frederick Douglass",
+        "Douglass"
       ]
     },
     {
@@ -44,15 +44,27 @@
       ]
     },
     {
-      "question": "This man called the author of The Heart of Darkness a “bloody racist” in his lecture An Image\nof Africa. He wrote about Chief Ezeulu refusing to work for T.K. Winterbottom in Arrow of God, and\nIkemefuna is killed by his guardian Okonkwo in a work inspired by this author’s experiences of British\ncolonization in Nigeria. For ten points, name this African author of Things Fall Apart.",
+      "question": "This author wrote about a drunk Pope Julius II who tries to convince Julius into letting him into\nheaven in Julius Exclusus, and he advocated for Christians to act with faith in his Handbook of a Christian\nKnight. Hans Holbein created drawings for this man’s best known work, which satirizes the workings of\nthe Catholic Clergy. For ten points, name this Dutch humanist who wrote In Praise of Folly.",
       "answer": [
-        "Chinua Achebe",
-        "Achebe"
+        "Desiderius Erasmus",
+        "Erasmus"
+      ]
+    },
+    {
+      "question": "This founder and editor of The Crisis magazine broke with an organization he co-founded over his\nopinion of the “separate but equal” doctrine. This man’s Niagara movement disagreed with Booker T.\nWashington’s Atlanta compromise, instead holding that the small, elite “Talented Tenth” should seek\nfull political authority in the South. For ten points, name this author of The Souls of Black Folk and\nco-founder of the NAACP.",
+      "answer": [
+        "William Edward Burghardt Du Bois",
+        "W.E.B. Du Bois",
+        "Du Bois"
       ]
     },
     {
       "question": "This character discusses fighting off sea monsters called “nicoras.” Wiglaf is the only person who\nattends this man in death, and is crowned king as a result. Unferth apologizes for doubting this character\nby granting him the sword Hrunting. For ten points, name this title character of the oldest surviving work\nof Old English poetry, an epic hero defeats Grendel.",
       "answer": "Beowulf"
+    },
+    {
+      "question": "Bill Gates distributed pages of this man’s Codex Leicester [lester] as a Windows screen saver. This\nman wrote in reverse cursive in notebooks detailing water-walking shoes and an early helicopter design,\nand he superimposed two images of a man inscribed in a circle and square in his Vitruvian Man drawing.\nFor ten points, name this Italian Renaissance scientist and artist, whose non-journal works include the\nMona Lisa.",
+      "answer": "Leonardo da Vinci"
     },
     {
       "question": "In this work, the fourth ditch of the Malebolge [mall-uh-bowlj] is home to sorcerers who walk with\ntheir heads turned backwards. This poem’s narrator avoids a leopard, a lion, and a wolf by passing through\na doorway that warns, “abandon all hope, ye who enter here,” and later discovers the traitors Cassius,\nBrutus, and Judas writhing in the mouths of Lucifer. The poet Virgil guides the narrator during, for ten\npoints, what first section of Dante’s Divine Comedy, in which the author explores the circles of Hell?",
@@ -82,16 +94,10 @@
       ]
     },
     {
-      "question": "Immediately prior to this event, a character delivers a monologue in which he argues against a\npardon by stating “I am constant as the northern star.” A man justifies his involvement in this event by\ncomparing its central subject to a serpent’s egg. The target of this event is eulogized in a funeral oration\nthat begins “Friends, Romans, countrymen, lend me your ears.” For ten points, name this event in which\na Roman leader utters the dying words “Et tu, Brute.”",
+      "question": "This discipline’s focus was shifted onto social constructions, rather than observables, by Giambattista Vico’s verum factum principle. The “heroic” in this discipline was discussed by Thomas Carlyle, who developed a “Great Man” theory of it. Authors in this field’s Dunning School promoted a “lost cause” narrative of the Confederacy in school textbooks. For ten points, name this study of humanity’s past.",
       "answer": [
-        "assassination of Julius Caesar",
-        "Assassination of Caesar",
-        "Murder of Julius Caesar",
-        "Killing of Julius Caesar",
-        "Stabbing of Julius Caesar",
-        "Murder of Caesar",
-        "Killing of Caesar",
-        "Stabbing of Caesar"
+        "history",
+        "more descriptive answers, such as “the philosophy of history”"
       ]
     },
     {
@@ -101,6 +107,111 @@
     {
       "question": "In this novel, a woman who seeks vengeance for the rape and murder of her sister by a callous\nnobleman sews the names of those she marks for death into her knitting. Near the start of this novel,\nDoctor Manette is released from an eighteen-year sentence in the Bastille. This novel ends as Sydney\nCarton is guillotined in place of Charles Darnay during the French Revolution. For ten points, name this\nCharles Dickens novel titled after London and Paris.",
       "answer": "A Tale of Two Cities"
+    },
+    {
+      "question": "Life under this leader is depicted in the opening chapters of the novel The Three-Body Problem. This leader’s wife wrote a series of Eight Model Dramas, including The Legend of the Red Lantern and The Red Detachment of Women. This ruler wrote that “Imperialism and All Reactionaries Are Paper Tigers” in a book of quotations. For ten points, name this author of the Little Red Book who instituted the Cultural Revolution in China.",
+      "answer": [
+        "Mao Zedong",
+        "either underlined portion"
+      ]
+    },
+    {
+      "question": "Two answers required. These two people criticized critical reformers of Christianity, particularly Bruno Bauer, in a book titled The Holy Family. The League of the Just asked these two people to collaborate on an 1848 pamphlet that opens by stating “a specter is haunting Europe” and studies the history of class struggles. For ten points, name these German philosophers, the co-authors of The Communist Manifesto.",
+      "answer": [
+        "Karl Marx and Friedrich Engels",
+        "in either order"
+      ]
+    },
+    {
+      "question": "This man argued that Sam Houston used self-defense following the misfire of a pistol by William Stanbery. Thomas Carr set a poem this man wrote to the tune “To Anacreon from Heaven;” that poem was written from a British ship during the attack on Fort McHenry in the War of 1812. The sight of an object “gallantly streaming” inspired, for ten points, what lawyer who described “the rockets’ red glare” in lyrics that became known as “The Star-Spangled Banner?”",
+      "answer": "Francis Scott Key"
+    },
+    {
+      "question": "Alonso de Avellaneda wrote an unauthorized sequel to this novel, causing its author to rush its second volume to completion ten years after its first volume appeared. The tale of a captive in the 39th chapter of this novel was based on its author’s kidnapping by pirates and enslavement by the Moors. This novel’s title character is bored of his life in La Mancha, causing him to take a noble name and become a knight. For ten points, name this novel by Miguel de Cervantes.",
+      "answer": "Don Quixote"
+    },
+    {
+      "question": "One author in this language wrote of a woman whose royal husband communicates with her using a medium after she is killed by soldiers in “The Song of Everlasting Sorrow.” One author in this language wrote of the “rumble-rumble of war chariots” in a poem bemoaning the An Lushan Rebellion. This language was used to write “Drinking Alone By Moonlight” the most noted poem of Li Po. For ten points, name this language in which poets like Bai Juyi and Wang Wei wrote under the Tang Dynasty.",
+      "answer": [
+        "Middle Chinese",
+        "Mandarin"
+      ]
+    },
+    {
+      "question": "This monarch tried to force Scotland to give up Queen Mary in marriage to his son in the War of the Rough Wooing. This king executed his advisor Thomas More and effectively replaced him with the author of the Book of Common Prayer, Thomas Cranmer, because More did not attend the coronation of Anne Boleyn. For ten points, name this English king who ordered the executions of two of his six wives.",
+      "answer": "Henry VIII of England"
+    },
+    {
+      "question": "This gospel is the only one where Jesus tries to keep his identity secret, and its manuscripts either have a “longer” ending or a “lost” shorter ending. Augustine thought this book was abridged from a longer gospel, but scholars now believe it was a source for the other synoptics. In this book, Jesus says “the Sabbath was made for man, not man for the sabbath.” For ten points, name this shortest and earliest gospel, the second book of the New Testament.",
+      "answer": "the Gospel/Book of Mark"
+    },
+    {
+      "question": "This man replaced John Carver as governor, and his successor Edward Winslow co-wrote Mourt’s Relation with him. During this man’s leadership, the Nemasket Raid was launched by Myles Standish. Samoset contacted the English during this man’s leadership, thus establishing relations with Massasoit. This Puritan leader documented the landing at Cape Cod and his signing of the Mayflower Compact. For ten points, name this five-time governor of Plymouth Colony and author of On Plymouth Plantation.",
+      "answer": "William Bradford"
+    },
+    {
+      "question": "A character in this novel declares a wish to become a vivandi`ere in the Union Army to join her father, Robert, before he is wounded in 1862. John Brooke is also wounded in the Civil War and, with one of this novel’s title characters, becomes the father of twins Daisy and Demi. Professor Bhaer and Laurie Laurence marry two of the other March sisters in, for ten points, what novel by Louisa May Alcott about Meg, Jo, Beth, and Amy?",
+      "answer": "Little Women"
+    },
+    {
+      "question": "In this novel, Cassy and Emmeline escape to Canada, where Cassy is reunited with her grandson, Harry, and her daughter, Eliza. Ophelia and Topsy are united by the death of Little Eva in this novel, before Augustine St Clare’s death leaves his wife free to sell the title man to Simon Legree. For ten points, name this novel by Harriet Beecher Stowe that, legend says, Abraham Lincoln credited with beginning the Civil War.",
+      "answer": [
+        "Uncle Tom’s Cabin",
+        "or, Life Among the Lowly"
+      ]
+    },
+    {
+      "question": "This novel was composed during the volcanic winter after the eruption of Mount Tambora, which may have inspired the setting of a frame story in which Robert Walton meets the protagonist while exploring the North Pole. In this novel, Elizabeth Lavenza is killed on her wedding night after her husband refuses to create a female companion for his first creation. For ten points, name this novel about Victor, a mad scientist who creates life, written by Mary Shelley.",
+      "answer": [
+        "Frankenstein",
+        "or, The Modern Prometheus"
+      ]
+    },
+    {
+      "question": "This novel’s protagonist adopts the daughter of his brother-in-law and Yugao [yoo-gah-oh]; his own daughter, the younger Akashi Lady, becomes an empress after being adopted by the protagonist’s wife. Although his father arranges for him to marry the daughter of the Minister of the Left, Lady Aoi [ah-oh-ee], this novel’s title “Shining Prince” pursues Lady Fujitsubo [foo-jee-tsoo-boh] because of her resemblance to his mother. For ten points, name this Japanese novel of the Heian period [hay-ahn period] written by Murasaki Shikibu [moo-rah-sah-kee shee-kee-boo].",
+      "answer": [
+        "The Tale of Genji",
+        "Genji monogatari"
+      ]
+    },
+    {
+      "question": "This thinker wrote that religion was the result of an “oceanic feeling” in one work, and in another work he analyzed the “death drive.” This author of Civilization and its Discontents and Beyond the Pleasure Principle theorized about the subconscious desire for one’s mother, which he called the “Oedipus complex.” For ten points, name this Austrian thinker who coined the terms “Id,” “ego,” and “superego,” the father of psychoanalysis.",
+      "answer": "Sigmund Freud IHO General Bowl 2017-2018 Round 9"
+    },
+    {
+      "question": "In one of this man’s novels, Frederic Henry fights during the Battle of Caporetto. In another of his novRels, Robert Jordan rigs a bridge with dynamite during the Spanish Civil War. This member of the “Lost Generation” drew on his experiences as an ambulance driver during World War One for his novel A Farewell to Arms. When not at his home in Key West, this author frequently went on African safaris. For ten points, name this American author of For Whom the Bell Tolls and The Old Man and the Sea.",
+      "answer": "Ernest Hemingway"
+    },
+    {
+      "question": "In Isabel Allende’s novel Daughter of Fortune, one of these events causes Joaquin to leave a pregnant Eliza. A Skookum king offers over $1000 gained from one of these events to buy a character that is mistreated by Hal, Charles, and Mercedes before befriending John Thornton. That character, Buck, appears in the Jack London novel The Call of the Wild, which is set against the backdrop of one of these Devents in the Yukon. For ten points, name these events, a famous example of which saw miners flock to California in 1849.",
+      "answer": "Gold rush"
+    },
+    {
+      "question": "The Four Books and Five Classics are the authoritative texts of this man's philosophy, one of the so-called Hundred Schools of Thought. The first of this man's Five Constants is rén, or \"humaneness.\" This man believed that the emperor's Mandate of Heaven must be subject to absolute moral principles, including virtues like filial piety. For ten points, name this ancient Chinese philosopher known for his interpretation of the Golden Rule.",
+      "answer": [
+        "Confucius",
+        "Kǒng Fūzǐ",
+        "or Kongzi"
+      ]
+    },
+    {
+      "question": "While en route to Western Europe, this man had 4,000 denarii seized in the port of Trebizond, retaining some of his wealth by sewing precious stones into his coat. With Rustichello da Pisa, this man published his travelogue under the title Book of the Marvels of the World. That work describes this man's trip to the palace of Xanadu [[ZAN-ah-doo]] and his travels along the Silk Road. For ten points, name this Venetian merchant who explored the Far East and served Kublai Khan.",
+      "answer": "Marco Polo"
+    },
+    {
+      "question": "This one-time Minister of France refused to condemn the Reign of Terror saying it would \"Undermine the cause of republicanism in America.\" With James Madison, this man sponsored and wrote the National Gazette to raise money for his agrarian party. For ten points, name this Secretary of State in the first presidential cabinet, the rival of Alexander Hamilton and principal author of the Declaration of Independence.",
+      "answer": "ThomasJefferson"
+    },
+    {
+      "question": "Ibn Battuta claimed that this structure's purpose was to keep out demonic beasts named Gog and Magog. The first sections of this structure were believed to havebeenbuilt during the Spring and Autumn Period. The rebel Li Zicheng was defeated by a combined force of Manchus and General Wu Sangui's [[SAHNG-GWEES]] loyalists at this structure's namesake fortress in the Battle of Shanhai Pass. For ten points, name this series of fortifications across northern China. ANSWER:Great Wallof China (accept WanliChangcheng) 2021-22 C Set History (9) A series of works titled Anti-[this collection] were written by political figures including John Dewitt and George Clinton. Both \"checks and balances\" and \"separation of powers\" are advocated for in the 51st piece of this collection, which also states the legislative branch is the true voice of the people. The name\"Publius\"wasusedbyMadison, Hamilton, and Jay to write, for ten points, what collection of essays supporting the ratification of the U.S. Constitution? ANSWER:TheFederalistPapers(orTheFederalist;the full title isTheFederalist: A Collection of Essays, Written in Favour of the New Constitution, as Agreed upon by the Federal Convention, September 17, 1787) (10) In Islam, this book isidentifiedwithapre-IslamicholybooktitledZabur.Portionsof this book labelled mizmor were originally intended to be sung. Many sections of this book are attributedtoAsaphandtheSonsofKorah.The23rdchapterofthisbookbeginswiththe line \"The Lord is my shepherd, I shall not want.\" For ten points, name this Old Testament book that contains many poems attributed to King David.",
+      "answer": [
+        "Book ofPsalmsor ThePsalter",
+        "acceptTehillim 2021-22 C Set History"
+      ]
+    },
+    {
+      "question": "This orator gave the speech \"An Undefended Land\" to preach the dangers of Nazism to the British people. In the poem \"The Rowers,\" this man used the term \"Hun\" as a derogatory name for the citizens of the German Empire. This Orientalist author used the historical \"Great Game\" as the backdrop for his novel Kim. The first English recipient of the Nobel Prize in Literature was, for ten points, what author of The Jungle Book?",
+      "answer": "Rudyard Kipling or Joseph Rudyard Kipling"
     }
   ],
   "q2": [
@@ -112,6 +223,23 @@
       "bonus": {
         "question": "In what other Shakespeare play based on history does a queen of Egypt kill herself with\nan asp following the two title characters' loss at the Battle of Actium?",
         "answer": "Antony and Cleopatra"
+      }
+    },
+    {
+      "tossup": {
+        "question": "In the twentieth century, some groups modified this holiday to use a \"cup of Miriam\" to\nsymbolize women and an orange to symbolize homosexuals. This holiday also changed in the\ntwelfth century, when its service was collected as the \"haggadah\" (pr. hah-GUH-duh). For 10\npoints, name this Jewish holiday on which the \"seder\" (pr. SAY-dur) meal includes matzah\n(MAHT-suh).",
+        "answer": [
+          "Passover",
+          "Pesach"
+        ]
+      },
+      "bonus": {
+        "question": "What book of the Bible, in which Moses leads the Jews out of Egypt, is the focus of\nPassover?",
+        "answer": [
+          "Book of Exodus",
+          "Exodus",
+          "Sh'mot"
+        ]
       }
     },
     {
@@ -134,6 +262,20 @@
     },
     {
       "tossup": {
+        "question": "A “tattered man” in this novel bothers the protagonist, who is given a yellow envelope to deliver to\nWilson’s family upon his death, though Wilson asks for it back. In this novel, Henry Fleming is hit in the\nhead with a rifle, leading his fellow soldiers to think he suffered the title wound. For ten points, name this\nCivil War novel written by Stephen Crane.",
+        "answer": "The Red Badge of Courage"
+      },
+      "bonus": {
+        "question": "Two years before publishing The Red Badge of Courage, Crane wrote Maggie, A Girl of the\nStreets, which is set in the streets and flophouses of this city’s Bowery neighborhood.",
+        "answer": [
+          "New York City",
+          "NYC",
+          "New York"
+        ]
+      }
+    },
+    {
+      "tossup": {
         "question": "This man documents his experiences traveling in China in his collection “In Time of War: A Sonnet\nSequence with a Verse Commentary.” One poem by this author asks “Who can reach the deaf?/Who can\nspeak for the dumb?” and begins in “one of the dives/On Fifty-Second Street”; that poem declares “We\nmust love each other or die.” “Funeral Blues” was written by, for ten points, what poet who memorialized\nthe beginning of WWII in his poem “September 1, 1939?\"",
         "answer": [
           "W H Auden",
@@ -148,16 +290,15 @@
     },
     {
       "tossup": {
-        "question": "A “tattered man” in this novel bothers the protagonist, who is given a yellow envelope to deliver to\nWilson’s family upon his death, though Wilson asks for it back. In this novel, Henry Fleming is hit in the\nhead with a rifle, leading his fellow soldiers to think he suffered the title wound. For ten points, name this\nCivil War novel written by Stephen Crane.",
-        "answer": "The Red Badge of Courage"
+        "question": "A piano suite by this man had six movements dedicated to friends killed in World War I. This\ncomposer of Le Tombeau de Couperin included a “Danse Generale” in the finale of his ballet Daphnis et\nChloe. He also wrote a piece which opens with a flute playing a melody that repeats in a long crescendo\nover a snare drum ostinato. For ten points, name this French composer of Bolero.",
+        "answer": [
+          "Maurice Ravel",
+          "Ravel"
+        ]
       },
       "bonus": {
-        "question": "Two years before publishing The Red Badge of Courage, Crane wrote Maggie, A Girl of the\nStreets, which is set in the streets and flophouses of this city’s Bowery neighborhood.",
-        "answer": [
-          "New York City",
-          "NYC",
-          "New York"
-        ]
+        "question": "Ravel wrote two of these pieces for soloist and orchestra, one of which, named “for the left\nhand,” was for Paul Wittgenstein, who had lost his right arm in World War I.",
+        "answer": "piano concertos"
       }
     },
     {
@@ -175,20 +316,6 @@
     },
     {
       "tossup": {
-        "question": "This character’s elder brother was killed by Spaniards in the 1658 Battle of Dunkirk. This character\nescapes capture by Sallee pirates with the slave boy Xury, and he watches his friend tease and kill a bear\nbefore being surrounded by 300 wolves. This character is surprised by the discovery of a single footprint\non the beach of an island he calls “Despair.” Alexander Selkirk is thought to have inspired, for ten points,\nwhat castaway who titles a novel by Daniel Defoe?",
-        "answer": [
-          "Robinson Crusoe",
-          "Robinson",
-          "Crusoe"
-        ]
-      },
-      "bonus": {
-        "question": "After Robinson Crusoe saves this character from being eaten by cannibals, he becomes Crusoe’s\nfriend and assistant.",
-        "answer": "Friday"
-      }
-    },
-    {
-      "tossup": {
         "question": "One character in this novel is lured into a gambling debt by the doctor Dolokhov, while another\ncharacter falls in love with Anatole after meeting him and his sister H´el`ene at the opera. In this novel,\nPrince Andrei Bolkonsky fights in the battle of Austerlitz and Waterloo. The epilogue of this novel begins\nwith the wedding of Nastasha Rostova and Pierre Bezukhov, the latter of whom develops a desire to kill\nNapoleon after watching the Battle of Borodino. For ten points, name this notoriously long novel by Leo\nTolstoy.",
         "answer": [
           "War and Peace",
@@ -202,9 +329,374 @@
           "Great Man"
         ]
       }
+    },
+    {
+      "tossup": {
+        "question": "In a novel in this genre, the prostitute Lorena suffers from PTSD after she is kidnapped and sexually assaulted by Blue Duck. A novel in this genre follows Jane Withersteen, who escapes from a Mormon commune. Books in this genre include Larry McMurtry’s Lonesome Dove and Zane Grey’s Riders of the Purple Sage. For ten points, what is the genre of many Louis L’Amour novels featuring cowboys?",
+        "answer": [
+          "Westerns",
+          "Western fiction",
+          "Frontier fiction"
+        ]
+      },
+      "bonus": {
+        "question": "This contemporary author of Western fiction wrote about the real-life Glanton scalp hunting gang in Blood Meridian and the fictional Anton Chigurh in No Country for Old Men.",
+        "answer": "Cormac McCarthy"
+      }
+    },
+    {
+      "tossup": {
+        "question": "In a play by this author, a man who gave away all of his money at a banquet finds a hoard of gold while living in a cave in the wilderness. This author wrote a play in which the images of an armored head, a bloody child, and a crowned child warn a king of Scotland that he cannot be harmed by a man “of woman born,” though the king is later killed by Macduff anyways. For ten points, name this author of the historically inspired tragedies Timon of Athens and Macbeth.",
+        "answer": "William Shakespeare"
+      },
+      "bonus": {
+        "question": "The title character of this Shakespeare tragedy is a chieftain of the Volsci who is persuaded by his mother Volumnia to make peace with Rome in the 5th century BC.",
+        "answer": "Coriolanus"
+      }
+    },
+    {
+      "tossup": {
+        "question": "One of these characters barricades himself in the wine cellar of an inn with his friend Grimaud. One of these characters takes Madame de Chevreuse as his mistress. These characters aid a friend on a mission to help the Duke of Buckingham replace diamonds that were stolen by Milady de Winter, thus foiling Cardinal Richelieu’s scheme to cause war between France and England. Athos, Porthos, and Aramis are the names of, for ten points, what trio who title an Alexandre Dumas [do-MAH] novel?",
+        "answer": [
+          "the Three Musketeers",
+          "Athos, Porthos, and Aramis in any order before “Athos” is said"
+        ]
+      },
+      "bonus": {
+        "question": "Dumas’s novel The Vicomte of Bragelonne claims that this mysterious prisoner, usually known by the name of a piece of clothing that he was compelled to wear at all times, was actually the twin brother of Louis XIV.",
+        "answer": "The Man in the Iron Mask"
+      }
+    },
+    {
+      "tossup": {
+        "question": "During this event, John McCarty formed the Last Man Club, urging farmers to “grab a root and growl.” Black Sunday occurred during this time period, which inspired the lyric, “It fell across our city like a curtain of black rolled down.” A shelterbelt of trees was created to fight soil erosion caused by this event, which devastated the Texas panhandle and caused the mass migration of “Okies” to California. For ten points, name this event during the Great Depression in which massive dust storms ravaged the Great Plains.",
+        "answer": "Dust Bowl"
+      },
+      "bonus": {
+        "question": "This folk singer wrote the “curtain of black” lyric in his “Dust Storm Disaster.” This “Dust Bowl Troubadour” and writer of “This Land is Your Land” played a guitar that announced “This machine kills fascists.”",
+        "answer": "Woodrow Wilson “Woody” Guthrie"
+      }
+    },
+    {
+      "tossup": {
+        "question": "Mark Fisher wrote about the idea that this system is inescapable in his book on this sort of “Realism.” Another thinker wrote that Calvinism was related to the rise of this system in his book on The Protestant Ethic and the Spirit of this concept. Some people argue for a laissez-faire approach to this system, which advances a “free market” economy. For ten points, name this economic system which allows private ownership of the means of production.",
+        "answer": [
+          "capitalism",
+          "word forms"
+        ]
+      },
+      "bonus": {
+        "question": "The Protestant Ethic and the Spirit of Capitalism was written by this German social theorist.",
+        "answer": "Maximilian Karl Emil Weber"
+      }
+    },
+    {
+      "tossup": {
+        "question": "In a novel by this author, the doctor William Bradshaw recommends that a veteran adjust his “proportion.” In the second section of a novel by this author, “Time Passes,” Prue dies in childbirth while Andrew is killed during World War I. This woman wrote a novel in which Septimus Smith suffers from shell shock before he commits suicide by jumping out of an apartment window. For ten points, name this author of To the Lighthouse and Mrs. Dalloway.",
+        "answer": "Virginia Woolf"
+      },
+      "bonus": {
+        "question": "Woolf was a member of this circle of intellectuals, including John Maynard Keynes and Clive Bell, which was named for the district in London’s West End where they gathered.",
+        "answer": "Bloomsbury Group"
+      }
+    },
+    {
+      "tossup": {
+        "question": "The Rosenwald Fund was created to honor this man who, many years earlier, had been placed in charge of an Alabama institution by Samuel C. Armstrong. This man urged his followers to “cast down your bucket where you are” in an 1895 speech. This man was labeled the “Great Accommodator” by his rival for his belief that African Americans should cooperate with supportive whites, rather than take more radical actions. For ten points, name this long-time opponent of W.E.B. DuBois who established the Tuskegee Institute.",
+        "answer": "Booker Taliaferro Washington"
+      },
+      "bonus": {
+        "question": "Booker T. Washington’s “cast down your bucket” metaphor was used in a speech at the 1895 Cotton States and International Exposition in this city. Washington’s theories thus became known as this city’s Compromise.",
+        "answer": "Atlanta"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This novel was inspired by the author’s summers with Truman Persons. The Scottsboro boys” unfair trials inspired a scene in this novel in which Calpurnia sits with her employer’s children while Mayella Ewell falsely accuses a man of rape. Dill Harris visits this novel’s protagonists, who obsess over the reclusive Boo Radley while their father defends Tom Robinson. For ten points, name this novel about lawyer Atticus Finch and his children, Jem and Scout, written by Harper Lee.",
+        "answer": "To Kill a Mockingbird"
+      },
+      "bonus": {
+        "question": "In To Kill a Mockingbird, Tom Robinson is convicted by an all-white one of these groups. Powell v. Alabama overturned the Scottsboro Boys” rape convictions, partially on the grounds that these bodies had also included no African-Americans.",
+        "answer": "all-white jury"
+      }
+    },
+    {
+      "tossup": {
+        "question": "In one book, this philosopher argued that impressions and ideas were only different in terms of degree. The works of this philosopher awoke Immanuel Kant from his “dogmatic slumber.” This philosopher, who made the “is-ought” distinction and posited a missing shade of blue, wrote Dialogues Concerning Natural Religion and A Treatise of Human Nature. For ten points, name this Scottish empiricist, the author of An Enquiry Concerning Human Understanding.",
+        "answer": "David Hume"
+      },
+      "bonus": {
+        "question": "Hume wrote a lauded six-volume History of England, which he began writing during a 1745 uprising of this movement, which sought to restore the House of Stuart to the throne. This movement effectively ended after the Battle of Culloden.",
+        "answer": [
+          "Jacobites",
+          "word forms relating to Jacobitism"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "In two novels by this author, Sweetness shuns her daughter for her dark skin, and Milkman Dead comes of age amidst twentieth-century racial turmoil. This author of God Help the Child and Song of Solomon wrote about Pecola Breedlove’s obsessive desire to look like a white girl, and described Sethe’s fear of the daughter she killed to save her from slavery. For ten points, name this American author of The Bluest Eye and Beloved, who passed away in August 2019.",
+        "answer": [
+          "Toni Morrison",
+          "Chloe Anthony Wofford Morrison",
+          "Chloe Ardelia Wofford"
+        ]
+      },
+      "bonus": {
+        "question": "Toni Morrison is the most recent American novelist to receive this international literary prize, which she was awarded in 1993. Bob Dylan was controversially awarded this prize in 2016, on the basis that his lyrics were poetic.",
+        "answer": "Nobel Prize in Literature"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This thinker’s namesake school of thought was expanded by the critical theorists of the Frankfurt School. This thinker argued that the exploitation of labor was the source of profit and coined the term “commodity fetishism.” This man’s most famous work opens with the phrase “a spectre is haunting Europe,” and was co-written with Friedrich Engels. For ten points, name this author of Das Kapital and the Communist Manifesto.",
+        "answer": "Karl Marx"
+      },
+      "bonus": {
+        "question": "Marx and Engels published the Communist Manifesto in this year, in which it helped inspire people in minor uprisings in Germany; it did not spread quickly enough to inspire the broader uprisings of this year’s “Spring of Nations.”",
+        "answer": "1848"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This country failed to capture Tangier after its King Edward’s brother encouraged him to attack the city from Ceuta. Rulers from this country’s House of Aviz sponsored Bartolomeu Dias’s expedition to the Cape of Good Hope and Vasco da Gama’s voyage to India. Along with Spain, this country signed the Treaty of Tordesillas, dividing up much of the New World. For ten points, name this country, whose Age of Discovery began in Lisbon.",
+        "answer": "Portugal or Portuguese Empire BORNUS: This son of John I of Portugal is considered the instigator of the Portuguese Age of Discovery. ANSWER: Prince Henry the Navigator 6 In one novel written in this language, Marius joins the Friends of the ABC. In another novel originally written in this language, Athos, Porthos, and Aramis form the title group, who adopt the motto “All for one, one for all.” The Three Musketeers was originally written in it, as was a novel where the gypsy Esmeralda is rescued by the deformed Quasimodo. For ten points, name this language which Victor Hugo used to pen Les Miserables and The Hunchback of Notre Dame. D ANSWER: French"
+      },
+      "bonus": {
+        "question": "Another author who wrote in French, Jules Verne, is known as the “Father” of this speculative genre, as exemplified by his books Journey to the Center of the Earth and Twenty Thousand Leagues Under the Sea.",
+        "answer": "Science fiction T"
+      }
+    },
+    {
+      "tossup": {
+        "question": "During this period, translator Sidney Shapiro spent 10 years under house arrest for criticizing a political leader’s wife. “Scar literature” focuses on life during this period, during which The Legend of the Red Lantern and other examples of the eight model plays were widely performed. The play Hai Rui Dismissed from Office was criticized during this period after its overseer interpreted the work as Peng F Dehuai’s disapproval of the Great Leap Forward. For ten points, name this period in 1960s and 1970s China in which anti-capitalist literature was promoted by Chairman Mao.",
+        "answer": [
+          "Great Proletarian Cultural Revolution",
+          "Wehnua Da Geming"
+        ]
+      },
+      "bonus": {
+        "question": "Mao Zedong’s “Cult of Personality” was promoted by a book that was issued to all Chinese citizens, a “Little” book produced in this color.",
+        "answer": "Red A"
+      }
+    },
+    {
+      "tossup": {
+        "question": "Judge John Sirica ordered James McCord to provide information about this event, which G. Gordon Liddy orchestrated as head of the Plumbers. During this event, Special Prosecutor Archibald Cox was fired in the Saturday Night Massacre, and the anonymous source “Deep Throat” aided journalists Woodward and Bernstein in uncovering this 1970s scandal. For ten points, name this scandal involving the wiretapping of Democrat Party headquarters at a certain Washington hotel that led to the resignation of Richard Nixon.",
+        "answer": "Watergate scandal R"
+      },
+      "bonus": {
+        "question": "In 2020, a controversial book written by Bob Woodward that contains excerpts from recorded conversations with Donald Trump was published with this four-letter, one-word title.",
+        "answer": "Rage"
+      }
+    },
+    {
+      "tossup": {
+        "question": "During this event, one fleeing perpetrator attempted to jump into the Miljacka [meel-YOCK-ah] river only to find it was less than a foot deep. This event was planned by a man named “Apis” and later coordinated by Danilo Ilic [EE-litch]. One of the victims of this event was the commoner Sophie Chotek, whom this event’s intended target told to “live for our children” before he was killed by the Black Hand. Gavrilo Princip carried out, for ten points, what 1914 assassination that sparked World War One? DANSWER: Assassination of Archduke Franz Ferdinand (accept any answer that indicates the killing of Franz Ferdinand) BONUS: Franz Ferdinand was the son of Emperor Franz Joseph I of this empire.",
+        "answer": "Austro-Hungarian Empire 7 In one play by this author, he describes a “band of brothers” in the St. Crispin’s Day Speech, delivered by a royal character shortly before the Battle of Agincourt. Another of this writer’s plays has characters based on Holinshed’s Chronicles and is considered cursed in theatre circles. This husband of Anne Hathaway and resident of Stratford-upon-Avon premiered many of his works at the Globe Theatre. For ten points, name this Elizabethan-era playwright of Henry V, Macbeth, and Hamlet. ANSWER: William Shakespeare"
+      },
+      "bonus": {
+        "question": "Shakespeare’s final History Play and his only play about a Tudor king is what 1613 work, responsible for the burning of the Globe after a cannon ignited its thatched roof?",
+        "answer": [
+          "Henry VIII",
+          "All is True T"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "This ruler’s reign was the subject of the final book of John Foxe’s Book of Martyrs. This ruler issued the First Statute of Repeal to nullify prior religious laws and burned Hugh Latimer and Nicholas Ridley at the stake. This ruler imprisoned the author of the Book of Common Prayer, Thomas Cranmer, after she succeeded Lady Jane Grey. Known for her violent persecutions of Protestants, for ten points, name this ruler who re-Catholicized England before she was succeeded by Elizabeth I.",
+        "answer": [
+          "Mary I",
+          "Mary Tudor,"
+        ]
+      },
+      "bonus": {
+        "question": "Mary was Henry VIII’s oldest child but was preceded to the throne by this brother, 21 years her junRior, who was on the throne for six years, dying at the age of 15.",
+        "answer": "Edward VI"
+      }
+    },
+    {
+      "tossup": {
+        "question": "A major figure in this movement defined it in an essay titled \"Answering the Question: What is [this movement]?\" This movement's idealsweresupposedlyespousedby monarchs like Catherine the Great and were often spread through meetings at Masonic Lodges, coffeehouses, and salons. Preceded by Renaissance Humanism and the Scientific Revolution, for ten points, what intellectual movement of the 17th and 18th centuries was espoused by figures such as Immanuel Kant [[KAHNT]] and Voltaire?",
+        "answer": [
+          "Age ofEnlightenment",
+          "Age ofReason",
+          "word forms of Enlightenmentsuch asEnlightened"
+        ]
+      },
+      "bonus": {
+        "question": "A major milestone of the Age of Enlightenment was the 1751 publication by Denis Diderot [[deh-NEE dee-deh-ROH]] and Jean d'Alembert [[dah-lem-BEHR]] of what book, intended to be a \"systematic dictionary of the sciences, arts, and crafts\"? ANSWER:Encyclopédie(orEncyclopedia) 2021-22 C Set History (3) A Nazi operation named for this man included an order todefendBerlin\"tothelast bullet.\" This man, who may have coined the term \"ArmchairGeneral,\"assistedinorganizing theConventionofTauroggen[[toh-RAH-gen]]tocreateananti-Napoleoniccoalitionin1812. This man described the uncertainty of ongoing battles as the \"Fog of War\" and described warfare as a \"continuation of politics by other means.\" For ten points, name this nineteenth-century German military theorist who wroteOn War.",
+        "answer": [
+          "Carl vonClausewitz] or CarlPhilip Gottfried vonClausewitz BONUS: A predecessor to Clausewitz, Antoine-Henri Jomini ], wrote the book Summary of the Art of War and likely coined what term that describes maintaining an army's supply lines during conflict,",
+          "more generally describes organizing an industry's supply chain? ANSWER:Logistics",
+          "word forms such asLogistical"
+        ]
+      }
+    },
+    {
+      "tossup": {
+        "question": "This writer documented a six-week marine expedition in the Sea of Cortez and later went \"In Search of America\" in a rented pickup truck with his poodle. This author of Travels with Charley won a Pulitzer Prize for a novel in which Jim Casy is beaten to death after the Joad family travels to California during the Dust Bowl. For ten points, name this American author known for his Depression-era stories of California, including The Grapes of Wrath.",
+        "answer": "John Steinbeck or John Ernst Steinbeck, Jr."
+      },
+      "bonus": {
+        "question": "Steinbeck considered his magnum opus to be this 1952 novel of the Salinas Valley, which features Caleb and Adam Trask in allegorical roles.",
+        "answer": "East of Eden"
+      }
+    },
+    {
+      "tossup": {
+        "question": "This man's work as a secretary has led to debate over how much of his personal philosophy went intotheFundamentalConstitutionsofCarolina,whichespousedaristocracy and slavery. One work by this thinker outlines the \"State of Nature\" and claimsthatsociety was builttoprotectproperty,whichhedefinedas\"life,liberty,andestate,\"inspiringThomas Jefferson. For ten points, name thisEnglishempiricistand\"FatherofLiberalism\"whowrote Two Treatises of Government.",
+        "answer": "JohnLocke"
+      },
+      "bonus": {
+        "question": "Much of Locke'sphilosophyisbuiltonthisconcept,establishedinanamesakebook by Jean-Jacques Rousseau. This theory asserts that the public has directly or indirectly consented to give up their personal freedom to an authority in exchangeforprotectionand order. ANSWER:Social ContractTheory (orTheSocial Contract) 2021-22 C Set History (4) A thirty-year clan feud in this state began after Eliza Nichols shot Colonel Charles Jones in the face for maligning her character. Prior to a 1935 assassination, the \"Share our Wealth\" program was touted by this state's governor, known as the Kingfish. In this state, Andrew Jackson's victory over Edward Pakenham[[PAK-en-am]]inan1815battleoccurred months after the Treaty of Ghent ended the War of 1812. The Battle of New Orleans occurred in, for ten points, which southern U.S. state? ANSWER:Louisiana BONUS: The radio program Amos 'n' Andy inspired the nickname \"Kingfish\" for which New Orleans governor? A radical populist, he was assassinated by Dr. Carl Weiss in 1935.",
+        "answer": "HueyLongor Huey PierceLongJr."
+      }
     }
   ],
-  "q3": [],
+  "q3": [
+    {
+      "category": "VICTORIAN SOCIETY",
+      "questions": [
+        {
+          "question": "Author of A Christmas Carol and Great Expectations who complained about social\nconditions?",
+          "answer": [
+            "Charles Dickens",
+            "Dickens"
+          ]
+        },
+        {
+          "question": "Long-term economic phenomenon in which mechanized factories became the dominant sector\nof the economy?",
+          "answer": "Industrial Revolution"
+        },
+        {
+          "question": "Serial killer who targeted prostitutes in London in 1888?",
+          "answer": "Jack the Ripper"
+        },
+        {
+          "question": "Major British possession in Asia, which Victoria was declared Empress of?",
+          "answer": "India"
+        },
+        {
+          "question": "City that was the world’s most populous throughout Victoria’s reign?",
+          "answer": "London"
+        },
+        {
+          "question": "Conservative Party leader whom Victoria favored over his rival Gladstone?",
+          "answer": [
+            "Benjamin Disraeli",
+            "Disraeli"
+          ]
+        },
+        {
+          "question": "Playwright and author of The Picture of Dorian Grey who was sentenced to jail for his\nsexuality?",
+          "answer": [
+            "Oscar Wilde",
+            "Wilde"
+          ]
+        },
+        {
+          "question": "Famous Crimean War era poem written by Tennyson about a disastrous cavalry mission?",
+          "answer": "The Charge of the Light Brigade"
+        }
+      ],
+      "prompt": "In England during the time of Queen Victoria, who or what was the..."
+    },
+    {
+      "category": "20th Century Dictatorships",
+      "prompt": "Given the dictator and other information, name the country, kingdom, empire, etc., that they ruled.",
+      "questions": [
+        {
+          "question": "“Il Duce,” [eel doo-chay], Benito Mussolini, during World War II.",
+          "answer": "Italy"
+        },
+        {
+          "question": "Juan Peron, whose return to Buenos Aires was marred by the Ezeiza massacre.",
+          "answer": "Argentina"
+        },
+        {
+          "question": "Getulio Vargas, as well as two decades of general military rule supported by generals in Sao Paulo.",
+          "answer": "Brazil"
+        },
+        {
+          "question": "Enver Hoxha [ho-cha], who deposed King Zog from power in Tirana.",
+          "answer": "Albania"
+        },
+        {
+          "question": "The author of the “Green Book,” Muammar Gaddafi.",
+          "answer": "Libya"
+        },
+        {
+          "question": "Fran¸cois and Jean-Claude Duvalier [doo-val-YAY], known as “Papa Doc” and “Baby Doc.”",
+          "answer": "Haiti"
+        },
+        {
+          "question": "Saparmurat Niyazov, who ruled during and after Soviet control.",
+          "answer": "Turkmenistan"
+        },
+        {
+          "question": "Sani Abacha, whose government ordered the hanging of activist Ken Saro-Wiwa.",
+          "answer": "Nigeria"
+        }
+      ]
+    },
+    {
+      "category": "Samurai",
+      "prompt": "Name the...",
+      "questions": [
+        {
+          "question": "Country where they served nobility for centuries.",
+          "answer": [
+            "Japan",
+            "Nippon",
+            "Nihon"
+          ]
+        },
+        {
+          "question": "General name for the curved sword they wielded.",
+          "answer": "katana"
+        },
+        {
+          "question": "Feudal land-owners served by samurai; they served the shogun.",
+          "answer": "daimyo"
+        },
+        {
+          "question": "Code of honor by which they lived.",
+          "answer": "bushido"
+        },
+        {
+          "question": "Form of ritual disembowelment they employed to honorably kill themselves.",
+          "answer": [
+            "seppuku",
+            "harakiri"
+          ]
+        },
+        {
+          "question": "Term for a samurai without a master.",
+          "answer": "ronin"
+        },
+        {
+          "question": "Intricate ceremony they performed that takes place at chashitsu and involves thick and thin variants of a substance.",
+          "answer": [
+            "tea ceremony",
+            "chanoyu",
+            "sado",
+            "chado"
+          ]
+        },
+        {
+          "question": "Legendary samurai who wrote The Book of Five Rings.",
+          "answer": [
+            "Miyamoto Musashi",
+            "Shinmen Takezo",
+            "Miyamoto Bennosuke",
+            "Ninten Doraku"
+          ]
+        }
+      ]
+    }
+  ],
   "q4": [
     {
       "parts": [
@@ -216,22 +708,33 @@
     },
     {
       "parts": [
-        "(30 pts) Elbert Hubbard's inspirational story A Message to Garcia is set during this war. Mark\nTwain became a leader of the Anti-Imperialist League, which opposed this war. During this\nwar, Frederic (20 pts) ",
-        "Remington worked as a photographer for William Randolph (10 pts) ",
-        "Hearst,\nwho promised \"I'll furnish the war\" through his \"yellow journalism\" outlet, the New York\nJournal. For 10 points, name this war in which Cuba achieved independence and the U.S.\nannexed Puerto Rico."
+        "(30 pts) Theodor Adorno said that after the existence of this place, writing poetry is barbaric.\nThis place was built near a massive, forty-four track (20 pts) ",
+        "railway junction and was\ncommanded by Rudolph Hoss. At the main gate of this place, the words \"Arbeit Macht\nFrei\" (pr. ARR-bite mokt FRY), meaning (10 pts) ",
+        "\"work makes free,\" were spelled out in iron. It\nwas adjacent to the Birkenau extermination center. For 10 points, name this most active Nazi\ndeath camp, found in Poland."
+      ],
+      "answer": "Auschwitz"
+    },
+    {
+      "parts": [
+        "(30 pts) This art movement included a literary section in which poets Hugo Ball and Tristan\nTzara worked. Artists in this movement produced \"ready-mades\" such as a bicycle (20 pts) ",
+        "wheel and a urinal. This movement's name was supposedly chosen at the Cabaret Voltaire\nby sticking a (10 pts) ",
+        "pen-knife into a French dictionary at random. For 10 points, name this\nabsurdist \"anti-art\" movement of the World War I era, which included Marcel Duchamp."
       ],
       "answer": [
-        "Spanish-American War",
-        "Spanish-American"
+        "Dadaism",
+        "Dada"
       ]
     },
     {
       "parts": [
-        "(30 pts) This language was used to write a play in which a woman loses a ring in a river that\nwould prove her identity to her husband. In addition to that play by (20 pts) ",
-        "Kalidasa, this\nlanguage was used to write four religious texts called the Vedas. In one epic written in this\nlanguage, a prince saves his wife (10 pts) ",
-        "Sita after she is kidnapped by Ravana. For ten points, name\nthis classical language of India used to write the Ramayana, Mahabharata, and most Hindu literature."
+        "(30 pts) A poet during this dynasty wrote “In these perilous times - I long to serve my sovereign”\nin the work “On the River,” written during a rebellion led by a Sogdian general. During\nthis dynasty, the poet of an (20 pts) ",
+        "Ezra Pound-translated work, “A River Merchant’s Wife -\nA Letter” was exiled in the (10 pts) ",
+        "An Lushan Rebellion. For ten points, name this Chinese dynasty\nwhose poets included Du Fu and Li Po."
       ],
-      "answer": "Sanskrit"
+      "answer": [
+        "Tang Dynasty",
+        "Tang"
+      ]
     },
     {
       "parts": [
@@ -243,11 +746,22 @@
     },
     {
       "parts": [
-        "(30 pts) In this work, a monk compares the tragedies of Lucifer, Hercules, Nero, and Julius\nCaesar, among others. Earlier in this work, an old hag notes that “sovereignty over their (20 pts) ",
-        "husbands” is what women want most, as described by the Wife of Bath. This work was\nunfinished at its author’s death, including just 24 (10 pts) ",
-        "stories after the General Prologue, which\nintroduces a group of pilgrims at the Tabard Inn on their way to visit the shrine of Thomas a Beckett, an\nArchbishop who was slain in 1170. For ten points, name this 14th century collection of stories written by\nGeoffrey Chaucer."
+        "(30 pts) Xu Bing used this art form to create the nonsensical Book From the Sky. Naskh and\nkufic are two forms of this art used by Muslim artists. This type of art was practiced on (20 pts) ",
+        "tortoise shells in Shang dynasty China. Alcuin created one form of this technique known\nas the Carolingian miniscule. This technique is combined with (10 pts) ",
+        "painting and illustration to\ncreate illuminated works like the Lindisfarne Gospels and Book of Kells as well as for transcribing the\nQuran. For ten points, name this visual art of elaborate decorative writing."
       ],
-      "answer": "The Canterbury Tales"
+      "answer": "calligraphy"
+    },
+    {
+      "parts": [
+        "(30 pts) (TIEBREAKER EXAMPLE QUESTION) This man’s 4th Armored Division was able to stop an advance at the Battle of\nMontcornet. He wrote a book on how to modernize his nation’s military titled Army\nof the Future and ousted Henri Giraud for control of a resistance movement. As (20 pts) ",
+        "President, this man pulled his nation out of the NATO command structure and\ndeveloped a nuclear weapons program, which carried out tests in (10 pts) ",
+        "Algeria. For ten\npoints, name this first president of the Fifth Republic and leader of the Free French during World\nWar II."
+      ],
+      "answer": [
+        "Charles de Gaulle",
+        "de Gaulle"
+      ]
     },
     {
       "parts": [
@@ -264,6 +778,152 @@
         "Fitzwilliam Darcy. For ten points, name this\nnovel about Elizabeth Bennet written by Jane Austen."
       ],
       "answer": "Pride and Prejudice"
+    },
+    {
+      "parts": [
+        "(30 pts) A character created by this author has thousands of children with his concubines who are born after seven month pregnancies. This author wrote about The General in The Autumn of the Patriarch and described the final days of (20 pts)",
+        "Simon Bolivar in The General in His Labyrinth. This author fictionalized a 1928 massacre of striking banana workers in Ci´enaga, a town in his native (10 pts)",
+        "Colombia. For ten points, name this Nobel Prize-winning author of One Hundred Years of Solitude."
+      ],
+      "answer": "Gabriel Garcia Marquez"
+    },
+    {
+      "parts": [
+        "(30 pts) A lecture by this author subtitled “The Monsters and the Critics” argued that Beowulf should be studied as a poem, not as a pseudo-historical work. C.S. Lewis and this writer were leading members of the (20 pts)",
+        "Inklings, an Oxford literary group. A set of three jewels that are infused with the essence of two trees provide the title of a book by this man that was compiled by his son (10 pts)",
+        "Christopher, The Silmarillion. For ten points, name this author who created Middle Earth in his Lord of the Rings trilogy."
+      ],
+      "answer": "J.R.R. Tolkien or John Ronald Reuel Tolkien"
+    },
+    {
+      "parts": [
+        "(30 pts) This author wrote about two brothers who flip a coin to determine which one of them will join the Jacobite Rebellion of 1745 in his novel The Master of Ballantrae. In a novel by this author, Alan Breck Stewart joins forces with (20 pts)",
+        "David Balfour, who had been sold to a group of passing mariners by his uncle. In another book by this man, the (10 pts)",
+        "pirate Long John Silver leads the search for a buried gold. For ten points, name this author of Kidnapped and Treasure Island."
+      ],
+      "answer": "Robert Louis Stevenson"
+    },
+    {
+      "parts": [
+        "(30 pts) This man defined virtue as self-denial and rationality, and he encouraged parents to nourish the physical health of their children in a series of letters to Edward Clarke that would later be published as Some Thoughts (20 pts)",
+        "Concerning Education. This thinker, who argued that civil society was created to preserve private property, wrote that man is born without (10 pts)",
+        "innate ideas but is instead a tabula rasa in his Essay Concerning Human Understanding. For ten points, name this English philosopher, a key inspiration for Jefferson’s work on the Declaration of Independence."
+      ],
+      "answer": "John Locke"
+    },
+    {
+      "parts": [
+        "(30 pts) The only independent research center dedicated to studying breast cancer prevention is named after this person’s best-known work, which was inspired by Lucille Farrier Stickel’s reports. This author of The Sea Around Us criticized a campaign sponsored by the U.S. government to eradicate the (20 pts)",
+        "gypsy moth in Massachusetts. A Fable For Tomorrow titles the first chapter of a work by this woman about (10 pts)",
+        "depleting bald eagle populations due to pesticides like DDT. For ten points, what female environmentalist wrote Silent Spring?"
+      ],
+      "answer": "Rachel Carson"
+    },
+    {
+      "parts": [
+        "(30 pts) A poem about this man ends “In the prison of his days / Teach the free man how to praise,” and references how “In the nightmare of the dark / All the dogs of Europe bark.” After claiming that a certain author’s work “stirred [his] (20 pts)",
+        "blood,” this man used the line “They seek not for hidden treasures, they know not how to cast nets” in his introduction to Tagore’s Gitanjali. This man, who “disappeared in the dead of winter” but died on a (10 pts)",
+        "“dark cold day” in a W.H. Auden eulogy, declared “A terrible beauty is born” at the end of a poem about a failed uprising against the British. For ten points, name this Irish poet of “Easter, 1916.”"
+      ],
+      "answer": "William Butler Yeats"
+    },
+    {
+      "parts": [
+        "(30 pts) One work by this author is structured as a Socratic dialogue among his discussion group, the Orti Oricellari, and criticizes condottieri mercenaries. After a defeat at Prato for the citizen militia founded by this man, he followed (20 pts)",
+        "Pietro Soderini into exile and wrote a work that is often accompanied by this man’s made-up biography of Castruccio Castracane. This man’s most famous work holds (10 pts)",
+        "Cesare Borgia as an ideal ruler, stresses the idea of virtu´, and was dedicated to Lorenzo de Medici. For ten points, name this Florentine writer who held that it is better to be feared than loved in his The Prince."
+      ],
+      "answer": "Niccol´o Machiavelli"
+    },
+    {
+      "parts": [
+        "(30 pts) Sarah Bradford wrote a book titled Scenes in the Life of this woman and returned all the proceeds to fund her activism. While serving as a scout under James (20 pts)",
+        "Montgomery, this woman led a successful raid on Combahee Ferry. This woman was asked to participate in an attack on a (10 pts)",
+        "Virginia armory by an abolitionist, but was too sick to attend. For ten points, name this woman nicknamed “Moses” who “never lost a passenger” while helping slaves escape on the Underground Railroad."
+      ],
+      "answer": [
+        "Harriet Tubman",
+        "Araminta Ross"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) Due to its tenuous attribution to the Apostle John, this book was not accepted into the Armenian canon until about 1200 AD. In this book, a golden censer filled with coals is thrown onto the Earth and (20 pts)",
+        "seven trumpets are blown to announce the arrival of plagues. A vision of the Whore of Babylon appears in this book, which features the (10 pts)",
+        "return of Jesus and the defeat of Satan. For ten points, name this book by John of Patmos that depicts the end of the world, the last book of the New Testament."
+      ],
+      "answer": [
+        "Book of Revelation or the Apocalypse of John",
+        "or The Revelation to John",
+        "or The Revelation of Jesus Christ"
+      ]
+    },
+    {
+      "parts": [
+        "(30 pts) In a novel by this author, Anne Elliot breaks her engagement to the impoverished Frederick Wentworth, only for him to be promoted to Captain for his actions at the Battle of San Domingo and become rich. This author created Colonel Brandon and (20 pts)",
+        "Edward Ferrars, who court Elinor and Marianne Dashwood in one work, and wrote about (10 pts)",
+        "Fitzwilliam Darcy and Elizabeth Bennet in another novel. For ten points, name this English author of manners novels like Persuasion, Sense and Sensibility, and Pride and Prejudice."
+      ],
+      "answer": "Jane Austen"
+    },
+    {
+      "parts": [
+        "(30 pts) This man wrote about the noble savage Hayy in his treatise The Christian Philosopher , the first book of science published in the Americas. This man, whose father served as President of (20 pts)",
+        "Harvard for two decades and fought against governor-dictator Edmund Andros, supported smallpox inoculation in New England. The (10 pts)",
+        "executions of colonists during the Salem Witch Trials were supported by, for ten points, what son of Increase, a Puritan minister during the First Great Awakening?"
+      ],
+      "answer": "Cotton Mather"
+    },
+    {
+      "parts": [
+        "(30 pts) This philosopher once studied under the Earl of Shaftesbury, who he also served as a physician. In one book, this philosopher developed a theory of identity based on memory; in another book he argued for tolerance for everyone but Catholics and (20 pts)",
+        "atheists. This author of A Letter Concerning Toleration developed the idea of the (10 pts)",
+        "tabula rasa in An Essay Concerning Human Understanding. For ten points, name this English empiricist who defended the right to revolution in Two Treatises on Government."
+      ],
+      "answer": "John Locke"
+    },
+    {
+      "parts": [
+        "(30 pts) In this book’s epilogue, Professor James Pieixoto suggests that 20th-century overpopulation in India could have been controlled by a sterility virus while discussing the validity of cassette tapes used to record this text in the home of the (20 pts)",
+        "Commander. With Aunt Elizabeth, this novel’s narrator helps Janine give birth and tries to find her friend Moira, who successfully flees the (10 pts)",
+        "Republic of Gilead. Mike Pence has been protested by women wearing costumes from, for ten points, what novel by Margaret Atwood narrated by Offred, a fertile woman with the title role?"
+      ],
+      "answer": "The Handmaid’s Tale"
+    },
+    {
+      "parts": [
+        "(30 pts) In one novel by this author, General Montcalm asks Colonel Munro to withdraw his contingent of British soldiers from the French and Indian War. This author’s Revolutionary War romance, (20 pts)",
+        "The Spy, became the first notable American work of historical fiction. A Chingachgook and Uncas, the title character of this man’s best known work, (10 pts)",
+        "escort Alice and Cora to Fort William Henry in another of his novels. For ten points, name this American author of the Leatherstocking Tales including The Last of the Mohicans."
+      ],
+      "answer": "James Fenimore Cooper"
+    },
+    {
+      "parts": [
+        "(30 pts) In one poem by this author, “Stout and brave” hearts are likened to “muffled drums” after the speaker claims that “Life is real! Life is earnest! / And the grave is not the A goal.” This poet wrote about the title character’s love for Gabriel Lajeunesse as the British deported the (20 pts)",
+        "Acadians during the Great Upheaval in a poem that begins “this is the forest primeval.” Ojibwe legends serve as the basis for a poem by this author that includes the title character’s marriage to (10 pts)",
+        "Minniehaha. For ten points, name this American poet of “A Psalm of Life,” Evangeline, and The Song of Hiawatha."
+      ],
+      "answer": "Henry Wadsworth Longfellow"
+    },
+    {
+      "parts": [
+        "(30 pts) A passage in thisbookisoftenconsideredthefirstpieceofpublicadvocacyfor a progressive tax. This book was written primarily to forge a new theory to replace the ideas of Mercantilists and Physiocrats. (20 pts)",
+        "This book built upon its author's earlier TheoryofMoralSentimentsbylinkingtheconceptofthe\"InvisibleHand\" (10 pts)",
+        "to production. For ten points, name this magnum opus of Scottish moral philosopher Adam Smith, considered a foundational text of classical economics. ANSWER:TheWealth of Nations(orAn Inquiry intothe Nature and Causes of theWealth of Nations) (2) Sebastian Sommer's hypothesis that buildings along this structure combined human barracks with horse stables was validated by excavations in the 2000s at South Shields. The Vallum (+) earthwork lay to the south of this structure, which added to pre-existing forts in a line from Solway Firth to the River Tyne. Picts and other Caledonian tribes lived north of this structure, which began constructionin(*) 122AD.Fortenpoints,namethis73-milebarrierthatformedthenorthernborderofRoman Britain. ANSWER:Hadrian's Wall(acceptVallum AeliumorVallumHadrianibefore \"Vallum\"; acceptPict's Wallbefore \"Picts\"; prompt on \"RomanWall\") (3) While campaigning inJuiz[[HWEZ]]deFora,thiscandidatewasstabbedbelow his bulletproof vest by a man who claimed to be\"onamissionfromGod.\"AFacebook group called \"Women Against\" [this politician] sparked the (+) Ele Não [[EH-lay \"NOW\"]] demonstration against his policies. This successor to Michel Temer [[TEM-ehr]] led the movement to remove left-leaning president Dilma Rousseff [[ROO-sef]] while serving as federal deputy of (*) Rio de Janeiro. For ten points, name this man who in 2019 became the president of Brazil."
+      ],
+      "answer": "JairBolsonaroor Jair MessiasBolsonaro"
+    },
+    {
+      "parts": [
+        "(30 pts) A raid against this man's village of Bedonkohe [[bee-don-KO-heh]] by Jose Maria Carrasco led to his lifelong hatred of the Mexican army. This \"Tiger of the Human Race\" spent the last 23 years of his life incaptivityfollowinghissurrenderto Nelson Miles in Skeleton (20 pts)",
+        "Canyon. Paratroopers during the Second World War popularized shouting this chief's name before jumping out of a plane. (10 pts)",
+        "For ten points, name this 19th century Apache chief. ANSWER:Geronimo(acceptGoyaalé) (4) Cuban poet José Martí wrote a Centenario of this man in 1889, calling him a \"Hero in Peace and War.\"PhillisWheatley(+)wrote,\"Proceed,greatchief,withvirtue on thy side\" in an 18th-century poem titled for this politician. Parson Weems composed many stories aboutthisman,includingthefableofhischoppingdowna(*) cherry tree. For ten points, name this literature-inspiring first president of the United States."
+      ],
+      "answer": [
+        "GeorgeWashington",
+        "\"To His Excellency,GeneralWashington\""
+      ]
     }
   ]
 }
