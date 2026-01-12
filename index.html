@@ -1154,22 +1154,6 @@ function looseMatch(given, answer) {
         "with", "and", "or", "el", "la", "los", "las", "saint", "st", "d", "de",
         "du", "des", "le", "les", "un", "une", "van", "von", "der", "die", "das"
     ];
-
-    function preprocessAnswer(answer) {
-      if (!answer) return answer;
-      
-      let processedAnswer = String(answer);
-      
-      // Remove year ranges and set indicators (e.g., "2021-2022", "A-set", "B-set")
-      processedAnswer = processedAnswer.replace(/\s*\(?[ABC]?-?set\)?/gi, '');
-      processedAnswer = processedAnswer.replace(/\s*\(?\d{4}-\d{4}\)?/g, '');
-      
-      // Split on " or " (case insensitive) to get all acceptable variants
-      const variants = processedAnswer.split(/\s+or\s+/i).map(v => v.trim()).filter(Boolean);
-      
-      // Return array if multiple variants, single string if only one
-      return variants.length > 1 ? variants : variants[0] || processedAnswer;
-    }
   
     function normalizeWord(word) {
         word = word.toLowerCase().replace(/[.,;:!?]/g, '');
@@ -1339,6 +1323,22 @@ function looseMatch(given, answer) {
     return false;
 }
 
+function preprocessAnswer(ans) {
+  if (!ans) return ans;
+  
+  let processedAnswer = String(ans);
+  
+  // Remove year ranges and set indicators (e.g., "2021-2022", "A-set", "B-set")
+  processedAnswer = processedAnswer.replace(/\s*\(?[ABC]?-?set\)?/gi, '');
+  processedAnswer = processedAnswer.replace(/\s*\(?\d{4}-\d{4}\)?/g, '');
+  
+  // Split on " or " (case insensitive) to get all acceptable variants
+  const variants = processedAnswer.split(/\s+or\s+/i).map(v => v.trim()).filter(Boolean);
+  
+  // Return array if multiple variants, single string if only one
+  return variants.length > 1 ? variants : variants[0] || processedAnswer;
+}
+  
 function setFeedback(text, ok=true){
     const f = $('feedback');
     f.textContent = text;
