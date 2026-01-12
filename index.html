@@ -1155,6 +1155,22 @@ function looseMatch(given, answer) {
         "du", "des", "le", "les", "un", "une", "van", "von", "der", "die", "das"
     ];
 
+    function preprocessAnswer(answer) {
+      if (!answer) return answer;
+      
+      let processedAnswer = String(answer);
+      
+      // Remove year ranges and set indicators (e.g., "2021-2022", "A-set", "B-set")
+      processedAnswer = processedAnswer.replace(/\s*\(?[ABC]?-?set\)?/gi, '');
+      processedAnswer = processedAnswer.replace(/\s*\(?\d{4}-\d{4}\)?/g, '');
+      
+      // Split on " or " (case insensitive) to get all acceptable variants
+      const variants = processedAnswer.split(/\s+or\s+/i).map(v => v.trim()).filter(Boolean);
+      
+      // Return array if multiple variants, single string if only one
+      return variants.length > 1 ? variants : variants[0] || processedAnswer;
+    }
+  
     function normalizeWord(word) {
         word = word.toLowerCase().replace(/[.,;:!?]/g, '');
         
@@ -2285,25 +2301,25 @@ function startReading(){
     if (gameState.currentQuarter === 1){
         const q = gameState.activeQ1[gameState.currentQuestionIndex];
         questionText = q ? q.question : "";
-        correctAnswer = q ? q.answer : "";
+        correctAnswer = q ? preprocessAnswer(q.answer) : "";
     } else if (gameState.currentQuarter === 2){
         const q = gameState.activeQ2[gameState.currentQuestionIndex];
         questionText = q ? q.tossup.question : "";
-        correctAnswer = q ? q.tossup.answer : "";
+        correctAnswer = q ? preprocessAnswer(q.tossup.answer) : "";
         gameState.currentBonus = q ? q.bonus : null;
     } else if (gameState.currentQuarter === 3){
         const cat = gameState.activeQ3[gameState.q3selectedCategory];
         const qIndex = gameState.q3categoryProgress;
         const q = cat && cat.questions ? cat.questions[qIndex] : null;
         questionText = q ? q.question : "";
-        correctAnswer = q ? q.answer : "";
+        correctAnswer = q ? preprocessAnswer(q.answer) : "";
     } else if (gameState.currentQuarter === 4){
         const q = gameState.activeQ4[gameState.currentQuestionIndex];
         if (!q){ questionText = ""; correctAnswer = ""; }
         else {
             gameState.currentQ4Parts = q.parts;
             questionText = q.parts.join(" ");
-            correctAnswer = q.answer;
+            correctAnswer = preprocessAnswer(q.answer);
             // Calculate boundaries for buzz logic:
             let boundaries = [];
             let idx = 0;
@@ -2789,8 +2805,8 @@ async function submitAnswer(){
     
         // CHECK the answer
         const correct =
-            isStrictCorrect(given, qArr[idx].answer) ||
-            looseMatch(given, qArr[idx].answer);
+            isStrictCorrect(given, preprocessAnswer(qArr[idx].answer)) ||
+            looseMatch(given, preprocessAnswer(qArr[idx].answer));
         qArr[idx].isCorrect = correct;
         gameState.questionsAttempted++;
         if (correct) gameState.questionsCorrect++;
@@ -2924,7 +2940,7 @@ async function submitAnswer(){
             if (gameState.currentBonus){
                 setTimeout(()=> {
                     $('questionText').textContent = gameState.currentBonus.question;
-                    gameState.currentAnswer = gameState.currentBonus.answer;
+                    gameState.currentAnswer = preprocessAnswer(gameState.currentBonus.answer);
                     gameState.multiplier = 1;
                     $('answerInput').disabled = false;
                     $('answerInput').value = '';
