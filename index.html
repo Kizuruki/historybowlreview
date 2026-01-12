@@ -2507,8 +2507,13 @@ function showAnswer(){
 }
 
 /* ------------------ Answer checking & scoring ------------------ */
+function removeDiacritics(str) {
+  if (!str) return '';
+  return String(str).normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+  
 function normalize(s){
-    return (s || "").toString().trim().toLowerCase();
+    return removeDiacritics((s || "").toString().trim().toLowerCase());
 }
 
   function normalizeText(s) {
