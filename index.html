@@ -1373,15 +1373,36 @@ function preprocessAnswer(ans) {
   
   let processedAnswer = String(ans);
   
-  // Remove year ranges and set indicators (e.g., "2021-2022", "A-set", "B-set")
+  // Remove year ranges and set indicators
   processedAnswer = processedAnswer.replace(/\s*\(?[ABC]?-?set\)?/gi, '');
   processedAnswer = processedAnswer.replace(/\s*\(?\d{4}-\d{4}\)?/g, '');
   
-  // Split on " or " (case insensitive) to get all acceptable variants
-  const variants = processedAnswer.split(/\s+or\s+/i).map(v => v.trim()).filter(Boolean);
+  // Split on " or " first
+  let variants = processedAnswer.split(/\s+or\s+/i).map(v => v.trim()).filter(Boolean);
   
-  // Return array if multiple variants, single string if only one
-  return variants.length > 1 ? variants : variants[0] || processedAnswer;
+  // For each variant, also split on slashes to create additional variants
+  const expandedVariants = [];
+  variants.forEach(v => {
+    // Split on forward slash
+    if (v.includes('/')) {
+      const slashParts = v.split('/').map(p => p.trim()).filter(Boolean);
+      expandedVariants.push(...slashParts);
+    } else {
+      expandedVariants.push(v);
+    }
+  });
+  
+  // Split each variant on commas to get final list
+  const finalVariants = [];
+  expandedVariants.forEach(v => {
+    const commaParts = v.split(',').map(p => p.trim()).filter(Boolean);
+    finalVariants.push(...commaParts);
+  });
+  
+  // Remove duplicates
+  const unique = [...new Set(finalVariants)];
+  
+  return unique.length > 1 ? unique : unique[0] || processedAnswer;
 }
   
 function setFeedback(text, ok=true){
@@ -2554,11 +2575,39 @@ function showAnswer(){
 /* ------------------ Answer checking & scoring ------------------ */
 function removeDiacritics(str) {
   if (!str) return '';
-  return String(str).normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return String(str)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')  // Standard diacritics
+    .replace(/[\u0080-\u024F]/g, (char) => {
+      // Handle additional special characters
+      const replacements = {
+        'ß': 'ss',
+        'æ': 'ae',
+        'œ': 'oe',
+        'ø': 'o',
+        'ð': 'd',
+        'þ': 'th',
+        '´': '',  // Acute accent mark
+        '`': '',  // Grave accent mark
+        'ˆ': '',  // Circumflex
+        '¨': '',  // Diaeresis
+        '˜': '',  // Tilde
+        '¸': ''   // Cedilla
+      };
+      return replacements[char] || char;
+    });
+}
+
+function normalizeForMatching(text) {
+  return removeDiacritics(text)
+    .toLowerCase()
+    .replace(/[´`ˆ¨˜¸'']/g, '')  // Remove standalone accent marks
+    .replace(/\s+/g, ' ')
+    .trim();
 }
   
 function normalize(s){
-    return removeDiacritics((s || "").toString().trim().toLowerCase());
+    return normalizeForMatching((s || "").toString().trim());
 }
 
   function normalizeText(s) {
