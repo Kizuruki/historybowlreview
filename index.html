@@ -1679,34 +1679,22 @@ function togglePause() {
         }
     } else {
         // RESUME
-        if (gameState.pausedNextQuestionTime !== null && gameState.pausedNextQuestionTime > 0) {
-            gameState.nextQuestionTimer = setTimeout(() => {
-                if (!gameState.isPaused) {
-                    nextQuestion();
-                }
-            }, gameState.pausedNextQuestionTime);
-            gameState.nextQuestionStartTime = Date.now();
-            gameState.nextQuestionDelay = gameState.pausedNextQuestionTime;
-        }
         gameState.isPaused = false;
-        gameState.pausedNextQuestionTime = null;
         $('pauseBtn').textContent = "Pause";
         clearFeedback();
+        
         if (gameState.wasReading) resumeReading();
         
-        // ADD THIS: Resume post-read timer
         if (typeof gameState.pausedPostReadTime === 'number' && gameState.pausedPostReadTime > 0) {
             gameState.postReadTimeLeft = gameState.pausedPostReadTime;
             resumePostReadTimer();
         }
         
-        // ADD THIS: Resume answer timer
         if (typeof gameState.pausedAnswerTime === 'number' && gameState.pausedAnswerTime > 0) {
             gameState.answerTimeLeft = gameState.pausedAnswerTime;
             resumeAnswerTimer();
         }
         
-        // ADD THIS: Resume bonus timer
         if (typeof gameState.pausedBonusTime === 'number' && gameState.pausedBonusTime > 0) {
             gameState.bonusTimeLeft = gameState.pausedBonusTime;
             resumeBonusTimer();
@@ -1715,6 +1703,17 @@ function togglePause() {
         if (gameState.currentQuarter === 3 && gameState.q3CategoryActive && typeof gameState.pausedQ3Time === 'number') {
             gameState.q3TimeLeft = gameState.pausedQ3Time;
             startQ3CategoryTimer();
+        }
+        
+        // Resume next question timer - FIXED VERSION
+        if (gameState.pausedNextQuestionTime !== null && gameState.pausedNextQuestionTime > 0) {
+            gameState.nextQuestionTimer = setTimeout(() => {
+                if (!gameState.isPaused) {
+                    nextQuestion();
+                }
+            }, gameState.pausedNextQuestionTime);
+            gameState.nextQuestionStartTime = Date.now();
+            gameState.nextQuestionDelay = gameState.pausedNextQuestionTime;
         }
     
         if (
@@ -1725,14 +1724,14 @@ function togglePause() {
             resumeFeedbackCountdown(gameState.pausedFeedbackTime);
             gameState.pausedFeedbackTime = null;
         }
-
+    
         gameState.pausedPostReadTime = null;
         gameState.pausedAnswerTime = null;
         gameState.pausedBonusTime = null;
         gameState.pausedQ3Time = null;
-        gameState.pausedFeedbackTime = null;
+        gameState.pausedNextQuestionTime = null;
         gameState.wasReading = false;
-
+    
         if (
             gameState.buzzed ||
             (gameState.currentQuarter === 3 && gameState.q3CategoryActive) ||
@@ -1742,22 +1741,16 @@ function togglePause() {
         } else {
             $('buzzerBtn').disabled = false;
         }
-
+    
         $('showAnswerBtn').disabled = gameState.isShowingAnswer ? true : false;
-
+    
         if (gameState.buzzed || (gameState.currentQuarter === 3 && gameState.q3CategoryActive) || gameState.isAnsweringBonus) {
             $('answerInput').disabled = false;
         } else {
             $('answerInput').disabled = true;
         }
-        if (gameState.buzzed || (gameState.currentQuarter === 3 && gameState.q3CategoryActive) || gameState.isAnsweringBonus) {
-            $('answerInput').disabled = false;
-        } else {
-            $('answerInput').disabled = true;
-        }
-// keep submit button in lockstep with the input
+    
         $('submitBtn').disabled = $('answerInput').disabled;
-
     }
 }
 
