@@ -4855,11 +4855,12 @@ function normalizeAnswer(answer) {
   if (!answer) return '';
   
   return String(answer)
-    .replace(/'/g, "'")  // Normalize fancy apostrophes
-    .replace(/'/g, "'")  // Another variant
+    .toLowerCase()  // ADD THIS LINE
+    .replace(/'/g, "'")
+    .replace(/'/g, "'")
     .trim();
-  // DON'T split on comma here - keep the full string as-is
 }
+  
 </script>
 </body>
 </html>
