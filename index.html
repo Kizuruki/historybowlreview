@@ -1160,6 +1160,7 @@ let gameState = {
     buzzTime: null, // When user buzzed
     questionsLoaded: false,
     nextQuestionTimer: null,
+    nextQuestionDelay: null,
     pausedNextQuestionTime: null
 };
 
@@ -1651,7 +1652,9 @@ function togglePause() {
         // Handle next question timer
         if (gameState.nextQuestionTimer) {
             clearTimeout(gameState.nextQuestionTimer);
-            gameState.pausedNextQuestionTime = Date.now();
+            // Calculate remaining time
+            const elapsed = Date.now() - gameState.nextQuestionStartTime;
+            gameState.pausedNextQuestionTime = Math.max(0, gameState.nextQuestionDelay - elapsed);
             gameState.nextQuestionTimer = null;
         }
         if (
@@ -1676,6 +1679,15 @@ function togglePause() {
         }
     } else {
         // RESUME
+        if (gameState.pausedNextQuestionTime !== null && gameState.pausedNextQuestionTime > 0) {
+            gameState.nextQuestionTimer = setTimeout(() => {
+                if (!gameState.isPaused) {
+                    nextQuestion();
+                }
+            }, gameState.pausedNextQuestionTime);
+            gameState.nextQuestionStartTime = Date.now();
+            gameState.nextQuestionDelay = gameState.pausedNextQuestionTime;
+        }
         gameState.isPaused = false;
         gameState.pausedNextQuestionTime = null;
         $('pauseBtn').textContent = "Pause";
@@ -2995,6 +3007,8 @@ async function submitAnswer(){
             updateNodeProgressAfterCorrect();
             
             setFeedback(`Correct! +${earnedPoints} points (${responseTime?.toFixed(1)}s)`, true);
+            gameState.nextQuestionDelay = 1500;
+            gameState.nextQuestionStartTime = Date.now();
             gameState.nextQuestionTimer = setTimeout(()=> {
                 if (!gameState.isPaused) {
                     nextQuestion();
@@ -3018,6 +3032,8 @@ async function submitAnswer(){
             }
             startFeedbackCountdown(10);
             $('questionText').textContent = gameState.currentQuestionText;
+            gameState.nextQuestionDelay = 1500;
+            gameState.nextQuestionStartTime = Date.now();
             gameState.nextQuestionTimer = setTimeout(()=> {
                 if (!gameState.isPaused) {
                     nextQuestion();
@@ -3085,6 +3101,8 @@ async function submitAnswer(){
                                 $('questionText').textContent = gameState.currentBonus?.question || '';
                                 gameState.currentBonus = null;
                                 gameState.isAnsweringBonus = false;
+                                gameState.nextQuestionDelay = 1500;
+                                gameState.nextQuestionStartTime = Date.now();
                                 gameState.nextQuestionTimer = setTimeout(()=> {
                                     if (!gameState.isPaused) {
                                         nextQuestion();
@@ -3096,6 +3114,8 @@ async function submitAnswer(){
                     // === END BONUS TIMER ===
                 }, 1000);
             } else {
+                gameState.nextQuestionDelay = 1500;
+                gameState.nextQuestionStartTime = Date.now();
                 gameState.nextQuestionTimer = setTimeout(()=> {
                     if (!gameState.isPaused) {
                         nextQuestion();
@@ -3121,6 +3141,8 @@ async function submitAnswer(){
             }
             startFeedbackCountdown(10);
             $('questionText').textContent = gameState.currentQuestionText; // Stay on tossup, not bonus!
+            gameState.nextQuestionDelay = 1500;
+            gameState.nextQuestionStartTime = Date.now();
             gameState.nextQuestionTimer = setTimeout(()=> {
                 if (!gameState.isPaused) {
                     nextQuestion();
@@ -3149,6 +3171,8 @@ async function submitAnswer(){
             }
             updateScoreDisplays();
             setFeedback(`Correct! +${earnedPoints} points (${responseTime?.toFixed(1)}s)`, true);
+            gameState.nextQuestionDelay = 1500;
+            gameState.nextQuestionStartTime = Date.now();
             gameState.nextQuestionTimer = setTimeout(()=> {
                 if (!gameState.isPaused) {
                     nextQuestion();
@@ -3178,6 +3202,8 @@ async function submitAnswer(){
             setFeedback(`Incorrect. The correct answer was: ${formatAnswer(gameState.currentAnswer)}`, false);
             startFeedbackCountdown(10);
             $('questionText').textContent = gameState.currentQuestionText;
+            gameState.nextQuestionDelay = 1500;
+            gameState.nextQuestionStartTime = Date.now();
             gameState.nextQuestionTimer = setTimeout(()=> {
                 if (!gameState.isPaused) {
                     nextQuestion();
@@ -3208,6 +3234,8 @@ async function submitAnswer(){
             setFeedback(`Correct bonus! +${bonusPoints} points (${bonusResponseTime.toFixed(1)}s)`, true);
             gameState.currentBonus = null;
             gameState.isAnsweringBonus = false;
+            gameState.nextQuestionDelay = 1500;
+            gameState.nextQuestionStartTime = Date.now();
             gameState.nextQuestionTimer = setTimeout(()=> {
                 if (!gameState.isPaused) {
                     nextQuestion();
@@ -3232,6 +3260,8 @@ async function submitAnswer(){
             $('questionText').textContent = gameState.currentBonus?.question || '';
             gameState.currentBonus = null;
             gameState.isAnsweringBonus = false;
+            gameState.nextQuestionDelay = 1500;
+            gameState.nextQuestionStartTime = Date.now();
             gameState.nextQuestionTimer = setTimeout(()=> {
                 if (!gameState.isPaused) {
                     nextQuestion();
