@@ -3186,6 +3186,7 @@ window.AVAILABLE_FILES = [
 ];
 
 (function () {
+  console.log('MSM IIFE running');
 
   /* ── helpers ─────────────────────────────────────────── */
   function nq(text) {
@@ -3684,10 +3685,13 @@ window.AVAILABLE_FILES = [
   };
 
   function updateSelInfo() {
+    const selInfo = document.getElementById('msmSelInfo');
+    const resetBtn = document.getElementById('msmResetBtn');
+    if (!selInfo || !resetBtn) return;
     const n = _msmSelected.size;
-    document.getElementById('msmSelInfo').textContent =
+    selInfo.textContent =
       n === 0 ? 'No sets selected' : `${n} set${n !== 1 ? 's' : ''} selected for reset`;
-    document.getElementById('msmResetBtn').disabled = n === 0;
+    resetBtn.disabled = n === 0;
   }
 
   /* ── Reset ────────────────────────────────────────────── */
