@@ -746,21 +746,6 @@ function filterMasteredQ4(arr) {
     return arr.filter(q => !isQuestionMastered(4, (q.parts || []).join(' ')));
 }
 
-function showMasteredStats() {
-    const q1count = Array.from(masteredQuestions).filter(k => k.startsWith('Q1|')).length;
-    const q2count = Array.from(masteredQuestions).filter(k => k.startsWith('Q2|')).length;
-    const q4count = Array.from(masteredQuestions).filter(k => k.startsWith('Q4|')).length;
-    alert(`Mastered Questions:\nQ1: ${q1count}\nQ2: ${q2count} tossups\nQ4: ${q4count}\nTotal: ${masteredQuestions.size}\n\nThese won't appear in practice mode. Use "Reset All" to see them again.`);
-}
-
-function confirmResetMastered() {
-    if (confirm('Reset ALL mastered questions? They will appear again in practice mode.')) {
-        masteredQuestions = new Set();
-        saveMasteredQuestions();
-        alert('Mastered questions reset! All questions will appear in practice again.');
-    }
-}
-
 function showMasteredModal(quarter) {
     const total = masteredQuestions.size;
     $('masteredStatsText').textContent = `${total} questions mastered across all quarters.`;
