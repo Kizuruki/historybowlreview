@@ -3452,7 +3452,7 @@ window.AVAILABLE_FILES = [
   /* ── Open modal ─────────────────────────────────────────*/
   window.showMasteredStats = async function () {
     injectModal();
-    document.getElementById('masteredStatsModal').classList.add('open');
+    document.getElementById('masteredStatsModal').style.display = 'flex';
     _msmTabData = window.AVAILABLE_FILES || [];
     _msmSelected = new Set();
     _msmCurrentTabIdx = 0;
@@ -3461,7 +3461,7 @@ window.AVAILABLE_FILES = [
   };
 
   window.closeMasteredStatsModal = function () {
-    document.getElementById('masteredStatsModal').classList.remove('open');
+    document.getElementById('masteredStatsModal').style.display = 'none';
   };
 
   /* ── Tabs ─────────────────────────────────────────────── */
