@@ -3264,13 +3264,6 @@ window.AVAILABLE_FILES = [
     if (document.getElementById('masteredStatsModal')) return;
     document.head.insertAdjacentHTML('beforeend', `
 <style>
-#masteredStatsModal {
-  position:fixed;inset:0;z-index:10000;
-  background:rgba(10,8,20,.72);
-  backdrop-filter:blur(6px);
-  display:none;align-items:center;justify-content:center;
-}
-#masteredStatsModal.open { display:flex; }
 .msm-box {
   background:#1a1630;
   border:1.5px solid #6c63ff44;
@@ -3414,7 +3407,7 @@ window.AVAILABLE_FILES = [
 .msm-btn.sm:hover{background:#352d60;}
 </style>
 
-<div id="masteredStatsModal">
+<div id="masteredStatsModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(10,8,20,.72);backdrop-filter:blur(6px);align-items:center;justify-content:center;">
   <div class="msm-box">
     <div class="msm-header">
       <h2>🏆 Mastered Questions — Stats &amp; Reset</h2>
