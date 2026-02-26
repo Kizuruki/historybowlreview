@@ -3278,7 +3278,7 @@ window.AVAILABLE_FILES = [
   /* ── Modal HTML skeleton ─────────────────────────────── */
   function injectModal() {
     if (document.getElementById('masteredStatsModal')) return;
-    document.head.insertAdjacentHTML('beforeend', `
+    document.body.insertAdjacentHTML('beforeend', `
 <style>
 .msm-box {
   background:#1a1630;
