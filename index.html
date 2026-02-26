@@ -1237,8 +1237,14 @@ function looseMatch(given, answer) {
 function preprocessAnswer(ans) {
   if (!ans) return ans;
   let processedAnswer = String(ans);
+  processedAnswer = processedAnswer.replace(/\d{4}-\d{2}\b.*$/i, '');
+  // Strip year ranges like "2020-21", "2021-22 C Set History" etc. and everything after
+  processedAnswer = processedAnswer.replace(/\s*\d{4}-\d{2,4}.*$/i, '');
+  
+  // Existing cleanup
   processedAnswer = processedAnswer.replace(/\s*\(?[ABC]?-?set\)?/gi, '');
   processedAnswer = processedAnswer.replace(/\s*\(?\d{4}-\d{4}\)?/g, '');
+  
   let variants = processedAnswer.split(/\s+or\s+/i).map(v => v.trim()).filter(Boolean);
   const expandedVariants = [];
   variants.forEach(v => {
