@@ -3719,7 +3719,50 @@ window.AVAILABLE_FILES = [
   };
 
 })();
+<script src="fixes.js">
+// ── FIX 1 & 2: Login / Logout button visibility ─────────────
 
+window.updateAuthUI = function () {
+  const loginBtn  = document.getElementById('loginBtn');
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (!loginBtn || !logoutBtn) return;
+  if (window.currentUser) {
+    loginBtn.style.display  = 'none';
+    logoutBtn.style.display = 'inline-block';
+  } else {
+    loginBtn.style.display  = 'inline-block';
+    logoutBtn.style.display = 'none';
+  }
+};
+
+// Give the buttons their IDs if they don't already have them
+(function tagAuthButtons() {
+  document.querySelectorAll('.account-bar button').forEach(btn => {
+    const oc = btn.getAttribute('onclick') || '';
+    if (oc.includes('showLoginModal') && !btn.id) btn.id = 'loginBtn';
+    if (oc.includes('logout')         && !btn.id) btn.id = 'logoutBtn';
+  });
+})();
+
+// Patch logout() to refresh UI after clearing user
+const _origLogout = window.logout;
+window.logout = function () {
+  if (_origLogout) _origLogout.apply(this, arguments);
+  updateAuthUI();
+};
+
+// Patch closeLoginModal() — fires after every successful login
+const _origClose = window.closeLoginModal;
+window.closeLoginModal = function () {
+  if (_origClose) _origClose.apply(this, arguments);
+  updateAuthUI();
+};
+
+// Run immediately (handles auto-login via localStorage) and after
+// async init() tasks finish loading progress from server
+updateAuthUI();
+setTimeout(updateAuthUI, 500);
+setTimeout(updateAuthUI, 2000);
 </script>
 </body>
 </html>
