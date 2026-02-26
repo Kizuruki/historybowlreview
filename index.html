@@ -3462,7 +3462,7 @@ window.AVAILABLE_FILES = [
   window.showMasteredStats = async function () {
     injectModal();
     const _msmEl = document.getElementById('masteredStatsModal');
-    _msmEl.style.removeProperty('display');
+    _msmEl.setAttribute('style', _msmEl.getAttribute('style').replace('display:none;', ''));
     _msmEl.style.display = 'flex';
     _msmTabData = window.AVAILABLE_FILES || [];
     _msmSelected = new Set();
