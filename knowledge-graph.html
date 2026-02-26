@@ -543,8 +543,8 @@
   </style>
   <div class="account-bar">
       <span id="username-display">Guest</span>
-      <button class="account-btn" onclick="showLoginModal()">Login</button>
-      <button class="account-btn" onclick="logout()">Logout</button>
+      <button class="account-btn" id="loginBtn" onclick="showLoginModal()">Login</button>
+      <button class="account-btn" id="logoutBtn" onclick="logout()" style="display:none;">Logout</button>
   </div>
   
   <div class="mode-toggle">
@@ -687,7 +687,8 @@
         renderProgressStats();
         initDraggableCanvas();
         setupNodeSearch();
-        
+        updateAuthUI();
+          
         console.log('✓ Initialization complete');
       } catch (error) {
         console.error('❌ Failed to initialize:', error);
@@ -833,6 +834,7 @@
           localStorage.setItem('currentUser', username);
           
           await loadUserProgress();
+          updateAuthUI();
           closeLoginModal();
           if (currentNode) selectNode(currentNode.answer);
           renderProgressStats();
@@ -876,14 +878,29 @@
       }
     }
 
+    function updateAuthUI() {
+      const loginBtn = document.getElementById('loginBtn');
+      const logoutBtn = document.getElementById('logoutBtn');
+      if (!loginBtn || !logoutBtn) return;
+      if (currentUser) {
+        loginBtn.style.display = 'none';
+        logoutBtn.style.display = 'inline-block';
+      } else {
+        loginBtn.style.display = 'inline-block';
+        logoutBtn.style.display = 'none';
+      }
+    }
+      
     function logout() {
       currentUser = null;
       document.getElementById('username-display').textContent = 'Guest';
       localStorage.removeItem('currentUser');
+      sessionStorage.removeItem('knowledgeGraphUser');
       userProgress = {};
       loadUserProgress();
       if (currentNode) selectNode(currentNode.answer);
       renderProgressStats();
+      updateAuthUI();
     }
     // === CATEGORY & NODE RENDERING ===
     function renderCategories() {
@@ -891,7 +908,15 @@
       console.log('Sample userProgress entries:', Object.entries(userProgress).slice(0, 5));
       const categoryHierarchy = {};
       
-      nodesData.forEach(node => {
+      const visibleNodes = missedMode
+        ? nodesData.filter(n => {
+            const p = userProgress[normalizeAnswer(n.answer)];
+            const wrong = Array.isArray(p) ? 0 : (p?.times_wrong || 0);
+            return wrong > 0;
+          })
+        : nodesData;
+      
+      visibleNodes.forEach(node => {
         const cat = node.category;
         const subcat = node.subcategory || 'Other';
         const subsubcat = node.subsubcategory || null;
@@ -936,7 +961,7 @@
       };
       
       Object.keys(categoryHierarchy).sort().forEach(cat => {
-        const catNodes = nodesData.filter(n => n.category === cat);
+        const catNodes = visibleNodes.filter(n => n.category === cat);
         // Count topics with at least 1 star
         const completedTopics = catNodes.filter(n => getNodeStars(n) >= 1).length;
         const totalTopics = catNodes.length;
@@ -1503,6 +1528,7 @@
       missedMode = !missedMode;
       const toggle = document.getElementById('missedToggle');
       toggle.classList.toggle('active', missedMode);
+      renderCategories();
     }
   
     // === DRAGGABLE CANVAS ===
