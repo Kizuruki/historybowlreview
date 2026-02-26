@@ -326,8 +326,8 @@
     <!-- Account Bar -->
     <div class="account-bar" style="position:fixed;top:0;right:0;background:rgba(255,255,255,0.95);padding:8px 16px;border-radius:0 0 0 12px;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:1000;display:flex;gap:12px;align-items:center;">
         <span id="username-display">Guest</span>
-        <button class="btn" onclick="showLoginModal()" style="padding:6px 12px;font-size:13px;">Login</button>
-        <button class="btn secondary" onclick="logout()" style="padding:6px 12px;font-size:13px;">Logout</button>
+        <button class="btn" id="loginBtn" onclick="showLoginModal()" style="padding:6px 12px;font-size:13px;">Login</button>
+        <button class="btn secondary" id="logoutBtn" onclick="logout()" style="padding:6px 12px;font-size:13px;display:none;">Logout</button>
     </div>
     
     <!-- Login Modal -->
@@ -2772,6 +2772,7 @@ async function login() {
       await loadUserProgress();
       await loadMissedQuestions();
       await loadMasteredQuestions();
+      updateAuthUI();
       closeLoginModal();
     } else { document.getElementById('loginError').textContent = data.message || 'Invalid credentials'; }
   } catch (err) { console.error('Login error:', err); document.getElementById('loginError').textContent = 'Login failed. Please try again.'; }
@@ -2789,6 +2790,19 @@ async function register() {
   } catch (err) { console.error('Register error:', err); document.getElementById('loginError').textContent = 'Registration failed. Please try again.'; }
 }
 
+function updateAuthUI() {
+  const loginBtn = document.getElementById('loginBtn');
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (!loginBtn || !logoutBtn) return;
+  if (currentUser) {
+    loginBtn.style.display = 'none';
+    logoutBtn.style.display = 'inline-block';
+  } else {
+    loginBtn.style.display = 'inline-block';
+    logoutBtn.style.display = 'none';
+  }
+}
+    
 function logout() {
   currentUser = null;
   document.getElementById('username-display').textContent = 'Guest';
@@ -2797,6 +2811,7 @@ function logout() {
   sessionStorage.removeItem('knowledgeGraphUser');
   missedQuestions = [];
   masteredQuestions = new Set();
+  updateAuthUI();
 }
 
 async function loadUserProgress() {
@@ -2855,6 +2870,7 @@ async function init(){
     } else {
         loadMasteredQuestions(); // load guest mastered from localStorage
     }
+    setTimeout(updateAuthUI, 500);
 }
 init();
 
@@ -3445,7 +3461,9 @@ window.AVAILABLE_FILES = [
   /* ── Open modal ─────────────────────────────────────────*/
   window.showMasteredStats = async function () {
     injectModal();
-    document.getElementById('masteredStatsModal').style.display = 'flex';
+    const _msmEl = document.getElementById('masteredStatsModal');
+    _msmEl.style.removeProperty('display');
+    _msmEl.style.display = 'flex';
     _msmTabData = window.AVAILABLE_FILES || [];
     _msmSelected = new Set();
     _msmCurrentTabIdx = 0;
